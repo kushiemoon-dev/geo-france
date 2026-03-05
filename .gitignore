@@ -1,0 +1,7 @@
+node_modules/
+dist/
+data-work/
+*.log
+task_plan.md
+progress.md
+findings.md
