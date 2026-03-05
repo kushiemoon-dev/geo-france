@@ -340,6 +340,21 @@ body {
   height: 100%;
 }
 
+.detail-panel-hero {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #2a2a30;
+}
+
+.detail-panel-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .detail-panel-content .popup-age-bar {
   height: 6px;
   border-radius: 3px;
