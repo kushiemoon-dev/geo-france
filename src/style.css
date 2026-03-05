@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Layer toggle panel */
+.layer-toggle-panel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  min-width: 200px;
+}
+
+.layer-toggle-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #333;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.layer-toggle-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  cursor: pointer;
+  font-size: 13px;
+  color: #444;
+}
+
+.layer-toggle-item:hover {
+  color: #000;
+}
+
+.layer-toggle-item input[type="checkbox"] {
+  accent-color: #2563eb;
+}
+
+/* Legend panel */
+.legend-panel {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.legend-panel h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #333;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.legend-label {
+  font-size: 12px;
+  color: #444;
+}
+
+/* Popup styling */
+.geology-popup h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.geology-popup p {
+  font-size: 12px;
+  color: #555;
+  margin: 3px 0;
+  line-height: 1.4;
+}
+
+.popup-age-bar {
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+
+.popup-age-hierarchy {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.geology-popup .popup-descr {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.popup-section {
+  margin: 6px 0;
+}
+
+.popup-section strong {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #888;
+  margin-bottom: 3px;
+}
+
+.popup-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.popup-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  line-height: 1.4;
+}
+
+.tag-litho {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.tag-mineral {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.tag-fossil {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.geology-popup .popup-source {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 10px;
+  color: #999;
+  font-style: italic;
+}
+
+/* MapLibre popup override */
+.maplibregl-popup-content {
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
