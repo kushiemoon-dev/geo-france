@@ -88,6 +88,14 @@ function renderPetrographySection(lithology: string[]): string {
   return `<div class="detail-section-header">Petrographie</div>${rowsHtml}<div style="margin-top:10px">${barsHtml}</div>`
 }
 
+function findRockImage(lithology: string[]): string | undefined {
+  for (const litho of lithology) {
+    const info = getRockInfo(litho)
+    if (info?.image) return info.image
+  }
+  return undefined
+}
+
 function renderDetailContent(feature: MapGeoJSONFeature): string {
   const p = feature.properties
   const notation = p['NOTATION'] || p['notation'] || 'N/A'
@@ -98,6 +106,7 @@ function renderDetailContent(feature: MapGeoJSONFeature): string {
 
   const lithology = extractLithology(descr)
   const fossils = extractFossils(descr)
+  const rockImage = findRockImage(lithology)
 
   const wikiUrl = geo.wikiSlug
     ? `https://fr.wikipedia.org/wiki/${encodeURIComponent(geo.wikiSlug)}`
@@ -107,6 +116,7 @@ function renderDetailContent(feature: MapGeoJSONFeature): string {
     <button class="detail-panel-close" aria-label="Fermer">&times;</button>
     <div class="detail-panel-content">
       <div class="popup-age-bar" style="background-color: ${geo.color}"></div>
+      ${rockImage ? `<div class="detail-panel-hero"><img src="${rockImage}" alt="" loading="lazy"></div>` : ''}
       <h3 class="detail-panel-title">${escapeHtml(notation)}</h3>
       ${renderAgeSection(geo, notation, carte)}
       ${renderPetrographySection(lithology)}
