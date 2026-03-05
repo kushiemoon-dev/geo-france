@@ -397,6 +397,42 @@ body {
   line-height: 1.5;
 }
 
+/* Mineral composition details */
+.mineral-details {
+  margin: 8px 0 12px;
+}
+
+.mineral-detail-row {
+  display: flex;
+  gap: 6px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 12px;
+  align-items: baseline;
+}
+
+.mineral-detail-row:last-child {
+  border-bottom: none;
+}
+
+.mineral-detail-name {
+  font-weight: 600;
+  min-width: 90px;
+  text-transform: capitalize;
+}
+
+.mineral-detail-formula {
+  font-style: italic;
+  color: #e65100;
+}
+
+.mineral-detail-props {
+  color: #666;
+  font-size: 11px;
+  margin-left: auto;
+  text-align: right;
+}
+
 .detail-panel-links {
   margin: 14px 0;
   padding-top: 10px;
