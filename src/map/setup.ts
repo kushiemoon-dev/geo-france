@@ -1,14 +1,8 @@
 import maplibregl from 'maplibre-gl'
 import { Protocol } from 'pmtiles'
+import { FRANCE_CENTER } from '../config/regions.ts'
 
-// Normandie bounding box
-const NORMANDIE_BOUNDS: maplibregl.LngLatBoundsLike = [
-  [-2.0, 48.0],  // SW
-  [1.8, 49.8]    // NE
-]
-
-const NORMANDIE_CENTER: maplibregl.LngLatLike = [-0.5, 48.85]
-const DEFAULT_ZOOM = 8
+const DEFAULT_ZOOM = 6
 
 export function createMap(container: string): maplibregl.Map {
   // Register PMTiles protocol
@@ -38,10 +32,6 @@ export function createMap(container: string): maplibregl.Map {
           tileSize: 256,
           attribution: '&copy; OpenTopoMap',
           maxzoom: 17
-        },
-        'geology': {
-          type: 'vector',
-          url: 'pmtiles:///data/normandy-geology.pmtiles'
         }
       },
       layers: [
@@ -64,10 +54,9 @@ export function createMap(container: string): maplibregl.Map {
         }
       ]
     },
-    center: NORMANDIE_CENTER,
+    center: FRANCE_CENTER,
     zoom: DEFAULT_ZOOM,
-    maxBounds: NORMANDIE_BOUNDS,
-    minZoom: 6,
+    minZoom: 5,
     maxZoom: 16
   })
 
