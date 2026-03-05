@@ -82,55 +82,56 @@ export interface RockInfo {
   readonly facies?: string
   readonly texture?: string
   readonly minerals: readonly RockMineral[]
+  readonly image?: string
 }
 
 const ROCK_DB: Record<string, RockInfo> = {
   // Magmatiques plutoniques
-  granite: { type: 'magmatique', origin: 'plutonique', facies: 'Granite a biotite dominant, calco-alcalin', texture: 'Grenue, grain moyen, parfois porphyroide', minerals: [
+  granite: { type: 'magmatique', origin: 'plutonique', facies: 'Granite a biotite dominant, calco-alcalin', texture: 'Grenue, grain moyen, parfois porphyroide', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Granite_Yosemite_P1160483.jpg/400px-Granite_Yosemite_P1160483.jpg', minerals: [
     { name: 'feldspath', percent: '32%' }, { name: 'plagioclase', percent: '28%' }, { name: 'quartz', percent: '25%' }, { name: 'biotite', percent: '12%' }, { name: 'amphibole', percent: '3%' }
   ]},
-  granodiorite: { type: 'magmatique', origin: 'plutonique', facies: 'Granodiorite calco-alcaline', texture: 'Grenue', minerals: [
+  granodiorite: { type: 'magmatique', origin: 'plutonique', facies: 'Granodiorite calco-alcaline', texture: 'Grenue', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Granodiorite_pmg_ss_2006.jpg/400px-Granodiorite_pmg_ss_2006.jpg', minerals: [
     { name: 'plagioclase', percent: '40%' }, { name: 'quartz', percent: '25%' }, { name: 'feldspath', percent: '15%' }, { name: 'biotite', percent: '12%' }, { name: 'amphibole', percent: '8%' }
   ]},
-  tonalite: { type: 'magmatique', origin: 'plutonique', facies: 'Tonalite sodique', texture: 'Grenue', minerals: [
+  tonalite: { type: 'magmatique', origin: 'plutonique', facies: 'Tonalite sodique', texture: 'Grenue', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Tonalite_pmg_ss_2006.jpg/400px-Tonalite_pmg_ss_2006.jpg', minerals: [
     { name: 'plagioclase', percent: '50%' }, { name: 'quartz', percent: '25%' }, { name: 'biotite', percent: '15%' }, { name: 'amphibole', percent: '10%' }
   ]},
-  diorite: { type: 'magmatique', origin: 'plutonique', facies: 'Diorite quartzique', texture: 'Grenue', minerals: [
+  diorite: { type: 'magmatique', origin: 'plutonique', facies: 'Diorite quartzique', texture: 'Grenue', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Diorite_pmg_ss_2006.jpg/400px-Diorite_pmg_ss_2006.jpg', minerals: [
     { name: 'plagioclase', percent: '55%' }, { name: 'amphibole', percent: '25%' }, { name: 'biotite', percent: '10%' }, { name: 'quartz', percent: '10%' }
   ]},
-  leucogranite: { type: 'magmatique', origin: 'plutonique', facies: 'Leucogranite a muscovite', texture: 'Grenue a grain fin', minerals: [
+  leucogranite: { type: 'magmatique', origin: 'plutonique', facies: 'Leucogranite a muscovite', texture: 'Grenue a grain fin', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Leucogranite_Ploumanach.jpg/400px-Leucogranite_Ploumanach.jpg', minerals: [
     { name: 'feldspath', percent: '35%' }, { name: 'quartz', percent: '35%' }, { name: 'muscovite', percent: '15%' }, { name: 'plagioclase', percent: '15%' }
   ]},
-  trondhjemite: { type: 'magmatique', origin: 'plutonique', facies: 'Trondhjemite sodique', texture: 'Grenue', minerals: [
+  trondhjemite: { type: 'magmatique', origin: 'plutonique', facies: 'Trondhjemite sodique', texture: 'Grenue', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Trondhjemite_Finse.jpg/400px-Trondhjemite_Finse.jpg', minerals: [
     { name: 'plagioclase', percent: '55%' }, { name: 'quartz', percent: '30%' }, { name: 'biotite', percent: '10%' }, { name: 'muscovite', percent: '5%' }
   ]},
-  microgranite: { type: 'magmatique', origin: 'filonienne', facies: 'Microgranite porphyrique', texture: 'Microgrenue porphyrique', minerals: [
+  microgranite: { type: 'magmatique', origin: 'filonienne', facies: 'Microgranite porphyrique', texture: 'Microgrenue porphyrique', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Microgranite_Ploumanach.jpg/400px-Microgranite_Ploumanach.jpg', minerals: [
     { name: 'feldspath', percent: '35%' }, { name: 'quartz', percent: '30%' }, { name: 'plagioclase', percent: '20%' }, { name: 'biotite', percent: '10%' }, { name: 'muscovite', percent: '5%' }
   ]},
 
   // Magmatiques volcaniques
-  basalte: { type: 'magmatique', origin: 'volcanique', facies: 'Basalte tholeiitique a alcalin', texture: 'Microlitique, parfois porphyrique', minerals: [
+  basalte: { type: 'magmatique', origin: 'volcanique', facies: 'Basalte tholeiitique a alcalin', texture: 'Microlitique, parfois porphyrique', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/BasaltUSGOV.jpg/400px-BasaltUSGOV.jpg', minerals: [
     { name: 'plagioclase', percent: '50%' }, { name: 'pyroxene', percent: '30%' }, { name: 'olivine', percent: '15%' }, { name: 'magnetite', percent: '5%' }
   ]},
-  rhyolite: { type: 'magmatique', origin: 'volcanique', facies: 'Rhyolite alcaline', texture: 'Vitreuse a microlitique', minerals: [
+  rhyolite: { type: 'magmatique', origin: 'volcanique', facies: 'Rhyolite alcaline', texture: 'Vitreuse a microlitique', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Rhyolite_pmg_ss_2006.jpg/400px-Rhyolite_pmg_ss_2006.jpg', minerals: [
     { name: 'quartz', percent: '35%' }, { name: 'feldspath', percent: '35%' }, { name: 'plagioclase', percent: '15%' }, { name: 'biotite', percent: '10%' }, { name: 'magnetite', percent: '5%' }
   ]},
-  andesite: { type: 'magmatique', origin: 'volcanique', facies: 'Andesite calco-alcaline', texture: 'Microlitique porphyrique', minerals: [
+  andesite: { type: 'magmatique', origin: 'volcanique', facies: 'Andesite calco-alcaline', texture: 'Microlitique porphyrique', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Andesite_pmg_ss_2006.jpg/400px-Andesite_pmg_ss_2006.jpg', minerals: [
     { name: 'plagioclase', percent: '55%' }, { name: 'pyroxene', percent: '20%' }, { name: 'amphibole', percent: '15%' }, { name: 'magnetite', percent: '10%' }
   ]},
-  dacite: { type: 'magmatique', origin: 'volcanique', facies: 'Dacite', texture: 'Microlitique porphyrique', minerals: [
+  dacite: { type: 'magmatique', origin: 'volcanique', facies: 'Dacite', texture: 'Microlitique porphyrique', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Dacite_pmg_ss_2006.jpg/400px-Dacite_pmg_ss_2006.jpg', minerals: [
     { name: 'plagioclase', percent: '45%' }, { name: 'quartz', percent: '20%' }, { name: 'biotite', percent: '15%' }, { name: 'amphibole', percent: '12%' }, { name: 'magnetite', percent: '8%' }
   ]},
-  phonolite: { type: 'magmatique', origin: 'volcanique', facies: 'Phonolite', texture: 'Microlitique fluidale', minerals: [
+  phonolite: { type: 'magmatique', origin: 'volcanique', facies: 'Phonolite', texture: 'Microlitique fluidale', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Phonolite_pmg_ss_2006.jpg/400px-Phonolite_pmg_ss_2006.jpg', minerals: [
     { name: 'feldspath', percent: '50%' }, { name: 'plagioclase', percent: '25%' }, { name: 'pyroxene', percent: '15%' }, { name: 'amphibole', percent: '10%' }
   ]},
-  trachyte: { type: 'magmatique', origin: 'volcanique', facies: 'Trachyte alcalin', texture: 'Microlitique fluidale', minerals: [
+  trachyte: { type: 'magmatique', origin: 'volcanique', facies: 'Trachyte alcalin', texture: 'Microlitique fluidale', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Trachyte_pmg_ss_2006.jpg/400px-Trachyte_pmg_ss_2006.jpg', minerals: [
     { name: 'feldspath', percent: '60%' }, { name: 'plagioclase', percent: '15%' }, { name: 'biotite', percent: '10%' }, { name: 'pyroxene', percent: '10%' }, { name: 'magnetite', percent: '5%' }
   ]},
   spilite: { type: 'magmatique', origin: 'volcanique', facies: 'Spilite (basalte altere)', texture: 'Microlitique', minerals: [
     { name: 'plagioclase', percent: '50%' }, { name: 'chlorite', percent: '25%' }, { name: 'calcite', percent: '15%' }, { name: 'magnetite', percent: '10%' }
   ]},
-  ophite: { type: 'magmatique', origin: 'subvolcanique', facies: 'Ophite (dolerite)', texture: 'Ophitique, grain moyen', minerals: [
+  ophite: { type: 'magmatique', origin: 'subvolcanique', facies: 'Ophite (dolerite)', texture: 'Ophitique, grain moyen', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Dolerite_pmg_ss_2006.jpg/400px-Dolerite_pmg_ss_2006.jpg', minerals: [
     { name: 'plagioclase', percent: '50%' }, { name: 'pyroxene', percent: '35%' }, { name: 'olivine', percent: '10%' }, { name: 'magnetite', percent: '5%' }
   ]},
   tuf: { type: 'magmatique', origin: 'volcanique', facies: 'Tuf volcanique', texture: 'Pyroclastique', minerals: [
@@ -141,19 +142,19 @@ const ROCK_DB: Record<string, RockInfo> = {
   ]},
 
   // Sedimentaires carbonatees
-  calcaire: { type: 'sedimentaire', origin: 'marine', facies: 'Calcaire bioclastique a micritique', texture: 'Micritique a sparitique', minerals: [
+  calcaire: { type: 'sedimentaire', origin: 'marine', facies: 'Calcaire bioclastique a micritique', texture: 'Micritique a sparitique', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Calcaire_urgonien_%28Vercors%2C_France%29.jpg/400px-Calcaire_urgonien_%28Vercors%2C_France%29.jpg', minerals: [
     { name: 'calcite', percent: '95%' }, { name: 'quartz', percent: '3%' }, { name: 'argile', percent: '2%' }
   ]},
-  craie: { type: 'sedimentaire', origin: 'marine', facies: 'Craie a silex', texture: 'Crayeuse, tres fine', minerals: [
+  craie: { type: 'sedimentaire', origin: 'marine', facies: 'Craie a silex', texture: 'Crayeuse, tres fine', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Chalk_clridge_crop.jpg/400px-Chalk_clridge_crop.jpg', minerals: [
     { name: 'calcite', percent: '97%' }, { name: 'silice', percent: '3%' }
   ]},
-  marne: { type: 'sedimentaire', origin: 'marine', facies: 'Marne argilo-calcaire', texture: 'Massive, tendre', minerals: [
+  marne: { type: 'sedimentaire', origin: 'marine', facies: 'Marne argilo-calcaire', texture: 'Massive, tendre', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Marl_Outcrop.JPG/400px-Marl_Outcrop.JPG', minerals: [
     { name: 'calcite', percent: '60%' }, { name: 'argile', percent: '35%' }, { name: 'quartz', percent: '5%' }
   ]},
-  dolomie: { type: 'sedimentaire', origin: 'marine', facies: 'Dolomie cristalline', texture: 'Saccharoide a massive', minerals: [
+  dolomie: { type: 'sedimentaire', origin: 'marine', facies: 'Dolomie cristalline', texture: 'Saccharoide a massive', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dolomite_USDA.jpg/400px-Dolomite_USDA.jpg', minerals: [
     { name: 'dolomite', percent: '90%' }, { name: 'calcite', percent: '8%' }, { name: 'quartz', percent: '2%' }
   ]},
-  travertin: { type: 'sedimentaire', origin: 'continentale', facies: 'Travertin (tuf calcaire)', texture: 'Poreuse, vacuolaire', minerals: [
+  travertin: { type: 'sedimentaire', origin: 'continentale', facies: 'Travertin (tuf calcaire)', texture: 'Poreuse, vacuolaire', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Travertin_Pamukkale.jpg/400px-Travertin_Pamukkale.jpg', minerals: [
     { name: 'calcite', percent: '95%' }, { name: 'quartz', percent: '3%' }, { name: 'argile', percent: '2%' }
   ]},
   lumachelle: { type: 'sedimentaire', origin: 'marine', facies: 'Lumachelle coquilliere', texture: 'Bioclastique grossiere', minerals: [
@@ -167,25 +168,25 @@ const ROCK_DB: Record<string, RockInfo> = {
   ]},
 
   // Sedimentaires detritiques
-  gres: { type: 'sedimentaire', origin: 'detritique', facies: 'Gres quartzeux', texture: 'Granulaire, cimentee', minerals: [
+  gres: { type: 'sedimentaire', origin: 'detritique', facies: 'Gres quartzeux', texture: 'Granulaire, cimentee', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sandstone%28quartz%29USGOV.jpg/400px-Sandstone%28quartz%29USGOV.jpg', minerals: [
     { name: 'quartz', percent: '75%' }, { name: 'feldspath', percent: '15%' }, { name: 'mica', percent: '5%' }, { name: 'argile', percent: '5%' }
   ]},
-  argile: { type: 'sedimentaire', origin: 'detritique', facies: 'Argile plastique', texture: 'Massive, plastique', minerals: [
+  argile: { type: 'sedimentaire', origin: 'detritique', facies: 'Argile plastique', texture: 'Massive, plastique', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Clay-ite.jpg/400px-Clay-ite.jpg', minerals: [
     { name: 'kaolin', percent: '60%' }, { name: 'quartz', percent: '25%' }, { name: 'mica', percent: '15%' }
   ]},
   sable: { type: 'meuble', origin: 'detritique', facies: 'Sable quartzeux', texture: 'Granulaire meuble', minerals: [
     { name: 'quartz', percent: '80%' }, { name: 'feldspath', percent: '10%' }, { name: 'mica', percent: '5%' }
   ]},
-  silex: { type: 'sedimentaire', origin: 'diagenetique', facies: 'Silex nodulaire', texture: 'Cryptocristalline', minerals: [
+  silex: { type: 'sedimentaire', origin: 'diagenetique', facies: 'Silex nodulaire', texture: 'Cryptocristalline', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Silex_-_Royan.jpg/400px-Silex_-_Royan.jpg', minerals: [
     { name: 'silice', percent: '98%' }, { name: 'calcite', percent: '2%' }
   ]},
-  conglomerat: { type: 'sedimentaire', origin: 'detritique', facies: 'Conglomerat polygynique', texture: 'Grossiere, cimentee', minerals: [
+  conglomerat: { type: 'sedimentaire', origin: 'detritique', facies: 'Conglomerat polygynique', texture: 'Grossiere, cimentee', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Conglomerate_on_quartz.jpg/400px-Conglomerate_on_quartz.jpg', minerals: [
     { name: 'quartz', percent: '50%' }, { name: 'feldspath', percent: '20%' }, { name: 'calcite', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
   poudingue: { type: 'sedimentaire', origin: 'detritique', facies: 'Poudingue a galets arrondis', texture: 'Grossiere, cimentee', minerals: [
     { name: 'quartz', percent: '55%' }, { name: 'calcite', percent: '20%' }, { name: 'feldspath', percent: '15%' }, { name: 'argile', percent: '10%' }
   ]},
-  arkose: { type: 'sedimentaire', origin: 'detritique', facies: 'Arkose feldspathique', texture: 'Granulaire, cimentee', minerals: [
+  arkose: { type: 'sedimentaire', origin: 'detritique', facies: 'Arkose feldspathique', texture: 'Granulaire, cimentee', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Arkose_pmg_ss_2006.jpg/400px-Arkose_pmg_ss_2006.jpg', minerals: [
     { name: 'quartz', percent: '50%' }, { name: 'feldspath', percent: '35%' }, { name: 'mica', percent: '10%' }, { name: 'argile', percent: '5%' }
   ]},
   siltite: { type: 'sedimentaire', origin: 'detritique', facies: 'Siltite', texture: 'Fine, laminee', minerals: [
@@ -194,7 +195,7 @@ const ROCK_DB: Record<string, RockInfo> = {
   argilite: { type: 'sedimentaire', origin: 'detritique', facies: 'Argilite induree', texture: 'Massive, compacte', minerals: [
     { name: 'kaolin', percent: '65%' }, { name: 'quartz', percent: '20%' }, { name: 'mica', percent: '10%' }, { name: 'chlorite', percent: '5%' }
   ]},
-  grauwacke: { type: 'sedimentaire', origin: 'detritique', facies: 'Grauwacke', texture: 'Granulaire, mal triee', minerals: [
+  grauwacke: { type: 'sedimentaire', origin: 'detritique', facies: 'Grauwacke', texture: 'Granulaire, mal triee', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Graywacke_pmg_ss_2006.jpg/400px-Graywacke_pmg_ss_2006.jpg', minerals: [
     { name: 'quartz', percent: '35%' }, { name: 'feldspath', percent: '25%' }, { name: 'argile', percent: '20%' }, { name: 'mica', percent: '10%' }, { name: 'chlorite', percent: '10%' }
   ]},
   gaize: { type: 'sedimentaire', origin: 'marine', facies: 'Gaize siliceuse', texture: 'Fine, poreuse', minerals: [
@@ -214,7 +215,7 @@ const ROCK_DB: Record<string, RockInfo> = {
   ]},
 
   // Meubles
-  loess: { type: 'meuble', origin: 'eolienne', facies: 'Loess calcaire', texture: 'Silteuse, homogene', minerals: [
+  loess: { type: 'meuble', origin: 'eolienne', facies: 'Loess calcaire', texture: 'Silteuse, homogene', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Loess_closeup.jpg/400px-Loess_closeup.jpg', minerals: [
     { name: 'quartz', percent: '50%' }, { name: 'calcite', percent: '20%' }, { name: 'feldspath', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
   limon: { type: 'meuble', origin: 'fluviatile', facies: 'Limon argileux', texture: 'Fine, plastique', minerals: [
@@ -240,28 +241,28 @@ const ROCK_DB: Record<string, RockInfo> = {
   ]},
 
   // Metamorphiques
-  schiste: { type: 'metamorphique', origin: 'regional', facies: 'Schiste pelitique', texture: 'Schisteuse, feuilletee', minerals: [
+  schiste: { type: 'metamorphique', origin: 'regional', facies: 'Schiste pelitique', texture: 'Schisteuse, feuilletee', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Schist_detail.jpg/400px-Schist_detail.jpg', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'mica', percent: '30%' }, { name: 'chlorite', percent: '20%' }, { name: 'feldspath', percent: '10%' }
   ]},
-  gneiss: { type: 'metamorphique', origin: 'regional', facies: 'Gneiss oeille', texture: 'Gneissique, rubanee', minerals: [
+  gneiss: { type: 'metamorphique', origin: 'regional', facies: 'Gneiss oeille', texture: 'Gneissique, rubanee', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Gneiss_pmg_ss_2006.jpg/400px-Gneiss_pmg_ss_2006.jpg', minerals: [
     { name: 'feldspath', percent: '40%' }, { name: 'quartz', percent: '35%' }, { name: 'mica', percent: '20%' }, { name: 'grenat', percent: '5%' }
   ]},
-  micaschiste: { type: 'metamorphique', origin: 'regional', facies: 'Micaschiste a grenat', texture: 'Schisteuse, cristalline', minerals: [
+  micaschiste: { type: 'metamorphique', origin: 'regional', facies: 'Micaschiste a grenat', texture: 'Schisteuse, cristalline', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Micaschiste_Vosges.jpg/400px-Micaschiste_Vosges.jpg', minerals: [
     { name: 'mica', percent: '40%' }, { name: 'quartz', percent: '35%' }, { name: 'grenat', percent: '10%' }, { name: 'staurotide', percent: '8%' }, { name: 'chlorite', percent: '7%' }
   ]},
-  quartzite: { type: 'metamorphique', origin: 'regional', facies: 'Quartzite massif', texture: 'Granoblastique', minerals: [
+  quartzite: { type: 'metamorphique', origin: 'regional', facies: 'Quartzite massif', texture: 'Granoblastique', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Quartzite_pmg_ss_2006.jpg/400px-Quartzite_pmg_ss_2006.jpg', minerals: [
     { name: 'quartz', percent: '90%' }, { name: 'mica', percent: '5%' }, { name: 'feldspath', percent: '5%' }
   ]},
-  migmatite: { type: 'metamorphique', origin: 'anatexie', facies: 'Migmatite heterogene', texture: 'Migmatitique, rubanee', minerals: [
+  migmatite: { type: 'metamorphique', origin: 'anatexie', facies: 'Migmatite heterogene', texture: 'Migmatitique, rubanee', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Migmatite_pmg_ss_2006.jpg/400px-Migmatite_pmg_ss_2006.jpg', minerals: [
     { name: 'feldspath', percent: '35%' }, { name: 'quartz', percent: '30%' }, { name: 'mica', percent: '20%' }, { name: 'grenat', percent: '8%' }, { name: 'sillimanite', percent: '7%' }
   ]},
-  eclogite: { type: 'metamorphique', origin: 'haute pression', facies: 'Eclogite', texture: 'Granoblastique', minerals: [
+  eclogite: { type: 'metamorphique', origin: 'haute pression', facies: 'Eclogite', texture: 'Granoblastique', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Eclogite_pmg_ss_2006.jpg/400px-Eclogite_pmg_ss_2006.jpg', minerals: [
     { name: 'grenat', percent: '45%' }, { name: 'pyroxene', percent: '45%' }, { name: 'quartz', percent: '5%' }, { name: 'amphibole', percent: '5%' }
   ]},
-  serpentinite: { type: 'metamorphique', origin: 'hydrothermal', facies: 'Serpentinite', texture: 'Massive a fibreuse', minerals: [
+  serpentinite: { type: 'metamorphique', origin: 'hydrothermal', facies: 'Serpentinite', texture: 'Massive a fibreuse', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Serpentinite_pmg_ss_2006.jpg/400px-Serpentinite_pmg_ss_2006.jpg', minerals: [
     { name: 'chlorite', percent: '60%' }, { name: 'magnetite', percent: '15%' }, { name: 'olivine', percent: '15%' }, { name: 'pyroxene', percent: '10%' }
   ]},
-  mylonite: { type: 'metamorphique', origin: 'dynamique', facies: 'Mylonite', texture: 'Mylonitique, laminee', minerals: [
+  mylonite: { type: 'metamorphique', origin: 'dynamique', facies: 'Mylonite', texture: 'Mylonitique, laminee', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Mylonite_pmg_ss_2006.jpg/400px-Mylonite_pmg_ss_2006.jpg', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'feldspath', percent: '30%' }, { name: 'mica', percent: '20%' }, { name: 'chlorite', percent: '10%' }
   ]},
   corneenne: { type: 'metamorphique', origin: 'contact', facies: 'Corneenne', texture: 'Cornee, compacte', minerals: [
@@ -270,7 +271,7 @@ const ROCK_DB: Record<string, RockInfo> = {
   phyllade: { type: 'metamorphique', origin: 'regional', facies: 'Phyllade', texture: 'Phylliteuse, satinee', minerals: [
     { name: 'mica', percent: '40%' }, { name: 'quartz', percent: '35%' }, { name: 'chlorite', percent: '20%' }, { name: 'feldspath', percent: '5%' }
   ]},
-  ardoise: { type: 'metamorphique', origin: 'regional', facies: 'Ardoise', texture: 'Schisteuse fine, fissile', minerals: [
+  ardoise: { type: 'metamorphique', origin: 'regional', facies: 'Ardoise', texture: 'Schisteuse fine, fissile', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Slate_pmg_ss_2006.jpg/400px-Slate_pmg_ss_2006.jpg', minerals: [
     { name: 'mica', percent: '40%' }, { name: 'quartz', percent: '30%' }, { name: 'chlorite', percent: '20%' }, { name: 'feldspath', percent: '10%' }
   ]},
   ampelite: { type: 'metamorphique', origin: 'regional', facies: 'Ampelite (schiste noir)', texture: 'Schisteuse, noire', minerals: [
