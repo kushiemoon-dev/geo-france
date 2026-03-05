@@ -43,18 +43,22 @@ export const faultsLayer: LayerSpecification = {
 
 export const dipPointsLayer: LayerSpecification = {
   id: 'dip-points',
-  type: 'circle',
+  type: 'symbol',
   source: 'geology',
   'source-layer': 'P_STRUCT',
+  filter: ['all', ['has', 'AZIMUT'], ['!=', ['get', 'PENDAGE'], 999]],
+  layout: {
+    'icon-image': 'dip-symbol',
+    'icon-size': ['interpolate', ['linear'], ['zoom'], 8, 0.6, 14, 1.2],
+    'icon-rotate': ['get', 'AZIMUT'],
+    'icon-rotation-alignment': 'map',
+    'icon-allow-overlap': true,
+    'icon-ignore-placement': true,
+  },
   paint: {
-    'circle-radius': [
-      'interpolate', ['linear'], ['zoom'],
-      8, 2,
-      14, 6
-    ],
-    'circle-color': '#000000',
-    'circle-stroke-color': '#FFFFFF',
-    'circle-stroke-width': 1
+    'icon-color': '#000000',
+    'icon-halo-color': '#ffffff',
+    'icon-halo-width': 1,
   },
   minzoom: 8
 }
