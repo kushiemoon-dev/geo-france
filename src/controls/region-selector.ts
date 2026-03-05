@@ -25,8 +25,11 @@ export function setupRegionSelector(map: maplibregl.Map): void {
 
   select.addEventListener('change', () => {
     loadRegion(map, select.value)
+    document.dispatchEvent(new CustomEvent('regionchange', { detail: select.value }))
   })
 
   container.appendChild(select)
   document.body.appendChild(container)
+
+  document.dispatchEvent(new CustomEvent('regionchange', { detail: DEFAULT_REGION }))
 }

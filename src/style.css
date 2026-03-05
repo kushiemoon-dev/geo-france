@@ -246,6 +246,53 @@ body {
   pointer-events: none;
 }
 
+/* Notices panel */
+.notices-panel {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  max-width: 320px;
+  min-width: 220px;
+}
+
+.notices-header {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #333;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.notices-list {
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+.notices-item {
+  padding: 3px 0;
+}
+
+.notices-item a {
+  font-size: 12px;
+  color: #2563eb;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.notices-item a:hover {
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+
 /* MapLibre popup override */
 .maplibregl-popup-content {
   border-radius: 8px;
