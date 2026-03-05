@@ -1,6 +1,7 @@
 import type maplibregl from 'maplibre-gl'
 import type { MapGeoJSONFeature } from 'maplibre-gl'
 import { classifyNotation, extractLithology, extractMinerals, extractFossils } from '../utils/geology-data.ts'
+import { getMineralInfo } from '../utils/mineral-data.ts'
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -9,6 +10,40 @@ function escapeHtml(text: string): string {
 function renderTags(items: string[], className: string): string {
   if (items.length === 0) return ''
   return items.map(t => `<span class="popup-tag ${className}">${escapeHtml(t)}</span>`).join('')
+}
+
+function renderMineralDetails(minerals: string[]): string {
+  if (minerals.length === 0) return ''
+
+  const seen = new Set<string>()
+  const rows: string[] = []
+
+  for (const name of minerals) {
+    const info = getMineralInfo(name)
+    if (!info) continue
+    // Deduplicate by formula (accent variants share the same info)
+    const key = info.formula
+    if (seen.has(key)) continue
+    seen.add(key)
+
+    const displayName = name.charAt(0).toUpperCase() + name.slice(1)
+    const props = [
+      info.crystalSystem ? info.crystalSystem.charAt(0).toUpperCase() + info.crystalSystem.slice(1) : null,
+      `Durete ${info.hardness}`,
+      info.category.charAt(0).toUpperCase() + info.category.slice(1),
+    ].filter(Boolean).join(' · ')
+
+    rows.push(
+      `<div class="mineral-detail-row">` +
+        `<span class="mineral-detail-name">${escapeHtml(displayName)}</span>` +
+        `<span class="mineral-detail-formula">${info.formula}</span>` +
+        `<span class="mineral-detail-props">${escapeHtml(props)}</span>` +
+      `</div>`
+    )
+  }
+
+  if (rows.length === 0) return ''
+  return `<div class="detail-panel-section"><strong>Composition mineralogique</strong><div class="mineral-details">${rows.join('')}</div></div>`
 }
 
 function renderDetailContent(feature: MapGeoJSONFeature): string {
@@ -44,6 +79,7 @@ function renderDetailContent(feature: MapGeoJSONFeature): string {
       ${descr ? `<div class="detail-panel-section"><strong>Description BRGM</strong><p class="detail-panel-descr">${escapeHtml(descr)}</p></div>` : ''}
       ${lithology.length > 0 ? `<div class="detail-panel-section"><strong>Lithologie</strong><div class="popup-tags">${renderTags(lithology, 'tag-litho')}</div></div>` : ''}
       ${minerals.length > 0 ? `<div class="detail-panel-section"><strong>Mineraux</strong><div class="popup-tags">${renderTags(minerals, 'tag-mineral')}</div></div>` : ''}
+      ${renderMineralDetails(minerals)}
       ${fossils.length > 0 ? `<div class="detail-panel-section"><strong>Fossiles</strong><div class="popup-tags">${renderTags(fossils, 'tag-fossil')}</div></div>` : ''}
       <div class="detail-panel-links">
         <strong>Liens externes</strong>
