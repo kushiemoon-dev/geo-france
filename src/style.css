@@ -7,6 +7,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow: hidden;
+  background: #1a1a1f;
 }
 
 #map {
@@ -19,11 +20,11 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(30, 30, 35, 0.95);
   backdrop-filter: blur(8px);
   border-radius: 8px;
   padding: 12px 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   z-index: 10;
   min-width: 200px;
 }
@@ -33,10 +34,10 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #333;
+  color: #999;
   margin-bottom: 8px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #333;
 }
 
 .layer-toggle-item {
@@ -46,11 +47,11 @@ body {
   padding: 4px 0;
   cursor: pointer;
   font-size: 13px;
-  color: #444;
+  color: #ccc;
 }
 
 .layer-toggle-item:hover {
-  color: #000;
+  color: #fff;
 }
 
 .layer-toggle-item input[type="checkbox"] {
@@ -62,11 +63,11 @@ body {
   position: absolute;
   bottom: 30px;
   left: 10px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(30, 30, 35, 0.95);
   backdrop-filter: blur(8px);
   border-radius: 8px;
   padding: 12px 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   z-index: 10;
   max-height: 50vh;
   overflow-y: auto;
@@ -77,10 +78,10 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #333;
+  color: #999;
   margin-bottom: 8px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #333;
 }
 
 .legend-item {
@@ -95,26 +96,26 @@ body {
   width: 20px;
   height: 14px;
   border-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
 }
 
 .legend-label {
   font-size: 12px;
-  color: #444;
+  color: #ccc;
 }
 
 /* Popup styling */
 .geology-popup h3 {
   font-size: 15px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #e0e0e0;
   margin-bottom: 4px;
 }
 
 .geology-popup p {
   font-size: 12px;
-  color: #555;
+  color: #aaa;
   margin: 3px 0;
   line-height: 1.4;
 }
@@ -127,14 +128,14 @@ body {
 
 .popup-age-hierarchy {
   font-size: 11px;
-  color: #666;
+  color: #888;
   margin-bottom: 6px;
   font-weight: 500;
 }
 
 .geology-popup .popup-descr {
   font-size: 13px;
-  color: #333;
+  color: #ccc;
   margin-bottom: 6px;
 }
 
@@ -166,26 +167,26 @@ body {
 }
 
 .tag-litho {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.2);
+  color: #81c784;
 }
 
 .tag-mineral {
-  background: #fff3e0;
-  color: #e65100;
+  background: rgba(230, 81, 0, 0.2);
+  color: #ffb74d;
 }
 
 .tag-fossil {
-  background: #e3f2fd;
-  color: #1565c0;
+  background: rgba(21, 101, 192, 0.2);
+  color: #64b5f6;
 }
 
 .geology-popup .popup-source {
   margin-top: 8px;
   padding-top: 6px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #333;
   font-size: 10px;
-  color: #999;
+  color: #666;
   font-style: italic;
 }
 
@@ -194,11 +195,11 @@ body {
   position: absolute;
   top: 10px;
   left: 220px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(30, 30, 35, 0.95);
   backdrop-filter: blur(8px);
   border-radius: 8px;
   padding: 12px 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
 
@@ -207,27 +208,27 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #333;
+  color: #999;
   margin-bottom: 8px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #333;
 }
 
 .region-select {
   width: 100%;
   padding: 6px 8px;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #444;
   border-radius: 4px;
   font-size: 13px;
-  color: #333;
-  background: #fff;
+  color: #e0e0e0;
+  background: #2a2a30;
   cursor: pointer;
 }
 
 .region-select:focus {
   outline: none;
   border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
 }
 
 /* Loading indicator */
@@ -251,11 +252,11 @@ body {
   position: absolute;
   bottom: 30px;
   right: 10px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(30, 30, 35, 0.95);
   backdrop-filter: blur(8px);
   border-radius: 8px;
   padding: 12px 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   z-index: 10;
   max-width: 320px;
   min-width: 220px;
@@ -266,10 +267,10 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #333;
+  color: #999;
   margin-bottom: 8px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #333;
 }
 
 .notices-list {
@@ -290,7 +291,7 @@ body {
 
 .notices-item a:hover {
   text-decoration: underline;
-  color: #1d4ed8;
+  color: #60a5fa;
 }
 
 /* Detail panel (slide-in right) */
@@ -300,9 +301,9 @@ body {
   right: 0;
   width: 360px;
   height: 100%;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(30, 30, 35, 0.98);
   backdrop-filter: blur(12px);
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.4);
   z-index: 20;
   transform: translateX(100%);
   transition: transform 0.3s ease;
@@ -320,7 +321,7 @@ body {
   background: none;
   border: none;
   font-size: 24px;
-  color: #666;
+  color: #888;
   cursor: pointer;
   line-height: 1;
   padding: 4px 8px;
@@ -329,8 +330,8 @@ body {
 }
 
 .detail-panel-close:hover {
-  background: rgba(0, 0, 0, 0.08);
-  color: #333;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0e0e0;
 }
 
 .detail-panel-content {
@@ -348,14 +349,14 @@ body {
 .detail-panel-title {
   font-size: 20px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #e0e0e0;
   margin-bottom: 4px;
   padding-right: 32px;
 }
 
 .detail-panel-content .popup-age-hierarchy {
   font-size: 12px;
-  color: #666;
+  color: #888;
   margin-bottom: 8px;
   font-weight: 500;
 }
@@ -363,17 +364,17 @@ body {
 .detail-panel-age {
   font-size: 14px;
   font-weight: 600;
-  color: #2563eb;
+  color: #60a5fa;
   margin-bottom: 10px;
 }
 
 .detail-panel-summary {
   font-size: 13px;
-  color: #444;
+  color: #ccc;
   line-height: 1.5;
   margin-bottom: 12px;
   padding: 10px 12px;
-  background: #f8f9fa;
+  background: rgba(37, 99, 235, 0.08);
   border-radius: 6px;
   border-left: 3px solid #2563eb;
 }
@@ -393,50 +394,89 @@ body {
 
 .detail-panel-descr {
   font-size: 13px;
-  color: #333;
+  color: #ccc;
   line-height: 1.5;
 }
 
-/* Mineral composition details */
-.mineral-details {
-  margin: 8px 0 12px;
-}
-
-.mineral-detail-row {
-  display: flex;
-  gap: 6px;
-  padding: 6px 0;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 12px;
-  align-items: baseline;
-}
-
-.mineral-detail-row:last-child {
-  border-bottom: none;
-}
-
-.mineral-detail-name {
-  font-weight: 600;
-  min-width: 90px;
-  text-transform: capitalize;
-}
-
-.mineral-detail-formula {
-  font-style: italic;
-  color: #e65100;
-}
-
-.mineral-detail-props {
-  color: #666;
+/* Section headers for structured detail panel */
+.detail-section-header {
   font-size: 11px;
-  margin-left: auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #666;
+  margin: 18px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #333;
+}
+
+/* Key-value rows */
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.detail-row-label {
+  color: #888;
+  font-size: 13px;
+}
+
+.detail-row-value {
+  color: #e0e0e0;
+  font-weight: 500;
+  font-size: 13px;
   text-align: right;
+  max-width: 60%;
+}
+
+/* Mineral composition bars */
+.mineral-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.mineral-bar-name {
+  min-width: 100px;
+  color: #ccc;
+  font-size: 12px;
+}
+
+.mineral-bar-track {
+  flex: 1;
+  height: 8px;
+  background: #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mineral-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.mineral-bar-pct {
+  min-width: 35px;
+  text-align: right;
+  color: #999;
+  font-size: 11px;
+}
+
+.mineral-bar-formula {
+  font-size: 10px;
+  color: #666;
+  font-style: italic;
+  margin-left: 108px;
+  margin-top: -2px;
+  margin-bottom: 2px;
 }
 
 .detail-panel-links {
   margin: 14px 0;
   padding-top: 10px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #333;
 }
 
 .detail-panel-links strong {
@@ -458,15 +498,15 @@ body {
 
 .detail-panel-links a:hover {
   text-decoration: underline;
-  color: #1d4ed8;
+  color: #60a5fa;
 }
 
 .detail-panel-content .popup-source {
   margin-top: 14px;
   padding-top: 10px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #333;
   font-size: 10px;
-  color: #999;
+  color: #666;
   font-style: italic;
 }
 
@@ -480,5 +520,11 @@ body {
 .maplibregl-popup-content {
   border-radius: 8px;
   padding: 12px 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  background: rgba(30, 30, 35, 0.98);
+  color: #e0e0e0;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: rgba(30, 30, 35, 0.98);
 }
