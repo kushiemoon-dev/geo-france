@@ -4,6 +4,15 @@ import { classifyNotation, extractLithology, extractFossils } from '../utils/geo
 import { getMineralInfo, getMineralBarColor, getRockInfo } from '../utils/mineral-data.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
 import type { RockInfo } from '../utils/mineral-data.ts'
+import type { MapMode } from '../map/map-mode.ts'
+
+// Close detail panel on mode switch to local
+document.addEventListener('mapmodechange', (e) => {
+  const mode = (e as CustomEvent<{ mode: MapMode }>).detail.mode
+  if (mode === 'local') {
+    closeDetailPanel()
+  }
+})
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')

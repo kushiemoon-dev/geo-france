@@ -8,6 +8,7 @@ import { setupLayerToggle } from './controls/layer-toggle.ts'
 import { setupLegend } from './controls/legend.ts'
 import { setupRegionSelector } from './controls/region-selector.ts'
 import { setupNoticesPanel } from './controls/notices-panel.ts'
+import { setupModeToggle } from './controls/mode-toggle.ts'
 import { registerDipIcon } from './map/dip-icon.ts'
 
 const map = createMap('map')
@@ -19,5 +20,6 @@ map.on('load', () => {
   setupLayerToggle(map)
   setupLegend()
   setupRegionSelector(map)
+  setupModeToggle(map)
   setupNoticesPanel()
 })
