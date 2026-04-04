@@ -1,23 +1,15 @@
 import type maplibregl from 'maplibre-gl'
 import { ALL_LAYERS } from './styles.ts'
-
-export type MapMode = 'national' | 'local'
+import { bus } from '../core/events.ts'
+import { store } from '../core/state.ts'
+import { showToast } from '../ui/shared/toast.ts'
+import type { MapMode } from '../core/types.ts'
 
 const WMS_SOURCE_ID = 'brgm-wms'
 const WMS_LAYER_ID = 'brgm-wms-layer'
+const FILL_OPACITY = 0.65
 
-let currentMode: MapMode = 'national'
-
-// Callback to get layer visibility states from layer-toggle
-let getLayerStates: (() => Record<string, boolean>) | null = null
-
-export function registerLayerStatesGetter(fn: () => Record<string, boolean>): void {
-  getLayerStates = fn
-}
-
-export function getCurrentMode(): MapMode {
-  return currentMode
-}
+let wmsErrorHandled = false
 
 function ensureWmsSource(map: maplibregl.Map): void {
   if (map.getSource(WMS_SOURCE_ID)) return
@@ -30,6 +22,16 @@ function ensureWmsSource(map: maplibregl.Map): void {
     tileSize: 256,
     attribution: '&copy; BRGM'
   })
+
+  if (!wmsErrorHandled) {
+    map.on('error', (e: unknown) => {
+      const err = e as { sourceId?: string }
+      if (err.sourceId === WMS_SOURCE_ID) {
+        showToast('Erreur de chargement WMS BRGM', 'warning')
+      }
+    })
+    wmsErrorHandled = true
+  }
 }
 
 function showWmsLayer(map: maplibregl.Map): void {
@@ -40,7 +42,6 @@ function showWmsLayer(map: maplibregl.Map): void {
     return
   }
 
-  // Insert above basemaps but works even if geology-fill is hidden
   const beforeId = map.getLayer('geology-fill') ? 'geology-fill' : undefined
   map.addLayer({
     id: WMS_LAYER_ID,
@@ -59,7 +60,6 @@ function hideWmsLayer(map: maplibregl.Map): void {
 function hideVectorLayers(map: maplibregl.Map): void {
   for (const layer of ALL_LAYERS) {
     if (map.getLayer(layer.id)) {
-      // Keep geology-fill queryable by making it transparent instead of hidden
       if (layer.id === 'geology-fill') {
         map.setPaintProperty(layer.id, 'fill-opacity', 0)
       } else {
@@ -70,23 +70,23 @@ function hideVectorLayers(map: maplibregl.Map): void {
 }
 
 function restoreVectorLayers(map: maplibregl.Map): void {
-  const states = getLayerStates ? getLayerStates() : {}
+  const { layers } = store.getState()
 
   for (const layer of ALL_LAYERS) {
     if (map.getLayer(layer.id)) {
       if (layer.id === 'geology-fill') {
-        map.setPaintProperty(layer.id, 'fill-opacity', 0.65)
+        map.setPaintProperty(layer.id, 'fill-opacity', FILL_OPACITY)
       }
-      const visible = states[layer.id] ?? true
+      const visible = layers[layer.id] ?? true
       map.setLayoutProperty(layer.id, 'visibility', visible ? 'visible' : 'none')
     }
   }
 }
 
 export function setMapMode(map: maplibregl.Map, mode: MapMode): void {
-  if (mode === currentMode) return
+  if (mode === store.getState().mode) return
 
-  currentMode = mode
+  store.setState({ mode })
 
   if (mode === 'local') {
     hideVectorLayers(map)
@@ -96,11 +96,11 @@ export function setMapMode(map: maplibregl.Map, mode: MapMode): void {
     restoreVectorLayers(map)
   }
 
-  document.dispatchEvent(new CustomEvent('mapmodechange', { detail: { mode } }))
+  bus.emit('mode:change', { mode })
 }
 
 export function ensureModeAfterRegionLoad(map: maplibregl.Map): void {
-  if (currentMode === 'local') {
+  if (store.getState().mode === 'local') {
     hideVectorLayers(map)
     showWmsLayer(map)
   }

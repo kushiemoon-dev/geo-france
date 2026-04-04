@@ -1,0 +1,13 @@
+/* MapLibre popup override */
+
+.maplibregl-popup-content {
+  border-radius: var(--geo-radius);
+  padding: var(--geo-space-md) var(--geo-space-lg);
+  box-shadow: var(--geo-shadow-lg);
+  background: var(--geo-bg-panel);
+  color: var(--geo-text-primary);
+}
+
+.maplibregl-popup-tip {
+  border-top-color: var(--geo-bg-panel);
+}

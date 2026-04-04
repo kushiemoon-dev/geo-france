@@ -4,15 +4,7 @@ import { classifyNotation, extractLithology, extractFossils } from '../utils/geo
 import { getMineralInfo, getMineralBarColor, getRockInfo } from '../utils/mineral-data.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
 import type { RockInfo } from '../utils/mineral-data.ts'
-import type { MapMode } from '../map/map-mode.ts'
-
-// Close detail panel on mode switch to local
-document.addEventListener('mapmodechange', (e) => {
-  const mode = (e as CustomEvent<{ mode: MapMode }>).detail.mode
-  if (mode === 'local') {
-    closeDetailPanel()
-  }
-})
+import { bus } from '../core/events.ts'
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -183,6 +175,12 @@ export function setupDetailPanel(map: maplibregl.Map, onClose: () => void): void
     const features = map.queryRenderedFeatures(e.point, { layers: ['geology-fill'] })
     const dipFeatures = map.queryRenderedFeatures(e.point, { layers: ['dip-points'] })
     if (features.length === 0 && dipFeatures.length === 0) {
+      closeDetailPanel()
+    }
+  })
+
+  bus.on('mode:change', ({ mode }) => {
+    if (mode === 'local') {
       closeDetailPanel()
     }
   })

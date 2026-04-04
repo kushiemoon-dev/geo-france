@@ -1,0 +1,106 @@
+/* Responsive breakpoints */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .notices-panel {
+    max-width: 260px;
+    min-width: 180px;
+  }
+}
+
+/* Hide mobile FABs on desktop */
+.mobile-fabs {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* Top bar: compact, no overflow */
+  .topbar {
+    padding: 0 var(--geo-space-sm);
+    gap: var(--geo-space-sm);
+    overflow: hidden;
+  }
+
+  .topbar-logo-text {
+    display: none;
+  }
+
+  .topbar-separator {
+    display: none;
+  }
+
+  .topbar-region {
+    min-width: 100px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .geo-toggle {
+    padding: 2px;
+  }
+
+  .geo-toggle-item {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  /* Hide topbar buttons on mobile — replaced by separate FABs */
+  .topbar-right {
+    display: none;
+  }
+
+  /* Mobile floating action buttons */
+  .mobile-fabs {
+    position: fixed;
+    top: 56px;
+    left: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    z-index: 16;
+  }
+
+  .mobile-fabs .geo-btn-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    background: var(--geo-bg-panel);
+    border: 1px solid var(--geo-border);
+    box-shadow: var(--geo-shadow);
+  }
+
+  /* Panels hidden by default on mobile, toggled via FABs */
+  .layer-toggle-panel {
+    top: 92px;
+    left: 8px;
+    max-width: 200px;
+    display: none;
+  }
+
+  .layer-toggle-panel.panel-open {
+    display: block;
+  }
+
+  .legend-panel {
+    top: 92px;
+    left: 8px;
+    bottom: auto;
+    max-width: 200px;
+    max-height: 40vh;
+    display: none;
+  }
+
+  .legend-panel.panel-open {
+    display: block;
+  }
+
+  .notices-panel {
+    display: none;
+  }
+
+  /* Detail panel full width */
+  .detail-panel {
+    width: 100%;
+  }
+}

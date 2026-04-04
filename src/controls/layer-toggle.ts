@@ -1,11 +1,11 @@
 import type maplibregl from 'maplibre-gl'
-import { registerLayerStatesGetter } from '../map/map-mode.ts'
-import type { MapMode } from '../map/map-mode.ts'
+import { bus } from '../core/events.ts'
+import { store } from '../core/state.ts'
 
 interface LayerGroup {
-  id: string
-  label: string
-  layerIds: string[]
+  readonly id: string
+  readonly label: string
+  readonly layerIds: readonly string[]
   visible: boolean
 }
 
@@ -19,11 +19,16 @@ const LAYER_GROUPS: LayerGroup[] = [
 
 function toggleLayerGroup(map: maplibregl.Map, group: LayerGroup): void {
   const visibility = group.visible ? 'visible' : 'none'
+  const layerUpdates: Record<string, boolean> = {}
+
   for (const layerId of group.layerIds) {
     if (map.getLayer(layerId)) {
       map.setLayoutProperty(layerId, 'visibility', visibility)
     }
+    layerUpdates[layerId] = group.visible
   }
+
+  store.setState({ layers: { ...store.getState().layers, ...layerUpdates } })
 }
 
 export function setupLayerToggle(map: maplibregl.Map): void {
@@ -55,20 +60,7 @@ export function setupLayerToggle(map: maplibregl.Map): void {
     container.appendChild(label)
   }
 
-  // Register layer states getter for map-mode restoration
-  registerLayerStatesGetter(() => {
-    const states: Record<string, boolean> = {}
-    for (const group of LAYER_GROUPS) {
-      for (const layerId of group.layerIds) {
-        states[layerId] = group.visible
-      }
-    }
-    return states
-  })
-
-  // React to mode changes
-  document.addEventListener('mapmodechange', (e) => {
-    const mode = (e as CustomEvent<{ mode: MapMode }>).detail.mode
+  bus.on('mode:change', ({ mode }) => {
     const isLocal = mode === 'local'
     container.style.opacity = isLocal ? '0.5' : '1'
     container.style.pointerEvents = isLocal ? 'none' : ''
