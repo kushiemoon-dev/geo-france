@@ -8,6 +8,7 @@ import type { MapMode } from '../core/types.ts'
 const WMS_SOURCE_ID = 'brgm-wms'
 const WMS_LAYER_ID = 'brgm-wms-layer'
 const FILL_OPACITY = 0.65
+const LOCAL_MIN_ZOOM = 10
 
 let wmsErrorHandled = false
 
@@ -20,6 +21,7 @@ function ensureWmsSource(map: maplibregl.Map): void {
       'https://geoservices.brgm.fr/geologie?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=SCAN_H_GEOL50&SRS=EPSG:3857&FORMAT=image/png&TRANSPARENT=true&WIDTH=256&HEIGHT=256&BBOX={bbox-epsg-3857}'
     ],
     tileSize: 256,
+    minzoom: LOCAL_MIN_ZOOM,
     attribution: '&copy; BRGM'
   })
 
@@ -91,6 +93,10 @@ export function setMapMode(map: maplibregl.Map, mode: MapMode): void {
   if (mode === 'local') {
     hideVectorLayers(map)
     showWmsLayer(map)
+    if (map.getZoom() < LOCAL_MIN_ZOOM) {
+      map.easeTo({ zoom: LOCAL_MIN_ZOOM, duration: 800 })
+      showToast('Zoom automatique pour la vue locale', 'info')
+    }
   } else {
     hideWmsLayer(map)
     restoreVectorLayers(map)
