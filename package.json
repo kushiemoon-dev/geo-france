@@ -12,6 +12,9 @@
     "typescript": "~5.9.3",
     "vite": "^7.3.1"
   },
+  "overrides": {
+    "picomatch": ">=4.0.4"
+  },
   "dependencies": {
     "maplibre-gl": "^5.19.0",
     "pmtiles": "^4.4.0"
