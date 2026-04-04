@@ -1,4 +1,6 @@
 import type maplibregl from 'maplibre-gl'
+import { registerLayerStatesGetter } from '../map/map-mode.ts'
+import type { MapMode } from '../map/map-mode.ts'
 
 interface LayerGroup {
   id: string
@@ -52,6 +54,25 @@ export function setupLayerToggle(map: maplibregl.Map): void {
     label.appendChild(span)
     container.appendChild(label)
   }
+
+  // Register layer states getter for map-mode restoration
+  registerLayerStatesGetter(() => {
+    const states: Record<string, boolean> = {}
+    for (const group of LAYER_GROUPS) {
+      for (const layerId of group.layerIds) {
+        states[layerId] = group.visible
+      }
+    }
+    return states
+  })
+
+  // React to mode changes
+  document.addEventListener('mapmodechange', (e) => {
+    const mode = (e as CustomEvent<{ mode: MapMode }>).detail.mode
+    const isLocal = mode === 'local'
+    container.style.opacity = isLocal ? '0.5' : '1'
+    container.style.pointerEvents = isLocal ? 'none' : ''
+  })
 
   document.body.appendChild(container)
 }

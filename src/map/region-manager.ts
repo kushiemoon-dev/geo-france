@@ -1,6 +1,7 @@
 import type maplibregl from 'maplibre-gl'
 import { ALL_LAYERS } from './styles.ts'
 import { getRegion } from '../config/regions.ts'
+import { ensureModeAfterRegionLoad } from './map-mode.ts'
 
 let currentRegionId: string | null = null
 let loadingIndicator: HTMLElement | null = null
@@ -73,6 +74,7 @@ export function loadRegion(map: maplibregl.Map, regionId: string): void {
   // Add new source and layers
   addGeologySource(map, regionId)
   addGeologyLayers(map)
+  ensureModeAfterRegionLoad(map)
 
   currentRegionId = regionId
 
