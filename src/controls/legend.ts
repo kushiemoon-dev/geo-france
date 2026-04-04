@@ -1,4 +1,5 @@
 import { LEGEND_PERIODS } from '../utils/colors.ts'
+import type { MapMode } from '../map/map-mode.ts'
 
 export function setupLegend(): void {
   const container = document.createElement('div')
@@ -24,6 +25,11 @@ export function setupLegend(): void {
     item.appendChild(label)
     container.appendChild(item)
   }
+
+  document.addEventListener('mapmodechange', (e) => {
+    const mode = (e as CustomEvent<{ mode: MapMode }>).detail.mode
+    container.style.display = mode === 'local' ? 'none' : ''
+  })
 
   document.body.appendChild(container)
 }
