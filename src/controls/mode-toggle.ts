@@ -1,6 +1,7 @@
 import type maplibregl from 'maplibre-gl'
 import { setMapMode } from '../map/map-mode.ts'
-import type { MapMode } from '../map/map-mode.ts'
+import { bus } from '../core/events.ts'
+import type { MapMode } from '../core/types.ts'
 
 export function setupModeToggle(map: maplibregl.Map): void {
   const container = document.createElement('div')
@@ -23,20 +24,14 @@ export function setupModeToggle(map: maplibregl.Map): void {
   btnLocal.textContent = 'Locale 1/50 000'
   btnLocal.type = 'button'
 
-  btnNational.addEventListener('click', () => {
-    setMapMode(map, 'national')
-  })
-
-  btnLocal.addEventListener('click', () => {
-    setMapMode(map, 'local')
-  })
+  btnNational.addEventListener('click', () => setMapMode(map, 'national'))
+  btnLocal.addEventListener('click', () => setMapMode(map, 'local'))
 
   btnGroup.appendChild(btnNational)
   btnGroup.appendChild(btnLocal)
   container.appendChild(btnGroup)
 
-  document.addEventListener('mapmodechange', (e) => {
-    const mode = (e as CustomEvent<{ mode: MapMode }>).detail.mode
+  bus.on('mode:change', ({ mode }: { mode: MapMode }) => {
     btnNational.className = mode === 'national' ? 'mode-btn mode-btn-active' : 'mode-btn'
     btnLocal.className = mode === 'local' ? 'mode-btn mode-btn-active' : 'mode-btn'
   })

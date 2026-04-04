@@ -1,0 +1,63 @@
+@media (max-width: 768px) {
+  .bottom-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    background: var(--geo-bg-panel);
+    border-top: 1px solid var(--geo-border);
+    border-radius: 16px 16px 0 0;
+    box-shadow: var(--geo-shadow-lg);
+    transition: transform 300ms ease;
+    will-change: transform;
+    transform: translateY(100%);
+  }
+
+  .bottom-sheet.sheet-peek {
+    transform: translateY(calc(100% - 80px));
+  }
+
+  .bottom-sheet.sheet-half {
+    transform: translateY(50vh);
+  }
+
+  .bottom-sheet.sheet-full {
+    transform: translateY(10vh);
+  }
+
+  .bottom-sheet.sheet-dragging {
+    transition: none;
+  }
+
+  .bottom-sheet-handle {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    cursor: grab;
+    touch-action: none;
+  }
+
+  .bottom-sheet-handle-bar {
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--geo-border);
+  }
+
+  .bottom-sheet-peek,
+  .bottom-sheet-content {
+    padding: 0 16px;
+  }
+
+  .bottom-sheet-content {
+    overflow-y: auto;
+    max-height: calc(90vh - 80px);
+  }
+}
+
+@media (min-width: 769px) {
+  .bottom-sheet {
+    display: none;
+  }
+}
