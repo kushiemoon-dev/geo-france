@@ -3,6 +3,7 @@ import { setMapMode } from '../../map/map-mode.ts'
 import { bus } from '../../core/events.ts'
 import { store } from '../../core/state.ts'
 import { REGIONS } from '../../config/regions.ts'
+import { loadRegion } from '../../map/region-manager.ts'
 import type { MapMode } from '../../core/types.ts'
 
 function createLogo(): HTMLElement {
@@ -32,7 +33,7 @@ function createLogo(): HTMLElement {
   return logo
 }
 
-function createRegionSelect(_map: maplibregl.Map): HTMLElement {
+function createRegionSelect(map: maplibregl.Map): HTMLElement {
   const select = document.createElement('select')
   select.className = 'geo-select topbar-region'
 
@@ -47,6 +48,7 @@ function createRegionSelect(_map: maplibregl.Map): HTMLElement {
   }
 
   select.addEventListener('change', () => {
+    loadRegion(map, select.value)
     document.dispatchEvent(new CustomEvent('regionchange', { detail: select.value }))
   })
 
