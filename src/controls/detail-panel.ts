@@ -1,10 +1,11 @@
 import type maplibregl from 'maplibre-gl'
-import type { MapGeoJSONFeature } from 'maplibre-gl'
+export type FeatureLike = { properties: Record<string, unknown> }
 import { classifyNotation, extractLithology, extractFossils } from '../utils/geology-data.ts'
 import { getMineralInfo, getMineralBarColor, getRockInfo } from '../utils/mineral-data.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
 import type { RockInfo } from '../utils/mineral-data.ts'
 import { bus } from '../core/events.ts'
+import { store } from '../core/state.ts'
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -97,11 +98,11 @@ function findRockImage(lithology: string[]): string | undefined {
   return undefined
 }
 
-function renderDetailContent(feature: MapGeoJSONFeature): string {
+function renderDetailContent(feature: FeatureLike): string {
   const p = feature.properties
-  const notation = p['NOTATION'] || p['notation'] || 'N/A'
-  const descr = p['DESCR'] || p['descr'] || p['DESCRIPTION'] || ''
-  const carte = p['CARTE'] || p['carte'] || ''
+  const notation = String(p['NOTATION'] || p['notation'] || 'N/A')
+  const descr = String(p['DESCR'] || p['descr'] || p['DESCRIPTION'] || '')
+  const carte = String(p['CARTE'] || p['carte'] || '')
 
   const geo = classifyNotation(notation)
 
@@ -145,7 +146,7 @@ function getOrCreatePanel(): HTMLElement {
   return panelEl
 }
 
-export function openDetailPanel(feature: MapGeoJSONFeature): void {
+export function openDetailPanel(feature: FeatureLike): void {
   const panel = getOrCreatePanel()
   panel.innerHTML = renderDetailContent(feature)
   // Force reflow before adding .open for transition
@@ -171,7 +172,9 @@ export function setupDetailPanel(map: maplibregl.Map, onClose: () => void): void
   closeCallback = onClose
 
   // Close panel when clicking on map (not on a geology feature)
+  // In local mode, the WMS click handler in info-panel manages the panel
   map.on('click', (e) => {
+    if (store.getState().mode === 'local') return
     const features = map.queryRenderedFeatures(e.point, { layers: ['geology-fill'] })
     const dipFeatures = map.queryRenderedFeatures(e.point, { layers: ['dip-points'] })
     if (features.length === 0 && dipFeatures.length === 0) {
@@ -179,9 +182,7 @@ export function setupDetailPanel(map: maplibregl.Map, onClose: () => void): void
     }
   })
 
-  bus.on('mode:change', ({ mode }) => {
-    if (mode === 'local') {
-      closeDetailPanel()
-    }
+  bus.on('mode:change', () => {
+    closeDetailPanel()
   })
 }

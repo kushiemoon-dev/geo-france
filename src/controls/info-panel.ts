@@ -2,6 +2,9 @@ import maplibregl from 'maplibre-gl'
 import type { MapGeoJSONFeature } from 'maplibre-gl'
 import { highlightFormation } from '../layers/geology.ts'
 import { openDetailPanel, setupDetailPanel, closeDetailPanel } from './detail-panel.ts'
+import { store } from '../core/state.ts'
+import { showToast } from '../ui/shared/toast.ts'
+import { LOCAL_MIN_ZOOM } from '../map/map-mode.ts'
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -25,6 +28,42 @@ function formatDipPopupContent(feature: MapGeoJSONFeature): string {
       <p class="popup-source">Source: BD Charm-50 / BRGM</p>
     </div>
   `
+}
+
+let wmsAbort: AbortController | null = null
+
+function lngLatToEpsg3857(lng: number, lat: number): [number, number] {
+  const x = lng * 20037508.34 / 180
+  const y = Math.log(Math.tan((90 + lat) * Math.PI / 360)) / (Math.PI / 180)
+  return [x, y * 20037508.34 / 180]
+}
+
+async function queryWmsFeatureInfo(
+  lngLat: { lng: number; lat: number }
+): Promise<Record<string, unknown> | null> {
+  wmsAbort?.abort()
+  wmsAbort = new AbortController()
+
+  const [x, y] = lngLatToEpsg3857(lngLat.lng, lngLat.lat)
+  const buf = 50
+  const bbox = `${x - buf},${y - buf},${x + buf},${y + buf}`
+
+  const url = 'https://geoservices.brgm.fr/geologie?' + [
+    'SERVICE=WMS', 'VERSION=1.1.1', 'REQUEST=GetFeatureInfo',
+    'LAYERS=GEO050_S_FGEOL', 'QUERY_LAYERS=GEO050_S_FGEOL',
+    'INFO_FORMAT=application/json', 'SRS=EPSG:3857',
+    'WIDTH=101', 'HEIGHT=101', 'X=50', 'Y=50',
+    `BBOX=${bbox}`
+  ].join('&')
+
+  const res = await fetch(url, { signal: wmsAbort.signal })
+  if (!res.ok) return null
+
+  const data = await res.json()
+  const features = data?.features
+  if (!Array.isArray(features) || features.length === 0) return null
+
+  return features[0].properties as Record<string, unknown>
 }
 
 export function setupInfoPanel(map: maplibregl.Map): void {
@@ -62,6 +101,29 @@ export function setupInfoPanel(map: maplibregl.Map): void {
 
     highlightFormation(map, objectId)
     openDetailPanel(feature)
+  })
+
+  map.on('click', (e) => {
+    if (store.getState().mode !== 'local') return
+    if (map.getZoom() < LOCAL_MIN_ZOOM) return
+
+    const canvas = map.getCanvas()
+    canvas.style.cursor = 'wait'
+
+    queryWmsFeatureInfo(e.lngLat)
+      .then((props) => {
+        canvas.style.cursor = ''
+        if (!props) {
+          showToast('Aucune donnee geologique ici', 'info')
+          return
+        }
+        openDetailPanel({ properties: props })
+      })
+      .catch((err: unknown) => {
+        canvas.style.cursor = ''
+        if (err instanceof DOMException && err.name === 'AbortError') return
+        showToast('Erreur de requete BRGM', 'warning')
+      })
   })
 
   map.on('mouseenter', 'dip-points', () => {
