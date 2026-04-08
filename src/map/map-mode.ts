@@ -8,7 +8,7 @@ import type { MapMode } from '../core/types.ts'
 const WMS_SOURCE_ID = 'brgm-wms'
 const WMS_LAYER_ID = 'brgm-wms-layer'
 const FILL_OPACITY = 0.65
-const LOCAL_MIN_ZOOM = 10
+export const LOCAL_MIN_ZOOM = 10
 
 let wmsErrorHandled = false
 
