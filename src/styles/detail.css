@@ -312,6 +312,31 @@
   color: #64b5f6;
 }
 
+.tag-inferred {
+  border: 1px dashed rgba(100, 181, 246, 0.5);
+  background: rgba(21, 101, 192, 0.08);
+}
+
+.fossil-group {
+  margin-bottom: 6px;
+}
+
+.fossil-group-label {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--geo-text-muted);
+  margin-bottom: 3px;
+}
+
+.fossil-inferred-note {
+  font-size: 10px;
+  color: var(--geo-text-muted);
+  font-style: italic;
+  margin-top: 4px;
+}
+
 .geology-popup .popup-source {
   margin-top: var(--geo-space-sm);
   padding-top: 6px;

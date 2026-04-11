@@ -128,16 +128,16 @@ const ROCK_DB: Record<string, RockInfo> = {
   trachyte: { type: 'magmatique', origin: 'volcanique', facies: 'Trachyte alcalin', texture: 'Microlitique fluidale', image: '/images/rocks/trachyte.jpg', minerals: [
     { name: 'feldspath', percent: '60%' }, { name: 'plagioclase', percent: '15%' }, { name: 'biotite', percent: '10%' }, { name: 'pyroxene', percent: '10%' }, { name: 'magnetite', percent: '5%' }
   ]},
-  spilite: { type: 'magmatique', origin: 'volcanique', facies: 'Spilite (basalte altere)', texture: 'Microlitique', minerals: [
+  spilite: { type: 'magmatique', origin: 'volcanique', facies: 'Spilite (basalte altere)', texture: 'Microlitique', image: '/images/rocks/spilite.jpg', minerals: [
     { name: 'plagioclase', percent: '50%' }, { name: 'chlorite', percent: '25%' }, { name: 'calcite', percent: '15%' }, { name: 'magnetite', percent: '10%' }
   ]},
   ophite: { type: 'magmatique', origin: 'subvolcanique', facies: 'Ophite (dolerite)', texture: 'Ophitique, grain moyen', image: '/images/rocks/ophite.jpg', minerals: [
     { name: 'plagioclase', percent: '50%' }, { name: 'pyroxene', percent: '35%' }, { name: 'olivine', percent: '10%' }, { name: 'magnetite', percent: '5%' }
   ]},
-  tuf: { type: 'magmatique', origin: 'volcanique', facies: 'Tuf volcanique', texture: 'Pyroclastique', minerals: [
+  tuf: { type: 'magmatique', origin: 'volcanique', facies: 'Tuf volcanique', texture: 'Pyroclastique', image: '/images/rocks/tuf.jpg', minerals: [
     { name: 'plagioclase', percent: '30%' }, { name: 'quartz', percent: '20%' }, { name: 'feldspath', percent: '20%' }, { name: 'mica', percent: '10%' }
   ]},
-  cinerite: { type: 'magmatique', origin: 'volcanique', facies: 'Cinerite (tuf cendre)', texture: 'Pyroclastique fine', minerals: [
+  cinerite: { type: 'magmatique', origin: 'volcanique', facies: 'Cinerite (tuf cendre)', texture: 'Pyroclastique fine', image: '/images/rocks/cinerite.jpg', minerals: [
     { name: 'plagioclase', percent: '30%' }, { name: 'quartz', percent: '25%' }, { name: 'feldspath', percent: '20%' }, { name: 'mica', percent: '10%' }
   ]},
 
@@ -157,13 +157,13 @@ const ROCK_DB: Record<string, RockInfo> = {
   travertin: { type: 'sedimentaire', origin: 'continentale', facies: 'Travertin (tuf calcaire)', texture: 'Poreuse, vacuolaire', image: '/images/rocks/travertin.jpg', minerals: [
     { name: 'calcite', percent: '95%' }, { name: 'quartz', percent: '3%' }, { name: 'argile', percent: '2%' }
   ]},
-  lumachelle: { type: 'sedimentaire', origin: 'marine', facies: 'Lumachelle coquilliere', texture: 'Bioclastique grossiere', minerals: [
+  lumachelle: { type: 'sedimentaire', origin: 'marine', facies: 'Lumachelle coquilliere', texture: 'Bioclastique grossiere', image: '/images/rocks/lumachelle.jpg', minerals: [
     { name: 'calcite', percent: '90%' }, { name: 'quartz', percent: '5%' }, { name: 'argile', percent: '5%' }
   ]},
-  oolite: { type: 'sedimentaire', origin: 'marine', facies: 'Calcaire oolithique', texture: 'Oolithique', minerals: [
+  oolite: { type: 'sedimentaire', origin: 'marine', facies: 'Calcaire oolithique', texture: 'Oolithique', image: '/images/rocks/oolite.jpg', minerals: [
     { name: 'calcite', percent: '95%' }, { name: 'quartz', percent: '3%' }, { name: 'argile', percent: '2%' }
   ]},
-  falun: { type: 'sedimentaire', origin: 'marine', facies: 'Falun coquillier', texture: 'Bioclastique meuble', minerals: [
+  falun: { type: 'sedimentaire', origin: 'marine', facies: 'Falun coquillier', texture: 'Bioclastique meuble', image: '/images/rocks/falun.jpg', minerals: [
     { name: 'calcite', percent: '80%' }, { name: 'quartz', percent: '15%' }, { name: 'argile', percent: '5%' }
   ]},
 
@@ -174,7 +174,7 @@ const ROCK_DB: Record<string, RockInfo> = {
   argile: { type: 'sedimentaire', origin: 'detritique', facies: 'Argile plastique', texture: 'Massive, plastique', image: '/images/rocks/argile.jpg', minerals: [
     { name: 'kaolin', percent: '60%' }, { name: 'quartz', percent: '25%' }, { name: 'mica', percent: '15%' }
   ]},
-  sable: { type: 'meuble', origin: 'detritique', facies: 'Sable quartzeux', texture: 'Granulaire meuble', minerals: [
+  sable: { type: 'meuble', origin: 'detritique', facies: 'Sable quartzeux', texture: 'Granulaire meuble', image: '/images/rocks/sable.jpg', minerals: [
     { name: 'quartz', percent: '80%' }, { name: 'feldspath', percent: '10%' }, { name: 'mica', percent: '5%' }
   ]},
   silex: { type: 'sedimentaire', origin: 'diagenetique', facies: 'Silex nodulaire', texture: 'Cryptocristalline', image: '/images/rocks/silex.jpg', minerals: [
@@ -183,34 +183,34 @@ const ROCK_DB: Record<string, RockInfo> = {
   conglomerat: { type: 'sedimentaire', origin: 'detritique', facies: 'Conglomerat polygynique', texture: 'Grossiere, cimentee', image: '/images/rocks/conglomerat.jpg', minerals: [
     { name: 'quartz', percent: '50%' }, { name: 'feldspath', percent: '20%' }, { name: 'calcite', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
-  poudingue: { type: 'sedimentaire', origin: 'detritique', facies: 'Poudingue a galets arrondis', texture: 'Grossiere, cimentee', minerals: [
+  poudingue: { type: 'sedimentaire', origin: 'detritique', facies: 'Poudingue a galets arrondis', texture: 'Grossiere, cimentee', image: '/images/rocks/poudingue.jpg', minerals: [
     { name: 'quartz', percent: '55%' }, { name: 'calcite', percent: '20%' }, { name: 'feldspath', percent: '15%' }, { name: 'argile', percent: '10%' }
   ]},
   arkose: { type: 'sedimentaire', origin: 'detritique', facies: 'Arkose feldspathique', texture: 'Granulaire, cimentee', image: '/images/rocks/arkose.jpg', minerals: [
     { name: 'quartz', percent: '50%' }, { name: 'feldspath', percent: '35%' }, { name: 'mica', percent: '10%' }, { name: 'argile', percent: '5%' }
   ]},
-  siltite: { type: 'sedimentaire', origin: 'detritique', facies: 'Siltite', texture: 'Fine, laminee', minerals: [
+  siltite: { type: 'sedimentaire', origin: 'detritique', facies: 'Siltite', texture: 'Fine, laminee', image: '/images/rocks/siltite.jpg', minerals: [
     { name: 'quartz', percent: '50%' }, { name: 'argile', percent: '30%' }, { name: 'mica', percent: '15%' }, { name: 'feldspath', percent: '5%' }
   ]},
-  argilite: { type: 'sedimentaire', origin: 'detritique', facies: 'Argilite induree', texture: 'Massive, compacte', minerals: [
+  argilite: { type: 'sedimentaire', origin: 'detritique', facies: 'Argilite induree', texture: 'Massive, compacte', image: '/images/rocks/argilite.jpg', minerals: [
     { name: 'kaolin', percent: '65%' }, { name: 'quartz', percent: '20%' }, { name: 'mica', percent: '10%' }, { name: 'chlorite', percent: '5%' }
   ]},
   grauwacke: { type: 'sedimentaire', origin: 'detritique', facies: 'Grauwacke', texture: 'Granulaire, mal triee', image: '/images/rocks/grauwacke.jpg', minerals: [
     { name: 'quartz', percent: '35%' }, { name: 'feldspath', percent: '25%' }, { name: 'argile', percent: '20%' }, { name: 'mica', percent: '10%' }, { name: 'chlorite', percent: '10%' }
   ]},
-  gaize: { type: 'sedimentaire', origin: 'marine', facies: 'Gaize siliceuse', texture: 'Fine, poreuse', minerals: [
+  gaize: { type: 'sedimentaire', origin: 'marine', facies: 'Gaize siliceuse', texture: 'Fine, poreuse', image: '/images/rocks/gaize.jpg', minerals: [
     { name: 'silice', percent: '70%' }, { name: 'argile', percent: '20%' }, { name: 'glauconie', percent: '10%' }
   ]},
-  meuliere: { type: 'sedimentaire', origin: 'continentale', facies: 'Meuliere', texture: 'Caverneuse, silicifiee', minerals: [
+  meuliere: { type: 'sedimentaire', origin: 'continentale', facies: 'Meuliere', texture: 'Caverneuse, silicifiee', image: '/images/rocks/meuliere.jpg', minerals: [
     { name: 'silice', percent: '85%' }, { name: 'calcite', percent: '10%' }, { name: 'argile', percent: '5%' }
   ]},
-  radiolarite: { type: 'sedimentaire', origin: 'marine', facies: 'Radiolarite', texture: 'Cryptocristalline', minerals: [
+  radiolarite: { type: 'sedimentaire', origin: 'marine', facies: 'Radiolarite', texture: 'Cryptocristalline', image: '/images/rocks/radiolarite.jpg', minerals: [
     { name: 'silice', percent: '90%' }, { name: 'argile', percent: '8%' }, { name: 'hematite', percent: '2%' }
   ]},
-  breche: { type: 'sedimentaire', origin: 'detritique', facies: 'Breche a elements anguleux', texture: 'Grossiere, anguleuse', minerals: [
+  breche: { type: 'sedimentaire', origin: 'detritique', facies: 'Breche a elements anguleux', texture: 'Grossiere, anguleuse', image: '/images/rocks/breche.jpg', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'calcite', percent: '30%' }, { name: 'feldspath', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
-  tillite: { type: 'sedimentaire', origin: 'glaciaire', facies: 'Tillite (moraine fossile)', texture: 'Heterogene, non triee', minerals: [
+  tillite: { type: 'sedimentaire', origin: 'glaciaire', facies: 'Tillite (moraine fossile)', texture: 'Heterogene, non triee', image: '/images/rocks/tillite.jpg', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'feldspath', percent: '25%' }, { name: 'argile', percent: '20%' }, { name: 'mica', percent: '15%' }
   ]},
 
@@ -218,25 +218,25 @@ const ROCK_DB: Record<string, RockInfo> = {
   loess: { type: 'meuble', origin: 'eolienne', facies: 'Loess calcaire', texture: 'Silteuse, homogene', image: '/images/rocks/loess.jpg', minerals: [
     { name: 'quartz', percent: '50%' }, { name: 'calcite', percent: '20%' }, { name: 'feldspath', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
-  limon: { type: 'meuble', origin: 'fluviatile', facies: 'Limon argileux', texture: 'Fine, plastique', minerals: [
+  limon: { type: 'meuble', origin: 'fluviatile', facies: 'Limon argileux', texture: 'Fine, plastique', image: '/images/rocks/limon.jpg', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'argile', percent: '35%' }, { name: 'calcite', percent: '15%' }, { name: 'mica', percent: '10%' }
   ]},
   alluvion: { type: 'meuble', origin: 'fluviatile', facies: 'Alluvions fluviatiles', texture: 'Variable, stratifiee', image: '/images/rocks/alluvion.jpg', minerals: [
     { name: 'quartz', percent: '55%' }, { name: 'feldspath', percent: '15%' }, { name: 'calcite', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
-  colluvion: { type: 'meuble', origin: 'gravitaire', facies: 'Colluvions de pente', texture: 'Heterogene', minerals: [
+  colluvion: { type: 'meuble', origin: 'gravitaire', facies: 'Colluvions de pente', texture: 'Heterogene', image: '/images/rocks/colluvion.jpg', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'argile', percent: '30%' }, { name: 'calcite', percent: '15%' }, { name: 'feldspath', percent: '15%' }
   ]},
-  greze: { type: 'meuble', origin: 'periglaciaire', facies: 'Greze litee', texture: 'Stratifiee, anguleuse', minerals: [
+  greze: { type: 'meuble', origin: 'periglaciaire', facies: 'Greze litee', texture: 'Stratifiee, anguleuse', image: '/images/rocks/greze.jpg', minerals: [
     { name: 'calcite', percent: '70%' }, { name: 'quartz', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
-  tourbe: { type: 'meuble', origin: 'organique', facies: 'Tourbe', texture: 'Fibreuse a amorphe', minerals: [
+  tourbe: { type: 'meuble', origin: 'organique', facies: 'Tourbe', texture: 'Fibreuse a amorphe', image: '/images/rocks/tourbe.jpg', minerals: [
     { name: 'lignite', percent: '85%' }, { name: 'quartz', percent: '10%' }, { name: 'argile', percent: '5%' }
   ]},
-  tangue: { type: 'meuble', origin: 'marine', facies: 'Tangue (vase calcaire)', texture: 'Fine, plastique', minerals: [
+  tangue: { type: 'meuble', origin: 'marine', facies: 'Tangue (vase calcaire)', texture: 'Fine, plastique', image: '/images/rocks/tangue.jpg', minerals: [
     { name: 'calcite', percent: '50%' }, { name: 'argile', percent: '30%' }, { name: 'quartz', percent: '20%' }
   ]},
-  alterite: { type: 'meuble', origin: 'residuelle', facies: 'Alterite', texture: 'Variable, meuble', minerals: [
+  alterite: { type: 'meuble', origin: 'residuelle', facies: 'Alterite', texture: 'Variable, meuble', image: '/images/rocks/alterite.jpg', minerals: [
     { name: 'kaolin', percent: '40%' }, { name: 'quartz', percent: '35%' }, { name: 'limonite', percent: '15%' }, { name: 'mica', percent: '10%' }
   ]},
 
@@ -265,22 +265,22 @@ const ROCK_DB: Record<string, RockInfo> = {
   mylonite: { type: 'metamorphique', origin: 'dynamique', facies: 'Mylonite', texture: 'Mylonitique, laminee', image: '/images/rocks/mylonite.jpg', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'feldspath', percent: '30%' }, { name: 'mica', percent: '20%' }, { name: 'chlorite', percent: '10%' }
   ]},
-  corneenne: { type: 'metamorphique', origin: 'contact', facies: 'Corneenne', texture: 'Cornee, compacte', minerals: [
+  corneenne: { type: 'metamorphique', origin: 'contact', facies: 'Corneenne', texture: 'Cornee, compacte', image: '/images/rocks/corneenne.jpg', minerals: [
     { name: 'quartz', percent: '30%' }, { name: 'feldspath', percent: '25%' }, { name: 'biotite', percent: '20%' }, { name: 'andalousite', percent: '15%' }, { name: 'cordierite', percent: '10%' }
   ]},
-  phyllade: { type: 'metamorphique', origin: 'regional', facies: 'Phyllade', texture: 'Phylliteuse, satinee', minerals: [
+  phyllade: { type: 'metamorphique', origin: 'regional', facies: 'Phyllade', texture: 'Phylliteuse, satinee', image: '/images/rocks/phyllade.jpg', minerals: [
     { name: 'mica', percent: '40%' }, { name: 'quartz', percent: '35%' }, { name: 'chlorite', percent: '20%' }, { name: 'feldspath', percent: '5%' }
   ]},
   ardoise: { type: 'metamorphique', origin: 'regional', facies: 'Ardoise', texture: 'Schisteuse fine, fissile', image: '/images/rocks/ardoise.jpg', minerals: [
     { name: 'mica', percent: '40%' }, { name: 'quartz', percent: '30%' }, { name: 'chlorite', percent: '20%' }, { name: 'feldspath', percent: '10%' }
   ]},
-  ampelite: { type: 'metamorphique', origin: 'regional', facies: 'Ampelite (schiste noir)', texture: 'Schisteuse, noire', minerals: [
+  ampelite: { type: 'metamorphique', origin: 'regional', facies: 'Ampelite (schiste noir)', texture: 'Schisteuse, noire', image: '/images/rocks/ampelite.jpg', minerals: [
     { name: 'quartz', percent: '30%' }, { name: 'mica', percent: '25%' }, { name: 'chlorite', percent: '20%' }, { name: 'pyrite', percent: '10%' }, { name: 'lignite', percent: '15%' }
   ]},
-  phtanite: { type: 'metamorphique', origin: 'regional', facies: 'Phtanite (lydiite)', texture: 'Cryptocristalline, compacte', minerals: [
+  phtanite: { type: 'metamorphique', origin: 'regional', facies: 'Phtanite (lydiite)', texture: 'Cryptocristalline, compacte', image: '/images/rocks/phtanite.jpg', minerals: [
     { name: 'silice', percent: '85%' }, { name: 'argile', percent: '10%' }, { name: 'pyrite', percent: '5%' }
   ]},
-  pelite: { type: 'sedimentaire', origin: 'detritique', facies: 'Pelite argileuse', texture: 'Tres fine, compacte', minerals: [
+  pelite: { type: 'sedimentaire', origin: 'detritique', facies: 'Pelite argileuse', texture: 'Tres fine, compacte', image: '/images/rocks/pelite.jpg', minerals: [
     { name: 'argile', percent: '55%' }, { name: 'quartz', percent: '25%' }, { name: 'mica', percent: '15%' }, { name: 'chlorite', percent: '5%' }
   ]},
 }
