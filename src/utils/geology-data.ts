@@ -175,6 +175,7 @@ const MINERALS = [
 ]
 
 const FOSSILS = [
+  // Termes existants
   'bryozoaires', 'ammonites', 'brachiopodes', 'trilobites', 'crinoïdes',
   'crinoides', 'coraux', 'récif', 'recif', 'rudistes', 'foraminifères',
   'foraminiferes', 'nummulites', 'ostracodes', 'graptolites', 'bivalves',
@@ -183,7 +184,57 @@ const FOSSILS = [
   'belemnites', 'inocérames', 'inocerames', 'orbitolines', 'nautiles',
   'algues', 'stromatolithes', 'polypiers', 'céphalopodes', 'cephalopodes',
   'pélécypodes', 'pelecypodes', 'conodontes', 'chitinozoaires',
-  'acritarches', 'dinoflagellés', 'dinoflagelles', 'spores', 'pollen'
+  'acritarches', 'dinoflagellés', 'dinoflagelles', 'spores', 'pollen',
+  // Bivalves / mollusques
+  'huîtres', 'huitres', 'gryphées', 'gryphees', 'gryphée', 'gryphee',
+  'gryphaea', 'exogyra', 'exogyres', 'ostrea',
+  'pecten', 'pectinidés', 'pectinides', 'plicatules',
+  'trigonies', 'trigonia', 'natica', 'natices',
+  'cérithes', 'cerithes', 'cérithe', 'cerithe', 'turritelles', 'turritella',
+  // Rudistes
+  'hippurites', 'toucasia', 'caprines', 'radiolites',
+  // Ammonites / céphalopodes
+  'goniatites', 'hildoceras', 'harpoceras', 'lytoceras', 'arnioceras',
+  'baculites', 'scaphites', 'orthocères', 'orthoceres', 'cardioceras',
+  // Brachiopodes supplémentaires
+  'térébratules', 'terebratules', 'térébratule', 'terebratule',
+  'rhynchonelles', 'rhynchonelle', 'rhynchonella',
+  'orthis', 'spirifer', 'athyris',
+  // Trilobites supplémentaires
+  'paradoxides',
+  // Foraminifères supplémentaires
+  'milioles', 'miliole', 'miliolidés', 'miliolides',
+  'alvéolines', 'alveolines', 'alvéoline', 'alveoline',
+  'lituolidés', 'lituolides',
+  'orbitoïdes', 'orbitoides', 'orbitolinidés', 'orbitolinides',
+  'discocyclines', 'discocycline', 'assilines', 'assiline', 'operculines',
+  'globigérines', 'globigerines', 'globotruncana', 'rotalipora',
+  'calpionelles',
+  // Algues / microfossiles végétaux
+  'characées', 'characees', 'dasycladacées', 'dasycladacees', 'lithothamnium',
+  'microcodium', 'encrines',
+  // Radiolaires
+  'radiolaires',
+  // Annélides / vers
+  'annélides', 'annelides', 'serpules',
+  // Stromatopores
+  'stromatopores', 'stromatoporidés', 'stromatoporides',
+  // Coraux supplémentaires
+  'rugosa',
+  // Échinodermes supplémentaires
+  'oursins', 'oursin',
+  // Vertébrés
+  'poissons', 'reptiles', 'dinosaures', 'mammifères', 'mammiferes',
+  'vertébrés', 'vertebres',
+  // Termes génériques fossiles (présents dans les DESCR BRGM)
+  'fossiles', 'fossile', 'fossilifère', 'fossilifere',
+  'bioclastes', 'bioclaste', 'microfaune',
+  'empreintes', 'encroûtements', 'encroutements',
+  'oncolites', 'oncolithes', 'oncoïdes', 'oncoides',
+  // Tentaculites
+  'tentaculites',
+  // Ichnofossiles
+  'terriers',
 ]
 
 const LITHOLOGY = [

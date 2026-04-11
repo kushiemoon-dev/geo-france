@@ -11,6 +11,7 @@ const FILL_OPACITY = 0.65
 export const LOCAL_MIN_ZOOM = 10
 
 let wmsErrorHandled = false
+let wmsErrorToastShown = false
 
 function ensureWmsSource(map: maplibregl.Map): void {
   if (map.getSource(WMS_SOURCE_ID)) return
@@ -28,8 +29,9 @@ function ensureWmsSource(map: maplibregl.Map): void {
   if (!wmsErrorHandled) {
     map.on('error', (e: unknown) => {
       const err = e as { sourceId?: string }
-      if (err.sourceId === WMS_SOURCE_ID) {
-        showToast('Erreur de chargement WMS BRGM', 'warning')
+      if (err.sourceId === WMS_SOURCE_ID && !wmsErrorToastShown) {
+        wmsErrorToastShown = true
+        showToast('Certaines tuiles WMS BRGM indisponibles', 'warning')
       }
     })
     wmsErrorHandled = true
@@ -49,7 +51,7 @@ function showWmsLayer(map: maplibregl.Map): void {
     id: WMS_LAYER_ID,
     type: 'raster',
     source: WMS_SOURCE_ID,
-    paint: { 'raster-opacity': 0.85 }
+    paint: { 'raster-opacity': 0.7 }
   }, beforeId)
 }
 
