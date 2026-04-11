@@ -10,6 +10,37 @@ function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
+let wmsAbort: AbortController | null = null
+
+function lngLatToEpsg3857(lng: number, lat: number): [number, number] {
+  const x = lng * 20037508.34 / 180
+  const y = Math.log(Math.tan((90 + lat) * Math.PI / 360)) / (Math.PI / 180)
+  return [x, y * 20037508.34 / 180]
+}
+
+async function queryWmsFeatureInfo(
+  lngLat: { lng: number; lat: number }
+): Promise<Record<string, unknown> | null> {
+  wmsAbort?.abort()
+  wmsAbort = new AbortController()
+  const [x, y] = lngLatToEpsg3857(lngLat.lng, lngLat.lat)
+  const buf = 50
+  const bbox = `${x - buf},${y - buf},${x + buf},${y + buf}`
+  const url = 'https://geoservices.brgm.fr/geologie?' + [
+    'SERVICE=WMS', 'VERSION=1.1.1', 'REQUEST=GetFeatureInfo',
+    'LAYERS=GEO050_S_FGEOL', 'QUERY_LAYERS=GEO050_S_FGEOL',
+    'INFO_FORMAT=application/json', 'SRS=EPSG:3857',
+    'WIDTH=101', 'HEIGHT=101', 'X=50', 'Y=50',
+    `BBOX=${bbox}`,
+  ].join('&')
+  const res = await fetch(url, { signal: wmsAbort.signal })
+  if (!res.ok) return null
+  const data = await res.json() as { features?: { properties: Record<string, unknown> }[] }
+  const features = data?.features
+  if (!Array.isArray(features) || features.length === 0) return null
+  return features[0].properties
+}
+
 function formatDipPopupContent(feature: MapGeoJSONFeature): string {
   const p = feature.properties
   const pendage = p['PENDAGE'] ?? p['pendage'] ?? ''
@@ -63,26 +94,53 @@ export function setupInfoPanel(map: maplibregl.Map): void {
 
     const feature = e.features[0]
     const objectId = feature.properties['OBJECTID'] || feature.properties['objectid'] || null
-
     highlightFormation(map, objectId)
-    openDetailPanel(feature)
+
+    // If DESCR is missing, enrich from WMS before opening
+    const descr = String(feature.properties['DESCR'] || feature.properties['descr'] || '')
+    if (descr) {
+      openDetailPanel(feature)
+      return
+    }
+    const canvas = map.getCanvas()
+    canvas.style.cursor = 'wait'
+    queryWmsFeatureInfo(e.lngLat)
+      .then(props => {
+        canvas.style.cursor = 'pointer'
+        if (props) {
+          openDetailPanel({ properties: { ...feature.properties, ...props } })
+        } else {
+          openDetailPanel(feature)
+        }
+      })
+      .catch(() => {
+        canvas.style.cursor = 'pointer'
+        openDetailPanel(feature)
+      })
   })
 
   map.on('click', (e) => {
     if (store.getState().mode !== 'local') return
     if (map.getZoom() < LOCAL_MIN_ZOOM) return
 
-    // Interroge la couche vectorielle geology-fill (opacité 0 en mode local mais toujours queryable)
+    // Only handle clicks not already caught by geology-fill layer
     const features = map.queryRenderedFeatures(e.point, { layers: ['geology-fill'] })
-    if (features.length === 0) {
-      showToast('Aucune donnee geologique ici', 'info')
-      return
-    }
+    if (features.length > 0) return
 
-    const feature = features[0]
-    const objectId = feature.properties['OBJECTID'] || feature.properties['objectid'] || null
-    highlightFormation(map, objectId)
-    openDetailPanel(feature)
+    // Click on area without vector tile: query WMS directly
+    const canvas = map.getCanvas()
+    canvas.style.cursor = 'wait'
+    queryWmsFeatureInfo(e.lngLat)
+      .then(props => {
+        canvas.style.cursor = ''
+        if (!props) { showToast('Aucune donnee geologique ici', 'info'); return }
+        openDetailPanel({ properties: props })
+      })
+      .catch((err: unknown) => {
+        canvas.style.cursor = ''
+        if (err instanceof DOMException && err.name === 'AbortError') return
+        showToast('Erreur de requete BRGM', 'warning')
+      })
   })
 
   map.on('mouseenter', 'dip-points', () => {

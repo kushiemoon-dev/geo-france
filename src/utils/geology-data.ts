@@ -174,68 +174,69 @@ const MINERALS = [
   'galène', 'galene', 'blende', 'majorite', 'lignite', 'blavierite'
 ]
 
-const FOSSILS = [
-  // Termes existants
-  'bryozoaires', 'ammonites', 'brachiopodes', 'trilobites', 'crinoïdes',
-  'crinoides', 'coraux', 'récif', 'recif', 'rudistes', 'foraminifères',
-  'foraminiferes', 'nummulites', 'ostracodes', 'graptolites', 'bivalves',
-  'gastropodes', 'gastéropodes', 'gasteropodes', 'échinodermes', 'echinodermes',
-  'spongiaires', 'éponges', 'eponges', 'lamellibranches', 'bélemnites',
-  'belemnites', 'inocérames', 'inocerames', 'orbitolines', 'nautiles',
-  'algues', 'stromatolithes', 'polypiers', 'céphalopodes', 'cephalopodes',
-  'pélécypodes', 'pelecypodes', 'conodontes', 'chitinozoaires',
-  'acritarches', 'dinoflagellés', 'dinoflagelles', 'spores', 'pollen',
-  // Bivalves / mollusques
-  'huîtres', 'huitres', 'gryphées', 'gryphees', 'gryphée', 'gryphee',
-  'gryphaea', 'exogyra', 'exogyres', 'ostrea',
-  'pecten', 'pectinidés', 'pectinides', 'plicatules',
-  'trigonies', 'trigonia', 'natica', 'natices',
-  'cérithes', 'cerithes', 'cérithe', 'cerithe', 'turritelles', 'turritella',
-  // Rudistes
-  'hippurites', 'toucasia', 'caprines', 'radiolites',
-  // Ammonites / céphalopodes
-  'goniatites', 'hildoceras', 'harpoceras', 'lytoceras', 'arnioceras',
-  'baculites', 'scaphites', 'orthocères', 'orthoceres', 'cardioceras',
-  // Brachiopodes supplémentaires
-  'térébratules', 'terebratules', 'térébratule', 'terebratule',
-  'rhynchonelles', 'rhynchonelle', 'rhynchonella',
-  'orthis', 'spirifer', 'athyris',
-  // Trilobites supplémentaires
-  'paradoxides',
-  // Foraminifères supplémentaires
-  'milioles', 'miliole', 'miliolidés', 'miliolides',
-  'alvéolines', 'alveolines', 'alvéoline', 'alveoline',
-  'lituolidés', 'lituolides',
-  'orbitoïdes', 'orbitoides', 'orbitolinidés', 'orbitolinides',
-  'discocyclines', 'discocycline', 'assilines', 'assiline', 'operculines',
-  'globigérines', 'globigerines', 'globotruncana', 'rotalipora',
-  'calpionelles',
-  // Algues / microfossiles végétaux
-  'characées', 'characees', 'dasycladacées', 'dasycladacees', 'lithothamnium',
-  'microcodium', 'encrines',
-  // Radiolaires
-  'radiolaires',
-  // Annélides / vers
-  'annélides', 'annelides', 'serpules',
-  // Stromatopores
-  'stromatopores', 'stromatoporidés', 'stromatoporides',
-  // Coraux supplémentaires
-  'rugosa',
-  // Échinodermes supplémentaires
-  'oursins', 'oursin',
-  // Vertébrés
-  'poissons', 'reptiles', 'dinosaures', 'mammifères', 'mammiferes',
-  'vertébrés', 'vertebres',
-  // Termes génériques fossiles (présents dans les DESCR BRGM)
-  'fossiles', 'fossile', 'fossilifère', 'fossilifere',
-  'bioclastes', 'bioclaste', 'microfaune',
-  'empreintes', 'encroûtements', 'encroutements',
-  'oncolites', 'oncolithes', 'oncoïdes', 'oncoides',
-  // Tentaculites
-  'tentaculites',
-  // Ichnofossiles
-  'terriers',
-]
+const FOSSIL_GROUPS: Record<string, readonly string[]> = {
+  ammonites: [
+    'ammonites', 'goniatites', 'hildoceras', 'harpoceras', 'lytoceras',
+    'arnioceras', 'baculites', 'scaphites', 'orthocères', 'orthoceres',
+    'cardioceras', 'nautiles', 'céphalopodes', 'cephalopodes',
+  ],
+  bélemnites: ['bélemnites', 'belemnites'],
+  échinodermes: [
+    'échinodermes', 'echinodermes', 'oursins', 'oursin', 'crinoïdes', 'crinoides', 'encrines',
+  ],
+  brachiopodes: [
+    'brachiopodes', 'térébratules', 'terebratules', 'térébratule', 'terebratule',
+    'rhynchonelles', 'rhynchonelle', 'rhynchonella', 'orthis', 'spirifer', 'athyris',
+  ],
+  bivalves: [
+    'bivalves', 'lamellibranches', 'pélécypodes', 'pelecypodes',
+    'huîtres', 'huitres', 'gryphées', 'gryphees', 'gryphée', 'gryphee',
+    'gryphaea', 'exogyra', 'exogyres', 'ostrea',
+    'pecten', 'pectinidés', 'pectinides', 'plicatules',
+    'trigonies', 'trigonia', 'inocérames', 'inocerames',
+  ],
+  gastéropodes: [
+    'gastéropodes', 'gasteropodes', 'gastropodes',
+    'cérithes', 'cerithes', 'cérithe', 'cerithe', 'turritelles', 'turritella',
+    'natica', 'natices',
+  ],
+  rudistes: ['rudistes', 'hippurites', 'toucasia', 'caprines', 'radiolites'],
+  coraux: [
+    'coraux', 'polypiers', 'stromatopores', 'stromatoporidés', 'stromatoporides',
+    'rugosa', 'récif', 'recif',
+  ],
+  foraminifères: [
+    'foraminifères', 'foraminiferes', 'nummulites', 'orbitolines',
+    'milioles', 'miliole', 'miliolidés', 'miliolides',
+    'alvéolines', 'alveolines', 'alvéoline', 'alveoline',
+    'lituolidés', 'lituolides',
+    'orbitoïdes', 'orbitoides', 'orbitolinidés', 'orbitolinides',
+    'discocyclines', 'discocycline', 'assilines', 'assiline', 'operculines',
+    'globigérines', 'globigerines', 'globotruncana', 'rotalipora', 'calpionelles',
+  ],
+  trilobites: ['trilobites', 'paradoxides'],
+  vertébrés: [
+    'poissons', 'reptiles', 'dinosaures', 'mammifères', 'mammiferes',
+    'vertébrés', 'vertebres',
+  ],
+  algues: [
+    'algues', 'stromatolithes', 'characées', 'characees',
+    'dasycladacées', 'dasycladacees', 'lithothamnium', 'microcodium',
+  ],
+  microfossiles: [
+    'radiolaires', 'ostracodes', 'conodontes', 'graptolites',
+    'chitinozoaires', 'acritarches', 'dinoflagellés', 'dinoflagelles',
+    'spores', 'pollen', 'tentaculites', 'bryozoaires',
+  ],
+  annélides: ['annélides', 'annelides', 'serpules', 'terriers'],
+  autres: [
+    'éponges', 'eponges', 'spongiaires',
+    'fossiles', 'fossile', 'fossilifère', 'fossilifere',
+    'bioclastes', 'bioclaste', 'microfaune',
+    'empreintes', 'encroûtements', 'encroutements',
+    'oncolites', 'oncolithes', 'oncoïdes', 'oncoides',
+  ],
+}
 
 const LITHOLOGY = [
   'calcaire', 'craie', 'marne', 'grès', 'gres', 'argile', 'schiste',
@@ -270,8 +271,42 @@ export function extractMinerals(descr: string): string[] {
   return extractTerms(descr, MINERALS)
 }
 
-export function extractFossils(descr: string): string[] {
-  return extractTerms(descr, FOSSILS)
+export type FossilGroups = Record<string, string[]>
+
+export function extractFossils(descr: string): FossilGroups {
+  if (!descr) return {}
+  const lower = descr.toLowerCase()
+  const out: FossilGroups = {}
+  for (const [group, terms] of Object.entries(FOSSIL_GROUPS)) {
+    const found: string[] = []
+    for (const term of terms) {
+      if (lower.includes(term) && !found.includes(term)) found.push(term)
+    }
+    if (found.length > 0) out[group] = found
+  }
+  return out
+}
+
+const MARINE_LITHOS = ['calcaire', 'craie', 'marne', 'dolomie', 'lumachelle', 'falun']
+
+export function inferFossils(notation: string, lithology: string[]): string[] {
+  if (!lithology.some(l => MARINE_LITHOS.includes(l))) return []
+  const geo = classifyNotation(notation)
+  if (geo.ageStartMa == null || geo.ageEndMa == null) return []
+  const mid = (geo.ageStartMa + geo.ageEndMa) / 2
+  if (mid >= 66 && mid <= 100.5) // Crétacé supérieur
+    return ['ammonites', 'rudistes', 'inocérames', 'foraminifères', 'oursins']
+  if (mid > 100.5 && mid <= 145) // Crétacé inférieur
+    return ['ammonites', 'rudistes', 'bivalves', 'foraminifères']
+  if (mid > 145 && mid <= 163.5) // Jurassique supérieur
+    return ['ammonites', 'bélemnites', 'coraux', 'oursins', 'bivalves']
+  if (mid > 163.5 && mid <= 201.4) // Jurassique moyen et inférieur
+    return ['ammonites', 'bélemnites', 'brachiopodes', 'oursins', 'bivalves']
+  if (mid > 201.4 && mid <= 251.9) // Trias
+    return ['bivalves', 'ammonites', 'coraux']
+  if (mid > 251.9 && mid <= 419.2) // Dévonien + Carbonifère
+    return ['coraux', 'brachiopodes', 'trilobites']
+  return []
 }
 
 export function extractLithology(descr: string): string[] {
