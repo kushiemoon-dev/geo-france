@@ -221,7 +221,7 @@ const ROCK_DB: Record<string, RockInfo> = {
   limon: { type: 'meuble', origin: 'fluviatile', facies: 'Limon argileux', texture: 'Fine, plastique', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'argile', percent: '35%' }, { name: 'calcite', percent: '15%' }, { name: 'mica', percent: '10%' }
   ]},
-  alluvion: { type: 'meuble', origin: 'fluviatile', facies: 'Alluvions fluviatiles', texture: 'Variable, stratifiee', minerals: [
+  alluvion: { type: 'meuble', origin: 'fluviatile', facies: 'Alluvions fluviatiles', texture: 'Variable, stratifiee', image: '/images/rocks/alluvion.jpg', minerals: [
     { name: 'quartz', percent: '55%' }, { name: 'feldspath', percent: '15%' }, { name: 'calcite', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
   colluvion: { type: 'meuble', origin: 'gravitaire', facies: 'Colluvions de pente', texture: 'Heterogene', minerals: [

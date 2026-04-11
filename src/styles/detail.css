@@ -367,3 +367,25 @@
   text-decoration: underline;
   color: var(--geo-accent-strong);
 }
+
+.notice-badge {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  vertical-align: middle;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.notice-badge-full {
+  background: #1d6fa4;
+  color: #fff;
+}
+
+.notice-badge-pocket {
+  background: #b94040;
+  color: #fff;
+}
