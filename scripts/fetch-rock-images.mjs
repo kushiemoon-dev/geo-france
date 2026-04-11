@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
  * Télécharge les images manquantes pour les lithologies sans photo dans ROCK_DB.
- * Sources: Wikimedia Commons (CC-BY-SA / domaine public).
+ * Utilise l'API REST Wikipedia (page/summary) qui retourne directement l'image principale.
  * Usage: node scripts/fetch-rock-images.mjs
  */
 
-import { createWriteStream, existsSync, mkdirSync, appendFileSync } from 'fs'
+import { createWriteStream, existsSync, mkdirSync, appendFileSync, writeFileSync } from 'fs'
 import { pipeline } from 'stream/promises'
 import https from 'https'
 import path from 'path'
@@ -15,80 +15,116 @@ const __dir = path.dirname(fileURLToPath(import.meta.url))
 const DEST = path.join(__dir, '..', 'public', 'images', 'rocks')
 const ATTR_FILE = path.join(DEST, 'ATTRIBUTIONS.md')
 
-// Mapping lithologie -> URL Wikimedia Commons (CC-BY-SA ou domaine public)
-// Toutes les URL sont des liens directs vers une image (pas la page de description).
-const IMAGES = {
-  spilite:    'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Spilite_-_geograph.org.uk.jpg/640px-Spilite_-_geograph.org.uk.jpg',
-  tuf:        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Volcanic_tuff.jpg/640px-Volcanic_tuff.jpg',
-  cinerite:   'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cinerite_de_Volvic.JPG/640px-Cinerite_de_Volvic.JPG',
-  lumachelle:  'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Lumachelle.jpg/640px-Lumachelle.jpg',
-  oolite:     'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Oolite_limestone.jpg/640px-Oolite_limestone.jpg',
-  falun:      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Falun-la-chapelle-vendômoise.jpg/640px-Falun-la-chapelle-vendômoise.jpg',
-  sable:      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sand_from_Gobi_Desert.jpg/640px-Sand_from_Gobi_Desert.jpg',
-  poudingue:  'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Conglomerado_en_Las_Bardenas_Reales.jpg/640px-Conglomerado_en_Las_Bardenas_Reales.jpg',
-  siltite:    'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Siltstone_2.jpg/640px-Siltstone_2.jpg',
-  argilite:   'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Argillite_Close_Up.jpg/640px-Argillite_Close_Up.jpg',
-  gaize:      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Gaize_de_l%27Argonne.jpg/640px-Gaize_de_l%27Argonne.jpg',
-  meuliere:   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Meulière_de_Fontainebleau.jpg/640px-Meulière_de_Fontainebleau.jpg',
-  radiolarite: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Radiolarite.jpg/640px-Radiolarite.jpg',
-  breche:     'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Breccia.jpg/640px-Breccia.jpg',
-  tillite:    'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Diamictite.jpg/640px-Diamictite.jpg',
-  limon:      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Silt_soil.jpg/640px-Silt_soil.jpg',
-  colluvion:  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Colluvial_soil.jpg/640px-Colluvial_soil.jpg',
-  greze:      'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Greze_litee.jpg/640px-Greze_litee.jpg',
-  tourbe:     'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Peat_deposit.jpg/640px-Peat_deposit.jpg',
-  tangue:     'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Mont-Saint-Michel-bay-sand.jpg/640px-Mont-Saint-Michel-bay-sand.jpg',
-  alterite:   'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Laterite_soil_profile.jpg/640px-Laterite_soil_profile.jpg',
-  corneenne:  'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hornfels_contact_metamorphism.jpg/640px-Hornfels_contact_metamorphism.jpg',
-  phyllade:   'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Phyllite_sample.jpg/640px-Phyllite_sample.jpg',
-  ampelite:   'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ampelite.jpg/640px-Ampelite.jpg',
-  phtanite:   'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Chert_BIF_banded_iron_formation.jpg/640px-Chert_BIF_banded_iron_formation.jpg',
-  pelite:     'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mudstone_sample.jpg/640px-Mudstone_sample.jpg',
+// Termes de recherche sur Wikimedia Commons
+const SEARCH_TERMS = {
+  greze:      'Grèzes litées',
+  alterite:   'Laterite weathered rock',
 }
 
-function fetchUrl(url) {
+function httpsGet(url) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, { headers: { 'User-Agent': 'brgmremaster-image-fetcher/1.0' } }, res => {
+    const req = https.get(url, {
+      headers: { 'User-Agent': 'brgmremaster-bot/1.0 (educational geological map)' }
+    }, res => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        fetchUrl(res.headers.location).then(resolve).catch(reject)
+        httpsGet(res.headers.location).then(resolve).catch(reject)
         return
       }
-      if (res.statusCode !== 200) { reject(new Error(`HTTP ${res.statusCode} for ${url}`)); return }
       resolve(res)
     })
     req.on('error', reject)
+    req.setTimeout(20000, () => { req.destroy(new Error('timeout')) })
   })
 }
 
-mkdirSync(DEST, { recursive: true })
+async function fetchJson(url) {
+  const res = await httpsGet(url)
+  if (res.statusCode === 429) {
+    const retryAfter = parseInt(res.headers['retry-after'] || '10', 10)
+    res.resume()
+    throw Object.assign(new Error(`HTTP 429`), { retryAfter })
+  }
+  if (res.statusCode !== 200) {
+    res.resume()
+    throw new Error(`HTTP ${res.statusCode}`)
+  }
+  return new Promise((resolve, reject) => {
+    let body = ''
+    res.on('data', d => body += d)
+    res.on('end', () => { try { resolve(JSON.parse(body)) } catch (e) { reject(e) } })
+    res.on('error', reject)
+  })
+}
 
+async function downloadImage(url, destPath) {
+  const res = await httpsGet(url)
+  if (res.statusCode !== 200) throw new Error(`HTTP ${res.statusCode}`)
+  await pipeline(res, createWriteStream(destPath))
+}
+
+async function getCommonsImageUrl(searchTerm) {
+  // 1. Chercher un fichier sur Wikimedia Commons
+  const searchUrl = `https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(searchTerm)}&srnamespace=6&srlimit=20&format=json`
+  const searchData = await fetchJson(searchUrl)
+  const results = searchData?.query?.search
+  if (!results || results.length === 0) return null
+
+  // 2. Prendre le premier résultat jpg/png (ignorer svg, gif, tif)
+  for (const r of results) {
+    const t = r.title.toLowerCase()
+    if (!t.endsWith('.jpg') && !t.endsWith('.jpeg') && !t.endsWith('.png') && !t.endsWith('.webp')) continue
+
+    const infoUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent(r.title)}&prop=imageinfo&iiprop=url|mime&iiurlwidth=640&format=json`
+    const infoData = await fetchJson(infoUrl)
+    const pages = infoData?.query?.pages
+    if (!pages) continue
+    const page = Object.values(pages)[0]
+    const info = page?.imageinfo?.[0]
+    if (!info) continue
+    const mime = info.mime || ''
+    if (!mime.startsWith('image/jpeg') && !mime.startsWith('image/png')) continue
+    const url = info.thumburl || info.url
+    if (!url) continue
+    return { url, title: r.title }
+  }
+  return null
+}
+
+mkdirSync(DEST, { recursive: true })
 if (!existsSync(ATTR_FILE)) {
-  appendFileSync(ATTR_FILE, '# Attributions images lithologies\n\nSource: Wikimedia Commons (CC-BY-SA sauf mention)\n\n')
+  writeFileSync(ATTR_FILE, '# Attributions images lithologies\n\nSource: Wikipedia / Wikimedia Commons (CC-BY-SA)\n\n')
 }
 
 let ok = 0, skipped = 0, failed = 0
+const failures = []
 
-for (const [name, url] of Object.entries(IMAGES)) {
+for (const [name, searchTerm] of Object.entries(SEARCH_TERMS)) {
   const dest = path.join(DEST, `${name}.jpg`)
   if (existsSync(dest)) {
-    console.log(`  skip  ${name}.jpg (déjà présent)`)
+    console.log(`  skip  ${name}.jpg`)
     skipped++
     continue
   }
+
+  process.stdout.write(`  ...   ${name} `)
   try {
-    const stream = await fetchUrl(url)
-    await pipeline(stream, createWriteStream(dest))
-    console.log(`  ok    ${name}.jpg`)
-    appendFileSync(ATTR_FILE, `- **${name}.jpg** : ${url}\n`)
+    const result = await getCommonsImageUrl(searchTerm)
+    if (!result) throw new Error('aucun résultat Commons')
+
+    await downloadImage(result.url, dest)
+    console.log(`→ ok`)
+    appendFileSync(ATTR_FILE, `- **${name}.jpg** : "${result.title}" — ${result.url}\n`)
     ok++
+    await new Promise(r => setTimeout(r, 4000))
   } catch (err) {
-    console.warn(`  FAIL  ${name}.jpg — ${err.message}`)
-    console.warn(`         → Remplacer manuellement dans public/images/rocks/${name}.jpg`)
+    console.log(`→ FAIL (${err.message})`)
     failed++
+    failures.push(name)
   }
 }
 
 console.log(`\nTerminé: ${ok} téléchargés, ${skipped} ignorés, ${failed} échoués`)
-if (failed > 0) {
-  console.log('Pour les images échouées, chercher sur https://commons.wikimedia.org')
+if (failures.length > 0) {
+  console.log(`Échoués:\n  ${failures.join('\n  ')}`)
+  console.log('\n→ Déposer manuellement dans public/images/rocks/<nom>.jpg')
 }
