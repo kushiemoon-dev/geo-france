@@ -1,6 +1,7 @@
 import type maplibregl from 'maplibre-gl'
 export type FeatureLike = { properties: Record<string, unknown> }
-import { classifyNotation, extractLithology, extractFossils } from '../utils/geology-data.ts'
+import { classifyNotation, extractLithology, extractFossils, inferFossils } from '../utils/geology-data.ts'
+import type { FossilGroups } from '../utils/geology-data.ts'
 import { getMineralInfo, getMineralBarColor, getRockInfo } from '../utils/mineral-data.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
 import type { RockInfo } from '../utils/mineral-data.ts'
@@ -107,7 +108,8 @@ function renderDetailContent(feature: FeatureLike): string {
   const geo = classifyNotation(notation)
 
   const lithology = extractLithology(descr)
-  const fossils = extractFossils(descr)
+  const fossils: FossilGroups = extractFossils(descr)
+  const inferred = Object.keys(fossils).length === 0 ? inferFossils(notation, lithology) : []
   const rockImage = findRockImage(lithology)
 
   const wikiUrl = geo.wikiSlug
@@ -124,7 +126,24 @@ function renderDetailContent(feature: FeatureLike): string {
       ${renderPetrographySection(lithology)}
       ${descr ? `<div class="detail-panel-section"><strong>Description BRGM</strong><p class="detail-panel-descr">${escapeHtml(descr)}</p></div>` : ''}
       ${lithology.length > 0 ? `<div class="detail-panel-section"><strong>Lithologie</strong><div class="popup-tags">${renderTags(lithology, 'tag-litho')}</div></div>` : ''}
-      ${fossils.length > 0 ? `<div class="detail-panel-section"><strong>Fossiles</strong><div class="popup-tags">${renderTags(fossils, 'tag-fossil')}</div></div>` : ''}
+      ${Object.keys(fossils).length > 0 ? `
+        <div class="detail-panel-section">
+          <strong>Fossiles</strong>
+          ${Object.entries(fossils).map(([group, terms]) => `
+            <div class="fossil-group">
+              <span class="fossil-group-label">${escapeHtml(group)}</span>
+              <div class="popup-tags">${renderTags(terms, 'tag-fossil')}</div>
+            </div>
+          `).join('')}
+        </div>
+      ` : ''}
+      ${inferred.length > 0 ? `
+        <div class="detail-panel-section">
+          <strong>Fossiles typiques</strong>
+          <div class="popup-tags">${renderTags(inferred, 'tag-fossil tag-inferred')}</div>
+          <p class="fossil-inferred-note">Inférés de l'étage — non cités dans la description BRGM</p>
+        </div>
+      ` : ''}
       <div class="detail-panel-links">
         <strong>Liens externes</strong>
         ${wikiUrl ? `<a href="${wikiUrl}" target="_blank" rel="noopener noreferrer">Wikipedia FR</a>` : ''}
