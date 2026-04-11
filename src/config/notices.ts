@@ -2,6 +2,8 @@ export interface Notice {
   sheet: string
   name: string
   url: string
+  pages?: number
+  bytes?: number
 }
 
 export const NOTICES: Record<string, Notice[]> = {

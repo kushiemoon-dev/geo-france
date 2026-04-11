@@ -15,42 +15,24 @@ export function createMap(container: string): maplibregl.Map {
       version: 8,
       glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
       sources: {
-        'satellite': {
+        'osm': {
           type: 'raster',
           tiles: [
-            'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+            'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png'
           ],
           tileSize: 256,
-          attribution: '&copy; Esri',
-          maxzoom: 18
-        },
-        'topo': {
-          type: 'raster',
-          tiles: [
-            'https://a.tile.opentopomap.org/{z}/{x}/{y}.png'
-          ],
-          tileSize: 256,
-          attribution: '&copy; OpenTopoMap',
-          maxzoom: 17
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          maxzoom: 19
         }
       },
       layers: [
         {
-          id: 'satellite-base',
+          id: 'osm-base',
           type: 'raster',
-          source: 'satellite',
-          paint: {
-            'raster-brightness-max': 0.6,
-            'raster-saturation': -0.3
-          }
-        },
-        {
-          id: 'topo-overlay',
-          type: 'raster',
-          source: 'topo',
-          paint: {
-            'raster-opacity': 0.25
-          }
+          source: 'osm',
+          paint: {}
         }
       ]
     },
