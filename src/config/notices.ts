@@ -663,7 +663,7 @@ export const NOTICES: Record<string, Notice[]> = {
     { sheet: '0286', name: 'VILLAINES-LA-JUHEL', url: 'http://ficheinfoterre.brgm.fr/Notices/0286N.pdf' },
     { sheet: '0287', name: 'FRESNAY SUR SARTHE', url: 'http://ficheinfoterre.brgm.fr/Notices/0287N.pdf' },
     { sheet: '0288', name: 'MAMERS', url: 'http://ficheinfoterre.brgm.fr/Notices/0288N.pdf' },
-    { sheet: '0319', name: 'LAVAL', url: 'http://ficheinfoterre.brgm.fr/Notices/0319N.pdf' },
+
     { sheet: '0320', name: 'EVRON', url: 'http://ficheinfoterre.brgm.fr/Notices/0320N.pdf' },
     { sheet: '0321', name: 'SILLE-LE-GUILLAUME', url: 'http://ficheinfoterre.brgm.fr/Notices/0321N.pdf' },
     { sheet: '0322', name: 'BEAUMONT-SUR-SARTHE', url: 'http://ficheinfoterre.brgm.fr/Notices/0322N.pdf' },
@@ -906,6 +906,7 @@ export const NOTICES: Record<string, Notice[]> = {
   'pays-de-la-loire': [
     { sheet: '0317', name: 'RENNES', url: 'http://ficheinfoterre.brgm.fr/Notices/0317N.pdf' },
     { sheet: '0318', name: 'VITRE', url: 'http://ficheinfoterre.brgm.fr/Notices/0318N.pdf' },
+    { sheet: '0319', name: 'LAVAL', url: 'http://ficheinfoterre.brgm.fr/Notices/0319N.pdf' },
     { sheet: '0353', name: 'JANZE', url: 'http://ficheinfoterre.brgm.fr/Notices/0353N.pdf' },
     { sheet: '0354', name: 'LA GUERCHE-DE-BRETAGNE', url: 'http://ficheinfoterre.brgm.fr/Notices/0354N.pdf' },
     { sheet: '0355', name: 'COSSE-LE-VIVIEN', url: 'http://ficheinfoterre.brgm.fr/Notices/0355N.pdf' },
