@@ -1,6 +1,6 @@
 import type maplibregl from 'maplibre-gl'
 export type FeatureLike = { properties: Record<string, unknown> }
-import { classifyNotation, extractLithology, extractFossils, inferFossils } from '../utils/geology-data.ts'
+import { classifyNotation, extractLithology, extractFossils, inferFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS } from '../utils/geology-data.ts'
 import type { FossilGroups } from '../utils/geology-data.ts'
 import { getMineralInfo, getMineralBarColor, getRockInfo } from '../utils/mineral-data.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
@@ -12,9 +12,16 @@ function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
-function renderTags(items: string[], className: string): string {
+function renderTags(items: string[], className: string, wikiSlugs?: Record<string, string>): string {
   if (items.length === 0) return ''
-  return items.map(t => `<span class="popup-tag ${className}">${escapeHtml(t)}</span>`).join('')
+  return items.map(t => {
+    const slug = wikiSlugs?.[t]
+    if (slug) {
+      const url = `https://fr.wikipedia.org/wiki/${encodeURIComponent(slug)}`
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="popup-tag ${className}">${escapeHtml(t)}</a>`
+    }
+    return `<span class="popup-tag ${className}">${escapeHtml(t)}</span>`
+  }).join('')
 }
 
 function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): string {
@@ -109,7 +116,13 @@ function renderDetailContent(feature: FeatureLike): string {
 
   const lithology = extractLithology(descr)
   const fossils: FossilGroups = extractFossils(descr)
-  const inferred = Object.keys(fossils).length === 0 ? inferFossils(notation, lithology) : []
+  const allInferred = inferFossils(notation, lithology)
+  const citedTerms = new Set<string>()
+  for (const [group, terms] of Object.entries(fossils)) {
+    citedTerms.add(group.toLowerCase())
+    for (const term of terms) citedTerms.add(term.toLowerCase())
+  }
+  const inferred = allInferred.filter(t => !citedTerms.has(t.toLowerCase()))
   const rockImage = findRockImage(lithology)
 
   const wikiUrl = geo.wikiSlug
@@ -125,14 +138,14 @@ function renderDetailContent(feature: FeatureLike): string {
       ${renderAgeSection(geo, notation, carte)}
       ${renderPetrographySection(lithology)}
       ${descr ? `<div class="detail-panel-section"><strong>Description BRGM</strong><p class="detail-panel-descr">${escapeHtml(descr)}</p></div>` : ''}
-      ${lithology.length > 0 ? `<div class="detail-panel-section"><strong>Lithologie</strong><div class="popup-tags">${renderTags(lithology, 'tag-litho')}</div></div>` : ''}
+      ${lithology.length > 0 ? `<div class="detail-panel-section"><strong>Lithologie</strong><div class="popup-tags">${renderTags(lithology, 'tag-litho', LITHO_WIKI_SLUGS)}</div></div>` : ''}
       ${Object.keys(fossils).length > 0 ? `
         <div class="detail-panel-section">
           <strong>Fossiles</strong>
           ${Object.entries(fossils).map(([group, terms]) => `
             <div class="fossil-group">
               <span class="fossil-group-label">${escapeHtml(group)}</span>
-              <div class="popup-tags">${renderTags(terms, 'tag-fossil')}</div>
+              <div class="popup-tags">${renderTags(terms, 'tag-fossil', FOSSIL_TERM_WIKI_SLUGS)}</div>
             </div>
           `).join('')}
         </div>
@@ -140,7 +153,7 @@ function renderDetailContent(feature: FeatureLike): string {
       ${inferred.length > 0 ? `
         <div class="detail-panel-section">
           <strong>Fossiles typiques</strong>
-          <div class="popup-tags">${renderTags(inferred, 'tag-fossil tag-inferred')}</div>
+          <div class="popup-tags">${renderTags(inferred, 'tag-fossil tag-inferred', FOSSIL_TERM_WIKI_SLUGS)}</div>
           <p class="fossil-inferred-note">Inférés de l'étage — non cités dans la description BRGM</p>
         </div>
       ` : ''}
