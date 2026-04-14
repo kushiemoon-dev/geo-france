@@ -255,6 +255,94 @@ const LITHOLOGY = [
   'tillite', 'trondhjemite', 'microgranite'
 ]
 
+export const LITHO_WIKI_SLUGS: Record<string, string> = {
+  'calcaire': 'Calcaire',
+  'craie': 'Craie_(roche)',
+  'marne': 'Marne_(géologie)',
+  'grès': 'Grès_(géologie)',
+  'gres': 'Grès_(géologie)',
+  'argile': 'Argile',
+  'schiste': 'Schiste',
+  'gneiss': 'Gneiss',
+  'granite': 'Granite',
+  'basalte': 'Basalte',
+  'sable': 'Sable',
+  'silex': 'Silex',
+  'conglomérat': 'Conglomérat_(géologie)',
+  'conglomerat': 'Conglomérat_(géologie)',
+  'dolomie': 'Dolomie',
+  'siltite': 'Siltite',
+  'argilite': 'Argilite',
+  'grauwacke': 'Grauwacke',
+  'loess': 'Lœss',
+  'limon': 'Limon_(sédiment)',
+  'tuf': 'Tuf_volcanique',
+  'travertin': 'Travertin',
+  'quartzite': 'Quartzite',
+  'pelite': 'Pélite',
+  'pélite': 'Pélite',
+  'meulière': 'Meulière',
+  'meuliere': 'Meulière',
+  'lumachelle': 'Lumachelle',
+  'oolite': 'Oolithe',
+  'tourbe': 'Tourbe',
+  'alluvion': 'Alluvion',
+  'granodiorite': 'Granodiorite',
+  'diorite': 'Diorite',
+  'micaschiste': 'Micaschiste',
+  'migmatite': 'Migmatite',
+  'radiolarite': 'Radiolarite',
+  'poudingue': 'Poudingue',
+  'rhyolite': 'Rhyolite',
+  'andésite': 'Andésite',
+  'andesite': 'Andésite',
+  'dacite': 'Dacite',
+  'phonolite': 'Phonolite',
+  'trachyte': 'Trachyte',
+  'serpentinite': 'Serpentinite',
+  'éclogite': 'Éclogite',
+  'eclogite': 'Éclogite',
+  'mylonite': 'Mylonite',
+  'brèche': 'Brèche_(géologie)',
+  'breche': 'Brèche_(géologie)',
+  'phyllade': 'Phyllade',
+  'ardoise': 'Ardoise',
+  'arkose': 'Arkose',
+  'tillite': 'Tillite',
+}
+
+const FOSSIL_WIKI_SLUGS: Record<string, string> = {
+  'ammonites': 'Ammonoidea',
+  'bélemnites': 'Bélemnite',
+  'échinodermes': 'Echinodermata',
+  'brachiopodes': 'Brachiopoda',
+  'bivalves': 'Bivalvia',
+  'gastéropodes': 'Gastropoda',
+  'rudistes': 'Rudiste',
+  'coraux': 'Corail',
+  'foraminifères': 'Foraminifère',
+  'trilobites': 'Trilobita',
+  'vertébrés': 'Vertébré',
+  'algues': 'Algue',
+  'microfossiles': 'Microfossile',
+  'annélides': 'Annelida',
+}
+
+function buildFossilTermWikiMap(): Record<string, string> {
+  const map: Record<string, string> = {}
+  for (const [group, terms] of Object.entries(FOSSIL_GROUPS)) {
+    const slug = FOSSIL_WIKI_SLUGS[group]
+    if (!slug) continue
+    map[group] = slug
+    for (const term of terms) {
+      map[term] = slug
+    }
+  }
+  return map
+}
+
+export const FOSSIL_TERM_WIKI_SLUGS: Record<string, string> = buildFossilTermWikiMap()
+
 function extractTerms(text: string, terms: readonly string[]): string[] {
   if (!text) return []
   const lower = text.toLowerCase()
