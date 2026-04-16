@@ -1,6 +1,6 @@
 import type maplibregl from 'maplibre-gl'
 export type FeatureLike = { properties: Record<string, unknown> }
-import { classifyNotation, extractLithology, extractFossils, inferFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS } from '../utils/geology-data.ts'
+import { classifyNotation, extractLithology, extractFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS } from '../utils/geology-data.ts'
 import type { FossilGroups } from '../utils/geology-data.ts'
 import { getMineralInfo, getMineralBarColor, getRockInfo } from '../utils/mineral-data.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
@@ -116,13 +116,6 @@ function renderDetailContent(feature: FeatureLike): string {
 
   const lithology = extractLithology(descr)
   const fossils: FossilGroups = extractFossils(descr)
-  const allInferred = inferFossils(notation, lithology)
-  const citedTerms = new Set<string>()
-  for (const [group, terms] of Object.entries(fossils)) {
-    citedTerms.add(group.toLowerCase())
-    for (const term of terms) citedTerms.add(term.toLowerCase())
-  }
-  const inferred = allInferred.filter(t => !citedTerms.has(t.toLowerCase()))
   const rockImage = findRockImage(lithology)
 
   const wikiUrl = geo.wikiSlug
@@ -148,13 +141,6 @@ function renderDetailContent(feature: FeatureLike): string {
               <div class="popup-tags">${renderTags(terms, 'tag-fossil', FOSSIL_TERM_WIKI_SLUGS)}</div>
             </div>
           `).join('')}
-        </div>
-      ` : ''}
-      ${inferred.length > 0 ? `
-        <div class="detail-panel-section">
-          <strong>Fossiles typiques</strong>
-          <div class="popup-tags">${renderTags(inferred, 'tag-fossil tag-inferred', FOSSIL_TERM_WIKI_SLUGS)}</div>
-          <p class="fossil-inferred-note">Inférés de l'étage — non cités dans la description BRGM</p>
         </div>
       ` : ''}
       <div class="detail-panel-links">
