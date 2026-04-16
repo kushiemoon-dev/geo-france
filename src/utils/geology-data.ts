@@ -375,27 +375,6 @@ export function extractFossils(descr: string): FossilGroups {
   return out
 }
 
-const MARINE_LITHOS = ['calcaire', 'craie', 'marne', 'dolomie', 'lumachelle', 'falun']
-
-export function inferFossils(notation: string, lithology: string[]): string[] {
-  if (!lithology.some(l => MARINE_LITHOS.includes(l))) return []
-  const geo = classifyNotation(notation)
-  if (geo.ageStartMa == null || geo.ageEndMa == null) return []
-  const mid = (geo.ageStartMa + geo.ageEndMa) / 2
-  if (mid >= 66 && mid <= 100.5) // Crétacé supérieur
-    return ['ammonites', 'rudistes', 'inocérames', 'foraminifères', 'oursins']
-  if (mid > 100.5 && mid <= 145) // Crétacé inférieur
-    return ['ammonites', 'rudistes', 'bivalves', 'foraminifères']
-  if (mid > 145 && mid <= 163.5) // Jurassique supérieur
-    return ['ammonites', 'bélemnites', 'coraux', 'oursins', 'bivalves']
-  if (mid > 163.5 && mid <= 201.4) // Jurassique moyen et inférieur
-    return ['ammonites', 'bélemnites', 'brachiopodes', 'oursins', 'bivalves']
-  if (mid > 201.4 && mid <= 251.9) // Trias
-    return ['bivalves', 'ammonites', 'coraux']
-  if (mid > 251.9 && mid <= 419.2) // Dévonien + Carbonifère
-    return ['coraux', 'brachiopodes', 'trilobites']
-  return []
-}
 
 export function extractLithology(descr: string): string[] {
   return extractTerms(descr, LITHOLOGY)
