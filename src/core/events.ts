@@ -28,7 +28,7 @@ function createEventBus() {
       ...args: EventMap[K] extends void ? [event: K] : [event: K, data: EventMap[K]]
     ) {
       const [event, data] = args
-      listeners.get(event)?.forEach((fn) => (fn as Function)(data))
+      listeners.get(event)?.forEach((fn) => (fn as (...a: unknown[]) => void)(data))
     },
   }
 }

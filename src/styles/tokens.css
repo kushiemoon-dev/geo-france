@@ -1,4 +1,5 @@
 :root {
+  /* Dark theme (default) */
   --geo-bg-primary: #1c1714;
   --geo-bg-panel: #231d17;
   --geo-bg-elevated: #2a2118;
@@ -26,4 +27,37 @@
   --geo-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
 
   --geo-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Light theme — paper map aesthetic */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --geo-bg-primary: #f0e8dc;
+    --geo-bg-panel: #faf6f0;
+    --geo-bg-elevated: #ffffff;
+    --geo-border: #c8b89a;
+    --geo-text-primary: #2a1f14;
+    --geo-text-secondary: #5c4a35;
+    --geo-text-muted: #8b7355;
+    --geo-accent: #b45309;
+    --geo-accent-strong: #92400e;
+    --geo-danger: #dc2626;
+    --geo-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    --geo-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.18);
+  }
+}
+
+[data-theme='light'] {
+  --geo-bg-primary: #f0e8dc;
+  --geo-bg-panel: #faf6f0;
+  --geo-bg-elevated: #ffffff;
+  --geo-border: #c8b89a;
+  --geo-text-primary: #2a1f14;
+  --geo-text-secondary: #5c4a35;
+  --geo-text-muted: #8b7355;
+  --geo-accent: #b45309;
+  --geo-accent-strong: #92400e;
+  --geo-danger: #dc2626;
+  --geo-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --geo-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.18);
 }

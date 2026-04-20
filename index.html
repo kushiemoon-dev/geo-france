@@ -8,20 +8,23 @@
     <link rel="canonical" href="https://geo-france.kushie.dev" />
     <meta name="theme-color" content="#1c1714" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://geo-france.kushie.dev" />
     <meta property="og:title" content="Carte Géologique de France" />
     <meta property="og:description" content="Carte géologique interactive de France : explorez les formations géologiques, pendages et notices BRGM des 13 régions métropolitaines." />
-    <meta property="og:image" content="https://geo-france.kushie.dev/og-image.svg" />
+    <meta property="og:image" content="https://geo-france.kushie.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="fr_FR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Carte Géologique de France" />
     <meta name="twitter:description" content="Carte géologique interactive de France : explorez les formations géologiques, pendages et notices BRGM des 13 régions métropolitaines." />
-    <meta name="twitter:image" content="https://geo-france.kushie.dev/og-image.svg" />
+    <meta name="twitter:image" content="https://geo-france.kushie.dev/og-image.png" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -47,7 +50,8 @@
     </script>
   </head>
   <body>
-    <div id="map"></div>
+    <a href="#map" class="skip-link">Aller au contenu</a>
+    <main id="map" role="main" aria-label="Carte géologique interactive de France"></main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
