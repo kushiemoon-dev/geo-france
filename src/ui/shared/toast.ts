@@ -11,6 +11,9 @@ function getContainer(): HTMLElement {
   if (!container) {
     container = document.createElement('div')
     container.className = 'geo-toast-container'
+    container.setAttribute('aria-live', 'polite')
+    container.setAttribute('aria-atomic', 'false')
+    container.setAttribute('role', 'status')
     document.body.appendChild(container)
   }
   return container
@@ -28,19 +31,29 @@ export function showToast(
     el.removeChild(el.children[0])
   }
 
+  if (type === 'error') {
+    el.setAttribute('role', 'alert')
+    el.setAttribute('aria-live', 'assertive')
+  } else {
+    el.setAttribute('role', 'status')
+    el.setAttribute('aria-live', 'polite')
+  }
+
   const toast = document.createElement('div')
   toast.className = `geo-toast geo-toast-${type}`
+  toast.setAttribute('tabindex', '0')
   toast.innerHTML =
-    `<span class="geo-toast-icon">${ICONS[type]}</span>` +
+    `<span class="geo-toast-icon" aria-hidden="true">${ICONS[type]}</span>` +
     `<span class="geo-toast-message">${message}</span>`
 
   el.appendChild(toast)
 
   const timer = setTimeout(() => dismiss(toast), duration)
 
-  toast.addEventListener('click', () => {
-    clearTimeout(timer)
-    dismiss(toast)
+  const dismissHandler = () => { clearTimeout(timer); dismiss(toast) }
+  toast.addEventListener('click', dismissHandler)
+  toast.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dismissHandler() }
   })
 }
 

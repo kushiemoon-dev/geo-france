@@ -2,8 +2,14 @@ node_modules/
 dist/
 data-work/
 public/data/*.pmtiles
+data.zip
 *.log
 task_plan.md
 progress.md
 findings.md
+.superpowers/
+.env
+.env.local
+.env.*.local
+.playwright-mcp/
 .superpowers/

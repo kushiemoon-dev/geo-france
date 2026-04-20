@@ -5,11 +5,101 @@
     "license": "CC BY-SA 2.5",
     "url": "https://commons.wikimedia.org/wiki/File%3ALaterite%20formation%20on%20basaltic%20tuff%2C%20Madagascar.%20C%20005.jpg"
   },
+  "andesite": {
+    "title": "File:Andesite outcrop of the Matsue Formation II.jpg",
+    "author": "Gkiseki",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AAndesite%20outcrop%20of%20the%20Matsue%20Formation%20II.jpg"
+  },
+  "ardoise": {
+    "title": "File:Slate Macro 1.JPG",
+    "author": "“Jon Zander (Digon3)”",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ASlate%20Macro%201.JPG"
+  },
   "argile": {
-    "title": "File:Clay grindstone, Umaria district, Madhya Pradesh, India.jpg",
-    "author": "Yann (talk)",
+    "title": "File:Clay-ss-2005.jpg",
+    "author": "Siim Sepp",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Clay-ss-2005.jpg"
+  },
+  "argilite": {
+    "title": "File:Argillite.JPG",
+    "author": "Gbuchana (talk) (Uploads)",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File%3AArgillite.JPG"
+  },
+  "arkose": {
+    "title": "File:Granite and arkose (GeoDIL number - 2).jpg",
+    "author": "Dexter Perkins",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AGranite%20and%20arkose%20(GeoDIL%20number%20-%202).jpg"
+  },
+  "basalte": {
+    "title": "File:Basalt paving Assomada.jpg",
+    "author": "Cayambe",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ABasalt%20paving%20Assomada.jpg"
+  },
+  "breche": {
+    "title": "File:Lunar sample 79135 photo S73-15443.jpg",
+    "author": "NASA (Lunar Receiving Laboratory)",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File%3ALunar%20sample%2079135%20photo%20S73-15443.jpg"
+  },
+  "calcaire": {
+    "title": "File:Limestone Formation In Waitomo.jpg",
+    "author": "Ingolfson",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File%3ALimestone%20Formation%20In%20Waitomo.jpg"
+  },
+  "cinerite": {
+    "title": "File:Rhyolite tuff of Smith Rock.jpg",
+    "author": "Jstuby",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ARhyolite%20tuff%20of%20Smith%20Rock.jpg"
+  },
+  "conglomerat": {
+    "title": "File:Conglomérat.jpg",
+    "author": "AS",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AConglom%C3%A9rat.jpg"
+  },
+  "corneenne": {
+    "title": "File:Stromeyerite, baryte, calcite and chert 02.jpg",
+    "author": "Kritzolina",
     "license": "CC BY-SA 4.0",
-    "url": "https://commons.wikimedia.org/wiki/File%3AClay%20grindstone%2C%20Umaria%20district%2C%20Madhya%20Pradesh%2C%20India.jpg"
+    "url": "https://commons.wikimedia.org/wiki/File%3AStromeyerite%2C%20baryte%2C%20calcite%20and%20chert%2002.jpg"
+  },
+  "craie": {
+    "title": "File:Chalk Face, Betchworth Quarry, Box Hill, Surrey.jpg",
+    "author": "Colin Smith",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AChalk_Face%2C_Betchworth_Quarry%2C_Box_Hill%2C_Surrey.jpg"
+  },
+  "dacite": {
+    "title": "File:Black porphyritic dacite (upper Holocene, 14 May 1915; Devastated Area, Lassen Volcano National Park, California, USA) 24 (37575924341).jpg",
+    "author": "James St. John",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ABlack%20porphyritic%20dacite%20(upper%20Holocene%2C%2014%20May%201915%3B%20Devastated%20Area%2C%20Lassen%20Volcano%20National%20Park%2C%20California%2C%20USA)%2024%20(37575924341).jpg"
+  },
+  "diorite": {
+    "title": "File:Diorite orbicolare.jpg",
+    "author": "Daniele.51",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ADiorite%20orbicolare.jpg"
+  },
+  "dolomie": {
+    "title": "File:Dolostone breccia (Mackinac Breccia, Devonian; Interstate-75 exit near St. Ignace, Upper Peninsula of Michigan, USA) 2 (40975889854).jpg",
+    "author": "James St. John",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Dolostone_breccia_(Mackinac_Breccia,_Devonian;_Interstate-75_exit_near_St._Ignace,_Upper_Peninsula_of_Michigan,_USA)_2_(40975889854).jpg"
+  },
+  "eclogite": {
+    "title": "File:Eclogite Norway.jpg",
+    "author": "No machine-readable author provided. Woudloper assumed (based on copyright claims).",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File%3AEclogite%20Norway.jpg"
   },
   "gaize": {
     "title": "File:Opoka rock Saratov 1.jpg",
@@ -17,11 +107,113 @@
     "license": "CC BY-SA 3.0",
     "url": "https://commons.wikimedia.org/wiki/File%3AOpoka%20rock%20Saratov%201.jpg"
   },
+  "gneiss": {
+    "title": "File:Metapelitic gneiss (GeoDIL number - 518).jpg",
+    "author": "Dexter Perkins",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AMetapelitic%20gneiss%20(GeoDIL%20number%20-%20518).jpg"
+  },
+  "granite": {
+    "title": "File:Granite.jpg",
+    "author": "Wikimedia Commons",
+    "license": "CC BY-SA 2.0 br",
+    "url": "https://commons.wikimedia.org/wiki/File%3AGranite.jpg"
+  },
+  "granodiorite": {
+    "title": "File:Granodiorite (Giant Forest Granodiorite, mid-Cretaceous, 97-102 Ma; Moro Rock, Sequoia National Park, California, USA) 2 (16799561295).jpg",
+    "author": "James St. John",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AGranodiorite%20(Giant%20Forest%20Granodiorite%2C%20mid-Cretaceous%2C%2097-102%20Ma%3B%20Moro%20Rock%2C%20Sequoia%20National%20Park%2C%20California%2C%20USA)%202%20(16799561295).jpg"
+  },
+  "grauwacke": {
+    "title": "File:Grauwackefelsen Collmberg.jpg",
+    "author": "Cookroach",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AGrauwackefelsen%20Collmberg.jpg"
+  },
+  "gres": {
+    "title": "File:Fractured sandstone in the Nopah Range.jpg",
+    "author": "Thomas Farley",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AFractured%20sandstone%20in%20the%20Nopah%20Range.jpg"
+  },
+  "greze": {
+    "title": "File:Grèze.jpg",
+    "author": "Laurent06",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AGr%C3%A8ze.jpg"
+  },
+  "leucogranite": {
+    "title": "File:Leucogranite in Lewisianoid Rock - geograph.org.uk - 3106733.jpg",
+    "author": "Anne Burgess",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ALeucogranite%20in%20Lewisianoid%20Rock%20-%20geograph.org.uk%20-%203106733.jpg"
+  },
+  "limon": {
+    "title": "File:RockFlourPeytoLake.jpg",
+    "author": "Fairsing",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File%3ARockFlourPeytoLake.jpg"
+  },
+  "loess": {
+    "title": "File:Sandy coloured loess marking the locations of two dissolution pipes - geograph.org.uk - 6775539.jpg",
+    "author": "Andrew Diack",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ASandy%20coloured%20loess%20marking%20the%20locations%20of%20two%20dissolution%20pipes%20-%20geograph.org.uk%20-%206775539.jpg"
+  },
+  "lumachelle": {
+    "title": "File:Bivalve coquina limestone Odessa.jpg",
+    "author": "Lumasella",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ABivalve%20coquina%20limestone%20Odessa.jpg"
+  },
+  "micaschiste": {
+    "title": "File:Micaschiste dans le jardin alpin La Linnaea.jpg",
+    "author": "Arkelin",
+    "license": "CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AMicaschiste%20dans%20le%20jardin%20alpin%20La%20Linnaea.jpg"
+  },
+  "microgranite": {
+    "title": "File:Microgranite specimen - geograph.org.uk - 7612218.jpg",
+    "author": "Jonathan Wilkins",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AMicrogranite%20specimen%20-%20geograph.org.uk%20-%207612218.jpg"
+  },
+  "migmatite": {
+    "title": "File:Metamorphic rock Georgian Bay.jpg",
+    "author": "P199",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AMetamorphic%20rock%20Georgian%20Bay.jpg"
+  },
+  "mylonite": {
+    "title": "File:Garnet porphyroblast.JPG",
+    "author": "Wikimedia Commons",
+    "license": "CC BY-SA 1.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AGarnet%20porphyroblast.JPG"
+  },
+  "oolite": {
+    "title": "File:Group of oolites.jpg",
+    "author": "Ralvarezlara00",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AGroup%20of%20oolites.jpg"
+  },
+  "ophite": {
+    "title": "File:Ophitic basalt (Scales Creek Flow, Portage Lake Volcanic Series, upper Mesoproterozoic, ~1.095-1.096 Ga; Seventh Street roadcut, Houghton, Upper Peninsula of Michigan, USA) (8282036164).jpg",
+    "author": "James St. John",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AOphitic%20basalt%20(Scales%20Creek%20Flow%2C%20Portage%20Lake%20Volcanic%20Series%2C%20upper%20Mesoproterozoic%2C%20~1.095-1.096%20Ga%3B%20Seventh%20Street%20roadcut%2C%20Houghton%2C%20Upper%20Peninsula%20of%20Michigan%2C%20USA)%20(8282036164).jpg"
+  },
   "pelite": {
     "title": "File:Pelite, Schist and Psammite - geograph.org.uk - 4016795.jpg",
     "author": "Anne Burgess",
     "license": "CC BY-SA 2.0",
     "url": "https://commons.wikimedia.org/wiki/File%3APelite%2C%20Schist%20and%20Psammite%20-%20geograph.org.uk%20-%204016795.jpg"
+  },
+  "phonolite": {
+    "title": "File:Rock sample Phonolite Addi Amyuq.jpg",
+    "author": "Jan Nyssen",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ARock%20sample%20Phonolite%20Addi%20Amyuq.jpg"
   },
   "phtanite": {
     "title": "File:Rocher ste véronique.jpg",
@@ -29,11 +221,59 @@
     "license": "CC BY-SA 3.0",
     "url": "https://commons.wikimedia.org/wiki/File%3ARocher%20ste%20v%C3%A9ronique.jpg"
   },
+  "poudingue": {
+    "title": "File:Pudding Stone on roadside in Farringdon, Hampshire.jpg",
+    "author": "Hayumisoyprotein",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File%3APudding%20Stone%20on%20roadside%20in%20Farringdon%2C%20Hampshire.jpg"
+  },
+  "quartzite": {
+    "title": "File:Sioux-Quartzite1.jpg",
+    "author": "James St. John",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ASioux-Quartzite1.jpg"
+  },
+  "radiolarite": {
+    "title": "File:Glen Canyon Park Chert Outcrop.jpg",
+    "author": "Eric A. Schiff",
+    "license": "CC BY-SA 2.5",
+    "url": "https://commons.wikimedia.org/wiki/File%3AGlen%20Canyon%20Park%20Chert%20Outcrop.jpg"
+  },
+  "rhyolite": {
+    "title": "File:Rhyolite tuff of Smith Rock.jpg",
+    "author": "Jstuby",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ARhyolite%20tuff%20of%20Smith%20Rock.jpg"
+  },
   "sable": {
     "title": "File:Quartzose marine beach sand (Carrickalinga Head, Gulf St. Vincent, South Australia).jpg",
     "author": "James St. John",
     "license": "CC BY 2.0",
     "url": "https://commons.wikimedia.org/wiki/File%3AQuartzose%20marine%20beach%20sand%20(Carrickalinga%20Head%2C%20Gulf%20St.%20Vincent%2C%20South%20Australia).jpg"
+  },
+  "schiste": {
+    "title": "File:Schist Scotland ss 2007.JPG",
+    "author": "Siim Sepp",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ASchist%20Scotland%20ss%202007.JPG"
+  },
+  "serpentinite": {
+    "title": "File:Magnetitic serpentinite (Red Lodge Chromite District, Precambrian; Rock Creek Canyon, Beartooth Mountains, Montana, USA) 4.jpg",
+    "author": "James St. John",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AMagnetitic%20serpentinite%20(Red%20Lodge%20Chromite%20District%2C%20Precambrian%3B%20Rock%20Creek%20Canyon%2C%20Beartooth%20Mountains%2C%20Montana%2C%20USA)%204.jpg"
+  },
+  "silex": {
+    "title": "File:Flint (Vanport Flint, Middle Pennsylvanian; Nethers Flint Quarries, Flint Ridge, Ohio, USA) 269.jpg",
+    "author": "James St. John",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AFlint%20(Vanport%20Flint%2C%20Middle%20Pennsylvanian%3B%20Nethers%20Flint%20Quarries%2C%20Flint%20Ridge%2C%20Ohio%2C%20USA)%20269.jpg"
+  },
+  "siltite": {
+    "title": "File:Holtzclaw siltstone-Kentucky.jpg",
+    "author": "John Knouse aka. Jaknouse at English Wikipedia",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File%3AHoltzclaw%20siltstone-Kentucky.jpg"
   },
   "spilite": {
     "title": "File:Metamorphosed pillow basalt (Ely Greenstone, Neoarchean, ~2.722 Ga; Rt. 169 roadcut just east of Ely, Minnesota, USA) 1 (20905041163).jpg",
@@ -47,10 +287,40 @@
     "license": "CC BY-SA 3.0",
     "url": "https://commons.wikimedia.org/wiki/File%3ATangue%20of%20Islamabad.JPG"
   },
+  "tillite": {
+    "title": "File:Permian sandstone with tillite deposits, Werribee Gorge State Park, Victoria Australia (6221223423).jpg",
+    "author": "Rexness from Melbourne, Australia",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3APermian%20sandstone%20with%20tillite%20deposits%2C%20Werribee%20Gorge%20State%20Park%2C%20Victoria%20Australia%20(6221223423).jpg"
+  },
+  "tonalite": {
+    "title": "File:Grimstad e39 trolldalen IMG 3861 geology tonalite-trondhjemite and gneiss and granite.JPG",
+    "author": "Bjoertvedt",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AGrimstad%20e39%20trolldalen%20IMG%203861%20geology%20tonalite-trondhjemite%20and%20gneiss%20and%20granite.JPG"
+  },
+  "trachyte": {
+    "title": "File:Fan Rock Trachyte Columns Rosslyn Queensland.jpg",
+    "author": "Michael Zimmer  (zayzayem on Flickr)  https://www.flickr.com/people/zayzayem/",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3AFan%20Rock%20Trachyte%20Columns%20Rosslyn%20Queensland.jpg"
+  },
+  "travertin": {
+    "title": "File:Lingenau-limestone tuff-04ASD.jpg",
+    "author": "Asurnipal",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ALingenau-limestone%20tuff-04ASD.jpg"
+  },
   "trondhjemite": {
     "title": "File:Grimstad e39 trolldalen IMG 3861 geology tonalite-trondhjemite and gneiss and granite.JPG",
     "author": "Bjoertvedt",
     "license": "CC BY-SA 3.0",
     "url": "https://commons.wikimedia.org/wiki/File%3AGrimstad%20e39%20trolldalen%20IMG%203861%20geology%20tonalite-trondhjemite%20and%20gneiss%20and%20granite.JPG"
+  },
+  "tuf": {
+    "title": "File:Rhyolite tuff of Smith Rock.jpg",
+    "author": "Jstuby",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File%3ARhyolite%20tuff%20of%20Smith%20Rock.jpg"
   }
 }
