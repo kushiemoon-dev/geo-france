@@ -1,0 +1,14 @@
+{
+  "name": "Carte Géologique de France",
+  "short_name": "GéoFrance",
+  "description": "Carte géologique interactive de France : formations géologiques, pendages et notices BRGM des 13 régions métropolitaines.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1c1714",
+  "theme_color": "#1c1714",
+  "lang": "fr",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "categories": ["education", "science"]
+}
