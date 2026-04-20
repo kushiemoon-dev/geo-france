@@ -96,9 +96,10 @@ export function setupInfoPanel(map: maplibregl.Map): void {
     const objectId = feature.properties['OBJECTID'] || feature.properties['objectid'] || null
     highlightFormation(map, objectId)
 
-    // If DESCR is missing, enrich from WMS before opening
+    // If DESCR and LEGENDE are missing, enrich from WMS before opening
     const descr = String(feature.properties['DESCR'] || feature.properties['descr'] || '')
-    if (descr) {
+    const legende = String(feature.properties['LEGENDE'] || feature.properties['legende'] || '')
+    if (descr || legende) {
       openDetailPanel(feature)
       return
     }

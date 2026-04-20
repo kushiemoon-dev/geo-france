@@ -76,6 +76,15 @@ export interface RockMineral {
   readonly percent: string
 }
 
+export type ImageStatus = 'verified' | 'quarantined' | 'missing'
+
+export interface ImageSource {
+  readonly title: string
+  readonly author: string
+  readonly license: string
+  readonly url: string
+}
+
 export interface RockInfo {
   readonly type: string
   readonly origin: string
@@ -83,6 +92,8 @@ export interface RockInfo {
   readonly texture?: string
   readonly minerals: readonly RockMineral[]
   readonly image?: string
+  readonly imageStatus?: ImageStatus
+  readonly imageSource?: ImageSource
 }
 
 const ROCK_DB: Record<string, RockInfo> = {
@@ -224,7 +235,7 @@ const ROCK_DB: Record<string, RockInfo> = {
   alluvion: { type: 'meuble', origin: 'fluviatile', facies: 'Alluvions fluviatiles', texture: 'Variable, stratifiee', image: '/images/rocks/alluvion.jpg', minerals: [
     { name: 'quartz', percent: '55%' }, { name: 'feldspath', percent: '15%' }, { name: 'calcite', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
-  colluvion: { type: 'meuble', origin: 'gravitaire', facies: 'Colluvions de pente', texture: 'Heterogene', image: '/images/rocks/colluvion.jpg', minerals: [
+  colluvion: { type: 'meuble', origin: 'gravitaire', facies: 'Colluvions de pente', texture: 'Heterogene', image: '/images/rocks/colluvion.jpg', imageStatus: 'quarantined', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'argile', percent: '30%' }, { name: 'calcite', percent: '15%' }, { name: 'feldspath', percent: '15%' }
   ]},
   greze: { type: 'meuble', origin: 'periglaciaire', facies: 'Greze litee', texture: 'Stratifiee, anguleuse', image: '/images/rocks/greze.jpg', minerals: [
@@ -274,7 +285,7 @@ const ROCK_DB: Record<string, RockInfo> = {
   ardoise: { type: 'metamorphique', origin: 'regional', facies: 'Ardoise', texture: 'Schisteuse fine, fissile', image: '/images/rocks/ardoise.jpg', minerals: [
     { name: 'mica', percent: '40%' }, { name: 'quartz', percent: '30%' }, { name: 'chlorite', percent: '20%' }, { name: 'feldspath', percent: '10%' }
   ]},
-  ampelite: { type: 'metamorphique', origin: 'regional', facies: 'Ampelite (schiste noir)', texture: 'Schisteuse, noire', image: '/images/rocks/ampelite.jpg', minerals: [
+  ampelite: { type: 'metamorphique', origin: 'regional', facies: 'Ampelite (schiste noir)', texture: 'Schisteuse, noire', image: '/images/rocks/ampelite.jpg', imageStatus: 'quarantined', minerals: [
     { name: 'quartz', percent: '30%' }, { name: 'mica', percent: '25%' }, { name: 'chlorite', percent: '20%' }, { name: 'pyrite', percent: '10%' }, { name: 'lignite', percent: '15%' }
   ]},
   phtanite: { type: 'metamorphique', origin: 'regional', facies: 'Phtanite (lydiite)', texture: 'Cryptocristalline, compacte', image: '/images/rocks/phtanite.jpg', minerals: [
@@ -336,8 +347,17 @@ export function getMineralBarColor(name: string): string {
   return MINERAL_BAR_COLORS[canonical] ?? '#888'
 }
 
+import imageMetadata from '../../public/images/rocks/metadata.json'
+
+export function hasUsableImage(info: RockInfo | undefined): boolean {
+  return !!info?.image && info.imageStatus !== 'quarantined'
+}
+
 export function getRockInfo(name: string): RockInfo | undefined {
   const key = name.toLowerCase()
   const canonical = ROCK_ACCENT_ALIASES[key] ?? key
-  return ROCK_DB[canonical]
+  const base = ROCK_DB[canonical]
+  if (!base) return undefined
+  const source = (imageMetadata as Record<string, ImageSource>)[canonical]
+  return source ? { ...base, imageSource: source } : base
 }

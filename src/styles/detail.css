@@ -323,6 +323,12 @@ a.popup-tag:hover {
   color: #64b5f6;
 }
 
+.tag-enriched {
+  border: 1px dashed rgba(100, 181, 246, 0.6);
+  background: rgba(21, 101, 192, 0.1);
+}
+
+
 .fossil-group {
   margin-bottom: 6px;
 }
