@@ -62,8 +62,8 @@
   }
 
   .mobile-fabs .geo-btn-icon {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     font-size: 16px;
     background: var(--geo-bg-panel);
     border: 1px solid var(--geo-border);

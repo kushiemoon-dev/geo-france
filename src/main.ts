@@ -1,6 +1,12 @@
 import 'maplibre-gl/dist/maplibre-gl.css'
 import './styles/index.css'
+import { initTheme } from './ui/theme.ts'
+import { initSentry, initPlausible } from './telemetry.ts'
 import { createMap } from './map/setup.ts'
+
+initSentry()
+initPlausible()
+initTheme()
 import { loadInitialRegion } from './map/region-manager.ts'
 import { DEFAULT_REGION } from './config/regions.ts'
 import { setupInfoPanel } from './controls/info-panel.ts'

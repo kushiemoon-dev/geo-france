@@ -10,7 +10,7 @@ interface LayerGroup {
 }
 
 const LAYER_GROUPS: LayerGroup[] = [
-  { id: 'formations', label: 'Formations geologiques', layerIds: ['geology-fill', 'geology-highlight'], visible: true },
+  { id: 'formations', label: 'Formations géologiques', layerIds: ['geology-fill', 'geology-highlight'], visible: true },
   { id: 'contours', label: 'Contours formations', layerIds: ['geology-outline'], visible: true },
   { id: 'faults', label: 'Failles & contacts', layerIds: ['faults'], visible: true },
   { id: 'dips', label: 'Pendages', layerIds: ['dip-points', 'dip-labels'], visible: true },

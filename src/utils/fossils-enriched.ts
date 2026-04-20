@@ -12,7 +12,8 @@ const data = enrichedData as EnrichedJson
 const MAX_TERMS = 12
 
 export function getEnrichedFossils(carte: string): FossilGroups {
-  const entry = carte ? (data.by_carte[carte] ?? null) : null
+  const key = carte ? carte.padStart(4, '0') : ''
+  const entry = key ? (data.by_carte[key] ?? null) : null
   if (!entry) return {}
   const out: FossilGroups = {}
   for (const [group, terms] of Object.entries(entry.groups)) {

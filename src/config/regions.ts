@@ -10,6 +10,13 @@ export interface RegionConfig {
 
 export const REGIONS: readonly RegionConfig[] = [
   {
+    id: 'france',
+    name: 'France entière',
+    bounds: [[-5.5, 41.0], [10.0, 51.5]] as LngLatBoundsLike,
+    center: [2.2, 46.6] as LngLatLike,
+    zoom: 6
+  },
+  {
     id: 'auvergne-rhone-alpes',
     name: 'Auvergne-Rhone-Alpes',
     bounds: [[2.0, 44.0], [7.2, 46.8]],
