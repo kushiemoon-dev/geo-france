@@ -176,37 +176,46 @@ const MINERALS = [
 
 const FOSSIL_GROUPS: Record<string, readonly string[]> = {
   ammonites: [
-    'ammonites', 'goniatites', 'hildoceras', 'harpoceras', 'lytoceras',
+    'ammonites', 'ammonite', 'ammonitique',
+    'goniatites', 'hildoceras', 'harpoceras', 'lytoceras',
     'arnioceras', 'baculites', 'scaphites', 'orthocères', 'orthoceres',
     'cardioceras', 'nautiles', 'céphalopodes', 'cephalopodes',
   ],
-  bélemnites: ['bélemnites', 'belemnites'],
+  bélemnites: ['bélemnites', 'bélemnite', 'belemnites', 'belemnite'],
   échinodermes: [
     'échinodermes', 'echinodermes', 'oursins', 'oursin', 'crinoïdes', 'crinoides', 'encrines',
   ],
+  échinides: [
+    'échinides', 'echinides', 'échinide', 'echinide',
+  ],
   brachiopodes: [
-    'brachiopodes', 'térébratules', 'terebratules', 'térébratule', 'terebratule',
+    'brachiopodes', 'brachiopode',
+    'térébratules', 'terebratules', 'térébratule', 'terebratule',
     'rhynchonelles', 'rhynchonelle', 'rhynchonella', 'orthis', 'spirifer', 'athyris',
   ],
   bivalves: [
-    'bivalves', 'lamellibranches', 'pélécypodes', 'pelecypodes',
-    'huîtres', 'huitres', 'gryphées', 'gryphees', 'gryphée', 'gryphee',
+    'bivalves', 'bivalve', 'lamellibranches', 'pélécypodes', 'pelecypodes',
+    'huîtres', 'huître', 'huitres', 'huitre',
+    'gryphées', 'gryphees', 'gryphée', 'gryphee',
     'gryphaea', 'exogyra', 'exogyres', 'ostrea',
     'pecten', 'pectinidés', 'pectinides', 'plicatules',
-    'trigonies', 'trigonia', 'inocérames', 'inocerames',
+    'trigonies', 'trigonia', 'inocérames', 'inocerames', 'inoceramus',
   ],
   gastéropodes: [
     'gastéropodes', 'gasteropodes', 'gastropodes',
     'cérithes', 'cerithes', 'cérithe', 'cerithe', 'turritelles', 'turritella',
     'natica', 'natices',
   ],
-  rudistes: ['rudistes', 'hippurites', 'toucasia', 'caprines', 'radiolites'],
+  rudistes: ['rudistes', 'rudiste', 'hippurites', 'toucasia', 'caprines', 'radiolites'],
   coraux: [
-    'coraux', 'polypiers', 'stromatopores', 'stromatoporidés', 'stromatoporides',
+    'coraux', 'corail', 'coralien', 'corallien', 'récifal', 'recifal',
+    'polypiers', 'stromatopores', 'stromatoporidés', 'stromatoporides',
     'rugosa', 'récif', 'recif',
   ],
   foraminifères: [
-    'foraminifères', 'foraminiferes', 'nummulites', 'orbitolines',
+    'foraminifères', 'foraminifere', 'foraminiferes',
+    'nummulites', 'nummulite', 'nummulitique',
+    'orbitolines', 'orbitoline',
     'milioles', 'miliole', 'miliolidés', 'miliolides',
     'alvéolines', 'alveolines', 'alvéoline', 'alveoline',
     'lituolidés', 'lituolides',
@@ -214,19 +223,24 @@ const FOSSIL_GROUPS: Record<string, readonly string[]> = {
     'discocyclines', 'discocycline', 'assilines', 'assiline', 'operculines',
     'globigérines', 'globigerines', 'globotruncana', 'rotalipora', 'calpionelles',
   ],
-  trilobites: ['trilobites', 'paradoxides'],
+  trilobites: ['trilobites', 'trilobite', 'paradoxides'],
   vertébrés: [
-    'poissons', 'reptiles', 'dinosaures', 'mammifères', 'mammiferes',
-    'vertébrés', 'vertebres',
+    'poissons', 'poisson', 'reptiles', 'reptile',
+    'dinosaures', 'dinosaure',
+    'mammifères', 'mammifere', 'mammiferes',
+    'vertébrés', 'vertebre', 'vertebres',
   ],
   algues: [
     'algues', 'stromatolithes', 'characées', 'characees',
     'dasycladacées', 'dasycladacees', 'lithothamnium', 'microcodium',
   ],
+  bryozoaires: [
+    'bryozoaires', 'bryozoaire',
+  ],
   microfossiles: [
     'radiolaires', 'ostracodes', 'conodontes', 'graptolites',
     'chitinozoaires', 'acritarches', 'dinoflagellés', 'dinoflagelles',
-    'spores', 'pollen', 'tentaculites', 'bryozoaires',
+    'spores', 'pollen', 'tentaculites',
   ],
   annélides: ['annélides', 'annelides', 'serpules', 'terriers'],
   autres: [
@@ -355,15 +369,16 @@ function extractTerms(text: string, terms: readonly string[]): string[] {
   return found
 }
 
-export function extractMinerals(descr: string): string[] {
-  return extractTerms(descr, MINERALS)
+export function extractMinerals(...sources: string[]): string[] {
+  return extractTerms(sources.filter(Boolean).join(' '), MINERALS)
 }
 
 export type FossilGroups = Record<string, string[]>
 
-export function extractFossils(descr: string): FossilGroups {
-  if (!descr) return {}
-  const lower = descr.toLowerCase()
+export function extractFossils(...sources: string[]): FossilGroups {
+  const text = sources.filter(Boolean).join(' ')
+  if (!text) return {}
+  const lower = text.toLowerCase()
   const out: FossilGroups = {}
   for (const [group, terms] of Object.entries(FOSSIL_GROUPS)) {
     const found: string[] = []
@@ -376,6 +391,6 @@ export function extractFossils(descr: string): FossilGroups {
 }
 
 
-export function extractLithology(descr: string): string[] {
-  return extractTerms(descr, LITHOLOGY)
+export function extractLithology(...sources: string[]): string[] {
+  return extractTerms(sources.filter(Boolean).join(' '), LITHOLOGY)
 }
