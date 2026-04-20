@@ -235,7 +235,7 @@ const ROCK_DB: Record<string, RockInfo> = {
   alluvion: { type: 'meuble', origin: 'fluviatile', facies: 'Alluvions fluviatiles', texture: 'Variable, stratifiee', image: '/images/rocks/alluvion.jpg', minerals: [
     { name: 'quartz', percent: '55%' }, { name: 'feldspath', percent: '15%' }, { name: 'calcite', percent: '15%' }, { name: 'argile', percent: '15%' }
   ]},
-  colluvion: { type: 'meuble', origin: 'gravitaire', facies: 'Colluvions de pente', texture: 'Heterogene', image: '/images/rocks/colluvion.jpg', imageStatus: 'quarantined', minerals: [
+  colluvion: { type: 'meuble', origin: 'gravitaire', facies: 'Colluvions de pente', texture: 'Heterogene', minerals: [
     { name: 'quartz', percent: '40%' }, { name: 'argile', percent: '30%' }, { name: 'calcite', percent: '15%' }, { name: 'feldspath', percent: '15%' }
   ]},
   greze: { type: 'meuble', origin: 'periglaciaire', facies: 'Greze litee', texture: 'Stratifiee, anguleuse', image: '/images/rocks/greze.jpg', minerals: [
@@ -285,7 +285,7 @@ const ROCK_DB: Record<string, RockInfo> = {
   ardoise: { type: 'metamorphique', origin: 'regional', facies: 'Ardoise', texture: 'Schisteuse fine, fissile', image: '/images/rocks/ardoise.jpg', minerals: [
     { name: 'mica', percent: '40%' }, { name: 'quartz', percent: '30%' }, { name: 'chlorite', percent: '20%' }, { name: 'feldspath', percent: '10%' }
   ]},
-  ampelite: { type: 'metamorphique', origin: 'regional', facies: 'Ampelite (schiste noir)', texture: 'Schisteuse, noire', image: '/images/rocks/ampelite.jpg', imageStatus: 'quarantined', minerals: [
+  ampelite: { type: 'metamorphique', origin: 'regional', facies: 'Ampelite (schiste noir)', texture: 'Schisteuse, noire', minerals: [
     { name: 'quartz', percent: '30%' }, { name: 'mica', percent: '25%' }, { name: 'chlorite', percent: '20%' }, { name: 'pyrite', percent: '10%' }, { name: 'lignite', percent: '15%' }
   ]},
   phtanite: { type: 'metamorphique', origin: 'regional', facies: 'Phtanite (lydiite)', texture: 'Cryptocristalline, compacte', image: '/images/rocks/phtanite.jpg', minerals: [
