@@ -24,6 +24,26 @@
   outline: none;
 }
 
+/* ===== Skip link ===== */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 8px;
+  z-index: 9999;
+  padding: 8px 16px;
+  background: var(--geo-bg-panel);
+  color: var(--geo-text-primary);
+  border: 2px solid var(--geo-accent);
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 8px;
+}
+
 /* ===== ARIA et accessibilite ===== */
 
 .sr-only {

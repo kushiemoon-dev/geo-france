@@ -33,7 +33,7 @@ const dryRun     = args.includes('--dry-run')
 
 // ── Queries qualifiées FR→EN ──────────────────────────────────────────────────
 const QUERY_MAP = {
-  argile:       'clay mudstone hand specimen rock sample',
+  argile:       'claystone mudstone argillaceous rock outcrop geological hand specimen',
   sable:        'quartz sand grains geological sample',
   gaize:        'greensand siliceous rock glauconitic',
   spilite:      'pillow lava basalt greenstone rock outcrop',
@@ -44,10 +44,23 @@ const QUERY_MAP = {
   phtanite:     'chert lydite rock specimen',
   pelite:       'argillite mudrock sedimentary rock sample',
   trondhjemite: 'leucocratic plutonic rock hand specimen',
+  dolomie:      'dolostone dolomite carbonate rock hand specimen outcrop geology',
+  craie:        'chalk white cretaceous limestone rock outcrop cliff geology specimen',
+  gres:         'sandstone hand specimen rock geology sample',
+  grauwacke:    'greywacke wacke turbidite rock hand specimen geology',
+  schiste:      'phyllite schist metamorphic rock hand specimen outcrop',
+  loess:        'loess aeolian deposit windblown silt sediment outcrop geological',
+  limon:        'silt alluvial deposit floodplain sediment',
+  alluvion:     'alluvial gravel sediment fluvial deposit riverbed',
+  tourbe:       'peat bog peatland sediment geological formation',
+  meuliere:     'meulière siliceous rock millstone geology specimen',
+  marne:        'marl grey limestone clay sedimentary outcrop cliff geological hand specimen',
+  falun:        'coquina bioclastic shell sand deposit Loire sedimentary rock geology',
+  greze:        'grèze litée periglacial stratified scree sediment geology',
 }
 const DEFAULT_SUFFIX = 'rock hand specimen geology'
 
-const BLACKLIST   = /\b(map|sketch|pdf|diagram|landscape|sculpture|pottery|ceramic|plate|painting|chart|schema|drawing|stamp|coin|flag|bone|skull|museum|display|cabinet|journal|quarterly|proceedings|review|bulletin|notice|annual)\b|fossils?/i
+const BLACKLIST   = /\b(map|sketch|pdf|diagram|landscape|sculpture|pottery|ceramic|plate|painting|chart|schema|drawing|stamp|coin|flag|bone|skull|museum|display|cabinet|journal|quarterly|proceedings|review|bulletin|notice|annual|grindstone|tableware|artifact|artefact|carving|brick|tile|statue|figurine|arch|arche|children|child|kids|people|person|boy|girl|playing|portrait|village|town|city|house|building|monument|tower|blackboard|classroom|school|crayon|colored|colour|color|writing|pastel|agamidae|lizard|reptile|amphibian|insect|butterfly|bird|mammal|plant|flower|tree|forest|fungi|mushroom|bacteria|soldier|infantry|military|division|emblem|regiment|army|gold|silver|copper|zinc|ore|mine|mining|miner)\b|fossils?/i
 const TITLE_BONUS = /\b(specimen|outcrop|hand.?sample|hand.?specimen|thin.?section|rock|stone|geological|geology|sample|exposure|fragment|block|core|sand|clay|shale|chert|basalt|granite|limestone|schist|gneiss|quartzite|sandstone|mudstone|mudrock|siltstone|sediment|mineral|petrograph|litholog)\b/i
 
 // ── Parse ROCK_DB depuis mineral-data.ts ──────────────────────────────────────
@@ -175,6 +188,7 @@ async function findBestImage(key) {
     }
   }
 
+  if (!best || best.score < 2) return null
   return best
 }
 
