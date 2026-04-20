@@ -59,15 +59,38 @@ export function loadRegion(map: maplibregl.Map, regionId: string): void {
   currentRegionId = regionId
   store.setState({ regionId })
 
+  const cleanup = () => {
+    map.off('sourcedata', onSourceData)
+    map.off('error', onSourceError)
+    clearTimeout(loadTimeout)
+  }
+
   const onSourceData = (e: maplibregl.MapSourceDataEvent) => {
     if (e.sourceId === 'geology' && e.isSourceLoaded) {
+      cleanup()
       hideMapLoading()
       store.setState({ loading: false })
       bus.emit('region:loaded', { regionId })
-      map.off('sourcedata', onSourceData)
     }
   }
+
+  const onSourceError = (e: { sourceId?: string; error?: { message?: string } }) => {
+    if (e.sourceId !== 'geology') return
+    cleanup()
+    hideMapLoading()
+    store.setState({ loading: false })
+    showToast(`Données indisponibles pour ${region.name}`, 'warning')
+  }
+
+  const loadTimeout = setTimeout(() => {
+    cleanup()
+    hideMapLoading()
+    store.setState({ loading: false })
+    showToast(`Chargement ${region.name} trop long — données peut-être absentes`, 'warning')
+  }, 15000)
+
   map.on('sourcedata', onSourceData)
+  map.on('error', onSourceError as Parameters<typeof map.on>[1])
 
   map.fitBounds(region.bounds, { padding: 40, duration: 1000 })
 }

@@ -1,12 +1,19 @@
 {
-  "name": "brgmremaster",
+  "name": "geo-france",
   "private": true,
-  "version": "0.2.2",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/validate-rock-images.mjs",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --max-warnings 0",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
     "data:fossils": "node scripts/fetch-fossil-enrichment.mjs",
     "data:fossils:force": "node scripts/fetch-fossil-enrichment.mjs --force",
     "data:rocks": "node scripts/fetch-rock-images.mjs",
@@ -14,13 +21,21 @@
     "data:rocks:audit": "node scripts/audit-rock-images.mjs"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.59.0",
+    "@typescript-eslint/parser": "^8.59.0",
+    "eslint": "^10.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.3",
     "typescript": "~5.9.3",
-    "vite": "^7.3.2"
+    "vite": "^7.3.2",
+    "vite-plugin-pwa": "^1.2.0",
+    "vitest": "^4.1.4"
   },
   "overrides": {
     "picomatch": ">=4.0.4"
   },
   "dependencies": {
+    "@sentry/browser": "^10.49.0",
     "maplibre-gl": "^5.19.0",
     "pmtiles": "^4.4.0"
   }

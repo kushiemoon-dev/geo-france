@@ -31,16 +31,16 @@ function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): s
 
   if (geo.ere) {
     const ereParts = [geo.ere, geo.periode].filter(Boolean)
-    rows.push(['Ere geologique', ereParts.join(' / ')])
+    rows.push(['Ère géologique', ereParts.join(' / ')])
   }
 
   const periodParts = [geo.systeme, geo.etage].filter(Boolean)
   if (periodParts.length > 0) {
-    rows.push(['Periode', periodParts.join(' – ')])
+    rows.push(['Période', periodParts.join(' – ')])
   }
 
   if (geo.ageStartMa != null && geo.ageEndMa != null) {
-    rows.push(['Age absolu', `${geo.ageStartMa} – ${geo.ageEndMa} Ma`])
+    rows.push(['Âge absolu', `${geo.ageStartMa} – ${geo.ageEndMa} Ma`])
   }
 
   const feuilleLabel = carte ? ` (feuille ${carte})` : ''
@@ -54,7 +54,7 @@ function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): s
     `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${escapeHtml(value)}</span></div>`
   ).join('')
 
-  return `<div class="detail-section-header">Age &amp; Stratigraphie</div>${rowsHtml}`
+  return `<div class="detail-section-header">Âge &amp; Stratigraphie</div>${rowsHtml}`
 }
 
 function renderPetrographySection(lithology: string[]): string {
@@ -97,7 +97,7 @@ function renderPetrographySection(lithology: string[]): string {
       `</div>${formulaLine}`
   }).join('')
 
-  return `<div class="detail-section-header">Petrographie</div>${rowsHtml}<div style="margin-top:10px">${barsHtml}</div>`
+  return `<div class="detail-section-header">Pétrographie</div>${rowsHtml}<div style="margin-top:10px">${barsHtml}</div>`
 }
 
 const LITHO_PRIORITY = [
@@ -120,10 +120,10 @@ function sortLithologyByPriority(lithology: string[]): string[] {
   return [...lithology].sort((a, b) => rank(a) - rank(b))
 }
 
-function findRockImage(lithology: string[]): string | undefined {
+function findRockImage(lithology: string[]): { image: string; name: string } | undefined {
   for (const litho of sortLithologyByPriority(lithology)) {
     const info = getRockInfo(litho)
-    if (hasUsableImage(info)) return info!.image
+    if (hasUsableImage(info)) return { image: info!.image!, name: litho }
   }
   return undefined
 }
@@ -141,7 +141,7 @@ function renderDetailContent(feature: FeatureLike): string {
   const extracted: FossilGroups = extractFossils(descr, legende)
   const enrichedRaw = getEnrichedFossils(carte)
   const { merged: fossils, enrichedSet } = mergeFossils(extracted, enrichedRaw)
-  const rockImage = findRockImage(lithology)
+  const rock = findRockImage(lithology)
 
   const wikiUrl = geo.wikiSlug
     ? `https://fr.wikipedia.org/wiki/${encodeURIComponent(geo.wikiSlug)}`
@@ -150,9 +150,9 @@ function renderDetailContent(feature: FeatureLike): string {
   return `
     <button class="detail-panel-close" aria-label="Fermer">&times;</button>
     <div class="detail-panel-content">
-      <div class="popup-age-bar" style="background-color: ${geo.color}"></div>
-      ${rockImage ? `<div class="detail-panel-hero"><img src="${rockImage}" alt="" loading="lazy" onerror="this.closest('.detail-panel-hero').remove()"></div>` : ''}
-      <h3 class="detail-panel-title">${escapeHtml(notation)}</h3>
+      <div class="popup-age-bar" style="background-color: ${escapeHtml(geo.color)}"></div>
+      ${rock ? `<div class="detail-panel-hero"><img src="${escapeHtml(rock.image)}" alt="Échantillon de ${escapeHtml(rock.name)}" loading="lazy" onerror="this.closest('.detail-panel-hero').remove()"></div>` : ''}
+      <h3 class="detail-panel-title" id="detail-panel-title">${escapeHtml(notation)}</h3>
       ${renderAgeSection(geo, notation, carte)}
       ${renderPetrographySection(lithology)}
       ${descr ? `<div class="detail-panel-section"><strong>Description BRGM</strong><p class="detail-panel-descr">${escapeHtml(descr)}</p></div>` : ''}
@@ -174,39 +174,71 @@ function renderDetailContent(feature: FeatureLike): string {
         ${wikiUrl ? `<a href="${wikiUrl}" target="_blank" rel="noopener noreferrer">Wikipedia FR</a>` : ''}
         <a href="https://infoterre.brgm.fr/viewer/MainTileForward.do" target="_blank" rel="noopener noreferrer">InfoTerre (BRGM)</a>
       </div>
-      <p class="popup-source">Source: BD Charm-50 / BRGM</p>
+      <p class="popup-source">Source : BD Charm-50 © BRGM — <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" target="_blank" rel="noopener noreferrer">Licence Ouverte Etalab 2.0</a></p>
     </div>
   `
 }
 
 let panelEl: HTMLElement | null = null
 let closeCallback: (() => void) | null = null
+let triggerEl: HTMLElement | null = null
+let removeTrapFocus: (() => void) | null = null
+
+const FOCUSABLE = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+
+function trapFocus(panel: HTMLElement): () => void {
+  const handler = (e: KeyboardEvent) => {
+    if (e.key !== 'Tab') return
+    const els = [...panel.querySelectorAll<HTMLElement>(FOCUSABLE)]
+    if (els.length === 0) return
+    const first = els[0], last = els[els.length - 1]
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus() }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
+  }
+  panel.addEventListener('keydown', handler)
+  return () => panel.removeEventListener('keydown', handler)
+}
 
 function getOrCreatePanel(): HTMLElement {
   if (panelEl) return panelEl
   panelEl = document.createElement('div')
   panelEl.className = 'detail-panel'
+  panelEl.setAttribute('role', 'dialog')
+  panelEl.setAttribute('aria-modal', 'true')
+  panelEl.setAttribute('aria-labelledby', 'detail-panel-title')
   document.getElementById('map')!.appendChild(panelEl)
   return panelEl
 }
 
-export function openDetailPanel(feature: FeatureLike): void {
+export function openDetailPanel(feature: FeatureLike, trigger?: HTMLElement): void {
+  triggerEl = trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null)
+
   const panel = getOrCreatePanel()
   panel.innerHTML = renderDetailContent(feature)
   // Force reflow before adding .open for transition
-  panel.offsetHeight
+  void panel.offsetHeight
   panel.classList.add('open')
 
-  const closeBtn = panel.querySelector('.detail-panel-close')
+  const closeBtn = panel.querySelector<HTMLElement>('.detail-panel-close')
   if (closeBtn) {
     closeBtn.addEventListener('click', () => closeDetailPanel(), { once: true })
+    closeBtn.focus()
   }
+
+  if (removeTrapFocus) removeTrapFocus()
+  removeTrapFocus = trapFocus(panel)
+
+  panel.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Escape') { e.stopPropagation(); closeDetailPanel() }
+  }, { once: true })
 }
 
 export function closeDetailPanel(): void {
+  if (removeTrapFocus) { removeTrapFocus(); removeTrapFocus = null }
   if (panelEl) {
     panelEl.classList.remove('open')
   }
+  if (triggerEl) { triggerEl.focus(); triggerEl = null }
   if (closeCallback) {
     closeCallback()
   }
