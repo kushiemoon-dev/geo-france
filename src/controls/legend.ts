@@ -8,7 +8,7 @@ export function setupLegend(): void {
   container.className = 'legend-panel'
 
   const title = document.createElement('h3')
-  title.textContent = 'Periodes geologiques'
+  title.textContent = 'Périodes géologiques'
   container.appendChild(title)
 
   // National legend: period swatches
@@ -40,7 +40,7 @@ export function setupLegend(): void {
   localContent.style.display = 'none'
 
   const localImg = document.createElement('img')
-  localImg.alt = 'Legende carte geologique 1/50 000'
+  localImg.alt = 'Légende carte géologique 1/50 000'
   localImg.style.maxWidth = '100%'
   localImg.style.borderRadius = '4px'
 
@@ -56,7 +56,7 @@ export function setupLegend(): void {
         localImg.src = WMS_LEGEND_URL
       }
     } else {
-      title.textContent = 'Periodes geologiques'
+      title.textContent = 'Périodes géologiques'
       nationalContent.style.display = ''
       localContent.style.display = 'none'
     }
