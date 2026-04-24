@@ -111,7 +111,7 @@ export const REGIONS: readonly RegionConfig[] = [
 
 export const FRANCE_BOUNDS: LngLatBoundsLike = [[-5.5, 41.0], [10.0, 51.5]]
 export const FRANCE_CENTER: LngLatLike = [2.2, 46.6]
-export const DEFAULT_REGION = 'normandie'
+export const DEFAULT_REGION = 'france'
 
 export function getRegion(id: string): RegionConfig | undefined {
   return REGIONS.find(r => r.id === id)
