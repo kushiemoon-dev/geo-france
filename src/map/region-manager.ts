@@ -46,6 +46,16 @@ export function loadRegion(map: maplibregl.Map, regionId: string): void {
 
   if (regionId === currentRegionId) return
 
+  if (regionId === 'france') {
+    removeGeologyLayers(map)
+    removeGeologySource(map)
+    currentRegionId = regionId
+    store.setState({ regionId, loading: false })
+    map.fitBounds(region.bounds, { padding: 40, duration: 1000 })
+    bus.emit('region:loaded', { regionId })
+    return
+  }
+
   store.setState({ loading: true })
   showMapLoading(`Chargement ${region.name}...`)
 
