@@ -138,7 +138,7 @@ function renderDetailContent(feature: FeatureLike): string {
   const geo = classifyNotation(notation)
 
   const lithology = extractLithology(descr, legende)
-  const extracted: FossilGroups = extractFossils(descr, legende)
+  const extracted: FossilGroups = extractFossils(descr, legende, geo.summary ?? '')
   const enrichedRaw = getEnrichedFossils(carte)
   const { merged: fossils, enrichedSet } = mergeFossils(extracted, enrichedRaw)
   const rock = findRockImage(lithology)
@@ -157,10 +157,10 @@ function renderDetailContent(feature: FeatureLike): string {
       ${renderPetrographySection(lithology)}
       ${descr ? `<div class="detail-panel-section"><strong>Description BRGM</strong><p class="detail-panel-descr">${escapeHtml(descr)}</p></div>` : ''}
       ${lithology.length > 0 ? `<div class="detail-panel-section"><strong>Lithologie</strong><div class="popup-tags">${renderTags(lithology, 'tag-litho', LITHO_WIKI_SLUGS)}</div></div>` : ''}
-      ${Object.keys(fossils).some(g => g !== 'genres' && g !== 'autres') ? `
+      ${Object.keys(fossils).some(g => g !== 'genres') ? `
         <div class="detail-panel-section">
           <strong>Fossiles</strong>
-          ${Object.entries(fossils).filter(([group]) => group !== 'genres' && group !== 'autres').map(([group, terms]) => `
+          ${Object.entries(fossils).filter(([group]) => group !== 'genres').map(([group, terms]) => `
             <div class="fossil-group">
               <span class="fossil-group-label">${escapeHtml(group)}</span>
               <div class="popup-tags">${renderTags(terms, 'tag-fossil', FOSSIL_TERM_WIKI_SLUGS, enrichedSet)}</div>
@@ -174,7 +174,7 @@ function renderDetailContent(feature: FeatureLike): string {
         ${wikiUrl ? `<a href="${wikiUrl}" target="_blank" rel="noopener noreferrer">Wikipedia FR</a>` : ''}
         <a href="https://infoterre.brgm.fr/viewer/MainTileForward.do" target="_blank" rel="noopener noreferrer">InfoTerre (BRGM)</a>
       </div>
-      <p class="popup-source">Source : BD Charm-50 © BRGM — <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" target="_blank" rel="noopener noreferrer">Licence Ouverte Etalab 2.0</a></p>
+      <p class="popup-source">Source : BD Charm-50 © BRGM — <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" target="_blank" rel="noopener noreferrer">Données libres – Licence Etalab 2.0</a></p>
     </div>
   `
 }

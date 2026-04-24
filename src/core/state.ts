@@ -4,7 +4,7 @@ type Listener = (state: AppState) => void
 
 const initialState: AppState = {
   mode: 'national',
-  regionId: 'normandie',
+  regionId: 'france',
   layers: {
     'geology-fill': true,
     'geology-highlight': true,
