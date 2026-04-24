@@ -33,7 +33,7 @@ const dryRun     = args.includes('--dry-run')
 
 // ── Queries qualifiées FR→EN ──────────────────────────────────────────────────
 const QUERY_MAP = {
-  argile:       'claystone mudstone argillaceous rock outcrop geological hand specimen',
+  argile:       'claystone mudstone shale rock hand specimen outcrop geology geological',
   sable:        'quartz sand grains geological sample',
   gaize:        'greensand siliceous rock glauconitic',
   spilite:      'pillow lava basalt greenstone rock outcrop',
@@ -46,7 +46,7 @@ const QUERY_MAP = {
   trondhjemite: 'leucocratic plutonic rock hand specimen',
   dolomie:      'dolostone dolomite carbonate rock hand specimen outcrop geology',
   craie:        'chalk white cretaceous limestone rock outcrop cliff geology specimen',
-  gres:         'sandstone hand specimen rock geology sample',
+  gres:         'sandstone hand specimen geological sample sedimentary rock close-up',
   grauwacke:    'greywacke wacke turbidite rock hand specimen geology',
   schiste:      'phyllite schist metamorphic rock hand specimen outcrop',
   loess:        'loess aeolian deposit windblown silt sediment outcrop geological',
