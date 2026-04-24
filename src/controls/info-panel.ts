@@ -56,7 +56,7 @@ function formatDipPopupContent(feature: MapGeoJSONFeature): string {
       ${azimut !== '' ? `<p><strong>Azimut:</strong> ${escapeHtml(String(azimut))}\u00B0</p>` : ''}
       ${descr ? `<p class="popup-descr">${escapeHtml(descr)}</p>` : ''}
       ${attr ? `<p style="font-size:11px;color:#666">${escapeHtml(attr)}</p>` : ''}
-      <p class="popup-source">Source : BD Charm-50 © BRGM — <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" target="_blank" rel="noopener noreferrer">Licence Ouverte Etalab 2.0</a></p>
+      <p class="popup-source">Source : BD Charm-50 © BRGM — <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" target="_blank" rel="noopener noreferrer">Données libres – Licence Etalab 2.0</a></p>
     </div>
   `
 }

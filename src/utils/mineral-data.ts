@@ -179,10 +179,10 @@ const ROCK_DB: Record<string, RockInfo> = {
   ]},
 
   // Sedimentaires detritiques
-  gres: { type: 'sedimentaire', origin: 'detritique', facies: 'Gres quartzeux', texture: 'Granulaire, cimentee', image: '/images/rocks/gres.jpg', minerals: [
+  gres: { type: 'sedimentaire', origin: 'detritique', facies: 'Gres quartzeux', texture: 'Granulaire, cimentee', image: '/images/rocks/gres.jpg', imageStatus: 'quarantined', minerals: [
     { name: 'quartz', percent: '75%' }, { name: 'feldspath', percent: '15%' }, { name: 'mica', percent: '5%' }, { name: 'argile', percent: '5%' }
   ]},
-  argile: { type: 'sedimentaire', origin: 'detritique', facies: 'Argile plastique', texture: 'Massive, plastique', image: '/images/rocks/argile.jpg', minerals: [
+  argile: { type: 'sedimentaire', origin: 'detritique', facies: 'Argile plastique', texture: 'Massive, plastique', image: '/images/rocks/argile.jpg', imageStatus: 'quarantined', minerals: [
     { name: 'kaolin', percent: '60%' }, { name: 'quartz', percent: '25%' }, { name: 'mica', percent: '15%' }
   ]},
   sable: { type: 'meuble', origin: 'detritique', facies: 'Sable quartzeux', texture: 'Granulaire meuble', image: '/images/rocks/sable.jpg', minerals: [

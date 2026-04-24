@@ -5,7 +5,7 @@ Source : Wikimedia Commons
 - **alterite.jpg** : "File:Laterite formation on basaltic tuff, Madagascar. C 005.jpg" — © Werner Schellmann (talk · contribs) (CC BY-SA 2.5) — https://commons.wikimedia.org/wiki/File%3ALaterite%20formation%20on%20basaltic%20tuff%2C%20Madagascar.%20C%20005.jpg
 - **andesite.jpg** : "File:Andesite outcrop of the Matsue Formation II.jpg" — © Gkiseki (CC0) — https://commons.wikimedia.org/wiki/File%3AAndesite%20outcrop%20of%20the%20Matsue%20Formation%20II.jpg
 - **ardoise.jpg** : "File:Slate Macro 1.JPG" — © “Jon Zander (Digon3)” (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3ASlate%20Macro%201.JPG
-- **argile.jpg** : "File:Clay-ss-2005.jpg" — © Siim Sepp (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File:Clay-ss-2005.jpg
+- **argile.jpg** : "File:Clay time.jpg" — © Fidelis Manyange aka Manfidza (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AClay%20time.jpg
 - **argilite.jpg** : "File:Argillite.JPG" — © Gbuchana (talk) (Uploads) (Public domain) — https://commons.wikimedia.org/wiki/File%3AArgillite.JPG
 - **arkose.jpg** : "File:Granite and arkose (GeoDIL number - 2).jpg" — © Dexter Perkins (CC0) — https://commons.wikimedia.org/wiki/File%3AGranite%20and%20arkose%20(GeoDIL%20number%20-%202).jpg
 - **basalte.jpg** : "File:Basalt paving Assomada.jpg" — © Cayambe (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3ABasalt%20paving%20Assomada.jpg
@@ -19,7 +19,6 @@ Source : Wikimedia Commons
 - **diorite.jpg** : "File:Diorite orbicolare.jpg" — © Daniele.51 (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3ADiorite%20orbicolare.jpg
 - **dolomie.jpg** : "File:Dolostone breccia (Mackinac Breccia, Devonian; Interstate-75 exit near St. Ignace, Upper Peninsula of Michigan, USA) 2 (40975889854).jpg" — © James St. John (CC BY 2.0) — https://commons.wikimedia.org/wiki/File:Dolostone_breccia_(Mackinac_Breccia,_Devonian;_Interstate-75_exit_near_St._Ignace,_Upper_Peninsula_of_Michigan,_USA)_2_(40975889854).jpg
 - **eclogite.jpg** : "File:Eclogite Norway.jpg" — © No machine-readable author provided. Woudloper assumed (based on copyright claims). (Public domain) — https://commons.wikimedia.org/wiki/File%3AEclogite%20Norway.jpg
-- **falun.jpg** : "File:Henrik Gahn den äldre.jpg" — © Niclas Lafrensen (Public domain) — https://commons.wikimedia.org/wiki/File%3AHenrik%20Gahn%20den%20%C3%A4ldre.jpg
 - **gaize.jpg** : "File:Opoka rock Saratov 1.jpg" — © Le.Loup.Gris (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AOpoka%20rock%20Saratov%201.jpg
 - **gneiss.jpg** : "File:Metapelitic gneiss (GeoDIL number - 518).jpg" — © Dexter Perkins (CC0) — https://commons.wikimedia.org/wiki/File%3AMetapelitic%20gneiss%20(GeoDIL%20number%20-%20518).jpg
 - **granite.jpg** : "File:Granite.jpg" — © Wikimedia Commons (CC BY-SA 2.0 br) — https://commons.wikimedia.org/wiki/File%3AGranite.jpg
@@ -31,7 +30,6 @@ Source : Wikimedia Commons
 - **limon.jpg** : "File:RockFlourPeytoLake.jpg" — © Fairsing (Public domain) — https://commons.wikimedia.org/wiki/File%3ARockFlourPeytoLake.jpg
 - **loess.jpg** : "File:Sandy coloured loess marking the locations of two dissolution pipes - geograph.org.uk - 6775539.jpg" — © Andrew Diack (CC BY-SA 2.0) — https://commons.wikimedia.org/wiki/File%3ASandy%20coloured%20loess%20marking%20the%20locations%20of%20two%20dissolution%20pipes%20-%20geograph.org.uk%20-%206775539.jpg
 - **lumachelle.jpg** : "File:Bivalve coquina limestone Odessa.jpg" — © Lumasella (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3ABivalve%20coquina%20limestone%20Odessa.jpg
-- **marne.jpg** : "File:3rd Infantry Division soldiers in formation of its emblem 1919.jpg" — © 3rd Infantry Division (Public domain) — https://commons.wikimedia.org/wiki/File%3A3rd%20Infantry%20Division%20soldiers%20in%20formation%20of%20its%20emblem%201919.jpg
 - **micaschiste.jpg** : "File:Micaschiste dans le jardin alpin La Linnaea.jpg" — © Arkelin (CC BY 4.0) — https://commons.wikimedia.org/wiki/File%3AMicaschiste%20dans%20le%20jardin%20alpin%20La%20Linnaea.jpg
 - **microgranite.jpg** : "File:Microgranite specimen - geograph.org.uk - 7612218.jpg" — © Jonathan Wilkins (CC BY-SA 2.0) — https://commons.wikimedia.org/wiki/File%3AMicrogranite%20specimen%20-%20geograph.org.uk%20-%207612218.jpg
 - **migmatite.jpg** : "File:Metamorphic rock Georgian Bay.jpg" — © P199 (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AMetamorphic%20rock%20Georgian%20Bay.jpg
