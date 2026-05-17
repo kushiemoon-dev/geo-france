@@ -141,7 +141,9 @@ function renderDetailContent(feature: FeatureLike): string {
   const extracted: FossilGroups = extractFossils(descr, legende, geo.summary ?? '')
   const enrichedRaw = getEnrichedFossils(carte)
   const { merged: fossils, enrichedSet } = mergeFossils(extracted, enrichedRaw)
-  const overrideKey = Object.keys(FORMATION_IMAGE_OVERRIDES).find(k => notation.startsWith(k))
+  // Most-specific keys first — insertion order not reliable for matching priority
+  const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1', 'b2'] as const
+  const overrideKey = OVERRIDE_KEY_ORDER.find(k => notation.startsWith(k))
   const rock = overrideKey
     ? { image: FORMATION_IMAGE_OVERRIDES[overrideKey].image, name: overrideKey }
     : findRockImage(lithology)
