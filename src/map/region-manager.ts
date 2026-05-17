@@ -1,6 +1,6 @@
 import type maplibregl from 'maplibre-gl'
-import { ALL_LAYERS } from './styles.ts'
-import { getRegion } from '../config/regions.ts'
+import { REGIONS, getRegion } from '../config/regions.ts'
+import { createLayersForRegion, getRegionLayerIds, getRegionLayerId } from './styles.ts'
 import { ensureModeAfterRegionLoad } from './map-mode.ts'
 import { showMapLoading, hideMapLoading } from '../ui/shared/loading.ts'
 import { showToast } from '../ui/shared/toast.ts'
@@ -9,31 +9,40 @@ import { bus } from '../core/events.ts'
 
 let currentRegionId: string | null = null
 
-function removeGeologyLayers(map: maplibregl.Map): void {
-  const reversed = [...ALL_LAYERS].reverse()
-  for (const layer of reversed) {
-    if (map.getLayer(layer.id)) {
-      map.removeLayer(layer.id)
+export const DATA_REGIONS = REGIONS.filter(r => r.id !== 'france')
+
+function getSourceId(regionId: string): string {
+  return `geology-${regionId}`
+}
+
+export function initAllRegions(map: maplibregl.Map): void {
+  for (const region of DATA_REGIONS) {
+    const sourceId = getSourceId(region.id)
+    if (!map.getSource(sourceId)) {
+      map.addSource(sourceId, {
+        type: 'vector',
+        url: `pmtiles:///data/${region.id}.pmtiles`
+      })
+    }
+    for (const layer of createLayersForRegion(region.id)) {
+      if (!map.getLayer(layer.id)) {
+        map.addLayer(layer)
+      }
     }
   }
 }
 
-function removeGeologySource(map: maplibregl.Map): void {
-  if (map.getSource('geology')) {
-    map.removeSource('geology')
+function setRegionVisibility(map: maplibregl.Map, regionId: string, visibility: 'visible' | 'none'): void {
+  for (const layerId of getRegionLayerIds(regionId)) {
+    if (map.getLayer(layerId)) {
+      map.setLayoutProperty(layerId, 'visibility', visibility)
+    }
   }
 }
 
-function addGeologySource(map: maplibregl.Map, regionId: string): void {
-  map.addSource('geology', {
-    type: 'vector',
-    url: `pmtiles:///data/${regionId}.pmtiles`
-  })
-}
-
-function addGeologyLayers(map: maplibregl.Map): void {
-  for (const layer of ALL_LAYERS) {
-    map.addLayer(layer)
+function hideAllRegions(map: maplibregl.Map): void {
+  for (const region of DATA_REGIONS) {
+    setRegionVisibility(map, region.id, 'none')
   }
 }
 
@@ -46,62 +55,50 @@ export function loadRegion(map: maplibregl.Map, regionId: string): void {
 
   if (regionId === currentRegionId) return
 
+  hideAllRegions(map)
+
   if (regionId === 'france') {
-    removeGeologyLayers(map)
-    removeGeologySource(map)
+    for (const r of DATA_REGIONS) {
+      setRegionVisibility(map, r.id, 'visible')
+    }
     currentRegionId = regionId
     store.setState({ regionId, loading: false })
     map.fitBounds(region.bounds, { padding: 40, duration: 1000 })
-    showToast('Vue France entière — sélectionnez une région pour afficher la géologie', 'info')
     bus.emit('region:loaded', { regionId })
     return
   }
 
-  store.setState({ loading: true })
+  store.setState({ loading: true, regionId })
   showMapLoading(`Chargement ${region.name}...`)
 
-  removeGeologyLayers(map)
-  removeGeologySource(map)
-
-  addGeologySource(map, regionId)
-  addGeologyLayers(map)
+  setRegionVisibility(map, regionId, 'visible')
   ensureModeAfterRegionLoad(map)
-
   currentRegionId = regionId
-  store.setState({ regionId })
 
-  const cleanup = () => {
-    map.off('sourcedata', onSourceData)
-    map.off('error', onSourceError)
-    clearTimeout(loadTimeout)
-  }
-
-  const onSourceData = (e: maplibregl.MapSourceDataEvent) => {
-    if (e.sourceId === 'geology' && e.isSourceLoaded) {
-      cleanup()
+  const sourceId = getSourceId(regionId)
+  const isAlreadyLoaded = map.isSourceLoaded(sourceId)
+  if (isAlreadyLoaded) {
+    hideMapLoading()
+    store.setState({ loading: false })
+    bus.emit('region:loaded', { regionId })
+  } else {
+    const onSourceData = (e: maplibregl.MapSourceDataEvent) => {
+      if (e.sourceId === sourceId && e.isSourceLoaded) {
+        map.off('sourcedata', onSourceData)
+        clearTimeout(loadTimeout)
+        hideMapLoading()
+        store.setState({ loading: false })
+        bus.emit('region:loaded', { regionId })
+      }
+    }
+    const loadTimeout = setTimeout(() => {
+      map.off('sourcedata', onSourceData)
       hideMapLoading()
       store.setState({ loading: false })
-      bus.emit('region:loaded', { regionId })
-    }
+      showToast(`Chargement ${region.name} trop long`, 'warning')
+    }, 15000)
+    map.on('sourcedata', onSourceData)
   }
-
-  const onSourceError = (e: { sourceId?: string; error?: { message?: string } }) => {
-    if (e.sourceId !== 'geology') return
-    cleanup()
-    hideMapLoading()
-    store.setState({ loading: false })
-    showToast(`Données indisponibles pour ${region.name}`, 'warning')
-  }
-
-  const loadTimeout = setTimeout(() => {
-    cleanup()
-    hideMapLoading()
-    store.setState({ loading: false })
-    showToast(`Chargement ${region.name} trop long — données peut-être absentes`, 'warning')
-  }, 15000)
-
-  map.on('sourcedata', onSourceData)
-  map.on('error', onSourceError as Parameters<typeof map.on>[1])
 
   map.fitBounds(region.bounds, { padding: 40, duration: 1000 })
 }
@@ -112,4 +109,11 @@ export function getCurrentRegionId(): string | null {
 
 export function loadInitialRegion(map: maplibregl.Map, regionId: string): void {
   loadRegion(map, regionId)
+}
+
+export function getActiveRegionLayerId(baseId: string): string {
+  const regionId = currentRegionId && currentRegionId !== 'france'
+    ? currentRegionId
+    : DATA_REGIONS[0]?.id ?? 'bretagne'
+  return getRegionLayerId(baseId, regionId)
 }
