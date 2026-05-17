@@ -21,7 +21,7 @@ Source : Wikimedia Commons
 - **eclogite.jpg** : "File:Eclogite Norway.jpg" — © No machine-readable author provided. Woudloper assumed (based on copyright claims). (Public domain) — https://commons.wikimedia.org/wiki/File%3AEclogite%20Norway.jpg
 - **gaize.jpg** : "File:Opoka rock Saratov 1.jpg" — © Le.Loup.Gris (CC BY-SA 3.0) — https://commons.wikimedia.org/wiki/File%3AOpoka%20rock%20Saratov%201.jpg
 - **gneiss.jpg** : "File:Metapelitic gneiss (GeoDIL number - 518).jpg" — © Dexter Perkins (CC0) — https://commons.wikimedia.org/wiki/File%3AMetapelitic%20gneiss%20(GeoDIL%20number%20-%20518).jpg
-- **granite.jpg** : "File:Granite.jpg" — © Wikimedia Commons (CC BY-SA 2.0 br) — https://commons.wikimedia.org/wiki/File%3AGranite.jpg
+- **granite.jpg** : "File:Biotite granite (GeoDIL number - 18).jpg" — © Dexter Perkins (CC0) — https://commons.wikimedia.org/wiki/File:Biotite_granite_(GeoDIL_number_-_18).jpg
 - **granodiorite.jpg** : "File:Granodiorite (Giant Forest Granodiorite, mid-Cretaceous, 97-102 Ma; Moro Rock, Sequoia National Park, California, USA) 2 (16799561295).jpg" — © James St. John (CC BY 2.0) — https://commons.wikimedia.org/wiki/File%3AGranodiorite%20(Giant%20Forest%20Granodiorite%2C%20mid-Cretaceous%2C%2097-102%20Ma%3B%20Moro%20Rock%2C%20Sequoia%20National%20Park%2C%20California%2C%20USA)%202%20(16799561295).jpg
 - **grauwacke.jpg** : "File:Grauwackefelsen Collmberg.jpg" — © Cookroach (CC BY-SA 4.0) — https://commons.wikimedia.org/wiki/File%3AGrauwackefelsen%20Collmberg.jpg
 - **gres.jpg** : "File:Fractured sandstone in the Nopah Range.jpg" — © Thomas Farley (CC0) — https://commons.wikimedia.org/wiki/File%3AFractured%20sandstone%20in%20the%20Nopah%20Range.jpg
