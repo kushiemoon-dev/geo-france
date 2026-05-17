@@ -1,3 +1,4 @@
+import { FOSSIL_CANONICAL } from './geology-data.ts'
 import type { FossilGroups } from './geology-data.ts'
 import enrichedData from '../config/fossils-enriched.json'
 
@@ -17,7 +18,9 @@ export function getEnrichedFossils(carte: string): FossilGroups {
   if (!entry) return {}
   const out: FossilGroups = {}
   for (const [group, terms] of Object.entries(entry.groups)) {
-    out[group] = [...terms].slice(0, MAX_TERMS)
+    const mapped = [...terms].map(t => FOSSIL_CANONICAL[t] ?? t)
+    const deduped = [...new Set(mapped)]
+    out[group] = deduped.slice(0, MAX_TERMS)
   }
   return out
 }
