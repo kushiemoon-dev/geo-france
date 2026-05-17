@@ -1,9 +1,16 @@
 import type maplibregl from 'maplibre-gl'
-import { ALL_LAYERS } from './styles.ts'
 import { bus } from '../core/events.ts'
 import { store } from '../core/state.ts'
 import { showToast } from '../ui/shared/toast.ts'
 import type { MapMode } from '../core/types.ts'
+import { REGIONS } from '../config/regions.ts'
+import { getRegionLayerIds } from './styles.ts'
+
+const DATA_REGIONS_CACHE = REGIONS.filter(r => r.id !== 'france')
+
+function getAllRegionLayerIds(): string[] {
+  return DATA_REGIONS_CACHE.flatMap(r => getRegionLayerIds(r.id))
+}
 
 const WMS_SOURCE_ID = 'brgm-wms'
 const WMS_LAYER_ID = 'brgm-wms-layer'
@@ -46,7 +53,10 @@ function showWmsLayer(map: maplibregl.Map): void {
     return
   }
 
-  const beforeId = map.getLayer('geology-fill') ? 'geology-fill' : undefined
+  const { regionId } = store.getState()
+  const activeRegion = regionId !== 'france' ? regionId : DATA_REGIONS_CACHE[0]?.id
+  const fillLayerId = activeRegion ? `geology-fill__${activeRegion}` : undefined
+  const beforeId = fillLayerId && map.getLayer(fillLayerId) ? fillLayerId : undefined
   map.addLayer({
     id: WMS_LAYER_ID,
     type: 'raster',
@@ -62,28 +72,33 @@ function hideWmsLayer(map: maplibregl.Map): void {
 }
 
 function hideVectorLayers(map: maplibregl.Map): void {
-  for (const layer of ALL_LAYERS) {
-    if (map.getLayer(layer.id)) {
-      if (layer.id === 'geology-fill') {
-        map.setPaintProperty(layer.id, 'fill-opacity', 0)
-      } else {
-        map.setLayoutProperty(layer.id, 'visibility', 'none')
-      }
+  for (const layerId of getAllRegionLayerIds()) {
+    if (!map.getLayer(layerId)) continue
+    if (layerId.startsWith('geology-fill__')) {
+      map.setPaintProperty(layerId, 'fill-opacity', 0)
+    } else {
+      map.setLayoutProperty(layerId, 'visibility', 'none')
     }
   }
 }
 
 function restoreVectorLayers(map: maplibregl.Map): void {
-  const { layers } = store.getState()
+  const { layers, regionId } = store.getState()
+  const activeRegionIds = regionId === 'france'
+    ? DATA_REGIONS_CACHE.map(r => r.id)
+    : (regionId ? [regionId] : [DATA_REGIONS_CACHE[0]?.id ?? ''])
 
-  for (const layer of ALL_LAYERS) {
-    if (map.getLayer(layer.id)) {
-      if (layer.id === 'geology-fill') {
-        map.setPaintProperty(layer.id, 'fill-opacity', FILL_OPACITY)
-      }
-      const visible = layers[layer.id] ?? true
-      map.setLayoutProperty(layer.id, 'visibility', visible ? 'visible' : 'none')
+  for (const layerId of getAllRegionLayerIds()) {
+    if (!map.getLayer(layerId)) continue
+    const belongsToActive = activeRegionIds.some(rid => layerId.endsWith(`__${rid}`))
+    if (!belongsToActive) continue
+
+    if (layerId.startsWith('geology-fill__')) {
+      map.setPaintProperty(layerId, 'fill-opacity', FILL_OPACITY)
     }
+    const baseId = layerId.split('__')[0]
+    const visible = layers[baseId] ?? true
+    map.setLayoutProperty(layerId, 'visibility', visible ? 'visible' : 'none')
   }
 }
 
