@@ -140,7 +140,11 @@ function renderDetailContent(feature: FeatureLike): string {
   const lithology = extractLithology(descr, legende)
   const extracted: FossilGroups = extractFossils(descr, legende, geo.summary ?? '')
   const enrichedRaw = getEnrichedFossils(carte)
-  const { merged: fossils, enrichedSet } = mergeFossils(extracted, enrichedRaw)
+  const rawFossils = mergeFossils(extracted, enrichedRaw)
+  const isPrecambrien = geo.ere === 'Precambrien' || geo.periode === 'Brioverien'
+  const { merged: fossils, enrichedSet } = isPrecambrien
+    ? { merged: {} as FossilGroups, enrichedSet: new Set<string>() }
+    : rawFossils
   // Most-specific keys first — insertion order not reliable for matching priority
   const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1', 'b2'] as const
   const overrideKey = OVERRIDE_KEY_ORDER.find(k => notation.startsWith(k))
