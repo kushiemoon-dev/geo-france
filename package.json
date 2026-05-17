@@ -18,7 +18,8 @@
     "data:fossils:force": "node scripts/fetch-fossil-enrichment.mjs --force",
     "data:rocks": "node scripts/fetch-rock-images.mjs",
     "data:rocks:force": "node scripts/fetch-rock-images.mjs --force",
-    "data:rocks:audit": "node scripts/audit-rock-images.mjs"
+    "data:rocks:audit": "node scripts/audit-rock-images.mjs",
+    "audit:notices": "node scripts/audit-notices.mjs"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.59.0",
