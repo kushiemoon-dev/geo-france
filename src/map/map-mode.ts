@@ -94,7 +94,8 @@ function restoreVectorLayers(map: maplibregl.Map): void {
     if (!belongsToActive) continue
 
     if (layerId.startsWith('geology-fill__')) {
-      map.setPaintProperty(layerId, 'fill-opacity', FILL_OPACITY)
+      const fillVisible = layers['geology-fill'] ?? true
+      map.setPaintProperty(layerId, 'fill-opacity', fillVisible ? FILL_OPACITY : 0)
     }
     const baseId = layerId.split('__')[0]
     const visible = layers[baseId] ?? true
