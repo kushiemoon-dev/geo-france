@@ -1,6 +1,6 @@
 import type maplibregl from 'maplibre-gl'
 export type FeatureLike = { properties: Record<string, unknown> }
-import { classifyNotation, extractLithology, extractFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS } from '../utils/geology-data.ts'
+import { classifyNotation, extractLithology, extractFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS, METAMORPHISM_WIKI_SLUGS } from '../utils/geology-data.ts'
 import type { FossilGroups } from '../utils/geology-data.ts'
 import { getEnrichedFossils, mergeFossils } from '../utils/fossils-enriched.ts'
 import { getMineralInfo, getMineralBarColor, getRockInfo, hasUsableImage, FORMATION_IMAGE_OVERRIDES } from '../utils/mineral-data.ts'
@@ -84,15 +84,24 @@ function renderPetrographySection(lithology: string[]): string {
 
   if (!rockInfo) return ''
 
-  const rows: [string, string][] = []
-  const typeLabel = `Roche ${rockInfo.type}${rockInfo.origin ? ` ${rockInfo.origin}` : ''}`
-  rows.push(['Type', typeLabel])
-  if (rockInfo.facies) rows.push(['Facies', rockInfo.facies])
-  if (rockInfo.texture) rows.push(['Texture', rockInfo.texture])
+  const originSlug = rockInfo.origin ? METAMORPHISM_WIKI_SLUGS[rockInfo.origin] : undefined
+  const originHtml = originSlug
+    ? ` <a href="https://fr.wikipedia.org/wiki/${encodeURIComponent(originSlug)}" target="_blank" rel="noopener noreferrer">${escapeHtml(rockInfo.origin)}</a>`
+    : (rockInfo.origin ? ` ${escapeHtml(rockInfo.origin)}` : '')
+  const typeHtml = `Roche ${escapeHtml(rockInfo.type)}${originHtml}`
 
-  const rowsHtml = rows.map(([label, value]) =>
-    `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${escapeHtml(value)}</span></div>`
-  ).join('')
+  const typeRowHtml = `<div class="detail-row"><span class="detail-row-label">${escapeHtml('Type')}</span><span class="detail-row-value">${typeHtml}</span></div>`
+
+  const otherRows: [string, string][] = []
+  if (rockInfo.facies) otherRows.push(['Facies', rockInfo.facies])
+  if (rockInfo.texture) otherRows.push(['Texture', rockInfo.texture])
+
+  const rowsHtml = [
+    typeRowHtml,
+    ...otherRows.map(([label, value]) =>
+      `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${escapeHtml(value)}</span></div>`
+    ),
+  ].join('')
 
   const barsHtml = rockInfo.minerals.map(m => {
     const pctNum = parseInt(m.percent, 10)
