@@ -64,6 +64,107 @@ const FOSSIL_GROUPS = {
 }
 
 const MAX_TERMS = 12
+
+// Canonical singular forms for fossil terms (copied from geology-data.ts)
+const FOSSIL_CANONICAL = {
+  // ammonites
+  ammonites: 'ammonite', ammonite: 'ammonite', ammonitique: 'ammonite',
+  goniatites: 'goniatite', goniatite: 'goniatite',
+  hildoceras: 'hildoceras', harpoceras: 'harpoceras', lytoceras: 'lytoceras',
+  arnioceras: 'arnioceras', baculites: 'baculite', scaphites: 'scaphite',
+  'orthocères': 'orthocère', orthoceres: 'orthocère',
+  cardioceras: 'cardioceras',
+  nautiles: 'nautile', nautile: 'nautile',
+  'céphalopodes': 'céphalopode', cephalopodes: 'céphalopode',
+  // bélemnites
+  'bélemnites': 'bélemnite', 'bélemnite': 'bélemnite', belemnites: 'bélemnite', belemnite: 'bélemnite',
+  // échinodermes
+  'échinodermes': 'échinoderme', echinodermes: 'échinoderme',
+  oursins: 'oursin', oursin: 'oursin',
+  'crinoïdes': 'crinoïde', crinoides: 'crinoïde', encrines: 'encrine',
+  // échinides
+  'échinides': 'échinide', echinides: 'échinide',
+  'échinide': 'échinide', echinide: 'échinide',
+  // brachiopodes
+  brachiopodes: 'brachiopode', brachiopode: 'brachiopode',
+  'térébratules': 'térébratule', terebratules: 'térébratule',
+  'térébratule': 'térébratule', terebratule: 'térébratule',
+  rhynchonelles: 'rhynchonelle', rhynchonelle: 'rhynchonelle', rhynchonella: 'rhynchonella',
+  orthis: 'orthis', spirifer: 'spirifer', athyris: 'athyris',
+  // bivalves
+  bivalves: 'bivalve', bivalve: 'bivalve',
+  lamellibranches: 'lamellibranche', lamellibranche: 'lamellibranche',
+  'pélécypodes': 'pélécypode', pelecypodes: 'pélécypode',
+  'huîtres': 'huître', 'huître': 'huître', huitres: 'huître', huitre: 'huître',
+  'gryphées': 'gryphée', gryphees: 'gryphée', 'gryphée': 'gryphée', gryphee: 'gryphée',
+  gryphaea: 'gryphaea', exogyra: 'exogyra', exogyres: 'exogyre', ostrea: 'ostrea',
+  pecten: 'pecten',
+  'pectinidés': 'pectinidé', pectinides: 'pectinidé',
+  plicatules: 'plicatule',
+  trigonies: 'trigonie', trigonia: 'trigonia',
+  'inocérames': 'inocérame', inocerames: 'inocérame', inoceramus: 'inoceramus',
+  // gastéropodes
+  'gastéropodes': 'gastéropode', gasteropodes: 'gastéropode', gastropodes: 'gastéropode',
+  'cérithes': 'cérithe', cerithes: 'cérithe', 'cérithe': 'cérithe', cerithe: 'cérithe',
+  turritelles: 'turritelle', turritella: 'turritella',
+  natica: 'natica', natices: 'natice',
+  // rudistes
+  rudistes: 'rudiste', rudiste: 'rudiste', hippurites: 'hippurite',
+  toucasia: 'toucasia', caprines: 'caprine', radiolites: 'radiolite',
+  // coraux
+  coraux: 'corail', corail: 'corail', coralien: 'corail', corallien: 'corail',
+  'récifal': 'récifal', recifal: 'récifal',
+  polypiers: 'polypier',
+  stromatopores: 'stromatopore',
+  'stromatoporidés': 'stromatoporidé', stromatoporides: 'stromatoporidé',
+  rugosa: 'rugosa',
+  'récif': 'récif', recif: 'récif',
+  // foraminifères
+  'foraminifères': 'foraminifère', foraminifere: 'foraminifère', foraminiferes: 'foraminifère',
+  nummulites: 'nummulite', nummulite: 'nummulite', nummulitique: 'nummulite',
+  orbitolines: 'orbitoline', orbitoline: 'orbitoline',
+  milioles: 'miliole', miliole: 'miliole',
+  'miliolidés': 'miliolidé', miliolides: 'miliolidé',
+  'alvéolines': 'alvéoline', alveolines: 'alvéoline', 'alvéoline': 'alvéoline', alveoline: 'alvéoline',
+  'lituolidés': 'lituolidé', lituolides: 'lituolidé',
+  'orbitoïdes': 'orbitoïde', orbitoides: 'orbitoïde',
+  'orbitolinidés': 'orbitolinidé', orbitolinides: 'orbitolinidé',
+  discocyclines: 'discocycline', discocycline: 'discocycline',
+  assilines: 'assiline', assiline: 'assiline', operculines: 'operculine',
+  'globigérines': 'globigérine', globigerines: 'globigérine',
+  globotruncana: 'globotruncana', rotalipora: 'rotalipora', calpionelles: 'calpionelle',
+  // trilobites
+  trilobites: 'trilobite', trilobite: 'trilobite', paradoxides: 'paradoxides',
+  // vertébrés
+  poissons: 'poisson', poisson: 'poisson',
+  reptiles: 'reptile', reptile: 'reptile',
+  dinosaures: 'dinosaure', dinosaure: 'dinosaure',
+  'mammifères': 'mammifère', mammifere: 'mammifère', mammiferes: 'mammifère',
+  'vertébrés': 'vertébré', vertebre: 'vertébré', vertebres: 'vertébré',
+  // algues
+  algues: 'algue', stromatolithes: 'stromatolithe',
+  'characées': 'characée', characees: 'characée',
+  'dasycladacées': 'dasycladacée', dasycladacees: 'dasycladacée',
+  lithothamnium: 'lithothamnium', microcodium: 'microcodium',
+  // bryozoaires
+  bryozoaires: 'bryozoaire', bryozoaire: 'bryozoaire',
+  // microfossiles
+  radiolaires: 'radiolaire', ostracodes: 'ostracode', conodontes: 'conodonte',
+  graptolites: 'graptolite',
+  chitinozoaires: 'chitinozoaire', acritarches: 'acritarche',
+  'dinoflagellés': 'dinoflagellé', dinoflagelles: 'dinoflagellé',
+  spores: 'spore', pollen: 'pollen', tentaculites: 'tentaculite',
+  // annélides
+  'annélides': 'annélide', annelides: 'annélide', serpules: 'serpule', terriers: 'terrier',
+  // autres
+  'éponges': 'éponge', eponges: 'éponge', spongiaires: 'spongiaire',
+  fossiles: 'fossile', fossile: 'fossile', 'fossilifère': 'fossilifère', fossilifere: 'fossilifère',
+  bioclastes: 'bioclaste', bioclaste: 'bioclaste', microfaune: 'microfaune',
+  empreintes: 'empreinte',
+  'encroûtements': 'encroûtement', encroutements: 'encroûtement',
+  oncolites: 'oncolite', oncolithes: 'oncolite', 'oncoïdes': 'oncoïde', oncoides: 'oncoïde',
+}
+
 // French common words to skip in genus extraction
 const SKIP_WORDS = new Set([
   'Les', 'La', 'Le', 'Des', 'De', 'En', 'Au', 'Aux', 'Par', 'Sur', 'Sous', 'Dans',
@@ -85,7 +186,12 @@ function extractFossilsFromText(text) {
     for (const term of terms) {
       if (lower.includes(term) && !found.includes(term)) found.push(term)
     }
-    if (found.length > 0) out[group] = found.slice(0, MAX_TERMS)
+    if (found.length > 0) {
+      // Apply canonical mapping and deduplicate
+      const mapped = found.map(t => FOSSIL_CANONICAL[t] ?? t)
+      const deduped = [...new Set(mapped)]
+      out[group] = deduped.slice(0, MAX_TERMS)
+    }
   }
   return out
 }
