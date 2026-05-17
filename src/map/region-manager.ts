@@ -52,6 +52,7 @@ export function loadRegion(map: maplibregl.Map, regionId: string): void {
     currentRegionId = regionId
     store.setState({ regionId, loading: false })
     map.fitBounds(region.bounds, { padding: 40, duration: 1000 })
+    showToast('Vue France entière — sélectionnez une région pour afficher la géologie', 'info')
     bus.emit('region:loaded', { regionId })
     return
   }
