@@ -6,6 +6,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
+        skipWaiting: true,
+        clientsClaim: true,
         // Cache app shell only — rock images cached on-demand via runtime caching
         globPatterns: ['**/*.{js,css,html,svg,woff2}', 'og-image.png', 'favicon.svg'],
         globIgnores: ['**/data/*.pmtiles', '**/images/rocks/**'],
