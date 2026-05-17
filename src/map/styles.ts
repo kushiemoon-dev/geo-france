@@ -118,3 +118,21 @@ export const ALL_LAYERS = [
   surchargeLayer,
   geologyHighlightLayer
 ]
+
+export function createLayersForRegion(regionId: string): LayerSpecification[] {
+  const sourceId = `geology-${regionId}`
+  return ALL_LAYERS.map(layer => {
+    const cloned = { ...layer, id: `${layer.id}__${regionId}`, source: sourceId } as LayerSpecification
+    const existingLayout = (layer as { layout?: Record<string, unknown> }).layout ?? {}
+    ;(cloned as Record<string, unknown>).layout = { ...existingLayout, visibility: 'none' }
+    return cloned
+  })
+}
+
+export function getRegionLayerIds(regionId: string): string[] {
+  return ALL_LAYERS.map(l => `${l.id}__${regionId}`)
+}
+
+export function getRegionLayerId(baseId: string, regionId: string): string {
+  return `${baseId}__${regionId}`
+}
