@@ -108,10 +108,13 @@
     "url": "https://commons.wikimedia.org/wiki/File%3AMetapelitic%20gneiss%20(GeoDIL%20number%20-%20518).jpg"
   },
   "granite": {
-    "title": "File:Granite.jpg",
-    "author": "Wikimedia Commons",
-    "license": "CC BY-SA 2.0 br",
-    "url": "https://commons.wikimedia.org/wiki/File%3AGranite.jpg"
+    "title": "File:Biotite granite (GeoDIL number - 18).jpg",
+    "author": "Dexter Perkins",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Biotite_granite_(GeoDIL_number_-_18).jpg",
+    "attribution": "Dexter Perkins / Wikimedia Commons / CC0 (Public Domain)",
+    "imageStatus": "verified",
+    "description": "Grey medium-grained granite: orthoclase, sodic plagioclase, quartz, biotite, muscovite. Specimen 9 cm across."
   },
   "granodiorite": {
     "title": "File:Granodiorite (Giant Forest Granodiorite, mid-Cretaceous, 97-102 Ma; Moro Rock, Sequoia National Park, California, USA) 2 (16799561295).jpg",
