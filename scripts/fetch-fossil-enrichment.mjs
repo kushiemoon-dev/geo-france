@@ -58,9 +58,10 @@ const FOSSIL_GROUPS = {
   microfossiles: ['radiolaires', 'ostracodes', 'conodontes', 'graptolites', 'chitinozoaires',
     'acritarches', 'dinoflagellés', 'dinoflagelles', 'spores', 'pollen', 'tentaculites',
     'microfaune', 'microflore'],
-  annélides: ['annélides', 'annelides', 'serpules'],
+  annélides: ['annélides', 'annelides', 'serpules', 'terriers'],
   autres: ['éponges', 'eponges', 'spongiaires', 'fossiles', 'fossile', 'fossilifère',
-    'fossilifere', 'bioclastes', 'bioclaste', 'empreintes', 'oncolites', 'oncolithes'],
+    'fossilifere', 'bioclastes', 'bioclaste', 'empreintes',
+    'encroûtements', 'encroutements', 'oncolites', 'oncolithes', 'oncoïdes', 'oncoides'],
 }
 
 const MAX_TERMS = 12
@@ -126,6 +127,7 @@ const FOSSIL_CANONICAL = {
   assilines: 'assiline', assiline: 'assiline', operculines: 'operculine',
   'globigérines': 'globigérine', globigerines: 'globigérine',
   globotruncana: 'globotruncana', rotalipora: 'rotalipora', calpionelles: 'calpionelle',
+  praeglobotruncana: 'praeglobotruncana', globotruncane: 'globotruncane',
   trilobites: 'trilobite', trilobite: 'trilobite', paradoxides: 'paradoxides',
   poissons: 'poisson', poisson: 'poisson', reptiles: 'reptile', reptile: 'reptile',
   dinosaures: 'dinosaure', dinosaure: 'dinosaure',

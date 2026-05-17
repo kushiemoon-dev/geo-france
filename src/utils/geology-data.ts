@@ -241,6 +241,7 @@ export const FOSSIL_CANONICAL: Record<string, string> = {
   assilines: 'assiline', assiline: 'assiline', operculines: 'operculine',
   'globigérines': 'globigérine', globigerines: 'globigérine',
   globotruncana: 'globotruncana', rotalipora: 'rotalipora', calpionelles: 'calpionelle',
+  praeglobotruncana: 'praeglobotruncana', globotruncane: 'globotruncane',
   // trilobites
   trilobites: 'trilobite', trilobite: 'trilobite', paradoxides: 'paradoxides',
   // vertébrés
@@ -261,7 +262,7 @@ export const FOSSIL_CANONICAL: Record<string, string> = {
   graptolites: 'graptolite',
   chitinozoaires: 'chitinozoaire', acritarches: 'acritarche',
   'dinoflagellés': 'dinoflagellé', dinoflagelles: 'dinoflagellé',
-  spores: 'spore', pollen: 'pollen', tentaculites: 'tentaculite',
+  spores: 'spore', pollen: 'pollen', tentaculites: 'tentaculite', microflore: 'microflore',
   // annélides
   'annélides': 'annélide', annelides: 'annélide', serpules: 'serpule', terriers: 'terrier',
   // autres
@@ -321,6 +322,7 @@ const FOSSIL_GROUPS: Record<string, readonly string[]> = {
     'orbitoïdes', 'orbitoides', 'orbitolinidés', 'orbitolinides',
     'discocyclines', 'discocycline', 'assilines', 'assiline', 'operculines',
     'globigérines', 'globigerines', 'globotruncana', 'rotalipora', 'calpionelles',
+    'praeglobotruncana', 'globotruncane',
   ],
   trilobites: ['trilobites', 'trilobite', 'paradoxides'],
   vertébrés: [
@@ -339,7 +341,7 @@ const FOSSIL_GROUPS: Record<string, readonly string[]> = {
   microfossiles: [
     'radiolaires', 'ostracodes', 'conodontes', 'graptolites',
     'chitinozoaires', 'acritarches', 'dinoflagellés', 'dinoflagelles',
-    'spores', 'pollen', 'tentaculites',
+    'spores', 'pollen', 'tentaculites', 'microflore',
   ],
   annélides: ['annélides', 'annelides', 'serpules', 'terriers'],
   autres: [
