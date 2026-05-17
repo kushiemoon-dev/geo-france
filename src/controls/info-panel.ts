@@ -5,6 +5,15 @@ import { openDetailPanel, setupDetailPanel, closeDetailPanel } from './detail-pa
 import { store } from '../core/state.ts'
 import { showToast } from '../ui/shared/toast.ts'
 import { LOCAL_MIN_ZOOM } from '../map/map-mode.ts'
+import { DATA_REGIONS } from '../map/region-manager.ts'
+
+function getAllFillLayerIds(): string[] {
+  return DATA_REGIONS.map(r => `geology-fill__${r.id}`)
+}
+
+function getAllDipLayerIds(): string[] {
+  return DATA_REGIONS.map(r => `dip-points__${r.id}`)
+}
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -74,89 +83,69 @@ export function setupInfoPanel(map: maplibregl.Map): void {
     highlightFormation(map, null)
   })
 
-  map.on('click', 'dip-points', (e) => {
-    if (!e.features || e.features.length === 0) return
-
-    // Close detail panel if open
-    closeDetailPanel()
-
-    popup
-      .setLngLat(e.lngLat)
-      .setHTML(formatDipPopupContent(e.features[0]))
-      .addTo(map)
-  })
-
-  map.on('click', 'geology-fill', (e) => {
-    if (!e.features || e.features.length === 0) return
-
-    // Close any open dip popup
-    popup.remove()
-
-    const feature = e.features[0]
-    const objectId = feature.properties['OBJECTID'] || feature.properties['objectid'] || null
-    highlightFormation(map, objectId)
-
-    // If DESCR and LEGENDE are missing, enrich from WMS before opening
-    const descr = String(feature.properties['DESCR'] || feature.properties['descr'] || '')
-    const legende = String(feature.properties['LEGENDE'] || feature.properties['legende'] || '')
-    if (descr || legende) {
-      openDetailPanel(feature)
+  map.on('click', (e) => {
+    const dipFeatures = map.queryRenderedFeatures(e.point, { layers: getAllDipLayerIds() })
+    if (dipFeatures.length > 0) {
+      closeDetailPanel()
+      popup
+        .setLngLat(e.lngLat)
+        .setHTML(formatDipPopupContent(dipFeatures[0] as MapGeoJSONFeature))
+        .addTo(map)
       return
     }
-    const canvas = map.getCanvas()
-    canvas.style.cursor = 'wait'
-    queryWmsFeatureInfo(e.lngLat)
-      .then(props => {
-        canvas.style.cursor = 'pointer'
-        if (props) {
-          openDetailPanel({ properties: { ...feature.properties, ...props } })
-        } else {
-          openDetailPanel(feature)
-        }
-      })
-      .catch(() => {
-        canvas.style.cursor = 'pointer'
+
+    const fillFeatures = map.queryRenderedFeatures(e.point, { layers: getAllFillLayerIds() })
+    if (fillFeatures.length > 0) {
+      popup.remove()
+      const feature = fillFeatures[0] as MapGeoJSONFeature
+      const objectId = feature.properties['OBJECTID'] || feature.properties['objectid'] || null
+      highlightFormation(map, objectId)
+
+      const descr = String(feature.properties['DESCR'] || feature.properties['descr'] || '')
+      const legende = String(feature.properties['LEGENDE'] || feature.properties['legende'] || '')
+      if (descr || legende) {
         openDetailPanel(feature)
-      })
+        return
+      }
+      const canvas = map.getCanvas()
+      canvas.style.cursor = 'wait'
+      queryWmsFeatureInfo(e.lngLat)
+        .then(props => {
+          canvas.style.cursor = 'pointer'
+          if (props) {
+            openDetailPanel({ properties: { ...feature.properties, ...props } })
+          } else {
+            openDetailPanel(feature)
+          }
+        })
+        .catch(() => {
+          canvas.style.cursor = 'pointer'
+          openDetailPanel(feature)
+        })
+      return
+    }
+
+    // Mode local sans formation vectorielle : requête WMS directe
+    if (store.getState().mode === 'local' && map.getZoom() >= LOCAL_MIN_ZOOM) {
+      const canvas = map.getCanvas()
+      canvas.style.cursor = 'wait'
+      queryWmsFeatureInfo(e.lngLat)
+        .then(props => {
+          canvas.style.cursor = ''
+          if (!props) { showToast('Aucune donnée géologique ici', 'info'); return }
+          openDetailPanel({ properties: props })
+        })
+        .catch((err: unknown) => {
+          canvas.style.cursor = ''
+          if (err instanceof DOMException && err.name === 'AbortError') return
+          showToast('Erreur de requete BRGM', 'warning')
+        })
+    }
   })
 
-  map.on('click', (e) => {
-    if (store.getState().mode !== 'local') return
-    if (map.getZoom() < LOCAL_MIN_ZOOM) return
-
-    // Only handle clicks not already caught by geology-fill layer
-    const features = map.queryRenderedFeatures(e.point, { layers: ['geology-fill'] })
-    if (features.length > 0) return
-
-    // Click on area without vector tile: query WMS directly
-    const canvas = map.getCanvas()
-    canvas.style.cursor = 'wait'
-    queryWmsFeatureInfo(e.lngLat)
-      .then(props => {
-        canvas.style.cursor = ''
-        if (!props) { showToast('Aucune donnée géologique ici', 'info'); return }
-        openDetailPanel({ properties: props })
-      })
-      .catch((err: unknown) => {
-        canvas.style.cursor = ''
-        if (err instanceof DOMException && err.name === 'AbortError') return
-        showToast('Erreur de requete BRGM', 'warning')
-      })
-  })
-
-  map.on('mouseenter', 'dip-points', () => {
-    map.getCanvas().style.cursor = 'pointer'
-  })
-
-  map.on('mouseleave', 'dip-points', () => {
-    map.getCanvas().style.cursor = ''
-  })
-
-  map.on('mouseenter', 'geology-fill', () => {
-    map.getCanvas().style.cursor = 'pointer'
-  })
-
-  map.on('mouseleave', 'geology-fill', () => {
-    map.getCanvas().style.cursor = ''
+  map.on('mousemove', (e) => {
+    const dipHit = map.queryRenderedFeatures(e.point, { layers: getAllDipLayerIds() })
+    const fillHit = map.queryRenderedFeatures(e.point, { layers: getAllFillLayerIds() })
+    map.getCanvas().style.cursor = (dipHit.length > 0 || fillHit.length > 0) ? 'pointer' : ''
   })
 }
