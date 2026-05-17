@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { getEnrichedFossils, mergeFossils } from '../fossils-enriched.ts'
+import { FOSSIL_CANONICAL } from '../geology-data.ts'
+import fossilsJson from '../../config/fossils-enriched.json'
 
 describe('getEnrichedFossils', () => {
   it('retourne {} pour une carte vide', () => {
@@ -45,5 +47,20 @@ describe('mergeFossils', () => {
     const { merged, enrichedSet } = mergeFossils(extracted, enriched)
     expect(merged.ammonites).toHaveLength(1)
     expect(enrichedSet.has('ammonites')).toBe(false)
+  })
+})
+
+describe('fossils-enriched.json — singulier uniquement', () => {
+  it('aucun terme dans le JSON ne doit être une clé plurielle (FOSSIL_CANONICAL key → different value)', () => {
+    const byCarte = (fossilsJson as { by_carte: Record<string, { groups: Record<string, string[]> }> }).by_carte
+    const allTerms: string[] = Object.values(byCarte)
+      .flatMap(v => Object.values(v.groups).flat())
+
+    const violations = allTerms.filter(t => {
+      const canonical = FOSSIL_CANONICAL[t]
+      return canonical !== undefined && canonical !== t
+    })
+
+    expect(violations, `Termes pluriels non canonicalisés dans JSON : ${violations.slice(0, 10).join(', ')}`).toHaveLength(0)
   })
 })

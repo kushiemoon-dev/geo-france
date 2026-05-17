@@ -497,3 +497,12 @@ export function extractFossils(...sources: string[]): FossilGroups {
 export function extractLithology(...sources: string[]): string[] {
   return extractTerms(sources.filter(Boolean).join(' '), LITHOLOGY)
 }
+
+export const METAMORPHISM_WIKI_SLUGS: Record<string, string> = {
+  'regional': 'Métamorphisme_régional',
+  'contact': 'Métamorphisme_de_contact',
+  'hydrothermal': 'Métamorphisme_hydrothermal',
+  'haute pression': 'Métamorphisme_de_haute_pression',
+  'dynamique': 'Métamorphisme_dynamique',
+  'anatexie': 'Anatexie',
+}
