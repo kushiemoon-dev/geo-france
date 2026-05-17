@@ -3,7 +3,7 @@ export type FeatureLike = { properties: Record<string, unknown> }
 import { classifyNotation, extractLithology, extractFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS } from '../utils/geology-data.ts'
 import type { FossilGroups } from '../utils/geology-data.ts'
 import { getEnrichedFossils, mergeFossils } from '../utils/fossils-enriched.ts'
-import { getMineralInfo, getMineralBarColor, getRockInfo, hasUsableImage } from '../utils/mineral-data.ts'
+import { getMineralInfo, getMineralBarColor, getRockInfo, hasUsableImage, FORMATION_IMAGE_OVERRIDES } from '../utils/mineral-data.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
 import type { RockInfo } from '../utils/mineral-data.ts'
 import { bus } from '../core/events.ts'
@@ -141,7 +141,10 @@ function renderDetailContent(feature: FeatureLike): string {
   const extracted: FossilGroups = extractFossils(descr, legende, geo.summary ?? '')
   const enrichedRaw = getEnrichedFossils(carte)
   const { merged: fossils, enrichedSet } = mergeFossils(extracted, enrichedRaw)
-  const rock = findRockImage(lithology)
+  const overrideKey = Object.keys(FORMATION_IMAGE_OVERRIDES).find(k => notation.startsWith(k))
+  const rock = overrideKey
+    ? { image: FORMATION_IMAGE_OVERRIDES[overrideKey].image, name: overrideKey }
+    : findRockImage(lithology)
 
   const wikiUrl = geo.wikiSlug
     ? `https://fr.wikipedia.org/wiki/${encodeURIComponent(geo.wikiSlug)}`

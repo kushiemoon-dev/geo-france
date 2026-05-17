@@ -361,3 +361,10 @@ export function getRockInfo(name: string): RockInfo | undefined {
   const source = (imageMetadata as Record<string, ImageSource>)[canonical]
   return source ? { ...base, imageSource: source } : base
 }
+
+/** Per-formation image overrides (most specific keys first). */
+export const FORMATION_IMAGE_OVERRIDES: Record<string, { image: string; attribution?: string }> = {
+  b1Ph: { image: '/images/rocks/phtanite.jpg', attribution: 'Arlette1, CC BY-SA 3.0' },
+  b1:   { image: '/images/rocks/micaschiste.jpg' },
+  b2:   { image: '/images/rocks/grauwacke.jpg' },
+}
