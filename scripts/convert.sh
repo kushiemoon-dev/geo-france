@@ -156,6 +156,19 @@ for layer in "${LAYERS[@]}"; do
   done
   ogr2ogr -f GeoJSON "$merged" "$tmp_gpkg" "$layer"
   rm -f "$tmp_gpkg"
+
+  # Clip to France border (avoid cross-border overflow on frontier maps)
+  BORDER_FILE="$PROJECT_DIR/data/france-border.geojson"
+  if command -v ogr2ogr &>/dev/null && [ -f "$BORDER_FILE" ]; then
+    echo "  [clip] Clipping ${layer} to France border..."
+    merged_clipped="$WORK_DIR/${layer}_merged_clipped.geojson"
+    ogr2ogr -f GeoJSON "$merged_clipped" "$merged" \
+      -clipsrc "$BORDER_FILE" \
+      -nlt PROMOTE_TO_MULTI 2>/dev/null && mv "$merged_clipped" "$merged" || {
+      echo "  [warn] Clip failed for ${layer} — using unclipped data"
+      rm -f "$merged_clipped"
+    }
+  fi
 done
 
 # ---- Step 5: Generate PMTiles ----

@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "properties": {"name": "France metropolitaine"},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [[
+        [-5.5, 41.0], [10.0, 41.0], [10.0, 51.5], [-5.5, 51.5], [-5.5, 41.0]
+      ]]
+    }
+  }]
+}
