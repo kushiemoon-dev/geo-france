@@ -9,6 +9,7 @@ import type { RockInfo } from '../utils/mineral-data.ts'
 import { bus } from '../core/events.ts'
 import { store } from '../core/state.ts'
 import { NOTICES } from '../config/notices.ts'
+import { getCurrentRegionId, DATA_REGIONS } from '../map/region-manager.ts'
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -282,8 +283,14 @@ export function setupDetailPanel(map: maplibregl.Map, onClose: () => void): void
   // In local mode, the WMS click handler in info-panel manages the panel
   map.on('click', (e) => {
     if (store.getState().mode === 'local') return
-    const features = map.queryRenderedFeatures(e.point, { layers: ['geology-fill'] })
-    const dipFeatures = map.queryRenderedFeatures(e.point, { layers: ['dip-points'] })
+    const currentRegion = getCurrentRegionId()
+    const activeRegionIds = currentRegion === 'france'
+      ? DATA_REGIONS.map(r => r.id)
+      : (currentRegion ? [currentRegion] : [])
+    const fillLayerIds = activeRegionIds.map(rid => `geology-fill__${rid}`)
+    const dipLayerIds = activeRegionIds.map(rid => `dip-points__${rid}`)
+    const features = map.queryRenderedFeatures(e.point, { layers: fillLayerIds })
+    const dipFeatures = map.queryRenderedFeatures(e.point, { layers: dipLayerIds })
     if (features.length === 0 && dipFeatures.length === 0) {
       closeDetailPanel()
     }
