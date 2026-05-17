@@ -179,10 +179,10 @@ const ROCK_DB: Record<string, RockInfo> = {
   ]},
 
   // Sedimentaires detritiques
-  gres: { type: 'sedimentaire', origin: 'detritique', facies: 'Gres quartzeux', texture: 'Granulaire, cimentee', image: '/images/rocks/gres.jpg', imageStatus: 'quarantined', minerals: [
+  gres: { type: 'sedimentaire', origin: 'detritique', facies: 'Gres quartzeux', texture: 'Granulaire, cimentee', imageStatus: 'quarantined', minerals: [
     { name: 'quartz', percent: '75%' }, { name: 'feldspath', percent: '15%' }, { name: 'mica', percent: '5%' }, { name: 'argile', percent: '5%' }
   ]},
-  argile: { type: 'sedimentaire', origin: 'detritique', facies: 'Argile plastique', texture: 'Massive, plastique', image: '/images/rocks/argile.jpg', imageStatus: 'quarantined', minerals: [
+  argile: { type: 'sedimentaire', origin: 'detritique', facies: 'Argile plastique', texture: 'Massive, plastique', imageStatus: 'quarantined', minerals: [
     { name: 'kaolin', percent: '60%' }, { name: 'quartz', percent: '25%' }, { name: 'mica', percent: '15%' }
   ]},
   sable: { type: 'meuble', origin: 'detritique', facies: 'Sable quartzeux', texture: 'Granulaire meuble', image: '/images/rocks/sable.jpg', minerals: [
@@ -360,4 +360,11 @@ export function getRockInfo(name: string): RockInfo | undefined {
   if (!base) return undefined
   const source = (imageMetadata as Record<string, ImageSource>)[canonical]
   return source ? { ...base, imageSource: source } : base
+}
+
+/** Per-formation image overrides (most specific keys first). */
+export const FORMATION_IMAGE_OVERRIDES: Record<string, { image: string; attribution?: string }> = {
+  b1Ph: { image: '/images/rocks/phtanite.jpg', attribution: 'Arlette1, CC BY-SA 3.0' },
+  b1:   { image: '/images/rocks/micaschiste.jpg' },
+  b2:   { image: '/images/rocks/grauwacke.jpg' },
 }

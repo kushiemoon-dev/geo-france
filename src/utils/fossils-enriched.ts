@@ -1,3 +1,4 @@
+import { FOSSIL_CANONICAL } from './geology-data.ts'
 import type { FossilGroups } from './geology-data.ts'
 import enrichedData from '../config/fossils-enriched.json'
 
@@ -11,13 +12,30 @@ const data = enrichedData as EnrichedJson
 
 const MAX_TERMS = 12
 
+/**
+ * Convert a raw CARTE field value from PMTiles features to a fossils-enriched.json key.
+ *
+ * The BD Charm-50 PMTiles encode the BRGM sheet number with a +2000 offset
+ * (e.g. sheet 0479 → CARTE "2479", sheet 0244 → CARTE "2244").
+ * fossils-enriched.json is indexed by the raw 4-digit sheet number ("0479", "0244"…).
+ */
+function carteToNoticeKey(carte: string): string {
+  if (!carte) return ''
+  const n = parseInt(carte, 10)
+  if (isNaN(n)) return ''
+  const noticeNum = n >= 2000 ? n - 2000 : n
+  return String(noticeNum).padStart(4, '0')
+}
+
 export function getEnrichedFossils(carte: string): FossilGroups {
-  const key = carte ? carte.padStart(4, '0') : ''
+  const key = carteToNoticeKey(carte)
   const entry = key ? (data.by_carte[key] ?? null) : null
   if (!entry) return {}
   const out: FossilGroups = {}
   for (const [group, terms] of Object.entries(entry.groups)) {
-    out[group] = [...terms].slice(0, MAX_TERMS)
+    const mapped = [...terms].map(t => FOSSIL_CANONICAL[t] ?? t)
+    const deduped = [...new Set(mapped)]
+    out[group] = deduped.slice(0, MAX_TERMS)
   }
   return out
 }

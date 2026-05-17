@@ -4,12 +4,12 @@ import { extractFossils, extractLithology, classifyNotation } from '../geology-d
 describe('extractFossils', () => {
   it('détecte les ammonites dans un nom de formation', () => {
     const result = extractFossils('Calcaire à ammonites du Jurassique')
-    expect(Object.values(result).flat()).toContain('ammonites')
+    expect(Object.values(result).flat()).toContain('ammonite')
   })
 
   it('détecte les bivalves', () => {
     const result = extractFossils('Marnes à huîtres et bivalves')
-    expect(Object.values(result).flat().some(t => ['huîtres', 'huitres', 'bivalves'].includes(t))).toBe(true)
+    expect(Object.values(result).flat().some(t => ['huître', 'bivalve'].includes(t))).toBe(true)
   })
 
   it('retourne {} si texte vide', () => {
