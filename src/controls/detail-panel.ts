@@ -1,6 +1,6 @@
 import type maplibregl from 'maplibre-gl'
 export type FeatureLike = { properties: Record<string, unknown> }
-import { classifyNotation, extractLithology, extractFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS } from '../utils/geology-data.ts'
+import { classifyNotation, extractLithology, extractFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS, METAMORPHISM_WIKI_SLUGS } from '../utils/geology-data.ts'
 import type { FossilGroups } from '../utils/geology-data.ts'
 import { getEnrichedFossils, mergeFossils } from '../utils/fossils-enriched.ts'
 import { getMineralInfo, getMineralBarColor, getRockInfo, hasUsableImage, FORMATION_IMAGE_OVERRIDES } from '../utils/mineral-data.ts'
@@ -8,6 +8,8 @@ import type { GeologyEntry } from '../utils/geology-data.ts'
 import type { RockInfo } from '../utils/mineral-data.ts'
 import { bus } from '../core/events.ts'
 import { store } from '../core/state.ts'
+import { NOTICES } from '../config/notices.ts'
+import { getCurrentRegionId, DATA_REGIONS } from '../map/region-manager.ts'
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -27,34 +29,46 @@ function renderTags(items: string[], className: string, wikiSlugs?: Record<strin
 }
 
 function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): string {
-  const rows: [string, string][] = []
+  function makeRow(label: string, valueHtml: string): string {
+    return `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${valueHtml}</span></div>`
+  }
+
+  const parts: string[] = []
 
   if (geo.ere) {
     const ereParts = [geo.ere, geo.periode].filter(Boolean)
-    rows.push(['Ère géologique', ereParts.join(' / ')])
+    parts.push(makeRow('Ère géologique', escapeHtml(ereParts.join(' / '))))
   }
 
   const periodParts = [geo.systeme, geo.etage].filter(Boolean)
   if (periodParts.length > 0) {
-    rows.push(['Période', periodParts.join(' – ')])
+    parts.push(makeRow('Période', escapeHtml(periodParts.join(' – '))))
   }
 
   if (geo.ageStartMa != null && geo.ageEndMa != null) {
-    rows.push(['Âge absolu', `${geo.ageStartMa} – ${geo.ageEndMa} Ma`])
+    parts.push(makeRow('Âge absolu', escapeHtml(`${geo.ageStartMa} – ${geo.ageEndMa} Ma`)))
   }
 
-  const feuilleLabel = carte ? ` (feuille ${carte})` : ''
-  rows.push(['Code BRGM', `${notation}${feuilleLabel}`])
+  let carteHtml = ''
+  if (carte) {
+    const { regionId } = store.getState()
+    const regionNotices = NOTICES[regionId] ?? []
+    const paddedCarte = carte.padStart(4, '0')
+    const notice = regionNotices.find(n => n.sheet === paddedCarte)
+    if (notice) {
+      carteHtml = `<a href="${escapeHtml(notice.url)}" target="_blank" rel="noopener noreferrer">feuille ${escapeHtml(carte)} ↗</a>`
+    } else {
+      carteHtml = `feuille ${escapeHtml(carte)}`
+    }
+  }
+  const codeBrgmValueHtml = `${escapeHtml(notation)}${carteHtml ? ` (${carteHtml})` : ''}`
+  parts.push(makeRow('Code BRGM', codeBrgmValueHtml))
 
   if (geo.summary) {
-    rows.push(['Formation', geo.summary])
+    parts.push(makeRow('Formation', escapeHtml(geo.summary)))
   }
 
-  const rowsHtml = rows.map(([label, value]) =>
-    `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${escapeHtml(value)}</span></div>`
-  ).join('')
-
-  return `<div class="detail-section-header">Âge &amp; Stratigraphie</div>${rowsHtml}`
+  return `<div class="detail-section-header">Âge &amp; Stratigraphie</div>${parts.join('')}`
 }
 
 function renderPetrographySection(lithology: string[]): string {
@@ -71,15 +85,24 @@ function renderPetrographySection(lithology: string[]): string {
 
   if (!rockInfo) return ''
 
-  const rows: [string, string][] = []
-  const typeLabel = `Roche ${rockInfo.type}${rockInfo.origin ? ` ${rockInfo.origin}` : ''}`
-  rows.push(['Type', typeLabel])
-  if (rockInfo.facies) rows.push(['Facies', rockInfo.facies])
-  if (rockInfo.texture) rows.push(['Texture', rockInfo.texture])
+  const originSlug = rockInfo.origin ? METAMORPHISM_WIKI_SLUGS[rockInfo.origin] : undefined
+  const originHtml = originSlug
+    ? ` <a href="https://fr.wikipedia.org/wiki/${encodeURIComponent(originSlug)}" target="_blank" rel="noopener noreferrer">${escapeHtml(rockInfo.origin)}</a>`
+    : (rockInfo.origin ? ` ${escapeHtml(rockInfo.origin)}` : '')
+  const typeHtml = `Roche ${escapeHtml(rockInfo.type)}${originHtml}`
 
-  const rowsHtml = rows.map(([label, value]) =>
-    `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${escapeHtml(value)}</span></div>`
-  ).join('')
+  const typeRowHtml = `<div class="detail-row"><span class="detail-row-label">${escapeHtml('Type')}</span><span class="detail-row-value">${typeHtml}</span></div>`
+
+  const otherRows: [string, string][] = []
+  if (rockInfo.facies) otherRows.push(['Facies', rockInfo.facies])
+  if (rockInfo.texture) otherRows.push(['Texture', rockInfo.texture])
+
+  const rowsHtml = [
+    typeRowHtml,
+    ...otherRows.map(([label, value]) =>
+      `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${escapeHtml(value)}</span></div>`
+    ),
+  ].join('')
 
   const barsHtml = rockInfo.minerals.map(m => {
     const pctNum = parseInt(m.percent, 10)
@@ -140,7 +163,11 @@ function renderDetailContent(feature: FeatureLike): string {
   const lithology = extractLithology(descr, legende)
   const extracted: FossilGroups = extractFossils(descr, legende, geo.summary ?? '')
   const enrichedRaw = getEnrichedFossils(carte)
-  const { merged: fossils, enrichedSet } = mergeFossils(extracted, enrichedRaw)
+  const rawFossils = mergeFossils(extracted, enrichedRaw)
+  const isPrecambrien = geo.ere === 'Precambrien' || geo.periode === 'Brioverien'
+  const { merged: fossils, enrichedSet } = isPrecambrien
+    ? { merged: {} as FossilGroups, enrichedSet: new Set<string>() }
+    : rawFossils
   // Most-specific keys first — insertion order not reliable for matching priority
   const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1', 'b2'] as const
   const overrideKey = OVERRIDE_KEY_ORDER.find(k => notation.startsWith(k))
@@ -256,8 +283,14 @@ export function setupDetailPanel(map: maplibregl.Map, onClose: () => void): void
   // In local mode, the WMS click handler in info-panel manages the panel
   map.on('click', (e) => {
     if (store.getState().mode === 'local') return
-    const features = map.queryRenderedFeatures(e.point, { layers: ['geology-fill'] })
-    const dipFeatures = map.queryRenderedFeatures(e.point, { layers: ['dip-points'] })
+    const currentRegion = getCurrentRegionId()
+    const activeRegionIds = currentRegion === 'france'
+      ? DATA_REGIONS.map(r => r.id)
+      : (currentRegion ? [currentRegion] : [])
+    const fillLayerIds = activeRegionIds.map(rid => `geology-fill__${rid}`)
+    const dipLayerIds = activeRegionIds.map(rid => `dip-points__${rid}`)
+    const features = map.queryRenderedFeatures(e.point, { layers: fillLayerIds })
+    const dipFeatures = map.queryRenderedFeatures(e.point, { layers: dipLayerIds })
     if (features.length === 0 && dipFeatures.length === 0) {
       closeDetailPanel()
     }
