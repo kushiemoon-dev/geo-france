@@ -8,6 +8,7 @@ import type { GeologyEntry } from '../utils/geology-data.ts'
 import type { RockInfo } from '../utils/mineral-data.ts'
 import { bus } from '../core/events.ts'
 import { store } from '../core/state.ts'
+import { NOTICES } from '../config/notices.ts'
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -27,34 +28,46 @@ function renderTags(items: string[], className: string, wikiSlugs?: Record<strin
 }
 
 function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): string {
-  const rows: [string, string][] = []
+  function makeRow(label: string, valueHtml: string): string {
+    return `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${valueHtml}</span></div>`
+  }
+
+  const parts: string[] = []
 
   if (geo.ere) {
     const ereParts = [geo.ere, geo.periode].filter(Boolean)
-    rows.push(['Ère géologique', ereParts.join(' / ')])
+    parts.push(makeRow('Ère géologique', escapeHtml(ereParts.join(' / '))))
   }
 
   const periodParts = [geo.systeme, geo.etage].filter(Boolean)
   if (periodParts.length > 0) {
-    rows.push(['Période', periodParts.join(' – ')])
+    parts.push(makeRow('Période', escapeHtml(periodParts.join(' – '))))
   }
 
   if (geo.ageStartMa != null && geo.ageEndMa != null) {
-    rows.push(['Âge absolu', `${geo.ageStartMa} – ${geo.ageEndMa} Ma`])
+    parts.push(makeRow('Âge absolu', escapeHtml(`${geo.ageStartMa} – ${geo.ageEndMa} Ma`)))
   }
 
-  const feuilleLabel = carte ? ` (feuille ${carte})` : ''
-  rows.push(['Code BRGM', `${notation}${feuilleLabel}`])
+  let carteHtml = ''
+  if (carte) {
+    const { regionId } = store.getState()
+    const regionNotices = NOTICES[regionId] ?? []
+    const paddedCarte = carte.padStart(4, '0')
+    const notice = regionNotices.find(n => n.sheet === paddedCarte)
+    if (notice) {
+      carteHtml = `<a href="${escapeHtml(notice.url)}" target="_blank" rel="noopener noreferrer">feuille ${escapeHtml(carte)} ↗</a>`
+    } else {
+      carteHtml = `feuille ${escapeHtml(carte)}`
+    }
+  }
+  const codeBrgmValueHtml = `${escapeHtml(notation)}${carteHtml ? ` (${carteHtml})` : ''}`
+  parts.push(makeRow('Code BRGM', codeBrgmValueHtml))
 
   if (geo.summary) {
-    rows.push(['Formation', geo.summary])
+    parts.push(makeRow('Formation', escapeHtml(geo.summary)))
   }
 
-  const rowsHtml = rows.map(([label, value]) =>
-    `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${escapeHtml(value)}</span></div>`
-  ).join('')
-
-  return `<div class="detail-section-header">Âge &amp; Stratigraphie</div>${rowsHtml}`
+  return `<div class="detail-section-header">Âge &amp; Stratigraphie</div>${parts.join('')}`
 }
 
 function renderPetrographySection(lithology: string[]): string {
