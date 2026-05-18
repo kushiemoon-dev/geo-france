@@ -190,7 +190,8 @@ const LITHOLOGY = [
   'spilite', 'ophite', 'serpentinite', 'éclogite', 'eclogite',
   'mylonite', 'brèche', 'breche', 'phyllade', 'ardoise',
   'alterite', 'altérite', 'tonalite', 'arkose', 'leucogranite',
-  'tillite', 'trondhjemite', 'microgranite'
+  'tillite', 'trondhjemite', 'microgranite',
+  'gabbro', 'stratovolcan'
 ]
 
 export const LITHO_WIKI_SLUGS: Record<string, string> = {
