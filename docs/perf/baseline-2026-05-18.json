@@ -1,0 +1,14 @@
+{
+  "date": "2026-05-18",
+  "mode": "4G-mobile",
+  "metrics": {
+    "fcp_ms": 2412,
+    "lcp_ms": null,
+    "domContentLoaded_ms": 2398,
+    "load_ms": 2409,
+    "totalTransferSize_bytes": 1320352,
+    "jsTransferSize_bytes": 399460,
+    "requestCount": 42
+  },
+  "notes": "baseline avant optimisations F1-F8"
+}
