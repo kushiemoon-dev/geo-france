@@ -8,6 +8,7 @@ import { store } from '../core/state.ts'
 import { bus } from '../core/events.ts'
 
 let currentRegionId: string | null = null
+const initializedRegions = new Set<string>()
 
 export const DATA_REGIONS = REGIONS.filter(r => r.id !== 'france')
 
@@ -15,21 +16,53 @@ function getSourceId(regionId: string): string {
   return `geology-${regionId}`
 }
 
-export function initAllRegions(map: maplibregl.Map): void {
-  for (const region of DATA_REGIONS) {
-    const sourceId = getSourceId(region.id)
-    if (!map.getSource(sourceId)) {
-      map.addSource(sourceId, {
-        type: 'vector',
-        url: `pmtiles:///data/${region.id}.pmtiles`
-      })
-    }
-    for (const layer of createLayersForRegion(region.id)) {
-      if (!map.getLayer(layer.id)) {
-        map.addLayer(layer)
-      }
+function addRegionToMap(map: maplibregl.Map, regionId: string): void {
+  if (initializedRegions.has(regionId)) return
+  initializedRegions.add(regionId)
+
+  const sourceId = getSourceId(regionId)
+  if (!map.getSource(sourceId)) {
+    map.addSource(sourceId, {
+      type: 'vector',
+      url: `pmtiles:///data/${regionId}.pmtiles`
+    })
+  }
+  for (const layer of createLayersForRegion(regionId)) {
+    if (!map.getLayer(layer.id)) {
+      map.addLayer(layer)
     }
   }
+}
+
+export function initRegions(map: maplibregl.Map, initialRegionId: string): void {
+  if (initialRegionId === 'france') {
+    // France view: load all 13 regions — existing behaviour unchanged
+    for (const region of DATA_REGIONS) {
+      addRegionToMap(map, region.id)
+    }
+  } else {
+    // Single-region launch: only load the requested region
+    addRegionToMap(map, initialRegionId)
+  }
+}
+
+export async function ensureRegionInitialized(map: maplibregl.Map, regionId: string): Promise<void> {
+  if (initializedRegions.has(regionId)) return
+  addRegionToMap(map, regionId)
+
+  // Wait for the source to be available
+  const sourceId = getSourceId(regionId)
+  if (map.isSourceLoaded(sourceId)) return
+
+  await new Promise<void>((resolve) => {
+    const onSourceData = (e: maplibregl.MapSourceDataEvent) => {
+      if (e.sourceId === sourceId && e.isSourceLoaded) {
+        map.off('sourcedata', onSourceData)
+        resolve()
+      }
+    }
+    map.on('sourcedata', onSourceData)
+  })
 }
 
 function setRegionVisibility(map: maplibregl.Map, regionId: string, visibility: 'visible' | 'none'): void {
@@ -46,7 +79,7 @@ function hideAllRegions(map: maplibregl.Map): void {
   }
 }
 
-export function loadRegion(map: maplibregl.Map, regionId: string): void {
+export async function loadRegion(map: maplibregl.Map, regionId: string): Promise<void> {
   const region = getRegion(regionId)
   if (!region) {
     showToast(`Region inconnue : ${regionId}`, 'error')
@@ -55,9 +88,10 @@ export function loadRegion(map: maplibregl.Map, regionId: string): void {
 
   if (regionId === currentRegionId) return
 
-  hideAllRegions(map)
-
   if (regionId === 'france') {
+    // Ensure all regions are initialized before showing them
+    await Promise.all(DATA_REGIONS.map(r => ensureRegionInitialized(map, r.id)))
+    hideAllRegions(map)
     for (const r of DATA_REGIONS) {
       setRegionVisibility(map, r.id, 'visible')
     }
@@ -67,6 +101,10 @@ export function loadRegion(map: maplibregl.Map, regionId: string): void {
     bus.emit('region:loaded', { regionId })
     return
   }
+
+  await ensureRegionInitialized(map, regionId)
+
+  hideAllRegions(map)
 
   store.setState({ loading: true, regionId })
   showMapLoading(`Chargement ${region.name}...`)
@@ -116,4 +154,9 @@ export function getActiveRegionLayerId(baseId: string): string {
     ? currentRegionId
     : DATA_REGIONS[0]?.id ?? 'bretagne'
   return getRegionLayerId(baseId, regionId)
+}
+
+/** For test isolation only — resets module-level state between tests */
+export function _resetInitializedRegions(): void {
+  initializedRegions.clear()
 }
