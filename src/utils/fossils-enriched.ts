@@ -1,6 +1,5 @@
 import { FOSSIL_CANONICAL } from './geology-data.ts'
 import type { FossilGroups } from './geology-data.ts'
-import enrichedData from '../config/fossils-enriched.json'
 
 type EnrichedEntry = { groups: Record<string, string[]>; sources: string[] }
 type EnrichedJson = {
@@ -8,9 +7,20 @@ type EnrichedJson = {
   by_carte: Record<string, EnrichedEntry>
 }
 
-const data = enrichedData as EnrichedJson
-
 const MAX_TERMS = 12
+
+let cache: Promise<EnrichedJson> | null = null
+
+function loadEnrichedData(): Promise<EnrichedJson> {
+  if (!cache) {
+    cache = import('../config/fossils-enriched.json').then(m => m.default as EnrichedJson)
+  }
+  return cache
+}
+
+export function prefetchEnrichedFossils(): void {
+  loadEnrichedData()
+}
 
 /**
  * Convert a raw CARTE field value from PMTiles features to a fossils-enriched.json key.
@@ -27,7 +37,8 @@ function carteToNoticeKey(carte: string): string {
   return String(noticeNum).padStart(4, '0')
 }
 
-export function getEnrichedFossils(carte: string): FossilGroups {
+export async function getEnrichedFossils(carte: string): Promise<FossilGroups> {
+  const data = await loadEnrichedData()
   const key = carteToNoticeKey(carte)
   const entry = key ? (data.by_carte[key] ?? null) : null
   if (!entry) return {}
