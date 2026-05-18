@@ -4,7 +4,7 @@ import type { LayerSpecification } from 'maplibre-gl'
 
 describe('faultsMajorLayer', () => {
   it('a le filtre CODE = 1', () => {
-    expect(faultsMajorLayer.filter).toEqual(['==', ['get', 'CODE'], 1])
+    expect((faultsMajorLayer as Record<string, unknown>).filter).toEqual(['==', ['get', 'CODE'], 1])
   })
 
   it('n\'a pas de minzoom', () => {
@@ -14,7 +14,7 @@ describe('faultsMajorLayer', () => {
 
 describe('faultsMinorLayer', () => {
   it('a le filtre CODE = 2', () => {
-    expect(faultsMinorLayer.filter).toEqual(['==', ['get', 'CODE'], 2])
+    expect((faultsMinorLayer as Record<string, unknown>).filter).toEqual(['==', ['get', 'CODE'], 2])
   })
 
   it('a minzoom: 8', () => {
