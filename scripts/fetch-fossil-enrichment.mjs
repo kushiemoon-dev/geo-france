@@ -25,7 +25,7 @@ const ROOT = join(__dirname, '..')
 const force = process.argv.includes('--force')
 
 // ── Fossil keywords — imported from shared vocabulary ─────────────────────────
-import { FOSSIL_GROUPS, FOSSIL_CANONICAL as _FOSSIL_CANONICAL } from '../src/utils/fossil-vocabulary.ts'
+import { FOSSIL_GROUPS, FOSSIL_CANONICAL as _FOSSIL_CANONICAL } from '../src/utils/fossil-vocabulary.mjs'
 
 const MAX_TERMS = 12
 // French common words to skip in genus extraction
