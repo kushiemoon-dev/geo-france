@@ -13,7 +13,7 @@ interface LayerGroup {
 const LAYER_GROUPS: LayerGroup[] = [
   { id: 'formations', label: 'Formations géologiques', baseLayerIds: ['geology-fill', 'geology-highlight'], visible: true },
   { id: 'contours', label: 'Contours formations', baseLayerIds: ['geology-outline'], visible: true },
-  { id: 'faults', label: 'Failles & contacts', baseLayerIds: ['faults'], visible: true },
+  { id: 'faults', label: 'Failles & contacts', baseLayerIds: ['faults-major', 'faults-minor'], visible: true },
   { id: 'dips', label: 'Pendages', baseLayerIds: ['dip-points', 'dip-labels'], visible: true },
   { id: 'surcharge', label: 'Surcharges', baseLayerIds: ['surcharge'], visible: true },
 ]
