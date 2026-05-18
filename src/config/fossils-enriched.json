@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-20T23:12:57.780Z",
+  "generated": "2026-05-18T20:47:35.712Z",
   "by_carte": {
     "1001": {
       "groups": {
@@ -38,8 +38,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -110,9 +108,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Hasparren",
@@ -189,9 +185,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Orlhn",
@@ -267,10 +261,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Carte",
@@ -336,10 +327,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Carte",
@@ -407,10 +395,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -434,9 +419,6 @@
         "vertébrés": [
           "reptile"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Mirande",
           "Petite",
@@ -456,10 +438,6 @@
     },
     "1008": {
       "groups": {
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Lombez",
           "Garonne",
@@ -479,10 +457,6 @@
     },
     "1009": {
       "groups": {
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Muret",
           "Lauragais",
@@ -508,10 +482,6 @@
         "vertébrés": [
           "poisson",
           "mammifère"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Toulouse",
@@ -551,7 +521,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -594,9 +563,6 @@
           "spore",
           "pollen",
           "microflore"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Boite",
@@ -670,8 +636,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -755,8 +719,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -850,8 +812,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -923,9 +883,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Massif",
@@ -971,9 +929,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -1011,9 +966,6 @@
         "microfossiles": [
           "ostracode",
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Pages",
@@ -1086,7 +1038,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -1168,9 +1119,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Regagnas",
@@ -1243,8 +1192,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -1295,10 +1242,6 @@
         "algues": [
           "algue",
           "characée"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Draguignan",
@@ -1362,8 +1305,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -1443,9 +1384,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -1520,7 +1458,6 @@
         ],
         "autres": [
           "spongiaire",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -1545,9 +1482,6 @@
         "vertébrés": [
           "mammifère"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Garonne",
           "Volvestre",
@@ -1569,10 +1503,6 @@
       "groups": {
         "vertébrés": [
           "mammifère"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Poslalp",
@@ -1668,7 +1598,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
           "oncolite"
         ],
         "genres": [
@@ -1704,9 +1633,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Tertiaire",
@@ -1782,10 +1708,6 @@
           "microfaune",
           "microflore"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Ilola",
           "Cuers",
@@ -1838,7 +1760,6 @@
           "graptolite"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -1960,8 +1881,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -2030,7 +1949,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -2126,9 +2044,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -2210,8 +2125,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -2308,9 +2221,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -2403,8 +2313,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -2508,8 +2416,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -2587,8 +2493,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -2649,8 +2553,6 @@
           "acritarche"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -2714,8 +2616,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Carte",
@@ -2791,8 +2692,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -2822,7 +2721,6 @@
           "microflore"
         ],
         "autres": [
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -2924,10 +2822,6 @@
           "ostracode",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Ghisonaccia",
           "Corse",
@@ -2949,10 +2843,6 @@
       "groups": {
         "microfossiles": [
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Fraoce",
@@ -2986,9 +2876,6 @@
         "microfossiles": [
           "tentaculite"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Cassel",
           "Remise",
@@ -3014,9 +2901,6 @@
         "microfossiles": [
           "pollen",
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Membres",
@@ -3126,9 +3010,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -3188,9 +3069,7 @@
           "microfaune"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère"
+          "éponge"
         ],
         "genres": [
           "Guines",
@@ -3231,8 +3110,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -3263,10 +3140,6 @@
         ],
         "foraminifères": [
           "nummulite"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Nummulites",
@@ -3335,10 +3208,6 @@
           "dinoflagellé",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Lamellibranches",
           "Ostracodes",
@@ -3399,9 +3268,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Cassel",
@@ -3440,8 +3307,6 @@
           "poisson"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -3481,9 +3346,6 @@
         "microfossiles": [
           "graptolite",
           "chitinozoaire"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Weppes",
@@ -3553,9 +3415,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Montreuil",
           "Boulonnais",
@@ -3577,9 +3436,6 @@
       "groups": {
         "bivalves": [
           "inoceramus"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Boite",
@@ -3635,8 +3491,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Cyprina",
@@ -3683,8 +3538,7 @@
           "serpule"
         ],
         "autres": [
-          "éponge",
-          "fossile"
+          "éponge"
         ],
         "genres": [
           "Cucullaea",
@@ -3716,10 +3570,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "bioclaste"
         ],
         "genres": [
           "Bassin",
@@ -3776,7 +3626,6 @@
           "inoceramus"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -3802,7 +3651,6 @@
           "inoceramus"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -3864,9 +3712,6 @@
         ],
         "vertébrés": [
           "vertébré"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Inoceramus",
@@ -3941,9 +3786,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Ostrea",
@@ -4020,9 +3863,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boite",
@@ -4078,9 +3919,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -4123,8 +3961,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Abbeville",
@@ -4176,8 +4013,7 @@
           "reptile"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Doullens",
@@ -4218,9 +4054,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boita",
@@ -4252,10 +4086,6 @@
         ],
         "vertébrés": [
           "vertébré"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Quaternaire",
@@ -4298,8 +4128,6 @@
           "characée"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -4373,7 +4201,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -4438,9 +4265,6 @@
           "conodonte",
           "tentaculite",
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Jlliie",
@@ -4512,10 +4336,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Carle",
@@ -4555,10 +4376,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Pages",
           "Gamaches",
@@ -4593,9 +4410,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Boite",
@@ -4653,8 +4467,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -4761,8 +4573,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -4813,8 +4623,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -4866,7 +4674,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -4940,8 +4747,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -4980,8 +4785,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -5018,8 +4821,6 @@
           "tentaculite"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -5082,8 +4883,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Manche",
@@ -5129,8 +4929,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -5196,8 +4994,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -5245,8 +5041,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -5281,9 +5075,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Monciardini",
@@ -5328,8 +5120,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -5363,10 +5153,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Boite",
@@ -5416,9 +5202,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Salle",
@@ -5463,8 +5247,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -5554,8 +5336,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -5624,9 +5404,7 @@
           "serpule"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère"
+          "éponge"
         ],
         "genres": [
           "Renwez",
@@ -5687,10 +5465,6 @@
           "ostracode",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Bassin",
           "Cambrien",
@@ -5722,10 +5496,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Cotentin",
@@ -5763,8 +5533,6 @@
           "bryozoaire"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -5829,7 +5597,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -5886,10 +5653,6 @@
           "microfaune",
           "microflore"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Destombes",
           "Institut",
@@ -5938,8 +5701,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Ilouaill",
@@ -5997,8 +5759,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -6060,8 +5820,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -6124,10 +5882,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Beauvaisis",
@@ -6168,7 +5923,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -6222,10 +5976,6 @@
           "spore",
           "pollen"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Coupes",
           "Forages",
@@ -6276,8 +6026,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -6322,10 +6070,6 @@
         "vertébrés": [
           "vertébré"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Orleans",
           "Coucy",
@@ -6367,10 +6111,6 @@
           "miliole",
           "miliolidé",
           "globigérine"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Sables",
@@ -6417,9 +6157,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Bassin",
@@ -6477,8 +6214,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Rethel",
@@ -6560,10 +6296,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Ardennes",
@@ -6617,10 +6350,6 @@
         ],
         "vertébrés": [
           "poisson"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Maubeuge",
@@ -6693,8 +6422,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -6783,9 +6510,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -6853,8 +6577,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -6888,9 +6610,6 @@
         "bivalves": [
           "ostrea",
           "inoceramus"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Seine",
@@ -6935,8 +6654,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -6979,10 +6696,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Illli",
@@ -7056,8 +6769,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -7118,8 +6829,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -7182,8 +6891,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -7226,10 +6933,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Picardie",
@@ -7280,10 +6983,6 @@
           "pollen",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Attichy",
@@ -7345,8 +7044,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -7390,8 +7087,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -7434,8 +7129,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -7500,10 +7193,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -7546,10 +7236,6 @@
           "récifal",
           "polypier",
           "récif"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Bassin",
@@ -7600,9 +7286,7 @@
           "poisson"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -7643,10 +7327,6 @@
           "polypier",
           "récif"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Lorraine",
           "Belgique",
@@ -7686,10 +7366,6 @@
         ],
         "vertébrés": [
           "poisson"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Lorraine",
@@ -7737,10 +7413,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Hunsruck",
@@ -7796,10 +7468,6 @@
           "acritarche",
           "spore",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Sailill",
@@ -7867,8 +7535,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -7941,8 +7607,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -8031,9 +7695,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -8144,9 +7805,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -8213,9 +7871,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Lisieux",
@@ -8261,8 +7917,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Brionne",
@@ -8318,9 +7973,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Rouen",
@@ -8383,9 +8035,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Vexin",
@@ -8453,8 +8103,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -8537,9 +8185,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -8604,8 +8249,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -8652,8 +8295,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -8702,8 +8343,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -8744,8 +8383,6 @@
           "vertébré"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -8813,8 +8450,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -8864,8 +8499,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -8913,9 +8546,7 @@
           "microfaune"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "bioclaste"
+          "éponge"
         ],
         "genres": [
           "Carle",
@@ -8988,9 +8619,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -9036,9 +8664,7 @@
           "récif"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère"
+          "éponge"
         ],
         "genres": [
           "Verdun",
@@ -9078,8 +8704,6 @@
           "reptile"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -9149,9 +8773,6 @@
         "annélides": [
           "serpule"
         ],
-        "autres": [
-          "bioclaste"
-        ],
         "genres": [
           "Formations",
           "Briey",
@@ -9197,9 +8818,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Canner",
           "Moselle",
@@ -9232,9 +8850,6 @@
         ],
         "vertébrés": [
           "poisson"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Ensdorf",
@@ -9271,9 +8886,6 @@
         "vertébrés": [
           "poisson",
           "vertébré"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Geislautern",
@@ -9329,9 +8941,6 @@
           "pollen",
           "microfaune"
         ],
-        "autres": [
-          "bioclaste"
-        ],
         "genres": [
           "Fronce",
           "Cedex",
@@ -9366,9 +8975,6 @@
           "acritarche",
           "spore",
           "microfaune"
-        ],
-        "autres": [
-          "fossilifère"
         ],
         "genres": [
           "Carle",
@@ -9408,7 +9014,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -9509,9 +9114,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -9603,10 +9205,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -9696,9 +9295,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -9751,9 +9347,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boile",
@@ -9809,9 +9403,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Franc",
@@ -9863,8 +9455,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -9933,8 +9523,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -9997,8 +9585,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10062,8 +9648,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10108,8 +9692,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10151,8 +9733,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10205,8 +9785,6 @@
           "vertébré"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10263,8 +9841,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10315,8 +9891,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10372,9 +9946,7 @@
           "microfaune"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "bioclaste"
+          "éponge"
         ],
         "genres": [
           "Carte",
@@ -10428,9 +10000,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Monlho",
@@ -10490,10 +10060,6 @@
         "microfossiles": [
           "ostracode"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Pages",
           "Lorraine",
@@ -10534,8 +10100,6 @@
           "reptile"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10582,10 +10146,6 @@
         "vertébrés": [
           "poisson"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Chambley",
           "Lorraine",
@@ -10630,10 +10190,6 @@
           "poisson",
           "vertébré"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Moselle",
           "Seille",
@@ -10665,8 +10221,6 @@
           "reptile"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10700,8 +10254,6 @@
           "reptile"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10740,10 +10292,6 @@
         "vertébrés": [
           "poisson",
           "reptile"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Boulevard",
@@ -10806,8 +10354,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -10862,10 +10408,6 @@
           "pollen",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Carte",
           "Lannion",
@@ -10900,9 +10442,6 @@
           "acritarche",
           "spore",
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Boite",
@@ -10939,10 +10478,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -10985,9 +10520,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -11019,7 +10551,6 @@
           "acritarche"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -11087,9 +10618,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -11181,9 +10709,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -11276,9 +10801,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -11339,9 +10861,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -11396,10 +10915,6 @@
         ],
         "annélides": [
           "annélide"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Plaine",
@@ -11457,10 +10972,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Potamides",
@@ -11534,8 +11045,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -11585,8 +11094,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -11634,8 +11141,6 @@
           "vertébré"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -11685,8 +11190,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -11737,8 +11240,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -11802,8 +11303,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -11858,9 +11357,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -11929,9 +11425,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -11978,10 +11471,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -12065,10 +11554,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -12118,8 +11604,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -12158,10 +11642,6 @@
           "corail",
           "polypier",
           "récif"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Saint",
@@ -12215,9 +11695,6 @@
         "vertébrés": [
           "poisson"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Pages",
           "Lorraine",
@@ -12260,10 +11737,6 @@
           "poisson",
           "vertébré"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Nomeny",
           "Seille",
@@ -12298,9 +11771,6 @@
         "vertébrés": [
           "poisson"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Feuille",
           "Synclinal",
@@ -12330,8 +11800,6 @@
           "poisson"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -12406,8 +11874,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -12497,9 +11963,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -12563,8 +12026,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -12597,7 +12058,6 @@
           "algue"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -12636,8 +12096,7 @@
           "pollen"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -12680,10 +12139,6 @@
         "microfossiles": [
           "conodonte",
           "spore"
-        ],
-        "autres": [
-          "fossile",
-          "bioclaste"
         ],
         "genres": [
           "Formations",
@@ -12746,7 +12201,6 @@
           "pollen"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -12773,9 +12227,6 @@
         ],
         "microfossiles": [
           "pollen"
-        ],
-        "autres": [
-          "bioclaste"
         ],
         "genres": [
           "Roches",
@@ -12818,9 +12269,6 @@
           "spore",
           "pollen",
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Carte",
@@ -12874,9 +12322,7 @@
           "annélide"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "bioclaste"
+          "éponge"
         ],
         "genres": [
           "Carte",
@@ -12899,9 +12345,6 @@
       "groups": {
         "coraux": [
           "corail"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Roches",
@@ -12947,10 +12390,6 @@
           "chitinozoaire",
           "spore",
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Landivv",
@@ -13012,8 +12451,6 @@
           "chitinozoaire"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -13101,9 +12538,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -13187,9 +12621,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -13278,9 +12709,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -13336,8 +12764,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -13398,11 +12824,6 @@
         "annélides": [
           "annélide"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Carte",
           "Boite",
@@ -13453,10 +12874,6 @@
           "microfaune",
           "microflore"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Melle",
           "Crahet",
@@ -13487,8 +12904,6 @@
           "foraminifère"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -13525,8 +12940,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -13561,10 +12974,6 @@
         "vertébrés": [
           "poisson"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Fontainebleau",
           "Marsange",
@@ -13590,9 +12999,6 @@
         "gastéropodes": [
           "turritella",
           "natica"
-        ],
-        "autres": [
-          "fossilifère"
         ],
         "genres": [
           "Chenoise",
@@ -13620,8 +13026,6 @@
           "miliole"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -13656,7 +13060,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -13701,10 +13104,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossilifère",
-          "bioclaste"
         ],
         "genres": [
           "Pages",
@@ -13761,10 +13160,6 @@
           "dinoflagellé",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "bioclaste"
         ],
         "genres": [
           "Editions",
@@ -13834,8 +13229,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -13875,10 +13268,6 @@
         ],
         "coraux": [
           "rugosa"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Barrois",
@@ -13922,10 +13311,6 @@
         ],
         "vertébrés": [
           "vertébré"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Commercy",
@@ -13998,11 +13383,6 @@
         "annélides": [
           "serpule"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Frlne",
           "Dogger",
@@ -14071,8 +13451,6 @@
           "bryozoaire"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -14109,9 +13487,6 @@
         "coraux": [
           "corail"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Bassin",
           "Muschelkalk",
@@ -14138,8 +13513,6 @@
           "poisson"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -14213,8 +13586,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -14276,10 +13647,6 @@
           "spore",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Mammuthus",
           "Hanhoffen",
@@ -14314,9 +13681,6 @@
         "microfossiles": [
           "pollen"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Boite",
           "Clldex",
@@ -14348,9 +13712,6 @@
         "microfossiles": [
           "acritarche",
           "dinoflagellé"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Carte",
@@ -14409,8 +13770,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -14452,10 +13811,6 @@
           "acritarche",
           "spore"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boita",
           "Formations",
@@ -14484,9 +13839,6 @@
           "acritarche",
           "spore"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Roches",
           "Morlaix",
@@ -14510,7 +13862,6 @@
           "algue"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -14553,10 +13904,6 @@
           "spore",
           "pollen"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Carte",
           "Pontrieux",
@@ -14586,9 +13933,6 @@
         "microfossiles": [
           "spore",
           "pollen"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Carte",
@@ -14635,9 +13979,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -14670,8 +14011,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -14725,9 +14064,6 @@
         "microfossiles": [
           "ostracode",
           "graptolite"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Carte",
@@ -14789,8 +14125,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -14835,8 +14169,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -14935,9 +14267,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -15021,8 +14350,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -15086,7 +14413,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -15128,9 +14454,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Cedex",
@@ -15177,10 +14500,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Comme",
           "Chartres",
@@ -15213,10 +14532,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Boile",
@@ -15252,10 +14567,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Seine",
@@ -15299,9 +14610,6 @@
           "microfaune",
           "microflore"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Melun",
           "Seine",
@@ -15337,7 +14645,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -15378,7 +14685,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -15408,9 +14714,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Romilly",
@@ -15462,10 +14765,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Service",
@@ -15525,9 +14824,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -15584,9 +14880,7 @@
           "serpule"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère"
+          "éponge"
         ],
         "genres": [
           "Champagne",
@@ -15626,10 +14920,6 @@
         "vertébrés": [
           "poisson",
           "vertébré"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Voilage",
@@ -15679,7 +14969,6 @@
           "vertébré"
         ],
         "autres": [
-          "fossile",
           "oncolite"
         ],
         "genres": [
@@ -15728,10 +15017,6 @@
         ],
         "annélides": [
           "serpule"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Madon",
@@ -15787,8 +15072,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -15845,8 +15128,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -15897,8 +15178,6 @@
           "chitinozoaire"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -15977,8 +15256,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -16034,10 +15311,6 @@
           "ostracode",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Ostrea",
           "Pitaria",
@@ -16065,9 +15338,6 @@
         ],
         "algues": [
           "algue"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Boite",
@@ -16134,10 +15404,6 @@
           "pollen",
           "tentaculite"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Pages",
           "Gneiss",
@@ -16202,10 +15468,6 @@
           "spore",
           "tentaculite"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Brest",
           "Commana",
@@ -16256,10 +15518,6 @@
           "spore",
           "microflore"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Huelgoat",
           "Monts",
@@ -16295,10 +15553,6 @@
           "acritarche",
           "spore",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Dinantien",
@@ -16344,8 +15598,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -16378,9 +15630,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -16432,10 +15682,6 @@
           "chitinozoaire",
           "spore",
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Editions",
@@ -16505,10 +15751,6 @@
           "acritarche",
           "spore",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -16580,10 +15822,6 @@
           "tentaculite",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Couina",
           "Orleans",
@@ -16628,10 +15866,6 @@
           "acritarche",
           "spore",
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Massif",
@@ -16678,10 +15912,6 @@
           "chitinozoaire",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Lerouge",
           "Besombes",
@@ -16724,10 +15954,6 @@
           "pollen",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Service",
@@ -16792,9 +16018,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -16864,9 +16087,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -16946,9 +16166,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -16979,8 +16196,7 @@
           "inoceramus"
         ],
         "autres": [
-          "éponge",
-          "fossile"
+          "éponge"
         ],
         "genres": [
           "Editions",
@@ -17022,7 +16238,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -17057,10 +16272,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Boite",
@@ -17103,8 +16314,6 @@
           "mammifère"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -17141,8 +16350,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -17176,10 +16383,6 @@
         ],
         "bryozoaires": [
           "bryozoaire"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Fontainebleau",
@@ -17252,9 +16455,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -17426,10 +16627,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boile",
           "Cedex",
@@ -17504,9 +16701,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -17554,9 +16748,7 @@
           "vertébré"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère"
+          "éponge"
         ],
         "genres": [
           "Fossiles",
@@ -17610,10 +16802,6 @@
         ],
         "bryozoaires": [
           "bryozoaire"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Bassin",
@@ -17675,10 +16863,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -17750,8 +16934,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -17821,8 +17003,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -17865,7 +17045,6 @@
           "vertébré"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -17897,9 +17076,7 @@
           "chitinozoaire"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Vosges",
@@ -17969,8 +17146,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -18016,10 +17191,6 @@
           "spore",
           "pollen",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Blatt",
@@ -18073,10 +17244,6 @@
           "conodonte",
           "acritarche",
           "spore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -18143,9 +17310,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -18189,10 +17353,6 @@
           "spore",
           "tentaculite"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Cedex",
           "Toute",
@@ -18232,9 +17392,6 @@
           "graptolite",
           "spore"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Service",
           "Toute",
@@ -18271,9 +17428,6 @@
         "microfossiles": [
           "graptolite"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Formations",
           "Filons",
@@ -18306,9 +17460,6 @@
           "spore",
           "pollen"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Service",
           "Toute",
@@ -18337,9 +17488,6 @@
           "acritarche",
           "spore",
           "pollen"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Carte",
@@ -18387,9 +17535,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Carle",
@@ -18466,8 +17612,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -18537,9 +17681,7 @@
           "microfaune"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère"
+          "éponge"
         ],
         "genres": [
           "Carte",
@@ -18625,9 +17767,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -18673,10 +17812,6 @@
           "acritarche",
           "tentaculite",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Moyen",
@@ -18750,9 +17885,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -18844,9 +17976,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -18924,8 +18053,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -19014,9 +18141,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -19096,10 +18220,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Pages",
           "Conies",
@@ -19128,10 +18248,6 @@
           "reptile",
           "mammifère",
           "vertébré"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -19162,10 +18278,6 @@
           "spore",
           "pollen"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boilll",
           "Pages",
@@ -19193,9 +18305,6 @@
         ],
         "bryozoaires": [
           "bryozoaire"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Puiseaux",
@@ -19254,8 +18363,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -19306,9 +18414,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Fronce",
@@ -19362,9 +18468,6 @@
           "pollen",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Seine",
@@ -19440,10 +18543,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Bouilly",
@@ -19487,10 +18587,6 @@
         ],
         "vertébrés": [
           "mammifère"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Fossiles",
@@ -19544,10 +18640,6 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Apiocrinus",
           "Rhynchonella",
@@ -19594,10 +18686,6 @@
         ],
         "bryozoaires": [
           "bryozoaire"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Chaumont",
@@ -19650,10 +18738,6 @@
         "vertébrés": [
           "poisson",
           "reptile"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -19716,8 +18800,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -19764,11 +18846,6 @@
         "microfossiles": [
           "graptolite"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Cedex",
           "Pages",
@@ -19802,10 +18879,6 @@
         "vertébrés": [
           "poisson",
           "vertébré"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Hameurt",
@@ -19897,8 +18970,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -19927,7 +18998,6 @@
           "bryozoaire"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -19950,7 +19020,6 @@
     "0345": {
       "groups": {
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -19986,7 +19055,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -20010,9 +19078,6 @@
       "groups": {
         "microfossiles": [
           "pollen"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Carte",
@@ -20077,9 +19142,6 @@
     },
     "0350": {
       "groups": {
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Service",
           "Toute",
@@ -20112,9 +19174,6 @@
           "acritarche",
           "spore",
           "pollen"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Geoscirncn",
@@ -20149,10 +19208,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Carte",
@@ -20230,8 +19285,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -20288,9 +19341,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -20366,9 +19417,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Terre",
@@ -20448,8 +19497,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -20515,8 +19562,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -20591,10 +19636,6 @@
           "pollen",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Maine",
@@ -20678,9 +19719,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -20725,9 +19763,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -20782,8 +19818,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -20824,9 +19858,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Conditions",
           "Patay",
@@ -20857,10 +19888,6 @@
           "pollen",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Bassin",
           "Beauce",
@@ -20886,10 +19913,6 @@
         "microfossiles": [
           "pollen",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Burdigalien",
@@ -20921,10 +19944,6 @@
         ],
         "vertébrés": [
           "mammifère"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Bnitp",
@@ -20984,8 +20003,7 @@
           "microfaune"
         ],
         "autres": [
-          "éponge",
-          "fossile"
+          "éponge"
         ],
         "genres": [
           "Courtenay",
@@ -21050,9 +20068,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Botte",
@@ -21108,10 +20124,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Postale",
           "Tonnerre",
@@ -21163,10 +20175,6 @@
         ],
         "vertébrés": [
           "poisson"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Chaource",
@@ -21246,8 +20254,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -21324,9 +20330,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -21376,10 +20379,6 @@
         ],
         "vertébrés": [
           "vertébré"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Bassin",
@@ -21439,8 +20438,6 @@
           "algue"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -21528,9 +20525,6 @@
           "pollen",
           "microfaune"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Remiremont",
           "Hameurt",
@@ -21566,8 +20560,6 @@
           "pollen"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -21626,10 +20618,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Chara",
           "Sequoia",
@@ -21665,10 +20653,6 @@
         ],
         "microfossiles": [
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Carte",
@@ -21712,10 +20696,6 @@
           "spore",
           "pollen",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Carte",
@@ -21816,8 +20796,6 @@
           "pollen"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -21877,7 +20855,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -21930,8 +20907,6 @@
           "spore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -22000,9 +20975,7 @@
           "spore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -22068,11 +21041,6 @@
           "acritarche",
           "spore",
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
         ],
         "genres": [
           "Service",
@@ -22151,9 +21119,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -22232,8 +21197,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -22313,7 +21276,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -22383,9 +21345,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -22444,9 +21403,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -22498,10 +21455,6 @@
         "annélides": [
           "annélide"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boite",
           "Tertiaire",
@@ -22532,10 +21485,6 @@
         "vertébrés": [
           "vertébré"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Beauce",
           "Marchenoir",
@@ -22561,10 +21510,6 @@
         "vertébrés": [
           "vertébré"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Sologne",
           "Loire",
@@ -22586,9 +21531,6 @@
       "groups": {
         "vertébrés": [
           "vertébré"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Trois",
@@ -22618,10 +21560,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Boite",
@@ -22676,8 +21614,7 @@
           "microfaune"
         ],
         "autres": [
-          "éponge",
-          "fossile"
+          "éponge"
         ],
         "genres": [
           "Courtenay",
@@ -22727,7 +21664,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -22795,8 +21731,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -22874,8 +21808,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -22941,9 +21873,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -23007,8 +21936,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -23060,10 +21987,6 @@
         "vertébrés": [
           "vertébré"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Cedex",
           "Langres",
@@ -23112,9 +22035,6 @@
           "polypier",
           "récif"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Langres",
           "Jurassique",
@@ -23157,10 +22077,6 @@
           "polypier",
           "récif"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Postale",
           "Vosges",
@@ -23200,9 +22116,6 @@
         "gastéropodes": [
           "gastéropode"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Vosges",
           "Trias",
@@ -23227,10 +22140,6 @@
         ],
         "microfossiles": [
           "radiolaire"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -23307,8 +22216,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -23368,10 +22275,6 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Nystia",
           "Melania",
@@ -23394,9 +22297,6 @@
         "algues": [
           "algue",
           "lithothamnium"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Carte",
@@ -23429,10 +22329,6 @@
         ],
         "vertébrés": [
           "poisson"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Carte",
@@ -23513,8 +22409,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -23573,10 +22467,6 @@
           "pollen",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Rolle",
@@ -23652,9 +22542,6 @@
           "tentaculite"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -23728,8 +22615,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -23795,8 +22680,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -23867,9 +22750,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -23955,9 +22835,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -24033,10 +22910,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Carte",
@@ -24102,7 +22976,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -24157,8 +23030,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Blois",
@@ -24214,9 +23086,7 @@
           "pollen"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Coordination",
@@ -24270,8 +23140,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -24317,9 +23186,6 @@
         "microfossiles": [
           "dinoflagellé",
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Criton",
@@ -24370,8 +23236,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Bassin",
@@ -24440,10 +23305,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Jurassique",
@@ -24539,8 +23401,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -24630,8 +23490,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -24701,8 +23559,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -24774,9 +23630,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -24846,10 +23699,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -24927,10 +23777,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Lobothyris",
@@ -25007,8 +23854,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -25094,9 +23939,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -25145,10 +23987,6 @@
         ],
         "annélides": [
           "serpule"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Fossiles",
@@ -25243,9 +24081,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -25307,9 +24142,6 @@
         "vertébrés": [
           "poisson"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Giromagny",
           "Permien",
@@ -25351,10 +24183,6 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Sundgau",
           "Magstatt",
@@ -25393,10 +24221,6 @@
           "ostracode",
           "spore",
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Toutes",
@@ -25439,8 +24263,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -25496,8 +24318,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -25566,8 +24386,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -25634,8 +24452,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -25701,8 +24517,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -25772,8 +24586,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -25842,9 +24654,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Tours",
@@ -25894,8 +24704,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -25949,9 +24757,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Franc",
@@ -26022,8 +24828,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -26075,7 +24879,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -26128,10 +24931,6 @@
           "pollen",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "bioclaste"
         ],
         "genres": [
           "Cedex",
@@ -26204,8 +25003,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -26295,9 +25092,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -26379,10 +25173,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Courson",
@@ -26443,10 +25234,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Avallon",
           "Morvan",
@@ -26501,9 +25288,6 @@
         ],
         "algues": [
           "algue"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Morvan",
@@ -26561,10 +25345,6 @@
         ],
         "annélides": [
           "serpule"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Morvan",
@@ -26652,9 +25432,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -26745,9 +25522,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -26809,8 +25583,6 @@
           "bryozoaire"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -26868,8 +25640,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -26929,8 +25699,6 @@
           "poisson"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -27008,8 +25776,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -27077,8 +25843,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -27157,8 +25921,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -27191,9 +25953,6 @@
         ],
         "microfossiles": [
           "conodonte"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Ceoex",
@@ -27263,9 +26022,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boite",
@@ -27296,8 +26053,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Nantes",
@@ -27375,8 +26131,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -27450,8 +26204,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -27525,9 +26277,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Postale",
@@ -27601,9 +26351,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -27655,9 +26403,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boita",
@@ -27719,10 +26465,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Tours",
@@ -27793,8 +26536,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -27859,9 +26600,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -27938,8 +26676,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -28022,9 +26758,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -28103,8 +26837,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -28199,9 +26931,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -28289,9 +27018,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -28350,7 +27076,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -28400,8 +27125,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -28459,8 +27182,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -28550,9 +27271,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -28582,10 +27300,6 @@
         ],
         "microfossiles": [
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Dijon",
@@ -28658,8 +27372,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -28732,10 +27444,6 @@
         "annélides": [
           "serpule"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Doubs",
           "Moulins",
@@ -28785,10 +27493,6 @@
         ],
         "annélides": [
           "serpule"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Vercel",
@@ -28852,8 +27556,7 @@
           "bryozoaire"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Alluvions",
@@ -28917,9 +27620,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Damprichard",
           "Environ",
@@ -28968,8 +27668,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -29029,8 +27727,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -29104,8 +27800,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -29159,9 +27853,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Nanles",
@@ -29185,9 +27877,6 @@
         "trilobites": [
           "trilobite",
           "paradoxides"
-        ],
-        "autres": [
-          "fossilifère"
         ],
         "genres": [
           "Thclil",
@@ -29213,9 +27902,6 @@
         ],
         "trilobites": [
           "paradoxides"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Augier",
@@ -29289,9 +27975,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -29367,10 +28050,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Saumur",
@@ -29438,9 +28118,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Blere",
@@ -29495,9 +28173,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Quaternaire",
@@ -29569,9 +28245,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -29645,10 +28318,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Boite",
@@ -29725,9 +28395,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -29803,8 +28470,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -29882,8 +28547,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -29973,10 +28636,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Prrimery",
@@ -30073,9 +28733,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -30129,9 +28786,7 @@
           "microflore"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère"
+          "éponge"
         ],
         "genres": [
           "Morvan",
@@ -30192,8 +28847,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -30289,9 +28942,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -30383,9 +29033,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -30413,10 +29060,6 @@
         ],
         "microfossiles": [
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Cnagny",
@@ -30482,8 +29125,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -30580,9 +29221,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -30637,10 +29275,6 @@
         ],
         "algues": [
           "algue"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Morteau",
@@ -30705,9 +29339,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Morteau",
@@ -30795,9 +29427,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -30873,9 +29502,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -30946,8 +29572,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -31078,10 +29702,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Bressuire",
@@ -31162,9 +29783,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -31231,10 +29849,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Orleans",
@@ -31296,10 +29911,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Boite",
@@ -31383,10 +29995,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Blanc",
@@ -31459,9 +30068,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -31533,8 +30139,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -31600,8 +30204,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -31684,9 +30286,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -31757,10 +30356,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Oeclze",
@@ -31850,9 +30446,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -31929,9 +30522,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -31978,7 +30568,6 @@
           "microflore"
         ],
         "autres": [
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -32065,9 +30654,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -32160,9 +30746,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -32195,10 +30778,6 @@
           "spore",
           "pollen",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Puligny",
@@ -32272,8 +30851,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -32376,8 +30953,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -32459,9 +31034,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Pontarlier",
@@ -32547,8 +31120,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -32576,7 +31147,6 @@
           "acritarche"
         ],
         "autres": [
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -32624,8 +31194,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -32689,8 +31257,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -32734,8 +31300,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -32772,10 +31336,6 @@
         ],
         "vertébrés": [
           "poisson"
-        ],
-        "autres": [
-          "fossilifère",
-          "bioclaste"
         ],
         "genres": [
           "Roches",
@@ -32861,10 +31421,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -32955,9 +31512,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -33046,10 +31600,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Ostrea",
@@ -33099,7 +31650,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
           "oncolite"
         ],
         "genres": [
@@ -33169,10 +31719,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Bolle",
@@ -33235,8 +31782,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -33312,9 +31857,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -33395,9 +31937,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -33460,11 +31999,6 @@
           "pollen",
           "microflore"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Cedex",
           "Pages",
@@ -33515,8 +32049,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -33573,10 +32105,6 @@
           "spore",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Marnes",
           "Aquitanien",
@@ -33622,9 +32150,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -33703,8 +32228,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -33785,9 +32308,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -33890,9 +32410,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -33975,9 +32492,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Champagnole",
@@ -34047,9 +32562,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Mouthe",
@@ -34126,9 +32639,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -34181,8 +32691,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -34276,9 +32784,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -34370,9 +32875,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -34437,9 +32939,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -34507,10 +33006,6 @@
           "ostracode",
           "pollen",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Chauvigny",
@@ -34585,9 +33080,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -34667,9 +33159,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -34719,9 +33209,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Carte",
@@ -34774,11 +33262,6 @@
         "microfossiles": [
           "microflore"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Gryphaea",
           "Belemnites",
@@ -34830,9 +33313,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -34878,9 +33358,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -34921,10 +33398,6 @@
         "microfossiles": [
           "ostracode",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Orleans",
@@ -34967,8 +33440,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -35024,10 +33495,6 @@
           "spore",
           "pollen",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Marnes",
@@ -35112,9 +33579,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -35189,9 +33653,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -35250,8 +33711,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -35310,8 +33769,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -35378,8 +33835,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -35443,10 +33898,6 @@
         "microfossiles": [
           "ostracode"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Crillat",
           "Crozets",
@@ -35496,9 +33947,7 @@
           "pollen"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boite",
@@ -35546,9 +33995,7 @@
           "pollen"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boite",
@@ -35613,9 +34060,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Niort",
@@ -35706,9 +34151,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -35772,9 +34214,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -35852,9 +34291,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -35913,9 +34349,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -35948,10 +34381,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Palestel",
@@ -36039,9 +34468,6 @@
           "pollen",
           "microflore"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Buussat",
           "Orleans",
@@ -36089,8 +34515,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -36132,10 +34556,6 @@
           "spore",
           "pollen",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Scanvic",
@@ -36181,8 +34601,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -36271,9 +34689,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -36328,9 +34743,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Tournus",
@@ -36397,8 +34810,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -36461,8 +34872,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -36543,9 +34952,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boite",
@@ -36595,10 +35002,6 @@
         ],
         "microfossiles": [
           "ostracode"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Balte",
@@ -36656,7 +35059,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -36717,10 +35119,6 @@
           "radiolaire",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boulevard",
           "Patis",
@@ -36775,10 +35173,7 @@
           "récif"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Boile",
@@ -36820,8 +35215,7 @@
           "récif"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Marans",
@@ -36881,9 +35275,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -36968,9 +35360,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -37028,10 +35417,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Melle",
@@ -37102,8 +35488,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -37163,9 +35547,6 @@
     },
     "0640": {
       "groups": {
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Carle",
           "Editions",
@@ -37289,9 +35670,6 @@
         "algues": [
           "algue"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Pages",
           "Gannat",
@@ -37342,8 +35720,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -37390,8 +35766,6 @@
           "mammifère"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -37443,10 +35817,6 @@
           "conodonte",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Belleville",
@@ -37517,8 +35887,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -37605,8 +35973,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -37719,9 +36085,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -37825,9 +36188,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -37925,10 +36285,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Service",
@@ -38019,9 +36376,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -38098,11 +36452,6 @@
         ],
         "annélides": [
           "annélide"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
         ],
         "genres": [
           "Boite",
@@ -38193,10 +36542,6 @@
         "annélides": [
           "annélide"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Macrofaune",
           "Poitiers",
@@ -38267,10 +36612,6 @@
         "annélides": [
           "serpule"
         ],
-        "autres": [
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Sommaire",
           "Introduction",
@@ -38318,7 +36659,6 @@
           "serpule"
         ],
         "autres": [
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -38371,9 +36711,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Ruffec",
@@ -38404,9 +36742,6 @@
         "bivalves": [
           "lamellibranche"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Boile",
           "Cedex",
@@ -38426,9 +36761,6 @@
     },
     "0663": {
       "groups": {
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Orleans",
           "Editions",
@@ -38496,7 +36828,6 @@
           "spore"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -38575,8 +36906,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -38623,9 +36952,7 @@
           "ostracode"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Formations",
@@ -38652,10 +36979,6 @@
         "coraux": [
           "récif"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Ceoex",
           "Pages",
@@ -38678,10 +37001,6 @@
         "microfossiles": [
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Toute",
@@ -38743,9 +37062,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -38800,8 +37116,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -38882,8 +37196,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -38981,8 +37293,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -39067,8 +37377,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -39178,9 +37486,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -39277,9 +37582,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -39324,9 +37626,6 @@
           "radiolaire"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -39382,10 +37681,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -39477,10 +37773,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Saintes",
@@ -39548,8 +37841,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -39629,10 +37920,6 @@
           "microfaune",
           "microflore"
         ],
-        "autres": [
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Iloile",
           "Editions",
@@ -39710,8 +37997,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -39766,9 +38051,7 @@
           "poisson"
         ],
         "autres": [
-          "spongiaire",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -39791,9 +38074,6 @@
       "groups": {
         "vertébrés": [
           "dinosaure"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Editions",
@@ -39896,9 +38176,6 @@
         "algues": [
           "algue"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Franco",
           "Cedex",
@@ -39939,10 +38216,6 @@
           "pollen",
           "microflore"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Conditions",
           "Carte",
@@ -39973,9 +38246,6 @@
           "ostracode",
           "microflore"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Pages",
           "Thiers",
@@ -40005,10 +38275,6 @@
           "conodonte",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boite",
           "Cedex",
@@ -40036,10 +38302,6 @@
         ],
         "microfossiles": [
           "conodonte"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Toute",
@@ -40111,8 +38373,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -40183,8 +38443,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -40259,8 +38517,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -40358,8 +38614,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -40428,8 +38682,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -40524,8 +38776,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -40580,8 +38830,7 @@
           "poisson"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -40613,10 +38862,6 @@
           "orbitoline",
           "miliole",
           "calpionelle"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -40708,9 +38953,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Royan",
@@ -40802,10 +39045,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -40876,9 +39116,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boulevard",
@@ -40962,10 +39200,6 @@
           "pollen",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Bolle",
           "Charente",
@@ -41042,7 +39276,6 @@
           "annélide"
         ],
         "autres": [
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -41150,9 +39383,6 @@
         "vertébrés": [
           "poisson"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Service",
           "Toute",
@@ -41173,7 +39403,6 @@
     "0716": {
       "groups": {
         "autres": [
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -41224,9 +39453,6 @@
     },
     "0719": {
       "groups": {
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Carte",
           "Editions",
@@ -41299,9 +39525,6 @@
       "groups": {
         "bryozoaires": [
           "bryozoaire"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Postale",
@@ -41395,9 +39618,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -41466,8 +39686,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -41537,10 +39755,6 @@
         "vertébrés": [
           "poisson",
           "reptile"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Stratigraph",
@@ -41634,8 +39848,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -41699,8 +39911,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -41807,9 +40017,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Macro",
@@ -41893,10 +40101,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Orluns",
@@ -41973,9 +40178,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -42058,9 +40260,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Boile",
@@ -42138,9 +40338,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -42219,9 +40416,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -42358,10 +40552,6 @@
           "mammifère",
           "vertébré"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Carte",
           "Issoire",
@@ -42417,8 +40607,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -42474,10 +40662,6 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boltl",
           "Vienne",
@@ -42512,10 +40696,6 @@
         "microfossiles": [
           "radiolaire",
           "ostracode"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Formations",
@@ -42611,7 +40791,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -42665,8 +40844,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -42715,9 +40892,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Jacques",
@@ -42779,8 +40953,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -42858,9 +41030,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Laboratoire",
@@ -42937,9 +41107,6 @@
           "ostracode",
           "microfaune"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Macrofaune",
           "Mollusques",
@@ -43007,9 +41174,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Ibbtrac",
@@ -43100,9 +41265,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Carte",
@@ -43197,10 +41360,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -43274,8 +41434,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -43341,8 +41499,7 @@
           "microflore"
         ],
         "autres": [
-          "éponge",
-          "fossile"
+          "éponge"
         ],
         "genres": [
           "Pages",
@@ -43366,9 +41523,6 @@
         "microfossiles": [
           "acritarche",
           "microflore"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Groupe",
@@ -43421,7 +41575,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -43443,10 +41596,6 @@
     },
     "0764": {
       "groups": {
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Massif",
           "Cantal",
@@ -43473,7 +41622,6 @@
           "algue"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -43508,8 +41656,6 @@
           "pollen"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -43550,9 +41696,6 @@
     },
     "0768": {
       "groups": {
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Editions",
           "Service",
@@ -43609,10 +41752,6 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boile",
           "Terrains",
@@ -43646,10 +41785,6 @@
         ],
         "bryozoaires": [
           "bryozoaire"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -43716,10 +41851,6 @@
         "annélides": [
           "serpule"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boite",
           "Grenoble",
@@ -43758,7 +41889,6 @@
           "orbitoline"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -43813,8 +41943,6 @@
           "poisson"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -43878,8 +42006,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -43936,9 +42062,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Carte",
@@ -44003,8 +42127,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Laboratoire",
@@ -44060,8 +42183,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -44256,9 +42377,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -44352,9 +42470,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -44434,9 +42549,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -44500,8 +42612,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -44528,9 +42638,6 @@
           "conodonte",
           "acritarche",
           "microflore"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Bolle",
@@ -44600,8 +42707,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -44632,10 +42737,6 @@
         "microfossiles": [
           "pollen"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Alain",
           "Pages",
@@ -44658,9 +42759,6 @@
         "vertébrés": [
           "mammifère",
           "vertébré"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Cedex",
@@ -44687,8 +42785,6 @@
           "mammifère"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -44738,8 +42834,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -44811,10 +42905,6 @@
           "radiolaire",
           "ostracode",
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Pages",
@@ -44893,8 +42983,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -44962,8 +43050,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -45013,7 +43099,6 @@
           "polypier"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -45081,8 +43166,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -45148,9 +43231,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -45208,9 +43288,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -45278,8 +43355,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -45399,8 +43474,7 @@
           "microfaune"
         ],
         "autres": [
-          "éponge",
-          "fossilifère"
+          "éponge"
         ],
         "genres": [
           "Carle",
@@ -45473,10 +43547,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -45573,8 +43644,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -45719,9 +43788,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -45779,9 +43845,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -45817,8 +43880,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -45844,8 +43905,6 @@
           "gastéropode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -45877,9 +43936,6 @@
           "spore",
           "pollen"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Cedel",
           "Alain",
@@ -45902,9 +43958,6 @@
         "gastéropodes": [
           "gastéropode"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Frence",
           "Saugues",
@@ -45924,10 +43977,6 @@
     },
     "0815": {
       "groups": {
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boile",
           "Frence",
@@ -45954,7 +44003,6 @@
           "pollen"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -45984,9 +44032,6 @@
         ],
         "coraux": [
           "polypier"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Tournon",
@@ -46052,8 +44097,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -46117,10 +44160,6 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boite",
           "Source",
@@ -46167,8 +44206,6 @@
           "bryozoaire"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -46230,8 +44267,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -46279,8 +44314,6 @@
           "lithothamnium"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -46365,8 +44398,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -46452,10 +44483,6 @@
         "annélides": [
           "annélide"
         ],
-        "autres": [
-          "fossile",
-          "bioclaste"
-        ],
         "genres": [
           "Cedex",
           "Toute",
@@ -46525,9 +44552,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Editions",
@@ -46592,11 +44617,6 @@
         "microfossiles": [
           "ostracode",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
         ],
         "genres": [
           "Quaternaire",
@@ -46685,9 +44705,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -46774,8 +44791,6 @@
           "serpule"
         ],
         "autres": [
-          "fossilifère",
-          "bioclaste",
           "oncolite"
         ],
         "genres": [
@@ -46832,10 +44847,6 @@
           "pollen",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Fronce",
@@ -46904,10 +44915,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -46976,9 +44984,6 @@
         "microfossiles": [
           "ostracode",
           "microfaune"
-        ],
-        "autres": [
-          "fossilifère"
         ],
         "genres": [
           "Editions",
@@ -47058,8 +45063,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -47125,7 +45128,6 @@
           "microflore"
         ],
         "autres": [
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -47155,7 +45157,6 @@
           "acritarche"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -47187,10 +45188,6 @@
           "acritarche",
           "pollen"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Service",
           "Toute",
@@ -47215,9 +45212,6 @@
         ],
         "microfossiles": [
           "pollen"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Alain",
@@ -47260,9 +45254,6 @@
     },
     "0839": {
       "groups": {
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Boile",
           "Pages",
@@ -47282,9 +45273,6 @@
     },
     "0840": {
       "groups": {
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Boiln",
           "Frence",
@@ -47370,9 +45358,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -47457,8 +45442,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -47541,8 +45524,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -47611,9 +45592,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Grand",
@@ -47687,8 +45666,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -47751,9 +45728,6 @@
           "radiolaire",
           "microfaune"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Boite",
           "Socle",
@@ -47810,9 +45784,6 @@
           "radiolaire",
           "microfaune"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Service",
           "Toute",
@@ -47852,8 +45823,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -47937,10 +45906,6 @@
         "annélides": [
           "annélide"
         ],
-        "autres": [
-          "fossile",
-          "bioclaste"
-        ],
         "genres": [
           "Landes",
           "Lloyd",
@@ -48015,10 +45980,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -48087,10 +46049,6 @@
           "ostracode",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Hostens",
           "Landes",
@@ -48156,8 +46114,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -48219,8 +46175,6 @@
           "pollen"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -48285,9 +46239,6 @@
           "spore",
           "tentaculite",
           "microfaune"
-        ],
-        "autres": [
-          "fossilifère"
         ],
         "genres": [
           "Carte",
@@ -48368,11 +46319,6 @@
         "annélides": [
           "annélide"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Orlhns",
           "Cedex",
@@ -48441,9 +46387,6 @@
           "ostracode",
           "microfaune"
         ],
-        "autres": [
-          "bioclaste"
-        ],
         "genres": [
           "Bassin",
           "Dordogne",
@@ -48505,8 +46448,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -48574,9 +46515,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -48642,9 +46580,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -48677,10 +46612,6 @@
         ],
         "algues": [
           "algue"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Cedex",
@@ -48744,8 +46675,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -48794,8 +46723,6 @@
           "récif"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -48843,8 +46770,6 @@
           "poisson"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -48886,8 +46811,6 @@
           "ostrea"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -48993,9 +46916,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -49083,8 +47003,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -49163,9 +47081,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Oehetoeeras",
@@ -49238,8 +47154,7 @@
           "microfaune"
         ],
         "autres": [
-          "éponge",
-          "fossile"
+          "éponge"
         ],
         "genres": [
           "Buech",
@@ -49299,9 +47214,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Cluse",
@@ -49371,11 +47284,6 @@
         "microfossiles": [
           "radiolaire",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
         ],
         "genres": [
           "Pages",
@@ -49450,9 +47358,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -49509,7 +47414,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -49583,10 +47487,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Lloyd",
@@ -49654,9 +47555,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -49731,8 +47630,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -49803,8 +47700,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -49882,7 +47778,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
           "empreinte",
           "oncolite"
         ],
@@ -49963,8 +47858,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -50042,8 +47935,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -50107,8 +47998,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -50172,8 +48061,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -50239,8 +48126,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -50291,7 +48176,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -50348,8 +48232,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -50406,8 +48288,6 @@
           "pollen"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -50480,9 +48360,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Temps",
@@ -50543,8 +48421,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -50642,9 +48518,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -50740,9 +48613,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -50830,9 +48700,7 @@
         ],
         "autres": [
           "éponge",
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Seconde",
@@ -50914,10 +48782,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Pages",
@@ -50962,10 +48827,6 @@
         ],
         "annélides": [
           "serpule"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Baile",
@@ -51014,8 +48875,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -51096,10 +48955,6 @@
         "annélides": [
           "annélide"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Seyne",
           "Alpes",
@@ -51175,9 +49030,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boile",
@@ -51241,8 +49094,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -51319,10 +49170,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Lloyd",
@@ -51388,10 +49236,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Cedex",
@@ -51498,10 +49343,7 @@
           "ostracode"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Chaque",
@@ -51564,9 +49406,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -51594,9 +49433,6 @@
         ],
         "vertébrés": [
           "mammifère"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Garonne",
@@ -51655,8 +49491,6 @@
           "tentaculite"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -51706,8 +49540,6 @@
           "tentaculite"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -51771,8 +49603,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -51839,8 +49669,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -51930,11 +49758,6 @@
           "spore",
           "pollen"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Collomb",
           "Piboule",
@@ -52000,9 +49823,7 @@
           "serpule"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Meyrueis",
@@ -52084,8 +49905,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -52169,8 +49988,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -52250,10 +50067,6 @@
         "annélides": [
           "serpule"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Carle",
           "Terre",
@@ -52316,9 +50129,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Neocomites",
@@ -52407,8 +50218,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -52467,8 +50276,7 @@
           "microfaune"
         ],
         "autres": [
-          "éponge",
-          "fossile"
+          "éponge"
         ],
         "genres": [
           "Carte",
@@ -52573,7 +50381,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
           "empreinte"
         ],
         "genres": [
@@ -52623,9 +50430,6 @@
         ],
         "microfossiles": [
           "microfaune"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Bcite",
@@ -52697,8 +50501,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -52744,9 +50546,6 @@
           "pollen",
           "microfaune",
           "microflore"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Pinus",
@@ -52810,9 +50609,7 @@
           "microflore"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère"
+          "éponge"
         ],
         "genres": [
           "Cedex",
@@ -52905,11 +50702,6 @@
         "annélides": [
           "annélide"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Cedex",
           "Toute",
@@ -52985,11 +50777,6 @@
           "microfaune",
           "microflore"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Carte",
           "Losse",
@@ -53016,10 +50803,6 @@
         "gastéropodes": [
           "cérithe"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boulevard",
           "Condom",
@@ -53042,10 +50825,6 @@
         "vertébrés": [
           "mammifère"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Bassin",
           "Aquitain",
@@ -53065,10 +50844,6 @@
     },
     "0930": {
       "groups": {
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Carte",
           "Montauban",
@@ -53138,8 +50913,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "oncolite"
         ],
         "genres": [
@@ -53206,9 +50979,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -53245,8 +51015,6 @@
           "acritarche"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -53275,9 +51043,6 @@
           "poisson",
           "reptile",
           "vertébré"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Carte",
@@ -53335,9 +51100,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -53416,8 +51178,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -53500,9 +51260,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -53583,8 +51340,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -53650,10 +51405,6 @@
         "microfossiles": [
           "radiolaire",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Languedoc",
@@ -53732,9 +51483,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -53808,8 +51556,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -53875,10 +51621,6 @@
         "annélides": [
           "serpule"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Fraoce",
           "Monts",
@@ -53943,8 +51685,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -54048,8 +51788,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -54112,9 +51850,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Entrevaux",
@@ -54169,9 +51905,7 @@
           "radiolaire"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Permien",
@@ -54235,8 +51969,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -54315,8 +52047,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -54399,10 +52129,7 @@
           "microflore"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Morcenx",
@@ -54484,8 +52211,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -54611,10 +52336,7 @@
           "annélide"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "éponge"
         ],
         "genres": [
           "Remise",
@@ -54642,9 +52364,6 @@
         "foraminifères": [
           "nummulite"
         ],
-        "autres": [
-          "fossilifère"
-        ],
         "genres": [
           "Postale",
           "Fleurance",
@@ -54666,9 +52385,6 @@
       "groups": {
         "algues": [
           "algue"
-        ],
-        "autres": [
-          "fossilifère"
         ],
         "genres": [
           "Postale",
@@ -54692,9 +52408,6 @@
         "vertébrés": [
           "mammifère"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Garonne",
           "Celui",
@@ -54717,9 +52430,6 @@
         "vertébrés": [
           "mammifère"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Boulevard",
           "Lauragais",
@@ -54741,9 +52451,6 @@
       "groups": {
         "vertébrés": [
           "mammifère"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Boite",
@@ -54782,8 +52489,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -54838,8 +52543,6 @@
         ],
         "autres": [
           "éponge",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -54899,8 +52602,6 @@
           "annélide"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -54981,9 +52682,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte"
         ],
         "genres": [
@@ -55061,8 +52759,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -55136,10 +52832,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Languedoc",
           "Garrigues",
@@ -55197,10 +52889,6 @@
         "microfossiles": [
           "ostracode",
           "microfaune"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Languedoc",
@@ -55269,8 +52957,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -55315,8 +53001,6 @@
           "mammifère"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -55400,8 +53084,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -55499,8 +53181,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte",
           "oncolite"
         ],
@@ -55599,8 +53279,6 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -55692,9 +53370,7 @@
           "microfaune"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère"
+          "spongiaire"
         ],
         "genres": [
           "Boite",
@@ -55759,8 +53435,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -55847,8 +53521,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -55926,8 +53598,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -56020,8 +53690,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -56089,10 +53757,7 @@
           "annélide"
         ],
         "autres": [
-          "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "spongiaire"
         ],
         "genres": [
           "Carte",
@@ -56160,10 +53825,7 @@
           "annélide"
         ],
         "autres": [
-          "éponge",
-          "fossile",
-          "fossilifère",
-          "bioclaste"
+          "éponge"
         ],
         "genres": [
           "Fleor",
@@ -56210,10 +53872,6 @@
         "microfossiles": [
           "ostracode"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Boite",
           "Ofhians",
@@ -56235,9 +53893,6 @@
       "groups": {
         "vertébrés": [
           "mammifère"
-        ],
-        "autres": [
-          "fossile"
         ],
         "genres": [
           "Boite",
@@ -56261,9 +53916,6 @@
         "vertébrés": [
           "mammifère"
         ],
-        "autres": [
-          "fossile"
-        ],
         "genres": [
           "Garonne",
           "Lauragais",
@@ -56285,9 +53937,6 @@
       "groups": {
         "vertébrés": [
           "mammifère"
-        ],
-        "autres": [
-          "fossilifère"
         ],
         "genres": [
           "Lauragais",
@@ -56320,10 +53969,6 @@
         "microfossiles": [
           "ostracode",
           "pollen"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Quaternaire",
@@ -56369,8 +54014,6 @@
           "pollen"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -56399,9 +54042,6 @@
         "microfossiles": [
           "conodonte",
           "acritarche"
-        ],
-        "autres": [
-          "fossilifère"
         ],
         "genres": [
           "Boite",
@@ -56485,9 +54125,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
@@ -56572,8 +54209,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -56646,8 +54281,6 @@
           "serpule"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -56709,11 +54342,6 @@
           "tentaculite",
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère",
-          "bioclaste"
-        ],
         "genres": [
           "Lunel",
           "Quaternaire",
@@ -56764,8 +54392,6 @@
           "microflore"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -56831,8 +54457,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -56908,10 +54532,6 @@
         "microfossiles": [
           "microfaune"
         ],
-        "autres": [
-          "fossile",
-          "fossilifère"
-        ],
         "genres": [
           "Botle",
           "Gontard",
@@ -56979,8 +54599,6 @@
           "microfaune"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -57043,8 +54661,6 @@
           "ostracode"
         ],
         "autres": [
-          "fossile",
-          "fossilifère",
           "empreinte"
         ],
         "genres": [
@@ -57090,10 +54706,6 @@
         "vertébrés": [
           "reptile",
           "vertébré"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Salernes",
@@ -57156,10 +54768,6 @@
         ],
         "annélides": [
           "serpule"
-        ],
-        "autres": [
-          "fossile",
-          "fossilifère"
         ],
         "genres": [
           "Boulevard",
@@ -57258,9 +54866,6 @@
         ],
         "autres": [
           "spongiaire",
-          "fossile",
-          "fossilifère",
-          "bioclaste",
           "empreinte",
           "oncolite"
         ],
