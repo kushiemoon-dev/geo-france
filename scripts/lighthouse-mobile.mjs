@@ -68,6 +68,8 @@ async function waitForMapCanvas(page, timeoutMs = 30000) {
 
 async function run() {
   const date = new Date().toISOString().slice(0, 10)
+  const prefixArg = process.argv.find((a) => a.startsWith('--output-prefix='))
+  const outputPrefix = prefixArg ? prefixArg.split('=')[1] : 'baseline'
   const perfDir = join(ROOT, 'docs/perf')
   mkdirSync(perfDir, { recursive: true })
 
@@ -158,7 +160,7 @@ async function run() {
   })
 
   // Screenshot
-  const screenshotPath = join(perfDir, `baseline-${date}.png`)
+  const screenshotPath = join(perfDir, `${outputPrefix}-${date}.png`)
   await page.screenshot({ path: screenshotPath, fullPage: false })
   console.log(`Screenshot sauvegardé : ${screenshotPath}`)
 
@@ -178,10 +180,10 @@ async function run() {
     date,
     mode: '4G-mobile',
     metrics: timing,
-    notes: 'baseline avant optimisations F1-F8',
+    notes: outputPrefix === 'baseline' ? 'baseline avant optimisations F1-F8' : 'après optimisations F1-F8 + F10',
   }
 
-  const jsonPath = join(perfDir, `baseline-${date}.json`)
+  const jsonPath = join(perfDir, `${outputPrefix}-${date}.json`)
   writeFileSync(jsonPath, JSON.stringify(result, null, 2))
   console.log(`Résultats sauvegardés : ${jsonPath}`)
   console.log(JSON.stringify(result, null, 2))
