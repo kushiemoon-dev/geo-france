@@ -24,11 +24,31 @@ export const geologyOutlineLayer: LayerSpecification = {
   }
 }
 
-export const faultsLayer: LayerSpecification = {
-  id: 'faults',
+export const faultsMajorLayer: LayerSpecification = {
+  id: 'faults-major',
   type: 'line',
   source: 'geology',
   'source-layer': 'L_STRUCT',
+  filter: ['==', ['get', 'CODE'], 1],
+  paint: {
+    'line-color': '#CC0000',
+    'line-width': [
+      'interpolate', ['linear'], ['zoom'],
+      8, 1,
+      14, 3
+    ],
+    'line-opacity': 0.8,
+    'line-dasharray': [4, 2]
+  }
+}
+
+export const faultsMinorLayer: LayerSpecification = {
+  id: 'faults-minor',
+  type: 'line',
+  source: 'geology',
+  'source-layer': 'L_STRUCT',
+  filter: ['==', ['get', 'CODE'], 2],
+  minzoom: 8,
   paint: {
     'line-color': '#CC0000',
     'line-width': [
@@ -68,6 +88,7 @@ export const surchargeLayer: LayerSpecification = {
   type: 'fill',
   source: 'geology',
   'source-layer': 'S_SURCH',
+  minzoom: 7,
   paint: {
     'fill-color': '#9933CC',
     'fill-opacity': 0.25,
@@ -112,7 +133,8 @@ export const geologyHighlightLayer: LayerSpecification = {
 export const ALL_LAYERS = [
   geologyFillLayer,
   geologyOutlineLayer,
-  faultsLayer,
+  faultsMajorLayer,
+  faultsMinorLayer,
   dipPointsLayer,
   dipLabelsLayer,
   surchargeLayer,
