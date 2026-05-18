@@ -18,8 +18,9 @@ vi.mock('../../utils/geology-data.ts', () => ({
 }))
 
 vi.mock('../../utils/fossils-enriched.ts', () => ({
-  getEnrichedFossils: vi.fn(() => ({ ammonites: ['ammonite'] })),
+  getEnrichedFossils: vi.fn(() => Promise.resolve({ ammonites: ['ammonite'] })),
   mergeFossils: vi.fn(() => ({ merged: { ammonites: ['ammonite'] }, enrichedSet: new Set(['ammonite']) })),
+  prefetchEnrichedFossils: vi.fn(),
 }))
 
 vi.mock('../../utils/mineral-data.ts', () => ({
@@ -68,6 +69,8 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
       },
     }
     openDetailPanel(feature as never)
+    // Wait for the async renderDetailContent promise to resolve and update the DOM
+    await new Promise(resolve => setTimeout(resolve, 0))
     const panel = document.querySelector('.detail-panel')
     expect(panel).not.toBeNull()
     expect(panel!.innerHTML).not.toContain('Fossiles')
