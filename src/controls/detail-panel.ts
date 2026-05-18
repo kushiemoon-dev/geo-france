@@ -3,13 +3,22 @@ export type FeatureLike = { properties: Record<string, unknown> }
 import { classifyNotation, extractLithology, extractFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS, METAMORPHISM_WIKI_SLUGS } from '../utils/geology-data.ts'
 import type { FossilGroups } from '../utils/geology-data.ts'
 import { getEnrichedFossils, mergeFossils } from '../utils/fossils-enriched.ts'
-import { getMineralInfo, getMineralBarColor, getRockInfo, hasUsableImage, FORMATION_IMAGE_OVERRIDES } from '../utils/mineral-data.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
 import type { RockInfo } from '../utils/mineral-data.ts'
 import { bus } from '../core/events.ts'
 import { store } from '../core/state.ts'
-import { NOTICES } from '../config/notices.ts'
 import { getCurrentRegionId, DATA_REGIONS } from '../map/region-manager.ts'
+
+// Memoised lazy loaders — modules are fetched only when the panel first opens
+let _mineralDataCache: Promise<typeof import('../utils/mineral-data.ts')> | null = null
+function getMineralData() {
+  return (_mineralDataCache ??= import('../utils/mineral-data.ts'))
+}
+
+let _noticesCache: Promise<typeof import('../config/notices.ts')> | null = null
+function getNotices() {
+  return (_noticesCache ??= import('../config/notices.ts'))
+}
 
 function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -28,7 +37,7 @@ function renderTags(items: string[], className: string, wikiSlugs?: Record<strin
   }).join('')
 }
 
-function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): string {
+async function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): Promise<string> {
   function makeRow(label: string, valueHtml: string): string {
     return `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${valueHtml}</span></div>`
   }
@@ -52,6 +61,7 @@ function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): s
   let carteHtml = ''
   if (carte) {
     const { regionId } = store.getState()
+    const { NOTICES } = await getNotices()
     const regionNotices = NOTICES[regionId] ?? []
     const paddedCarte = carte.padStart(4, '0')
     const notice = regionNotices.find(n => n.sheet === paddedCarte)
@@ -71,7 +81,9 @@ function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): s
   return `<div class="detail-section-header">Âge &amp; Stratigraphie</div>${parts.join('')}`
 }
 
-function renderPetrographySection(lithology: string[]): string {
+async function renderPetrographySection(lithology: string[]): Promise<string> {
+  const { getRockInfo, getMineralBarColor, getMineralInfo } = await getMineralData()
+
   const seen = new Set<string>()
   let rockInfo: RockInfo | undefined
 
@@ -143,7 +155,8 @@ function sortLithologyByPriority(lithology: string[]): string[] {
   return [...lithology].sort((a, b) => rank(a) - rank(b))
 }
 
-function findRockImage(lithology: string[]): { image: string; name: string } | undefined {
+async function findRockImage(lithology: string[]): Promise<{ image: string; name: string } | undefined> {
+  const { getRockInfo, hasUsableImage } = await getMineralData()
   for (const litho of sortLithologyByPriority(lithology)) {
     const info = getRockInfo(litho)
     if (hasUsableImage(info)) return { image: info!.image!, name: litho }
@@ -171,9 +184,10 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
   // Most-specific keys first — insertion order not reliable for matching priority
   const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1', 'b2'] as const
   const overrideKey = OVERRIDE_KEY_ORDER.find(k => notation.startsWith(k))
+  const { FORMATION_IMAGE_OVERRIDES } = await getMineralData()
   const rock = overrideKey
     ? { image: FORMATION_IMAGE_OVERRIDES[overrideKey].image, name: overrideKey }
-    : findRockImage(lithology)
+    : await findRockImage(lithology)
 
   const wikiUrl = geo.wikiSlug
     ? `https://fr.wikipedia.org/wiki/${encodeURIComponent(geo.wikiSlug)}`
@@ -185,8 +199,8 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
       <div class="popup-age-bar" style="background-color: ${escapeHtml(geo.color)}"></div>
       ${rock ? `<div class="detail-panel-hero"><img src="${escapeHtml(rock.image)}" alt="Échantillon de ${escapeHtml(rock.name)}" loading="lazy" onerror="this.closest('.detail-panel-hero').remove()"></div>` : ''}
       <h3 class="detail-panel-title" id="detail-panel-title">${escapeHtml(notation)}</h3>
-      ${renderAgeSection(geo, notation, carte)}
-      ${renderPetrographySection(lithology)}
+      ${await renderAgeSection(geo, notation, carte)}
+      ${await renderPetrographySection(lithology)}
       ${descr ? `<div class="detail-panel-section"><strong>Description BRGM</strong><p class="detail-panel-descr">${escapeHtml(descr)}</p></div>` : ''}
       ${lithology.length > 0 ? `<div class="detail-panel-section"><strong>Lithologie</strong><div class="popup-tags">${renderTags(lithology, 'tag-litho', LITHO_WIKI_SLUGS)}</div></div>` : ''}
       ${Object.keys(fossils).some(g => g !== 'genres') ? `
