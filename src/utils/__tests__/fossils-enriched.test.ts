@@ -1,7 +1,10 @@
 import { describe, it, expect } from 'vitest'
 import { getEnrichedFossils, mergeFossils } from '../fossils-enriched.ts'
 import { FOSSIL_CANONICAL } from '../geology-data.ts'
+import { FOSSIL_GROUPS, FOSSIL_CANONICAL as FC_VOCAB } from '../fossil-vocabulary.ts'
 import fossilsJson from '../../config/fossils-enriched.json'
+
+const BANNED_FROM_AUTRES = ['fossile', 'fossiles', 'fossilifère', 'fossilifere', 'bioclastes', 'bioclaste']
 
 describe('getEnrichedFossils', () => {
   it('retourne {} pour une carte vide', () => {
@@ -62,5 +65,31 @@ describe('fossils-enriched.json — singulier uniquement', () => {
     })
 
     expect(violations, `Termes pluriels non canonicalisés dans JSON : ${violations.slice(0, 10).join(', ')}`).toHaveLength(0)
+  })
+})
+
+describe('fossil-vocabulary — termes bannis absents du groupe autres', () => {
+  it('FOSSIL_GROUPS.autres ne contient aucun terme générique banni', () => {
+    const autresTerms = FOSSIL_GROUPS['autres'] ?? []
+    const found = BANNED_FROM_AUTRES.filter(t => autresTerms.includes(t))
+    expect(found, `Termes bannis encore dans FOSSIL_GROUPS.autres : ${found.join(', ')}`).toHaveLength(0)
+  })
+
+  it('fossils-enriched.json ne contient aucun terme banni dans le groupe autres', () => {
+    const byCarte = (fossilsJson as { by_carte: Record<string, { groups: Record<string, string[]> }> }).by_carte
+    const violations: string[] = []
+    for (const [carte, v] of Object.entries(byCarte)) {
+      const autres = v.groups?.autres ?? []
+      for (const t of autres) {
+        if (BANNED_FROM_AUTRES.includes(t)) violations.push(`${carte}:${t}`)
+      }
+    }
+    expect(violations, `Termes bannis dans fossils-enriched.json/autres : ${violations.slice(0, 10).join(', ')}`).toHaveLength(0)
+  })
+
+  it('FOSSIL_CANONICAL et FOSSIL_GROUPS sont définis dans fossil-vocabulary.ts (re-export cohérent)', () => {
+    expect(FC_VOCAB).toStrictEqual(FOSSIL_CANONICAL)
+    expect(FOSSIL_GROUPS['ammonites']).toBeDefined()
+    expect(FOSSIL_GROUPS['autres']).toBeDefined()
   })
 })
