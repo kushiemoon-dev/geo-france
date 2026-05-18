@@ -169,7 +169,7 @@ function renderDetailContent(feature: FeatureLike): string {
     ? { merged: {} as FossilGroups, enrichedSet: new Set<string>() }
     : rawFossils
   // Most-specific keys first — insertion order not reliable for matching priority
-  const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1', 'b2'] as const
+  const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1S', 'b1', 'b2'] as const
   const overrideKey = OVERRIDE_KEY_ORDER.find(k => notation.startsWith(k))
   const rock = overrideKey
     ? { image: FORMATION_IMAGE_OVERRIDES[overrideKey].image, name: overrideKey }
