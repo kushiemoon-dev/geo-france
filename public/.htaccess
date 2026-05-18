@@ -2,6 +2,7 @@
     Header set Accept-Ranges bytes
     Header set Access-Control-Allow-Origin "*"
     Header set Content-Type "application/octet-stream"
+    Header set Cache-Control "public, max-age=2592000, immutable"
 </FilesMatch>
 
 # Security headers
