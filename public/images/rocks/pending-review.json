@@ -1,0 +1,6637 @@
+[
+  {
+    "carte": "1001",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "1002",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "1003",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "1004",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "1005",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "1006",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "1007",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "1008",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "1009",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "1010",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "1011",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "1012",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "1013",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "1014",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "1015",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "1016",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "1017",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "1018",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "1019",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "1021",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "1022",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "1023",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "1026",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "1027",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "1028",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "1034",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "1035",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "1039",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "1040",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "1045",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "1046",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "1047",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "1061",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "1068",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "1069",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "1070",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "1071",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "1072",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "1075",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "1079",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "1099",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "1103",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "1110",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "1117",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "1118",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "1119",
+    "reason": "mixed_formations",
+    "totalNotations": 147,
+    "fossilNotations": [
+      "X",
+      "Tz",
+      "Fz",
+      "CFz",
+      "Cy-z",
+      "¡-BFe",
+      "Cqy-z",
+      "Gy-z",
+      "SCy-z",
+      "MFya"
+    ],
+    "precambrienNotations": [
+      "bkûH",
+      "bkäH",
+      "bkoæH",
+      "bkM2H",
+      "bkñH",
+      "bñsMgÕ",
+      "bñsMg",
+      "bMgk4ó",
+      "bñi-SgMg",
+      "bñiMg"
+    ],
+    "magmaticNotations": [
+      "ãQ",
+      "ï",
+      "ã2P-H",
+      "ã2-3L",
+      "ã3MAG",
+      "ã3-4MAG",
+      "ã4MAG",
+      "ã3Pz",
+      "Õã3Pz",
+      "ã3MR"
+    ],
+    "groupsCount": 9
+  },
+  {
+    "carte": "1120",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0002",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0003",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0005",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 18
+  },
+  {
+    "carte": "0006",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0007",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0008",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0010",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0011",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0012",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0013",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0014",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0016",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0017",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0020",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0021",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0023",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0024",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0025",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0026",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0027",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0028",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0029",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0030",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0032",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0033",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0034",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0035",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0036",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0037",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0038",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0039",
+    "reason": "mixed_formations",
+    "totalNotations": 373,
+    "fossilNotations": [
+      "X",
+      "MzG",
+      "Mz",
+      "MzV",
+      "MzP",
+      "My",
+      "FMz(1)",
+      "FMz(2)",
+      "Dz",
+      "Dz/OE"
+    ],
+    "precambrienNotations": [
+      "b",
+      "b(1)",
+      "b(2)",
+      "b(3)",
+      "b(4)",
+      "b(ä)",
+      "b(5)",
+      "b(6)",
+      "b(7)",
+      "b(8)"
+    ],
+    "magmaticNotations": [
+      "ã3CL",
+      "ã3G",
+      "ã3L",
+      "¥GP",
+      "ã3M",
+      "ã4Rh",
+      "ã3SP",
+      "ã4PR",
+      "ãbm",
+      "ã4K"
+    ],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0040",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0044",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0045",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0046",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0047",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0048",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0049",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0050",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0051",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0052",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0053",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0057",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0058",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0059",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0060",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0061",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0062",
+    "reason": "mixed_formations",
+    "totalNotations": 154,
+    "fossilNotations": [
+      "X",
+      "Fz",
+      "Tz",
+      "³z",
+      "Fy",
+      "Fx",
+      "Fw",
+      "Fv",
+      "RF",
+      "C"
+    ],
+    "precambrienNotations": [
+      "b2S",
+      "b2G",
+      "b2",
+      "bS2G",
+      "bS2",
+      "bKO2",
+      "bKO2G",
+      "bS2S"
+    ],
+    "magmaticNotations": [
+      "Ê",
+      "ã4c",
+      "¥",
+      "Õã4c",
+      "Õo3",
+      "Õk2",
+      "Õo2",
+      "Õkió",
+      "ã1",
+      "îã"
+    ],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0063",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0064",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0065",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0066",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0067",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0068",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0069",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0072",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0073",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0074",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0075",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0076",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0077",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0078",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0079",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0080",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0081",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0082",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0083",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0084",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0085",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0086",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0087",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0088",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0093",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0095",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0097",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0098",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0099",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0100",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0101",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0102",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0103",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0104",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0105",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0106",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0107",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0108",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0109",
+    "reason": "mixed_formations",
+    "totalNotations": 145,
+    "fossilNotations": [
+      "X",
+      "C",
+      "E",
+      "SC",
+      "Fz",
+      "¡(j2P)",
+      "FzT",
+      "F(Ch)",
+      "Fy",
+      "Fx-y"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "Õ",
+      "î"
+    ],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0110",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0111",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0112",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0113",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0114",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0116",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0117",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0118",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0119",
+    "reason": "mixed_formations",
+    "totalNotations": 221,
+    "fossilNotations": [
+      "X",
+      "E",
+      "Fpl",
+      "Fz",
+      "UIGM2",
+      "Fm",
+      "CFz",
+      "C",
+      "Rfó",
+      "Fy"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "Ê",
+      "ï",
+      "îã",
+      "ãGl",
+      "ãif",
+      "ã",
+      "ã3U",
+      "ã3-4Gl",
+      "ã3OB",
+      "ã3V"
+    ],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0120",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0121",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0122",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0123",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0124",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0125",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0126",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0127",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0128",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0129",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0130",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0131",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0132",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0133",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0134",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0135",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0136",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0137",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0138",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0139",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0140",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0142",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0143",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0144",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0145",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0146",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0147",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0148",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0149",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0150",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0151",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0152",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0153",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0154",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0155",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0156",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0157",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0158",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0159",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0160",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0161",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0162",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0163",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0164",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0165",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0166",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0167",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0168",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0170",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0171",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0172",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0173",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0174",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0175",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0176",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0177",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0178",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0179",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0180",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0181",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0182",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0183",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0184",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0185",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0186",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0187",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0188",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0189",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0190",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0191",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0192",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0193",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0194",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0195",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0196",
+    "reason": "mixed_formations",
+    "totalNotations": 62,
+    "fossilNotations": [
+      "Q",
+      "Hydro",
+      "l3b",
+      "öáâ2",
+      "X",
+      "t7",
+      "l4",
+      "j5c",
+      "l3a",
+      "j3b"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "ã1",
+      "ã3-4",
+      "Õh1-2",
+      "¥,¡£",
+      "îã",
+      "ó",
+      "ã"
+    ],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0197",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0198",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0199",
+    "reason": "mixed_formations",
+    "totalNotations": 429,
+    "fossilNotations": [
+      "X",
+      "Gl-Ne",
+      "CA",
+      "Ez",
+      "Ezb",
+      "EJz",
+      "Fu",
+      "Ec",
+      "E-G",
+      "SMz"
+    ],
+    "precambrienNotations": [
+      "blæ"
+    ],
+    "magmaticNotations": [
+      "ã1",
+      "ï",
+      "ó",
+      "óë",
+      "aãP",
+      "îã",
+      "ã1-2f",
+      "aã",
+      "ã2A",
+      "aã(2)"
+    ],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0200",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0201",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0202",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0203",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0204",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0206",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0207",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0208",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0209",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0210",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0211",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0212",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0213",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0214",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0215",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0216",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0217",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0218",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0220",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0221",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0222",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0223",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0224",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0225",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0226",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0227",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0228",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0229",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0230",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0231",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0232",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0233",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0234",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0237",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0238",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0239",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0240",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0241",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0242",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0243",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0244",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0245",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0246",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0247",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0248",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0249",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0250",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0251",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0252",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0253",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0254",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0255",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0256",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0257",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0258",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0259",
+    "reason": "mixed_formations",
+    "totalNotations": 229,
+    "fossilNotations": [
+      "X",
+      "Cv",
+      "J",
+      "E",
+      "CRs",
+      "CR",
+      "C-F",
+      "¡ã",
+      "F",
+      "F(r)"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "ã1",
+      "ã1h",
+      "ã1m",
+      "ã1bm",
+      "ã1bc",
+      "îã1",
+      "îã1co",
+      "Ûä1",
+      "ã2L",
+      "ã2LM"
+    ],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0260",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0261",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0262",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0263",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0264",
+    "reason": "mixed_formations",
+    "totalNotations": 506,
+    "fossilNotations": [
+      "e7(g1)co",
+      "e4-5P",
+      "j5Sc",
+      "j6S",
+      "Fy",
+      "l1-2",
+      "j1-2P",
+      "æÌa1",
+      "Fz",
+      "ræ3"
+    ],
+    "precambrienNotations": [
+      "brâ"
+    ],
+    "magmaticNotations": [
+      "â",
+      "ã3-4b",
+      "îã",
+      "ó",
+      "ã3bm",
+      "Ûáo",
+      "ãM",
+      "ãM»",
+      "îãM",
+      "ï"
+    ],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0265",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0266",
+    "reason": "mixed_formations",
+    "totalNotations": 316,
+    "fossilNotations": [
+      "X",
+      "E",
+      "F",
+      "Eâ",
+      "Eã",
+      "EÜ",
+      "Eö",
+      "C",
+      "U",
+      "COE"
+    ],
+    "precambrienNotations": [
+      "brâ",
+      "brâ1",
+      "brâ1B",
+      "br"
+    ],
+    "magmaticNotations": [
+      "âi",
+      "âs",
+      "âstf",
+      "â2",
+      "â1ol R",
+      "â2ol",
+      "âf",
+      "ó1",
+      "â1",
+      "âò"
+    ],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0267",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0268",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0269",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0270",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0271",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0272",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0273",
+    "reason": "mixed_formations",
+    "totalNotations": 371,
+    "fossilNotations": [
+      "d",
+      "hydro",
+      "Fza",
+      "n1c-2a",
+      "n5a",
+      "n5b",
+      "æC(2)",
+      "Ab",
+      "j6-n4a",
+      "æC(1)"
+    ],
+    "precambrienNotations": [
+      "bCB",
+      "b-k(10)",
+      "b-k(7)",
+      "b-k(4)",
+      "b2(3)",
+      "b-k(6)",
+      "b2(10)",
+      "b2(11)",
+      "b-k(11)",
+      "b2(6)"
+    ],
+    "magmaticNotations": [
+      "ãæ1-2",
+      "îô",
+      "ã11",
+      "îë",
+      "ãë4",
+      "ã16",
+      "ã2M",
+      "ã21",
+      "ãt2AL",
+      "îã"
+    ],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0274",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0275",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0276",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0277",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0278",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0279",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0280",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0281",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0282",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0283",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0284",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0285",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0286",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0287",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0288",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0289",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0290",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0291",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0292",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0293",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0294",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0295",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0296",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0297",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0298",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0299",
+    "reason": "mixed_formations",
+    "totalNotations": 170,
+    "fossilNotations": [
+      "X",
+      "Fz",
+      "J",
+      "Xs",
+      "T",
+      "FzT",
+      "Fy-z",
+      "Fy",
+      "Fx",
+      "Fw"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "â3ol",
+      "â3h",
+      "â3Û",
+      "â3",
+      "â3ò",
+      "â2ol",
+      "â2",
+      "â1À(2)",
+      "â1Û",
+      "â1ol"
+    ],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0300",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0301",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0302",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0303",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0304",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0305",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0306",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0307",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0308",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0309",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0310",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0311",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0312",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0313",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0314",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0315",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0316",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0317",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0318",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0319",
+    "reason": "mixed_formations",
+    "totalNotations": 228,
+    "fossilNotations": [
+      "X",
+      "Xm",
+      "Mz",
+      "My",
+      "Fy",
+      "Mv",
+      "Mx",
+      "Mp",
+      "MzV",
+      "MzP"
+    ],
+    "precambrienNotations": [
+      "bñ",
+      "bñ1-2",
+      "bñ1-2(1)",
+      "bæ1-2",
+      "b-o6",
+      "b-o2",
+      "b-o2S2",
+      "b-o2S1",
+      "b-o1S",
+      "b"
+    ],
+    "magmaticNotations": [
+      "ã1K",
+      "ã2",
+      "ã2L",
+      "ã3",
+      "ã3R",
+      "ã",
+      "ã4",
+      "ã1-2P",
+      "ã1",
+      "ã3K"
+    ],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0320",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0321",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0322",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0323",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0324",
+    "reason": "mixed_formations",
+    "totalNotations": 175,
+    "fossilNotations": [
+      "X",
+      "Tz",
+      "D",
+      "Fz",
+      "o6-s1",
+      "Fy",
+      "Fx",
+      "Fw",
+      "Fv",
+      "RF"
+    ],
+    "precambrienNotations": [
+      "b1",
+      "b2Cg",
+      "b2S",
+      "b2G",
+      "b2",
+      "b1Ph",
+      "b1S",
+      "b1G",
+      "bÌ2G",
+      "bÌ2"
+    ],
+    "magmaticNotations": [
+      "â-á",
+      "ó-óá",
+      "îãC",
+      "ã4c",
+      "ã4",
+      "ã3bm",
+      "aã-«",
+      "ï",
+      "ã5",
+      "îãCA"
+    ],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0325",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0326",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0327",
+    "reason": "mixed_formations",
+    "totalNotations": 281,
+    "fossilNotations": [
+      "X",
+      "Mz",
+      "MFz",
+      "MFzT",
+      "Myb",
+      "Mya",
+      "My",
+      "Mx(1)",
+      "Mx",
+      "D"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "¥",
+      "ã1-2Ch",
+      "ã1Ch",
+      "ã1OM",
+      "ã2-3OM",
+      "ã3M",
+      "ã3P",
+      "Ão",
+      "ñSA",
+      "ã1K"
+    ],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0328",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0329",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0330",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0331",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0332",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0333",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0334",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0335",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0336",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0337",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0338",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0339",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0341",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0342",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0344",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0345",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0346",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0347",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0348",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0349",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0350",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0351",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0352",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0353",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0354",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0355",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0356",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0357",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0358",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0359",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0360",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0361",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0362",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0363",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0367",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0368",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0369",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0370",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0371",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0372",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0373",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0374",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0375",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0376",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0377",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0378",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0382",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0383",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0384",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0385",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0386",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0387",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0388",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0389",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0390",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0391",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0392",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0393",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0394",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0395",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0396",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0397",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0398",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0399",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0400",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0401",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0402",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0403",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0404",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0405",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0406",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0407",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0408",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0409",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0410",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0411",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0412",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0413",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0415",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0417",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0418",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0419",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0420",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0421",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0422",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0423",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0424",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0425",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0426",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0427",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0428",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0429",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0430",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0431",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0432",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0433",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0434",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0435",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0436",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0437",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0438",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0439",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0440",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0441",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0442",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0443",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0444",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0445",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0450",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0451",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0452",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0453",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0454",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0455",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0456",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0457",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0458",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0459",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0460",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0461",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0462",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0463",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0464",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0465",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0466",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0467",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0468",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0469",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0470",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0471",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0472",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0473",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0474",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0475",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0476",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0477",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0479",
+    "reason": "mixed_formations",
+    "totalNotations": 441,
+    "fossilNotations": [
+      "ph",
+      "d2A",
+      "Cz",
+      "C/SH",
+      "dâ",
+      "¡r",
+      "fã3Q",
+      "pã3Q",
+      "gã3Q",
+      "h1-2aó(4)"
+    ],
+    "precambrienNotations": [
+      "bâL",
+      "bSMK",
+      "bSM",
+      "bkSG",
+      "bäâ",
+      "bkS",
+      "bCg(1)",
+      "bkK",
+      "bPG",
+      "bCg(2)"
+    ],
+    "magmaticNotations": [
+      "îã",
+      "ã3Q",
+      "¥",
+      "îã5(1)",
+      "ã3R",
+      "ã5Q",
+      "ãPT",
+      "ï",
+      "ã2B",
+      "îë"
+    ],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0480",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0481",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0482",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0483",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0484",
+    "reason": "mixed_formations",
+    "totalNotations": 151,
+    "fossilNotations": [
+      "X",
+      "FC",
+      "OE",
+      "E",
+      "Xh",
+      "T",
+      "CFL",
+      "CRc",
+      "CRj",
+      "LP ou LPS"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "ï",
+      "aã",
+      "îã",
+      "ã2o",
+      "aã2",
+      "ã3",
+      "ã4",
+      "ñ1",
+      "ñ2 (1)",
+      "ñ2"
+    ],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0485",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0486",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0487",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0488",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0489",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0490",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0491",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0492",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0493",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0494",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0495",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0496",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0497",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0498",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0499",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0500",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0501",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0502",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0503",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0504",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0505",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0506",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0507",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0508",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0509",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0510",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0511",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0512",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0513",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0514",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0515",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0516",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0517",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0518",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0519",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0520",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0521",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0522",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0523",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0524",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0525",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0526",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0528",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0529",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0530",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0531",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0534",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0535",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0536",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0537",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0538",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0539",
+    "reason": "mixed_formations",
+    "totalNotations": 239,
+    "fossilNotations": [
+      "dâ",
+      "Eã",
+      "pdã4(U)",
+      "LV",
+      "Fy1",
+      "ë(b)",
+      "Fx",
+      "A",
+      "ìë(i)",
+      "E"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "ã3-4(C)",
+      "îãó",
+      "ã5(a)",
+      "ã3bt(SQ)",
+      "ã4bt-am(Z)",
+      "îãóâ",
+      "ã3-4MK(PA)",
+      "ãMq-bt(OB)",
+      "ã3MKbt(MP)",
+      "ã3bt(P)"
+    ],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0540",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0541",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0542",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0543",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0544",
+    "reason": "mixed_formations",
+    "totalNotations": 227,
+    "fossilNotations": [
+      "X",
+      "U",
+      "Lz",
+      "T",
+      "FLz",
+      "Fz",
+      "Fx-y",
+      "FT",
+      "F",
+      "FC"
+    ],
+    "precambrienNotations": [
+      "brâ"
+    ],
+    "magmaticNotations": [
+      "âV2",
+      "âV1",
+      "âd",
+      "âJ",
+      "ñæAsi",
+      "ñæA",
+      "ñA",
+      "Õcrd",
+      "ÕK",
+      "ñe"
+    ],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0545",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0546",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0547",
+    "reason": "mixed_formations",
+    "totalNotations": 407,
+    "fossilNotations": [
+      "X1",
+      "X2",
+      "X3",
+      "A",
+      "T",
+      "U",
+      "E",
+      "Er",
+      "D",
+      "Dy-z"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "âC(a)",
+      "âC(b)",
+      "ñ-K(a)",
+      "ñ(a)",
+      "â·Br",
+      "â",
+      "Û",
+      "âC(c)",
+      "âC(B)îBr",
+      "âC(B)g"
+    ],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0548",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0549",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0550",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0551",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0552",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0553",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0554",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0555",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0556",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0557",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0560",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0561",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0562",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0563",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0564",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0565",
+    "reason": "mixed_formations",
+    "totalNotations": 281,
+    "fossilNotations": [
+      "1",
+      "H(B)",
+      "? (Zrpp)",
+      "m1a(m)",
+      "m1b1(m)",
+      "m1a4(m)",
+      "g3-m1a(m)",
+      "c5(m)",
+      "g3(m)",
+      "c3(m)"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "â2p",
+      "â2",
+      "â1",
+      "â2(a)"
+    ],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0566",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0567",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0568",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0569",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0570",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0571",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0572",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0573",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0574",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0575",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0576",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0577",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0578",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0579",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0580",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0581",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0582",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0583",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0585",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0586",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0587",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0588",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0589",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0590",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0591",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0592",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0593",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0594",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0595",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0596",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0597",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0598",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0599",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0600",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0601",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0602",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0603",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0604",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0605",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0608",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0609",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0610",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0611",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0612",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0613",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0614",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0615",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0616",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0617",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0618",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0620",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0621",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0622",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0623",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0624",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0625",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0626",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0627",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0628",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0629",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0630",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0633",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0634",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0635",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0636",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0637",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0638",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0639",
+    "reason": "mixed_formations",
+    "totalNotations": 204,
+    "fossilNotations": [
+      "X",
+      "Xd",
+      "Xorn",
+      "Fz",
+      "Fy",
+      "Fy1",
+      "Fx",
+      "Fw",
+      "Fv",
+      "FCz"
+    ],
+    "precambrienNotations": [
+      "bñL",
+      "b2S",
+      "b(cal)",
+      "bSG",
+      "bSÃ",
+      "bSÃG",
+      "bÃ",
+      "bÃG",
+      "b",
+      "bC"
+    ],
+    "magmaticNotations": [
+      "îã",
+      "â",
+      "îLã",
+      "¥",
+      "Ûîã",
+      "îã1",
+      "îë",
+      "ó",
+      "ã3-4",
+      "ãM"
+    ],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0640",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0641",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0642",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0643",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0644",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0645",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0646",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0648",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0649",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0650",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0651",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0652",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0653",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0654",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0655",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0657",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0658",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0659",
+    "reason": "mixed_formations",
+    "totalNotations": 144,
+    "fossilNotations": [
+      "X",
+      "Fz",
+      "³z",
+      "Fy",
+      "Fx",
+      "Fw",
+      "Fv",
+      "C",
+      "¡b2",
+      "LP-OEy"
+    ],
+    "precambrienNotations": [
+      "b2CgÌ",
+      "b2Cg",
+      "b2S",
+      "b2G",
+      "b2",
+      "b2GÌ",
+      "b2Ì",
+      "b2Ã",
+      "b2GÃ",
+      "b2ÌÃ"
+    ],
+    "magmaticNotations": [
+      "óK1",
+      "îã",
+      "ã4c",
+      "ã4",
+      "¥",
+      "aã, «",
+      "ï",
+      "îãCA",
+      "óá-á",
+      "îë"
+    ],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0660",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0661",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0662",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0663",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0664",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0665",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0666",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0667",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0668",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0669",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0670",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0671",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0672",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0673",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0674",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0675",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0676",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0677",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0678",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0679",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0680",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0681",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0682",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0683",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0684",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0685",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0686",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0687",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0688",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0689",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0690",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0691",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0692",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0693",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0694",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0695",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0696",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0697",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0698",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0699",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0700",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0701",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0702",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0703",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0704",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0706",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0707",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0708",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0709",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0710",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0711",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0712",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0713",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0714",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0715",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0716",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0718",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0719",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0720",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0721",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0722",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0723",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0724",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0725",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0726",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0727",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0728",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0730",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0731",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0732",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0733",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0734",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0735",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0736",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0737",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0738",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0739",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0740",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0742",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0743",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0744",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0745",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0746",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0747",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0748",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0749",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0750",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0751",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0752",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0754",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0755",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0756",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0757",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0758",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0759",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0760",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0761",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0762",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0763",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0764",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0765",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0766",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0767",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0768",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0769",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0770",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0771",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0772",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0773",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0774",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0775",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0776",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0778",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0780",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0781",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0782",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0783",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0784",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0785",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0786",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0788",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0789",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0790",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0791",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0792",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0793",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0794",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0795",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0796",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0797",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0798",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0799",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0802",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0803",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0804",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0805",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0806",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0807",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0808",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0809",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0810",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0811",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0812",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0813",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0814",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0815",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0816",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0817",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0818",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0819",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0820",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0821",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0822",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0823",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0825",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0826",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0827",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0828",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0829",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0830",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0831",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0832",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0833",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0834",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0835",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0836",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 4
+  },
+  {
+    "carte": "0837",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0838",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0839",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0840",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0841",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0842",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0843",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0844",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0845",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0846",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0847",
+    "reason": "mixed_formations",
+    "totalNotations": 267,
+    "fossilNotations": [
+      "X",
+      "C",
+      "E",
+      "PIV",
+      "R-C",
+      "LPx",
+      "LP",
+      "CA",
+      "OE",
+      "CS"
+    ],
+    "precambrienNotations": [
+      "b-o2bBO",
+      "b-o2bBO(cg)",
+      "b-o2aBO",
+      "b-o2BO(sh)",
+      "b-o2BO",
+      "b(?)",
+      "bMy(û,s)",
+      "bMy(s,g)",
+      "bMy(s)",
+      "bMy(cg)"
+    ],
+    "magmaticNotations": [
+      "ã2P",
+      "ã3g",
+      "ã3tCh",
+      "ã3bmCh",
+      "îã3Ch",
+      "ã1OM",
+      "îãOM",
+      "aã1OM",
+      "ã3MF",
+      "ã3LM"
+    ],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0848",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0849",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0850",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0851",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0852",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0853",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0854",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0855",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0856",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0857",
+    "reason": "mixed_formations",
+    "totalNotations": 95,
+    "fossilNotations": [
+      "X",
+      "GP",
+      "E",
+      "E-GP",
+      "C",
+      "j5CC",
+      "S",
+      "U",
+      "Fz",
+      "Fy"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "ã-æ"
+    ],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0858",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0859",
+    "reason": "mixed_formations",
+    "totalNotations": 232,
+    "fossilNotations": [
+      "X",
+      "S",
+      "CFM",
+      "CS",
+      "e6aG",
+      "C",
+      "E",
+      "J",
+      "G",
+      "K"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "ó",
+      "ã3",
+      "ñ",
+      "ñ1",
+      "ñchl",
+      "ñMb",
+      "Å1",
+      "Å2",
+      "ã3(1)",
+      "ã3Mbm"
+    ],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0860",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0861",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0862",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0863",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0864",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0865",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0866",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0867",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0868",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0869",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0870",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0871",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0872",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0873",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0874",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0875",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0876",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0877",
+    "reason": "mixed_formations",
+    "totalNotations": 104,
+    "fossilNotations": [
+      "X",
+      "B",
+      "E",
+      "GP",
+      "Fy",
+      "F",
+      "Fz",
+      "K",
+      "Fy-z",
+      "P"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "aã",
+      "îã"
+    ],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0878",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0880",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0881",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0882",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0883",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0884",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0885",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0886",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0887",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0888",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0889",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0890",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0891",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0892",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0893",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0894",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0895",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0896",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0898",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0899",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0900",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0901",
+    "reason": "mixed_formations",
+    "totalNotations": 157,
+    "fossilNotations": [
+      "X",
+      "Fz",
+      "F",
+      "j5P",
+      "E",
+      "C",
+      "LP",
+      "G-FG",
+      "RC",
+      "p2"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "ã-æ",
+      "îã2",
+      "ó",
+      "îô-îã",
+      "îã",
+      "ãM",
+      "ã2a",
+      "îã3",
+      "ã3C",
+      "ãô"
+    ],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0902",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0903",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0904",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0905",
+    "reason": "mixed_formations",
+    "totalNotations": 362,
+    "fossilNotations": [
+      "AFv",
+      "e5M",
+      "e7aC",
+      "pS",
+      "g2",
+      "t3-4a",
+      "n3aCM",
+      "M5ûñ",
+      "e6GC",
+      "m3G"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "îãdif",
+      "ï1",
+      "aã1",
+      "îã",
+      "ï",
+      "îì",
+      "ï2",
+      "â"
+    ],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0906",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0907",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0908",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0909",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0910",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0911",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0912",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0913",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0914",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0915",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0916",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0920",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0923",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0924",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0925",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0926",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0927",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0928",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0929",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0930",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0931",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0932",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0933",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 6
+  },
+  {
+    "carte": "0934",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0935",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 10
+  },
+  {
+    "carte": "0936",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0938",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0939",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0940",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0941",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0942",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0943",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0944",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0945",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0946",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0947",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0949",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0950",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0951",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0952",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0953",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0954",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0955",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0956",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0957",
+    "reason": "mixed_formations",
+    "totalNotations": 200,
+    "fossilNotations": [
+      "X",
+      "E",
+      "C-F",
+      "C",
+      "GP",
+      "j2b",
+      "U",
+      "Fz",
+      "Fz1",
+      "Fy"
+    ],
+    "precambrienNotations": [],
+    "magmaticNotations": [
+      "¥c",
+      "Ûâ2",
+      "ñ1-2û2",
+      "ñ1-(2)û2bi",
+      "ñ1-(2)û2bi1",
+      "ã3-4",
+      "ñ1",
+      "ñ1-1",
+      "ñ1æ1-2-1",
+      "ñ1æ1-2-2"
+    ],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0958",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0959",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 7
+  },
+  {
+    "carte": "0960",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0961",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0962",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0963",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0964",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0965",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0966",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0967",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0968",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 1
+  },
+  {
+    "carte": "0969",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0970",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0971",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  },
+  {
+    "carte": "0972",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0973",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0976",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0977",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 14
+  },
+  {
+    "carte": "0978",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0979",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0980",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0981",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0982",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0983",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0984",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 2
+  },
+  {
+    "carte": "0985",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 5
+  },
+  {
+    "carte": "0986",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0987",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 3
+  },
+  {
+    "carte": "0988",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 17
+  },
+  {
+    "carte": "0989",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 15
+  },
+  {
+    "carte": "0990",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0991",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 11
+  },
+  {
+    "carte": "0992",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 9
+  },
+  {
+    "carte": "0993",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0994",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0995",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 13
+  },
+  {
+    "carte": "0996",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0997",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 8
+  },
+  {
+    "carte": "0998",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 12
+  },
+  {
+    "carte": "0999",
+    "reason": "no_geojson_mapping",
+    "notations": [],
+    "groupsCount": 16
+  }
+]
