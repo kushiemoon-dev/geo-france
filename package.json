@@ -36,6 +36,9 @@
   "overrides": {
     "picomatch": ">=4.0.4"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  },
   "dependencies": {
     "@sentry/browser": "^10.49.0",
     "maplibre-gl": "^5.19.0",
