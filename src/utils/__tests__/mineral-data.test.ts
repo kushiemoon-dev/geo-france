@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getRockInfo, hasUsableImage, getMineralInfo } from '../mineral-data.ts'
+import { getRockInfo, hasUsableImage, getMineralInfo, FORMATION_IMAGE_OVERRIDES } from '../mineral-data.ts'
 
 describe('getRockInfo', () => {
   it('retourne les infos pour une roche connue', () => {
@@ -43,5 +43,29 @@ describe('getMineralInfo', () => {
 
   it('supporte les alias accentués', () => {
     expect(getMineralInfo('disthène')).toEqual(getMineralInfo('disthene'))
+  })
+})
+
+describe('FORMATION_IMAGE_OVERRIDES', () => {
+  it('b1S est défini et possède une image', () => {
+    expect(FORMATION_IMAGE_OVERRIDES['b1S']).toBeDefined()
+    expect(FORMATION_IMAGE_OVERRIDES['b1S'].image).toBeTruthy()
+  })
+
+  it('b1S utilise une image schiste (distincte de b1 micaschiste)', () => {
+    expect(FORMATION_IMAGE_OVERRIDES['b1S'].image).not.toBe(FORMATION_IMAGE_OVERRIDES['b1'].image)
+  })
+
+  it('b2 est mappé vers grauwacke', () => {
+    expect(FORMATION_IMAGE_OVERRIDES['b2'].image).toContain('grauwacke')
+  })
+
+  it('les clés sont dans l\'ordre spécificité décroissante : b1Ph avant b1S avant b1', () => {
+    const keys = Object.keys(FORMATION_IMAGE_OVERRIDES)
+    const idxPh = keys.indexOf('b1Ph')
+    const idxS  = keys.indexOf('b1S')
+    const idxB1 = keys.indexOf('b1')
+    expect(idxPh).toBeLessThan(idxS)
+    expect(idxS).toBeLessThan(idxB1)
   })
 })

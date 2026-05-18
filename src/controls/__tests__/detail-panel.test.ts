@@ -29,6 +29,7 @@ vi.mock('../../utils/mineral-data.ts', () => ({
   hasUsableImage: vi.fn(() => false),
   FORMATION_IMAGE_OVERRIDES: {
     b1Ph: { image: 'test-image.jpg' },
+    b1S: { image: 'test-image.jpg' },
     b1: { image: 'test-image.jpg' },
     b2: { image: 'test-image.jpg' },
   },
