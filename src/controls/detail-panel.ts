@@ -151,7 +151,7 @@ function findRockImage(lithology: string[]): { image: string; name: string } | u
   return undefined
 }
 
-function renderDetailContent(feature: FeatureLike): string {
+async function renderDetailContent(feature: FeatureLike): Promise<string> {
   const p = feature.properties
   const notation = String(p['NOTATION'] || p['notation'] || 'N/A')
   const descr = String(p['DESCR'] || p['descr'] || p['DESCRIPTION'] || '')
@@ -162,7 +162,7 @@ function renderDetailContent(feature: FeatureLike): string {
 
   const lithology = extractLithology(descr, legende)
   const extracted: FossilGroups = extractFossils(descr, legende, geo.summary ?? '')
-  const enrichedRaw = getEnrichedFossils(carte)
+  const enrichedRaw = await getEnrichedFossils(carte)
   const rawFossils = mergeFossils(extracted, enrichedRaw)
   const isPrecambrien = geo.ere === 'Precambrien' || geo.periode === 'Brioverien'
   const { merged: fossils, enrichedSet } = isPrecambrien
@@ -246,7 +246,9 @@ export function openDetailPanel(feature: FeatureLike, trigger?: HTMLElement): vo
   triggerEl = trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null)
 
   const panel = getOrCreatePanel()
-  panel.innerHTML = renderDetailContent(feature)
+
+  // Show panel immediately with a loading skeleton so the transition starts right away
+  panel.innerHTML = `<button class="detail-panel-close" aria-label="Fermer">&times;</button><div class="detail-panel-content detail-panel-loading"></div>`
   // Force reflow before adding .open for transition
   void panel.offsetHeight
   panel.classList.add('open')
@@ -263,6 +265,22 @@ export function openDetailPanel(feature: FeatureLike, trigger?: HTMLElement): vo
   panel.addEventListener('keydown', (e: KeyboardEvent) => {
     if (e.key === 'Escape') { e.stopPropagation(); closeDetailPanel() }
   }, { once: true })
+
+  renderDetailContent(feature).then(html => {
+    // Only update if the same panel is still open (user hasn't closed it)
+    if (panel.classList.contains('open')) {
+      panel.innerHTML = html
+      const closeBtnFull = panel.querySelector<HTMLElement>('.detail-panel-close')
+      if (closeBtnFull) {
+        closeBtnFull.addEventListener('click', () => closeDetailPanel(), { once: true })
+      }
+      if (removeTrapFocus) removeTrapFocus()
+      removeTrapFocus = trapFocus(panel)
+      panel.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'Escape') { e.stopPropagation(); closeDetailPanel() }
+      }, { once: true })
+    }
+  })
 }
 
 export function closeDetailPanel(): void {

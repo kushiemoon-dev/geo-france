@@ -3,6 +3,7 @@ import './styles/index.css'
 import { initTheme } from './ui/theme.ts'
 import { initSentry, initPlausible } from './telemetry.ts'
 import { createMap } from './map/setup.ts'
+import { prefetchEnrichedFossils } from './utils/fossils-enriched.ts'
 
 initSentry()
 initPlausible()
@@ -32,4 +33,9 @@ map.on('load', () => {
   setupRegionSelector(map)
   setupModeToggle(map)
   setupNoticesPanel()
+
+  // Prefetch fossils data during browser idle time to avoid cold-load on first panel open
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => { prefetchEnrichedFossils() }, { timeout: 5000 })
+  }
 })
