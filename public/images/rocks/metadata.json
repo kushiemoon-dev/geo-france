@@ -313,5 +313,40 @@
     "author": "Jstuby",
     "license": "CC0",
     "url": "https://commons.wikimedia.org/wiki/File%3ARhyolite%20tuff%20of%20Smith%20Rock.jpg"
+  },
+  "alluvion": {
+    "title": "Alluvial deposits",
+    "author": "Unknown",
+    "license": "Unknown",
+    "url": "",
+    "note": "Needs proper attribution and license verification"
+  },
+  "ampelite": {
+    "title": "Ampelite (black shale)",
+    "author": "Unknown",
+    "license": "Unknown",
+    "url": "",
+    "note": "Needs proper attribution and license verification"
+  },
+  "colluvion": {
+    "title": "Colluvial deposits",
+    "author": "Unknown",
+    "license": "Unknown",
+    "url": "",
+    "note": "Needs proper attribution and license verification"
+  },
+  "phyllade": {
+    "title": "Phyllite",
+    "author": "Unknown",
+    "license": "Unknown",
+    "url": "",
+    "note": "Needs proper attribution and license verification"
+  },
+  "tourbe": {
+    "title": "Peat deposits",
+    "author": "Unknown",
+    "license": "Unknown",
+    "url": "",
+    "note": "Needs proper attribution and license verification"
   }
 }
