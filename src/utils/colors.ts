@@ -15,6 +15,17 @@ const COLOR_RULES: readonly CaseEntry[] = [
   [['Fz', 'Fy', 'Fx', 'Fw', 'Fv', 'Fu'], '#F9F97F'],
   [['B-'], '#F9F97F'],
 
+  // Mesozoique composite (must precede single 'M')
+  [['LMz-T', 'LMz'], '#34B2E8'],
+  [['MzM', 'MzS', 'MzR', 'Mz'], '#67C5B0'],
+  [['TLB'], '#812B92'],
+
+  // Lias composite — Lã prefix (must precede single 'l')
+  [['Lã1', 'Lã5', 'Lã'], '#34B2E8'],
+
+  // Miocene subdivisions (must precede single 'M')
+  [['Mp-u', 'Mp', 'Mu', 'Mv', 'Mx', 'My'], '#FFFF00'],
+
   // Eocene subdivisions
   [['e7'], '#FDB46C'],
   [['e6'], '#FDB46C'],
@@ -28,8 +39,8 @@ const COLOR_RULES: readonly CaseEntry[] = [
   [['c3'], '#BFE48A'],
   [['c2', 'c1'], '#A6D468'],
 
-  // Cretace inferieur
-  [['n6', 'n5'], '#7ECD74'],
+  // Cretace inferieur (n-prefixes + n2/n4)
+  [['n6', 'n5', 'n4', 'n2'], '#7ECD74'],
 
   // Jurassique superieur
   [['j7', 'j6', 'j5'], '#B3D4FF'],
@@ -57,8 +68,13 @@ const COLOR_RULES: readonly CaseEntry[] = [
   [['k'], '#7FA08C'],
   [['b'], '#F4B8D4'],
 
-  // Roches cristallines
-  [['ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û'], '#E36DAA'],
+  // Miocene uppercase generic (M), Quaternaire uppercase (Q) — after Mz/Mp/Mu/Mv/Mx/My
+  [['M'], '#FFFF00'],
+  [['Q'], '#F9F97F'],
+
+  // Roches cristallines — accentued-char prefixes (longest first, aã before ã)
+  [['aã'], '#E36DAA'],
+  [['ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', 'Ê', 'ï', 'â'], '#E36DAA'],
 
   // Quaternaire catch-all
   [['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R'], '#F9F97F'],
@@ -66,6 +82,7 @@ const COLOR_RULES: readonly CaseEntry[] = [
 
   // Alterites
   [['¡'], '#E8D0A0'],
+  [['a1'], '#E8D0A0'],
 ]
 
 function prefixCondition(prefix: string): ExpressionSpecification {

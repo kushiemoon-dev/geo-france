@@ -169,6 +169,22 @@ for layer in "${LAYERS[@]}"; do
       rm -f "$merged_clipped"
     }
   fi
+
+  # Clip to region administrative boundary (avoid inter-region overlap at borders)
+  # e.g. ARA polygons bleeding into PACA in the Alps, etc.
+  REGION_BORDER_FILE="$PROJECT_DIR/data/admin-regions/${REGION}.geojson"
+  if command -v ogr2ogr &>/dev/null && [ -f "$REGION_BORDER_FILE" ]; then
+    echo "  [clip] Clipping ${layer} to region boundary (${REGION})..."
+    merged_clipped="$WORK_DIR/${layer}_merged_clipped.geojson"
+    ogr2ogr -f GeoJSON "$merged_clipped" "$merged" \
+      -clipsrc "$REGION_BORDER_FILE" \
+      -nlt PROMOTE_TO_MULTI 2>/dev/null && mv "$merged_clipped" "$merged" || {
+      echo "  [warn] Regional clip failed for ${layer} — using France-border-clipped data"
+      rm -f "$merged_clipped"
+    }
+  else
+    echo "  [warn] No region boundary file found at ${REGION_BORDER_FILE} — skipping regional clip"
+  fi
 done
 
 # ---- Step 5: Generate PMTiles ----
