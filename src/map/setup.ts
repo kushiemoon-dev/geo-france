@@ -13,7 +13,7 @@ export function createMap(container: string): maplibregl.Map {
     container,
     style: {
       version: 8,
-      glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
+      glyphs: '/fonts/{fontstack}/{range}.pbf',
       sources: {
         'osm': {
           type: 'raster',
