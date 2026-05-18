@@ -76,7 +76,7 @@ export function setupLayerToggle(map: maplibregl.Map): void {
   }
 
   const updateVisibility = (mode: string): void => {
-    container.style.display = mode === 'local' ? 'block' : 'none'
+    container.style.display = mode === 'national' ? 'block' : 'none'
   }
 
   updateVisibility(store.getState().mode)
