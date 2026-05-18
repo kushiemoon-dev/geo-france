@@ -1,6 +1,6 @@
 // ICS (International Chronostratigraphic Chart) classification for BD Charm-50 NOTATION codes
-export { FOSSIL_GROUPS, FOSSIL_CANONICAL } from './fossil-vocabulary.ts'
 import { FOSSIL_GROUPS, FOSSIL_CANONICAL } from './fossil-vocabulary.ts'
+export { FOSSIL_GROUPS, FOSSIL_CANONICAL }
 
 export interface GeologyEntry {
   ere: string
