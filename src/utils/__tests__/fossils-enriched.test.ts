@@ -7,23 +7,23 @@ import fossilsJson from '../../config/fossils-enriched.json'
 const BANNED_FROM_AUTRES = ['fossile', 'fossiles', 'fossilifère', 'fossilifere', 'bioclastes', 'bioclaste']
 
 describe('getEnrichedFossils', () => {
-  it('retourne {} pour une carte vide', () => {
-    expect(getEnrichedFossils('')).toEqual({})
+  it('retourne {} pour une carte vide', async () => {
+    expect(await getEnrichedFossils('')).toEqual({})
   })
 
-  it('retourne {} pour une carte inconnue', () => {
-    expect(getEnrichedFossils('9999')).toEqual({})
+  it('retourne {} pour une carte inconnue', async () => {
+    expect(await getEnrichedFossils('9999')).toEqual({})
   })
 
-  it('zero-padding : "365" == "0365"', () => {
-    const withPad = getEnrichedFossils('0365')
-    const withoutPad = getEnrichedFossils('365')
+  it('zero-padding : "365" == "0365"', async () => {
+    const withPad = await getEnrichedFossils('0365')
+    const withoutPad = await getEnrichedFossils('365')
     expect(withPad).toEqual(withoutPad)
   })
 
-  it('zero-padding : "1" == "0001"', () => {
-    const a = getEnrichedFossils('1')
-    const b = getEnrichedFossils('0001')
+  it('zero-padding : "1" == "0001"', async () => {
+    const a = await getEnrichedFossils('1')
+    const b = await getEnrichedFossils('0001')
     expect(a).toEqual(b)
   })
 })
