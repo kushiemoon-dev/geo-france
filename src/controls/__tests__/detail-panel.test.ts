@@ -35,6 +35,10 @@ vi.mock('../../utils/mineral-data.ts', () => ({
   },
 }))
 
+vi.mock('../../config/notices.ts', () => ({
+  NOTICES: { bretagne: [] },
+}))
+
 vi.mock('../../core/events.ts', () => ({
   bus: { on: vi.fn(), emit: vi.fn(), off: vi.fn() },
 }))
