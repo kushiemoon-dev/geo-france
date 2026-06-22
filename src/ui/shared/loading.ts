@@ -10,17 +10,6 @@ export function createSpinner(size = 24): HTMLElement {
   return el
 }
 
-export function createLoadingBar(): HTMLElement {
-  const bar = document.createElement('div')
-  bar.className = 'geo-loading-bar'
-
-  const fill = document.createElement('div')
-  fill.className = 'geo-loading-bar-fill'
-  bar.appendChild(fill)
-
-  return bar
-}
-
 export function showMapLoading(message = 'Chargement...'): void {
   if (document.getElementById(MAP_LOADING_ID)) return
 
