@@ -164,18 +164,6 @@ export function classifyNotation(notation: string): GeologyEntry {
 
 // Helpers: extract terms from description text (case-insensitive)
 
-const MINERALS = [
-  'quartz', 'feldspath', 'biotite', 'muscovite', 'cordierite', 'cordiérite',
-  'amphibole', 'pyroxène', 'pyroxene', 'olivine', 'grenat', 'tourmaline',
-  'chlorite', 'calcite', 'dolomite', 'glauconie', 'silice', 'pyrite',
-  'mica', 'plagioclase', 'orthose', 'staurotide', 'staurolite',
-  'andalousite', 'sillimanite', 'disthène', 'disthene', 'apatite',
-  'zircon', 'magnétite', 'magnetite', 'ilménite', 'ilmenite',
-  'hématite', 'hematite', 'limonite', 'sidérite', 'siderite', 'barytine',
-  'fer', 'kaolin', 'phosphate', 'gypse', 'anhydrite', 'fluorine',
-  'galène', 'galene', 'blende', 'majorite', 'lignite', 'blavierite'
-]
-
 const LITHOLOGY = [
   'calcaire', 'craie', 'marne', 'grès', 'gres', 'argile', 'schiste',
   'gneiss', 'granite', 'basalte', 'sable', 'silex', 'conglomérat',
@@ -285,17 +273,7 @@ export const FOSSIL_TERM_WIKI_SLUGS: Record<string, string> = buildFossilTermWik
 function extractTerms(text: string, terms: readonly string[]): string[] {
   if (!text) return []
   const lower = text.toLowerCase()
-  const found: string[] = []
-  for (const term of terms) {
-    if (lower.includes(term) && !found.includes(term)) {
-      found.push(term)
-    }
-  }
-  return found
-}
-
-export function extractMinerals(...sources: string[]): string[] {
-  return extractTerms(sources.filter(Boolean).join(' '), MINERALS)
+  return terms.filter(term => lower.includes(term))
 }
 
 export type FossilGroups = Record<string, string[]>
