@@ -8,6 +8,7 @@ import type { RockInfo } from '../utils/mineral-data.ts'
 import { bus } from '../core/events.ts'
 import { store } from '../core/state.ts'
 import { getCurrentRegionId, DATA_REGIONS } from '../map/region-manager.ts'
+import { escapeHtml } from '../utils/html.ts'
 
 // Memoised lazy loaders — modules are fetched only when the panel first opens
 let _mineralDataCache: Promise<typeof import('../utils/mineral-data.ts')> | null = null
@@ -18,10 +19,6 @@ function getMineralData() {
 let _noticesCache: Promise<typeof import('../config/notices.ts')> | null = null
 function getNotices() {
   return (_noticesCache ??= import('../config/notices.ts'))
-}
-
-function escapeHtml(text: string): string {
-  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
 function renderTags(items: string[], className: string, wikiSlugs?: Record<string, string>, enrichedSet?: Set<string>): string {
