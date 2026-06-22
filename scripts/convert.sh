@@ -97,13 +97,8 @@ for layer in "${LAYERS[@]}"; do
       continue
     fi
 
-    # For combined ZIPs, match the specific dept code in the filename
-    shp_file=$(find "$dept_dir" -name "*_${dept}_*_${layer}_*.shp" -print -quit 2>/dev/null || true)
-    # Fallback: try without dept code prefix (some ZIPs use different naming)
-    if [ -z "$shp_file" ]; then
-      shp_file=$(find "$dept_dir" -name "*${dept}*${layer}*.shp" -print -quit 2>/dev/null || true)
-    fi
-    # Final fallback for single-dept ZIPs
+    shp_file=$(find "$dept_dir" -name "*${dept}*${layer}*.shp" -print -quit 2>/dev/null || true)
+    # Fallback for single-dept ZIPs where filename omits the dept code
     if [ -z "$shp_file" ]; then
       shp_file=$(find "$dept_dir" -name "*_${layer}_*.shp" -print -quit 2>/dev/null || true)
     fi
