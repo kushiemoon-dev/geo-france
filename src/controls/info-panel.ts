@@ -1,11 +1,29 @@
 import maplibregl from 'maplibre-gl'
 import type { MapGeoJSONFeature } from 'maplibre-gl'
-import { highlightFormation } from '../layers/geology.ts'
 import { openDetailPanel, setupDetailPanel, closeDetailPanel } from './detail-panel.ts'
 import { store } from '../core/state.ts'
 import { showToast } from '../ui/shared/toast.ts'
 import { LOCAL_MIN_ZOOM } from '../map/map-mode.ts'
 import { DATA_REGIONS } from '../map/region-manager.ts'
+import { escapeHtml } from '../utils/html.ts'
+
+function getHighlightLayerId(): string {
+  const { regionId } = store.getState()
+  const activeId = (regionId && regionId !== 'france')
+    ? regionId
+    : DATA_REGIONS[0]?.id ?? 'bretagne'
+  return `geology-highlight__${activeId}`
+}
+
+function highlightFormation(map: maplibregl.Map, objectId: string | number | null): void {
+  const layerId = getHighlightLayerId()
+  if (!map.getLayer(layerId)) return
+  if (objectId === null) {
+    map.setFilter(layerId, ['==', 'OBJECTID', ''])
+  } else {
+    map.setFilter(layerId, ['==', 'OBJECTID', objectId])
+  }
+}
 
 function getAllFillLayerIds(): string[] {
   return DATA_REGIONS.map(r => `geology-fill__${r.id}`)
@@ -15,9 +33,6 @@ function getAllDipLayerIds(): string[] {
   return DATA_REGIONS.map(r => `dip-points__${r.id}`)
 }
 
-function escapeHtml(text: string): string {
-  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-}
 
 let wmsAbort: AbortController | null = null
 
