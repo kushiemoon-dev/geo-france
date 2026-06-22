@@ -9,9 +9,7 @@ import { DEFAULT_REGION, getRegion } from './config/regions.ts'
 import { setupInfoPanel } from './controls/info-panel.ts'
 import { setupLayerToggle } from './controls/layer-toggle.ts'
 import { setupLegend } from './controls/legend.ts'
-import { setupRegionSelector } from './controls/region-selector.ts'
 import { setupNoticesPanel } from './controls/notices-panel.ts'
-import { setupModeToggle } from './controls/mode-toggle.ts'
 import { setupTopbar } from './ui/controls/topbar.ts'
 import { registerDipIcon } from './map/dip-icon.ts'
 
@@ -34,8 +32,6 @@ map.on('load', () => {
   setupLayerToggle(map)
   setupLegend()
   setupTopbar(map)
-  setupRegionSelector(map)
-  setupModeToggle(map)
   setupNoticesPanel()
 
   // Prefetch fossils data during browser idle time to avoid cold-load on first panel open
