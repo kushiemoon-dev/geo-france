@@ -21,9 +21,8 @@ const LAYER_GROUPS: LayerGroup[] = [
 
 function getActiveRegionIds(): string[] {
   const { regionId } = store.getState()
-  return regionId === 'france'
-    ? DATA_REGIONS.map(r => r.id)
-    : (regionId ? [regionId] : [DATA_REGIONS[0]?.id ?? ''])
+  if (regionId === 'france') return ['france']
+  return regionId ? [regionId] : [DATA_REGIONS[0]?.id ?? '']
 }
 
 function toggleLayerGroup(map: maplibregl.Map, group: LayerGroup): void {
