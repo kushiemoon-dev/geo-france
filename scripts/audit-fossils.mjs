@@ -100,6 +100,11 @@ function isMagmatic(cls) {
   return cls.periode === 'Roches cristallines'
 }
 
+// Cartes géologiquement connues comme intégralement magmatiques mais non couvertes
+// par le mapping GeoJSON (CARTE values GeoJSON ≠ numéros de notices BRGM)
+// Corse : granite hercynien dominant (notices 1103–1120)
+const KNOWN_MAGMATIC_NOTICES = new Set(['1103', '1110', '1117', '1118', '1119', '1120'])
+
 // ── Charger fossils-enriched.json ─────────────────────────────────────────
 const FOSSILS_PATH = join(ROOT, 'src/config/fossils-enriched.json')
 const fossilsRaw = JSON.parse(readFileSync(FOSSILS_PATH, 'utf8'))
@@ -183,6 +188,13 @@ for (const [carteKey, entry] of Object.entries(byCarte)) {
   const hasGroups = Object.keys(entry.groups).length > 0
   if (!hasGroups) {
     updatedByCarte[carteKey] = entry
+    continue
+  }
+
+  if (KNOWN_MAGMATIC_NOTICES.has(carteKey)) {
+    clearedR2++
+    updatedByCarte[carteKey] = { ...entry, groups: {} }
+    console.log(`  R2 Override    : carte ${carteKey} — géologie granitique connue (Corse)`)
     continue
   }
 
