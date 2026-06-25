@@ -13,6 +13,7 @@ interface LayerGroup {
 const LAYER_GROUPS: LayerGroup[] = [
   { id: 'formations', label: 'Formations géologiques', baseLayerIds: ['geology-fill', 'geology-highlight'], visible: true },
   { id: 'contours', label: 'Contours formations', baseLayerIds: ['geology-outline'], visible: true },
+  { id: 'labels', label: 'Noms de formations', baseLayerIds: ['formation-labels'], visible: false },
   { id: 'faults', label: 'Failles & contacts', baseLayerIds: ['faults-major', 'faults-minor'], visible: true },
   { id: 'dips', label: 'Pendages', baseLayerIds: ['dip-points', 'dip-labels'], visible: true },
   { id: 'surcharge', label: 'Surcharges', baseLayerIds: ['surcharge'], visible: true },
@@ -34,7 +35,10 @@ function toggleLayerGroup(map: maplibregl.Map, group: LayerGroup): void {
       const layerId = `${baseId}__${regionId}`
       if (map.getLayer(layerId)) {
         if (baseId === 'geology-fill') {
+          // Use fill-opacity (not layout visibility) to match hideVectorLayers + restoreVectorLayers
           map.setPaintProperty(layerId, 'fill-opacity', group.visible ? 0.65 : 0)
+          // Also sync layout visibility so any prior mode round-trip doesn't leave it hidden
+          map.setLayoutProperty(layerId, 'visibility', 'visible')
         } else {
           map.setLayoutProperty(layerId, 'visibility', visibility)
         }

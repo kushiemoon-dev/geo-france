@@ -66,15 +66,17 @@ const COLOR_RULES: readonly CaseEntry[] = [
   [['s'], '#B3E1B6'],
   [['o'], '#009270'],
   [['k'], '#7FA08C'],
+  // Parenthesized NOTATION like "(b2-r)LM" — 2-char prefix catches the leading "("
+  [['(b'], '#F4B8D4'],
   [['b'], '#F4B8D4'],
 
   // Miocene uppercase generic (M), Quaternaire uppercase (Q) — after Mz/Mp/Mu/Mv/Mx/My
   [['M'], '#FFFF00'],
   [['Q'], '#F9F97F'],
 
-  // Roches cristallines — accentued-char prefixes (longest first, aã before ã)
-  [['aã'], '#E36DAA'],
-  [['ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', 'Ê', 'ï', 'â'], '#E36DAA'],
+  // Roches cristallines — accentued-char prefixes (longest first, aã/Èæ before single chars)
+  [['aã', 'Èæ'], '#E36DAA'],
+  [['ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', 'Ê', 'ï', 'â', '¥'], '#E36DAA'],
 
   // Quaternaire catch-all
   [['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R'], '#F9F97F'],
