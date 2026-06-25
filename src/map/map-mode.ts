@@ -4,12 +4,15 @@ import { store } from '../core/state.ts'
 import { showToast } from '../ui/shared/toast.ts'
 import type { MapMode } from '../core/types.ts'
 import { REGIONS } from '../config/regions.ts'
-import { getRegionLayerIds } from './styles.ts'
+import { getRegionLayerIds, NATIONAL_LAYER_IDS } from './styles.ts'
 
 const DATA_REGIONS_CACHE = REGIONS.filter(r => r.id !== 'france')
 
 function getAllRegionLayerIds(): string[] {
-  return DATA_REGIONS_CACHE.flatMap(r => getRegionLayerIds(r.id))
+  return [
+    ...NATIONAL_LAYER_IDS,
+    ...DATA_REGIONS_CACHE.flatMap(r => getRegionLayerIds(r.id)),
+  ]
 }
 
 const WMS_SOURCE_ID = 'brgm-wms'
@@ -85,7 +88,7 @@ function hideVectorLayers(map: maplibregl.Map): void {
 function restoreVectorLayers(map: maplibregl.Map): void {
   const { layers, regionId } = store.getState()
   const activeRegionIds = regionId === 'france'
-    ? DATA_REGIONS_CACHE.map(r => r.id)
+    ? ['france', ...DATA_REGIONS_CACHE.map(r => r.id)]
     : (regionId ? [regionId] : [DATA_REGIONS_CACHE[0]?.id ?? ''])
 
   for (const layerId of getAllRegionLayerIds()) {
