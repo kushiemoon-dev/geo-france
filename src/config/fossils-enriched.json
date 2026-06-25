@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-18T20:47:35.712Z",
+  "generated": "2026-06-25T12:51:42.934Z",
   "by_carte": {
     "1001": {
       "groups": {
@@ -2574,289 +2574,37 @@
       ]
     },
     "1103": {
-      "groups": {
-        "bélemnites": [
-          "bélemnite"
-        ],
-        "échinodermes": [
-          "échinoderme",
-          "crinoïde",
-          "encrine"
-        ],
-        "bivalves": [
-          "gryphée",
-          "pecten"
-        ],
-        "coraux": [
-          "polypier",
-          "récif"
-        ],
-        "foraminifères": [
-          "foraminifère",
-          "nummulite",
-          "orbitoline",
-          "globigérine",
-          "globotruncana",
-          "rotalipora",
-          "calpionelle",
-          "praeglobotruncana"
-        ],
-        "vertébrés": [
-          "poisson"
-        ],
-        "algues": [
-          "algue"
-        ],
-        "bryozoaires": [
-          "bryozoaire"
-        ],
-        "microfossiles": [
-          "radiolaire",
-          "microfaune",
-          "microflore"
-        ],
-        "autres": [
-          "spongiaire"
-        ],
-        "genres": [
-          "Carte",
-          "Cedex",
-          "Service",
-          "Sciences",
-          "Membres",
-          "Toute",
-          "Notice",
-          "Rossi",
-          "Lluch",
-          "Jacquet"
-        ]
-      },
+      "groups": {},
       "sources": [
         "notice:1103"
       ]
     },
     "1110": {
-      "groups": {
-        "ammonites": [
-          "ammonite"
-        ],
-        "échinodermes": [
-          "échinoderme",
-          "oursin",
-          "encrine"
-        ],
-        "échinides": [
-          "échinide"
-        ],
-        "brachiopodes": [
-          "brachiopode"
-        ],
-        "bivalves": [
-          "lamellibranche"
-        ],
-        "gastéropodes": [
-          "gastéropode"
-        ],
-        "rudistes": [
-          "rudiste"
-        ],
-        "coraux": [
-          "corail",
-          "récif"
-        ],
-        "foraminifères": [
-          "foraminifère",
-          "nummulite",
-          "miliolidé",
-          "discocycline",
-          "globotruncana",
-          "rotalipora",
-          "calpionelle",
-          "praeglobotruncana"
-        ],
-        "vertébrés": [
-          "poisson"
-        ],
-        "algues": [
-          "algue"
-        ],
-        "bryozoaires": [
-          "bryozoaire"
-        ],
-        "microfossiles": [
-          "radiolaire",
-          "spore",
-          "pollen",
-          "microfaune",
-          "microflore"
-        ],
-        "autres": [
-          "spongiaire",
-          "empreinte"
-        ],
-        "genres": [
-          "Carte",
-          "Sanio",
-          "Boite",
-          "Cedex",
-          "Service",
-          "Toute",
-          "Corte",
-          "Notice",
-          "Rossi",
-          "Pages"
-        ]
-      },
+      "groups": {},
       "sources": [
         "notice:1110"
       ]
     },
     "1117": {
-      "groups": {
-        "algues": [
-          "algue"
-        ],
-        "microfossiles": [
-          "pollen",
-          "microflore"
-        ],
-        "autres": [
-          "empreinte"
-        ],
-        "genres": [
-          "Carte",
-          "Venaco",
-          "Bastelica",
-          "Ajaccio",
-          "Zicavo",
-          "Service",
-          "Toute",
-          "Notice",
-          "Rossi",
-          "Bonin"
-        ]
-      },
+      "groups": {},
       "sources": [
         "notice:1117"
       ]
     },
     "1118": {
-      "groups": {
-        "échinodermes": [
-          "encrine"
-        ],
-        "bivalves": [
-          "lamellibranche",
-          "ostrea"
-        ],
-        "foraminifères": [
-          "foraminifère",
-          "nummulite",
-          "miliolidé",
-          "globotruncana",
-          "rotalipora",
-          "calpionelle",
-          "praeglobotruncana"
-        ],
-        "algues": [
-          "algue"
-        ],
-        "microfossiles": [
-          "radiolaire",
-          "pollen",
-          "microfaune"
-        ],
-        "autres": [
-          "spongiaire"
-        ],
-        "genres": [
-          "Carte",
-          "Pietra",
-          "Cargese",
-          "Venaco",
-          "Verdi",
-          "Sarrola",
-          "Ghisonaccia",
-          "Carcopino",
-          "Zicavo",
-          "Ajaccio"
-        ]
-      },
+      "groups": {},
       "sources": [
         "notice:1118"
       ]
     },
     "1119": {
-      "groups": {
-        "échinodermes": [
-          "échinoderme"
-        ],
-        "bivalves": [
-          "bivalve",
-          "lamellibranche",
-          "huître",
-          "ostrea",
-          "pecten",
-          "pectinidé"
-        ],
-        "gastéropodes": [
-          "gastéropode",
-          "natice"
-        ],
-        "coraux": [
-          "récifal",
-          "polypier",
-          "récif"
-        ],
-        "foraminifères": [
-          "foraminifère"
-        ],
-        "vertébrés": [
-          "poisson"
-        ],
-        "algues": [
-          "algue"
-        ],
-        "microfossiles": [
-          "radiolaire",
-          "ostracode",
-          "microfaune"
-        ],
-        "genres": [
-          "Ghisonaccia",
-          "Corse",
-          "Comme",
-          "Elles",
-          "Bonin",
-          "Enfin",
-          "Solenzara",
-          "Rousse",
-          "Sardaigne",
-          "Jurassique"
-        ]
-      },
+      "groups": {},
       "sources": [
         "notice:1119"
       ]
     },
     "1120": {
-      "groups": {
-        "microfossiles": [
-          "pollen"
-        ],
-        "genres": [
-          "Fraoce",
-          "Plutonisme",
-          "Terrains",
-          "Ajaccio",
-          "Minaccia",
-          "Punta",
-          "Castagna",
-          "Parata",
-          "Ville",
-          "Porticcio"
-        ]
-      },
+      "groups": {},
       "sources": [
         "notice:1120"
       ]
