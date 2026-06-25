@@ -130,6 +130,26 @@ export const geologyHighlightLayer: LayerSpecification = {
   filter: ['==', 'OBJECTID', '']
 }
 
+export const formationLabelsLayer: LayerSpecification = {
+  id: 'formation-labels',
+  type: 'symbol',
+  source: 'geology',
+  'source-layer': 'S_FGEOL',
+  minzoom: 10,
+  layout: {
+    'text-field': ['coalesce', ['get', 'NOTATION'], ''],
+    'text-size': 11,
+    'text-anchor': 'center',
+    'text-allow-overlap': false,
+    'text-ignore-placement': false,
+  },
+  paint: {
+    'text-color': '#1a1a1a',
+    'text-halo-color': '#ffffff',
+    'text-halo-width': 1.5
+  }
+}
+
 export const ALL_LAYERS = [
   geologyFillLayer,
   geologyOutlineLayer,
@@ -138,7 +158,8 @@ export const ALL_LAYERS = [
   dipPointsLayer,
   dipLabelsLayer,
   surchargeLayer,
-  geologyHighlightLayer
+  geologyHighlightLayer,
+  formationLabelsLayer,
 ]
 
 export function createLayersForRegion(regionId: string): LayerSpecification[] {

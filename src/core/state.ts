@@ -9,6 +9,7 @@ const initialState: AppState = {
     'geology-fill': true,
     'geology-highlight': true,
     'geology-outline': true,
+    'formation-labels': false,
     'faults-major': true,
     'faults-minor': true,
     'dip-points': true,

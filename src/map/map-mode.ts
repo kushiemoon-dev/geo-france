@@ -94,9 +94,14 @@ function restoreVectorLayers(map: maplibregl.Map): void {
     if (!belongsToActive) continue
 
     if (layerId.startsWith('geology-fill__')) {
+      // geology-fill uses fill-opacity for visibility control (never layout visibility)
+      // to stay consistent with hideVectorLayers and toggleLayerGroup
       const fillVisible = layers['geology-fill'] ?? true
       map.setPaintProperty(layerId, 'fill-opacity', fillVisible ? FILL_OPACITY : 0)
+      map.setLayoutProperty(layerId, 'visibility', 'visible')
+      continue
     }
+
     const baseId = layerId.split('__')[0]
     const visible = layers[baseId] ?? true
     map.setLayoutProperty(layerId, 'visibility', visible ? 'visible' : 'none')

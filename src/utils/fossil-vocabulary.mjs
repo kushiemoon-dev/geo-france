@@ -165,7 +165,7 @@ export const FOSSIL_CANONICAL = {
   'annélides': 'annélide', annelides: 'annélide', serpules: 'serpule', terriers: 'terrier',
   // autres
   'éponges': 'éponge', eponges: 'éponge', spongiaires: 'spongiaire',
-  fossiles: 'fossile', fossile: 'fossile', 'fossilifère': 'fossilifère', fossilifere: 'fossilifère',
+  // 'fossile'/'fossilifère' retirés : termes génériques, jamais dans FOSSIL_GROUPS.
   bioclastes: 'bioclaste', bioclaste: 'bioclaste', microfaune: 'microfaune',
   empreintes: 'empreinte',
   'encroûtements': 'encroûtement', encroutements: 'encroûtement',
