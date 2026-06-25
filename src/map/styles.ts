@@ -162,6 +162,61 @@ export const ALL_LAYERS = [
   formationLabelsLayer,
 ]
 
+// ── Vue France nationale (LITHO_1M_SIMPLIFIEE, CODE_GEOL integer) ──────────
+
+const NATIONAL_CODE_COLORS: [number, string][] = [
+  [1,  '#F9F97F'],  // Argiles → Quaternaire
+  [2,  '#80CFFF'],  // Calcaires/marnes → Jurassique
+  [3,  '#A6D468'],  // Craie → Crétacé
+  [5,  '#CB8C37'],  // Grès → Dévonien
+  [6,  '#FFFF00'],  // Sables → Néogène
+  [7,  '#CC4400'],  // Basaltes/Rhyolites → volcanique
+  [8,  '#E36DAA'],  // Granites → Roches cristallines
+  [9,  '#9B59B6'],  // Ophiolites → métamorphique
+  [10, '#D070D0'],  // Gneiss → métamorphique
+  [11, '#D070D0'],  // Micaschistes → métamorphique
+  [12, '#B3E1B6'],  // Schistes/Grès → Paléozoïque
+]
+
+function buildNationalColorExpression(): unknown {
+  const parts: unknown[] = ['match', ['to-number', ['get', 'CODE_GEOL']]]
+  for (const [code, color] of NATIONAL_CODE_COLORS) {
+    parts.push(code, color)
+  }
+  parts.push('#CCCCCC')
+  return parts
+}
+
+export const NATIONAL_LAYER_IDS = ['geology-fill__france', 'geology-outline__france']
+
+export function createNationalLayers(): LayerSpecification[] {
+  return [
+    {
+      id: 'geology-fill__france',
+      type: 'fill',
+      source: 'geology-france',
+      'source-layer': 'S_FGEOL_1M',
+      layout: { visibility: 'none' },
+      paint: {
+        'fill-color': buildNationalColorExpression() as never,
+        'fill-opacity': 0.75,
+      },
+    },
+    {
+      id: 'geology-outline__france',
+      type: 'line',
+      source: 'geology-france',
+      'source-layer': 'S_FGEOL_1M',
+      layout: { visibility: 'none' },
+      paint: {
+        'line-color': '#333333',
+        'line-width': 0.5,
+        'line-opacity': 0.6,
+      },
+    },
+  ] as LayerSpecification[]
+}
+
 export function createLayersForRegion(regionId: string): LayerSpecification[] {
   const sourceId = `geology-${regionId}`
   return ALL_LAYERS.map(layer => {
