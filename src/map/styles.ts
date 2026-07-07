@@ -162,20 +162,20 @@ export const ALL_LAYERS = [
   formationLabelsLayer,
 ]
 
-// ── Vue France nationale (LITHO_1M_SIMPLIFIEE, CODE_GEOL integer) ──────────
+// ── National France view (LITHO_1M_SIMPLIFIEE, CODE_GEOL integer) ──────────
 
 const NATIONAL_CODE_COLORS: [number, string][] = [
-  [1,  '#F9F97F'],  // Argiles → Quaternaire
-  [2,  '#80CFFF'],  // Calcaires/marnes → Jurassique
-  [3,  '#A6D468'],  // Craie → Crétacé
-  [5,  '#CB8C37'],  // Grès → Dévonien
-  [6,  '#FFFF00'],  // Sables → Néogène
-  [7,  '#CC4400'],  // Basaltes/Rhyolites → volcanique
-  [8,  '#E36DAA'],  // Granites → Roches cristallines
-  [9,  '#9B59B6'],  // Ophiolites → métamorphique
-  [10, '#D070D0'],  // Gneiss → métamorphique
-  [11, '#D070D0'],  // Micaschistes → métamorphique
-  [12, '#B3E1B6'],  // Schistes/Grès → Paléozoïque
+  [1,  '#F9F97F'],  // Clays → Quaternary
+  [2,  '#80CFFF'],  // Limestones/marls → Jurassic
+  [3,  '#A6D468'],  // Chalk → Cretaceous
+  [5,  '#CB8C37'],  // Sandstone → Devonian
+  [6,  '#FFFF00'],  // Sands → Neogene
+  [7,  '#CC4400'],  // Basalts/Rhyolites → volcanic
+  [8,  '#E36DAA'],  // Granites → Crystalline rocks
+  [9,  '#9B59B6'],  // Ophiolites → metamorphic
+  [10, '#D070D0'],  // Gneiss → metamorphic
+  [11, '#D070D0'],  // Mica schists → metamorphic
+  [12, '#B3E1B6'],  // Schists/Sandstone → Paleozoic
 ]
 
 function buildNationalColorExpression(): unknown {
