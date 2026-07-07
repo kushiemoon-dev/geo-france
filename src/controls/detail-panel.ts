@@ -174,16 +174,16 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
   const extracted: FossilGroups = extractFossils(descr, legende, geo.summary ?? '')
   const enrichedRaw = await getEnrichedFossils(carte)
   const rawFossils = mergeFossils(extracted, enrichedRaw)
-  const isPrecambrien = geo.ere === 'Precambrien' || geo.periode === 'Brioverien'
-  // Roches magmatiques : la chaleur détruit toute matière organique → pas de fossiles.
-  // On détecte via la lithologie extraite : si toutes les lithologies identifiées sont
-  // magmatiques et qu'aucune n'est sédimentaire, on vide la section fossiles.
+  const isPrecambrian = geo.ere === 'Precambrien' || geo.periode === 'Brioverien'
+  // Magmatic rocks: heat destroys all organic matter → no fossils.
+  // Detected via the extracted lithology: if all identified lithologies are
+  // magmatic and none are sedimentary, we clear the fossils section.
   const { getRockInfo } = await getMineralData()
   const lithoTypes = lithology.map(l => getRockInfo(l)?.type ?? 'unknown')
   const hasMagmatic = lithoTypes.some(t => t === 'magmatique')
   const hasSedimentary = lithoTypes.some(t => t === 'sedimentaire')
   const isMagmatic = hasMagmatic && !hasSedimentary
-  const { merged: fossils, enrichedSet } = (isPrecambrien || isMagmatic)
+  const { merged: fossils, enrichedSet } = (isPrecambrian || isMagmatic)
     ? { merged: {} as FossilGroups, enrichedSet: new Set<string>() }
     : rawFossils
   // Most-specific keys first — insertion order not reliable for matching priority
