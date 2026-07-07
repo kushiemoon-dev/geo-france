@@ -140,7 +140,7 @@ export function setupInfoPanel(map: maplibregl.Map): void {
       return
     }
 
-    // Mode local sans formation vectorielle : requête WMS directe
+    // Local mode without vector tiles: direct WMS request
     if (store.getState().mode === 'local' && map.getZoom() >= LOCAL_MIN_ZOOM) {
       const canvas = map.getCanvas()
       canvas.style.cursor = 'wait'

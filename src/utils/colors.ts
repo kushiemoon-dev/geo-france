@@ -15,7 +15,7 @@ const COLOR_RULES: readonly CaseEntry[] = [
   [['Fz', 'Fy', 'Fx', 'Fw', 'Fv', 'Fu'], '#F9F97F'],
   [['B-'], '#F9F97F'],
 
-  // Mesozoique composite (must precede single 'M')
+  // Mesozoic composite (must precede single 'M')
   [['LMz-T', 'LMz'], '#34B2E8'],
   [['MzM', 'MzS', 'MzR', 'Mz'], '#67C5B0'],
   [['TLB'], '#812B92'],
@@ -33,20 +33,20 @@ const COLOR_RULES: readonly CaseEntry[] = [
   [['e3', 'e4'], '#FDB46C'],
   [['e1', 'e2'], '#FDB46C'],
 
-  // Cretace superieur
+  // Upper Cretaceous
   [['c6'], '#BFE48A'],
   [['c5', 'c4'], '#E2F2B0'],
   [['c3'], '#BFE48A'],
   [['c2', 'c1'], '#A6D468'],
 
-  // Cretace inferieur (n-prefixes + n2/n4)
+  // Lower Cretaceous (n-prefixes + n2/n4)
   [['n6', 'n5', 'n4', 'n2'], '#7ECD74'],
 
-  // Jurassique superieur
+  // Upper Jurassic
   [['j7', 'j6', 'j5'], '#B3D4FF'],
-  // Jurassique moyen
+  // Middle Jurassic
   [['j4', 'j3'], '#80CFFF'],
-  // Jurassique inferieur
+  // Lower Jurassic
   [['j2', 'j1'], '#34B2E8'],
 
   // Lias
@@ -70,15 +70,15 @@ const COLOR_RULES: readonly CaseEntry[] = [
   [['(b'], '#F4B8D4'],
   [['b'], '#F4B8D4'],
 
-  // Miocene uppercase generic (M), Quaternaire uppercase (Q) — after Mz/Mp/Mu/Mv/Mx/My
+  // Miocene uppercase generic (M), Quaternary uppercase (Q) — after Mz/Mp/Mu/Mv/Mx/My
   [['M'], '#FFFF00'],
   [['Q'], '#F9F97F'],
 
-  // Roches cristallines — accentued-char prefixes (longest first, aã/Èæ before single chars)
+  // Crystalline rocks — accentued-char prefixes (longest first, aã/Èæ before single chars)
   [['aã', 'Èæ'], '#E36DAA'],
   [['ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', 'Ê', 'ï', 'â', '¥'], '#E36DAA'],
 
-  // Quaternaire catch-all
+  // Quaternary catch-all
   [['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R'], '#F9F97F'],
   [['°', '³'], '#F9F97F'],
 

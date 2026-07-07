@@ -53,7 +53,7 @@
   background: var(--geo-bg-elevated);
 }
 
-/* --- Toggle segmente --- */
+/* --- Segmented toggle --- */
 
 .geo-toggle {
   display: inline-flex;
@@ -140,7 +140,7 @@
   height: 100%;
 }
 
-/* --- Panneau --- */
+/* --- Panel --- */
 
 .geo-panel {
   background: var(--geo-bg-panel);
