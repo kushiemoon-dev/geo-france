@@ -1,8 +1,8 @@
 /**
- * Vocabulaire fossile partagé entre geology-data.ts (TypeScript) et
+ * Fossil vocabulary shared between geology-data.ts (TypeScript) and
  * scripts/fetch-fossil-enrichment.mjs (ESM Node).
  *
- * Source unique de vérité pour FOSSIL_GROUPS et FOSSIL_CANONICAL.
+ * Single source of truth for FOSSIL_GROUPS and FOSSIL_CANONICAL.
  */
 
 export const FOSSIL_GROUPS: Record<string, readonly string[]> = {
@@ -83,16 +83,16 @@ export const FOSSIL_CANONICAL: Record<string, string> = {
   cardioceras: 'cardioceras',
   nautiles: 'nautile', nautile: 'nautile',
   'céphalopodes': 'céphalopode', cephalopodes: 'céphalopode',
-  // bélemnites
+  // belemnites
   'bélemnites': 'bélemnite', 'bélemnite': 'bélemnite', belemnites: 'bélemnite', belemnite: 'bélemnite',
-  // échinodermes
+  // echinoderms
   'échinodermes': 'échinoderme', echinodermes: 'échinoderme',
   oursins: 'oursin', oursin: 'oursin',
   'crinoïdes': 'crinoïde', crinoides: 'crinoïde', encrines: 'encrine',
-  // échinides
+  // echinoids
   'échinides': 'échinide', echinides: 'échinide',
   'échinide': 'échinide', echinide: 'échinide',
-  // brachiopodes
+  // brachiopods
   brachiopodes: 'brachiopode', brachiopode: 'brachiopode',
   'térébratules': 'térébratule', terebratules: 'térébratule',
   'térébratule': 'térébratule', terebratule: 'térébratule',
@@ -110,15 +110,15 @@ export const FOSSIL_CANONICAL: Record<string, string> = {
   plicatules: 'plicatule',
   trigonies: 'trigonie', trigonia: 'trigonia',
   'inocérames': 'inocérame', inocerames: 'inocérame', inoceramus: 'inoceramus',
-  // gastéropodes
+  // gastropods
   'gastéropodes': 'gastéropode', gasteropodes: 'gastéropode', gastropodes: 'gastéropode',
   'cérithes': 'cérithe', cerithes: 'cérithe', 'cérithe': 'cérithe', cerithe: 'cérithe',
   turritelles: 'turritelle', turritella: 'turritella',
   natica: 'natica', natices: 'natice',
-  // rudistes
+  // rudists
   rudistes: 'rudiste', rudiste: 'rudiste', hippurites: 'hippurite',
   toucasia: 'toucasia', caprines: 'caprine', radiolites: 'radiolite',
-  // coraux
+  // corals
   coraux: 'corail', corail: 'corail', coralien: 'corail', corallien: 'corail',
   'récifal': 'récifal', recifal: 'récifal',
   polypiers: 'polypier',
@@ -126,7 +126,7 @@ export const FOSSIL_CANONICAL: Record<string, string> = {
   'stromatoporidés': 'stromatoporidé', stromatoporides: 'stromatoporidé',
   rugosa: 'rugosa',
   'récif': 'récif', recif: 'récif',
-  // foraminifères
+  // foraminifera
   'foraminifères': 'foraminifère', foraminifere: 'foraminifère', foraminiferes: 'foraminifère',
   nummulites: 'nummulite', nummulite: 'nummulite', nummulitique: 'nummulite',
   orbitolines: 'orbitoline', orbitoline: 'orbitoline',
@@ -143,31 +143,31 @@ export const FOSSIL_CANONICAL: Record<string, string> = {
   praeglobotruncana: 'praeglobotruncana', globotruncane: 'globotruncane',
   // trilobites
   trilobites: 'trilobite', trilobite: 'trilobite', paradoxides: 'paradoxides',
-  // vertébrés
+  // vertebrates
   poissons: 'poisson', poisson: 'poisson',
   reptiles: 'reptile', reptile: 'reptile',
   dinosaures: 'dinosaure', dinosaure: 'dinosaure',
   'mammifères': 'mammifère', mammifere: 'mammifère', mammiferes: 'mammifère',
   'vertébrés': 'vertébré', vertebre: 'vertébré', vertebres: 'vertébré',
-  // algues
+  // algae
   algues: 'algue', stromatolithes: 'stromatolithe',
   'characées': 'characée', characees: 'characée',
   'dasycladacées': 'dasycladacée', dasycladacees: 'dasycladacée',
   lithothamnium: 'lithothamnium', microcodium: 'microcodium',
-  // bryozoaires
+  // bryozoans
   bryozoaires: 'bryozoaire', bryozoaire: 'bryozoaire',
-  // microfossiles
+  // microfossils
   radiolaires: 'radiolaire', ostracodes: 'ostracode', conodontes: 'conodonte',
   graptolites: 'graptolite',
   chitinozoaires: 'chitinozoaire', acritarches: 'acritarche',
   'dinoflagellés': 'dinoflagellé', dinoflagelles: 'dinoflagellé',
   spores: 'spore', pollen: 'pollen', tentaculites: 'tentaculite', microflore: 'microflore',
-  // annélides
+  // annelids
   'annélides': 'annélide', annelides: 'annélide', serpules: 'serpule', terriers: 'terrier',
-  // autres
+  // other
   'éponges': 'éponge', eponges: 'éponge', spongiaires: 'spongiaire',
-  // 'fossile'/'fossilifère' retirés : termes génériques, jamais dans FOSSIL_GROUPS,
-  // ne produisent aucun tag utile et polluent la catégorie "autres".
+  // 'fossile'/'fossilifère' removed: generic terms, never in FOSSIL_GROUPS,
+  // they produce no useful tag and pollute the "other" category.
   bioclastes: 'bioclaste', bioclaste: 'bioclaste', microfaune: 'microfaune',
   empreintes: 'empreinte',
   'encroûtements': 'encroûtement', encroutements: 'encroûtement',
