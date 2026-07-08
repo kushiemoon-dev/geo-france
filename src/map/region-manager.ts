@@ -1,6 +1,6 @@
 import type maplibregl from 'maplibre-gl'
 import { REGIONS, getRegion } from '../config/regions.ts'
-import { createLayersForRegion, getRegionLayerIds, getRegionLayerId, createNationalLayers, NATIONAL_LAYER_IDS } from './styles.ts'
+import { createLayersForRegion, getRegionLayerIds, createNationalLayers, NATIONAL_LAYER_IDS } from './styles.ts'
 import { ensureModeAfterRegionLoad } from './map-mode.ts'
 import { showMapLoading, hideMapLoading } from '../ui/shared/loading.ts'
 import { showToast } from '../ui/shared/toast.ts'
@@ -174,13 +174,6 @@ export function getCurrentRegionId(): string | null {
 
 export function loadInitialRegion(map: maplibregl.Map, regionId: string): void {
   loadRegion(map, regionId)
-}
-
-export function getActiveRegionLayerId(baseId: string): string {
-  const regionId = currentRegionId && currentRegionId !== 'france'
-    ? currentRegionId
-    : DATA_REGIONS[0]?.id ?? 'bretagne'
-  return getRegionLayerId(baseId, regionId)
 }
 
 /** For test isolation only — resets module-level state between tests */

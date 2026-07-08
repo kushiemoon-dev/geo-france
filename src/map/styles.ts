@@ -1,7 +1,7 @@
 import type { LayerSpecification } from 'maplibre-gl'
 import { buildColorExpression } from '../utils/colors.ts'
 
-export const geologyFillLayer: LayerSpecification = {
+const geologyFillLayer: LayerSpecification = {
   id: 'geology-fill',
   type: 'fill',
   source: 'geology',
@@ -12,7 +12,7 @@ export const geologyFillLayer: LayerSpecification = {
   }
 }
 
-export const geologyOutlineLayer: LayerSpecification = {
+const geologyOutlineLayer: LayerSpecification = {
   id: 'geology-outline',
   type: 'line',
   source: 'geology',
@@ -61,7 +61,7 @@ export const faultsMinorLayer: LayerSpecification = {
   }
 }
 
-export const dipPointsLayer: LayerSpecification = {
+const dipPointsLayer: LayerSpecification = {
   id: 'dip-points',
   type: 'symbol',
   source: 'geology',
@@ -96,7 +96,7 @@ export const surchargeLayer: LayerSpecification = {
   }
 }
 
-export const dipLabelsLayer: LayerSpecification = {
+const dipLabelsLayer: LayerSpecification = {
   id: 'dip-labels',
   type: 'symbol',
   source: 'geology',
@@ -117,7 +117,7 @@ export const dipLabelsLayer: LayerSpecification = {
   minzoom: 8
 }
 
-export const geologyHighlightLayer: LayerSpecification = {
+const geologyHighlightLayer: LayerSpecification = {
   id: 'geology-highlight',
   type: 'line',
   source: 'geology',
@@ -130,7 +130,7 @@ export const geologyHighlightLayer: LayerSpecification = {
   filter: ['==', 'OBJECTID', '']
 }
 
-export const formationLabelsLayer: LayerSpecification = {
+const formationLabelsLayer: LayerSpecification = {
   id: 'formation-labels',
   type: 'symbol',
   source: 'geology',
@@ -150,7 +150,7 @@ export const formationLabelsLayer: LayerSpecification = {
   }
 }
 
-export const ALL_LAYERS = [
+const ALL_LAYERS = [
   geologyFillLayer,
   geologyOutlineLayer,
   faultsMajorLayer,
@@ -229,8 +229,4 @@ export function createLayersForRegion(regionId: string): LayerSpecification[] {
 
 export function getRegionLayerIds(regionId: string): string[] {
   return ALL_LAYERS.map(l => `${l.id}__${regionId}`)
-}
-
-export function getRegionLayerId(baseId: string, regionId: string): string {
-  return `${baseId}__${regionId}`
 }

@@ -2,7 +2,7 @@ import '../../styles/loading.css'
 
 const MAP_LOADING_ID = 'geo-map-loading'
 
-export function createSpinner(size = 24): HTMLElement {
+function createSpinner(size = 24): HTMLElement {
   const el = document.createElement('div')
   el.className = 'geo-spinner'
   el.style.width = `${size}px`
