@@ -13,3 +13,7 @@ findings.md
 .env.*.local
 .playwright-mcp/
 .superpowers/
+
+# Ad-hoc manual test scripts/screenshots (not the real test suite)
+/e2e-test*.mjs
+/*.png
