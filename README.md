@@ -3,10 +3,10 @@
 ### Interactive Geological Map of France
 
 [![Live Demo](https://img.shields.io/badge/demo-geo--france.kushie.dev-blue?style=flat-square)](https://geo-france.kushie.dev)
-[![Version](https://img.shields.io/badge/version-0.1.0-green?style=flat-square)](https://github.com/kushiemoon-dev/geo-france/releases)
+[![Version](https://img.shields.io/badge/version-2.2.0-green?style=flat-square)](https://github.com/kushiemoon-dev/geo-france/releases)
 [![License](https://img.shields.io/github/license/kushiemoon-dev/geo-france?style=flat-square&color=gray)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
-[![MapLibre](https://img.shields.io/badge/MapLibre_GL-4.x-396CB2?style=flat-square&logo=maplibre&logoColor=white)](https://maplibre.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9+-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![MapLibre](https://img.shields.io/badge/MapLibre_GL-5.x-396CB2?style=flat-square&logo=maplibre&logoColor=white)](https://maplibre.org)
 
 </div>
 
@@ -28,6 +28,8 @@ Interactive geological map of metropolitan France — 14 regions, ~1 million geo
 - **Color legend** by geological period
 - **Geological notices** — 997 BRGM notice PDFs with page-count badges (full vs. pocket format)
 - **Local mode** — 1:50,000 WMS raster overlay from BRGM with formation identification via BD Charm-50 vectors
+- **Installable PWA** — offline-capable via `vite-plugin-pwa`
+- **Error tracking** — Sentry, client-side
 
 ---
 
@@ -55,6 +57,8 @@ Interactive geological map of metropolitan France — 14 regions, ~1 million geo
 | [OpenStreetMap](https://www.openstreetmap.org/) | Basemap |
 | [Tippecanoe](https://github.com/felt/tippecanoe) | GeoJSON → vector tiles conversion |
 | [GDAL](https://gdal.org/) | Shapefile reprojection & merging |
+| [Vitest](https://vitest.dev/) | Test runner |
+| [Sentry](https://sentry.io/) | Client-side error tracking |
 
 ---
 
@@ -63,8 +67,8 @@ Interactive geological map of metropolitan France — 14 regions, ~1 million geo
 ```bash
 git clone https://github.com/kushiemoon-dev/geo-france.git
 cd geo-france
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Server starts at `http://localhost:5173`. PMTiles files (~838 MB) are downloaded automatically via Git LFS.
@@ -72,7 +76,7 @@ Server starts at `http://localhost:5173`. PMTiles files (~838 MB) are downloaded
 ### Production build
 
 ```bash
-npm run build
+pnpm build
 ```
 
 Static files in `dist/` can be served by any web server. A static server with byte-range support is recommended for PMTiles files.
@@ -81,7 +85,7 @@ Static files in `dist/` can be served by any web server. A static server with by
 
 ## Data pipeline
 
-Scripts in `scripts/` handle the full per-region conversion:
+Scripts in `scripts/` handle the full per-region conversion, plus enrichment and auditing of secondary datasets:
 
 1. `scripts/regions.sh` — Region-to-department mapping
 2. `scripts/convert.sh` — Single region conversion (download, reprojection, merge, PMTiles)
@@ -92,6 +96,12 @@ Scripts in `scripts/` handle the full per-region conversion:
 ```bash
 cd scripts && bash convert-all.sh
 ```
+
+**Enrichment & audits** (separate from the core tile pipeline):
+
+- `fetch-fossil-enrichment.mjs` / `audit-fossils.mjs` — fossil term detection data
+- `fetch-rock-images.mjs` / `validate-rock-images.mjs` / `audit-rock-images.mjs` — rock sample images
+- `audit-notices.mjs` — BRGM notice PDF coverage
 
 ---
 
