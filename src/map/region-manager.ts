@@ -1,6 +1,6 @@
 import type maplibregl from 'maplibre-gl'
 import { REGIONS, getRegion } from '../config/regions.ts'
-import { createLayersForRegion, getRegionLayerIds, createNationalLayers, NATIONAL_LAYER_IDS } from './styles.ts'
+import { createLayersForRegion, getRegionLayerIds } from './styles.ts'
 import { ensureModeAfterRegionLoad } from './map-mode.ts'
 import { showMapLoading, hideMapLoading } from '../ui/shared/loading.ts'
 import { showToast } from '../ui/shared/toast.ts'
@@ -9,34 +9,6 @@ import { bus } from '../core/events.ts'
 
 let currentRegionId: string | null = null
 const initializedRegions = new Set<string>()
-
-const FRANCE_SOURCE_ID = 'geology-france'
-
-function addFranceNational(map: maplibregl.Map): void {
-  if (initializedRegions.has('france')) return
-  initializedRegions.add('france')
-  if (!map.getSource(FRANCE_SOURCE_ID)) {
-    map.addSource(FRANCE_SOURCE_ID, {
-      type: 'vector',
-      url: 'pmtiles:///data/france.pmtiles',
-    })
-  }
-  for (const layer of createNationalLayers()) {
-    if (!map.getLayer(layer.id)) map.addLayer(layer)
-  }
-}
-
-function setNationalVisibility(map: maplibregl.Map, visibility: 'visible' | 'none'): void {
-  for (const layerId of NATIONAL_LAYER_IDS) {
-    if (!map.getLayer(layerId)) continue
-    if (layerId === 'geology-fill__france') {
-      map.setPaintProperty(layerId, 'fill-opacity', visibility === 'visible' ? 0.75 : 0)
-      map.setLayoutProperty(layerId, 'visibility', 'visible')
-    } else {
-      map.setLayoutProperty(layerId, 'visibility', visibility)
-    }
-  }
-}
 
 export const DATA_REGIONS = REGIONS.filter(r => r.id !== 'france')
 
@@ -63,15 +35,13 @@ function addRegionToMap(map: maplibregl.Map, regionId: string): void {
 }
 
 export function initRegions(map: maplibregl.Map, initialRegionId: string): void {
-  // Always init the national france layer (france.pmtiles)
-  addFranceNational(map)
-
   if (initialRegionId === 'france') {
-    // France view: also pre-load 13 regional layers (for local navigation later)
+    // France view: load all 13 regions — existing behaviour unchanged
     for (const region of DATA_REGIONS) {
       addRegionToMap(map, region.id)
     }
   } else {
+    // Single-region launch: only load the requested region
     addRegionToMap(map, initialRegionId)
   }
 }
@@ -104,7 +74,6 @@ function setRegionVisibility(map: maplibregl.Map, regionId: string, visibility: 
 }
 
 function hideAllRegions(map: maplibregl.Map): void {
-  setNationalVisibility(map, 'none')
   for (const region of DATA_REGIONS) {
     setRegionVisibility(map, region.id, 'none')
   }
@@ -120,8 +89,12 @@ export async function loadRegion(map: maplibregl.Map, regionId: string): Promise
   if (regionId === currentRegionId) return
 
   if (regionId === 'france') {
+    // National view stacks all 13 regional PMTiles (~851MB) — no spinner shown, matches prod.
+    await Promise.all(DATA_REGIONS.map(r => ensureRegionInitialized(map, r.id)))
     hideAllRegions(map)
-    setNationalVisibility(map, 'visible')
+    for (const r of DATA_REGIONS) {
+      setRegionVisibility(map, r.id, 'visible')
+    }
     currentRegionId = regionId
     store.setState({ regionId, loading: false })
     map.fitBounds(region.bounds, { padding: 40, duration: 1000 })
