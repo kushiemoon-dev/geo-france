@@ -11,12 +11,6 @@ vi.mock('../styles.ts', () => ({
     `geology-fill-${regionId}`,
     `geology-line-${regionId}`,
   ]),
-  getRegionLayerId: vi.fn((baseId: string, regionId: string) => `${baseId}-${regionId}`),
-  createNationalLayers: vi.fn(() => [
-    { id: 'geology-fill__france', type: 'fill', source: 'geology-france', 'source-layer': 'S_FGEOL_1M', layout: { visibility: 'none' }, paint: {} },
-    { id: 'geology-outline__france', type: 'line', source: 'geology-france', 'source-layer': 'S_FGEOL_1M', layout: { visibility: 'none' }, paint: {} },
-  ]),
-  NATIONAL_LAYER_IDS: ['geology-fill__france', 'geology-outline__france'],
 }))
 
 vi.mock('../map-mode.ts', () => ({
@@ -85,8 +79,8 @@ describe('region-manager', () => {
 
       initRegions(map as never, 'france')
 
-      // DATA_REGIONS has 13 entries + 1 national france source
-      expect(map.addSource).toHaveBeenCalledTimes(14)
+      // DATA_REGIONS has 13 entries
+      expect(map.addSource).toHaveBeenCalledTimes(13)
     })
 
     it('Cas 2 — bretagne: ajoute seulement 1 source', async () => {
@@ -96,7 +90,7 @@ describe('region-manager', () => {
 
       initRegions(map as never, 'bretagne')
 
-      expect(map.addSource).toHaveBeenCalledTimes(2) // geology-france + geology-bretagne
+      expect(map.addSource).toHaveBeenCalledTimes(1) // geology-bretagne
       expect(map.addSource).toHaveBeenCalledWith('geology-bretagne', expect.objectContaining({
         url: 'pmtiles:///data/bretagne.pmtiles',
       }))
@@ -110,7 +104,7 @@ describe('region-manager', () => {
       initRegions(map as never, 'bretagne')
       initRegions(map as never, 'bretagne')
 
-      expect(map.addSource).toHaveBeenCalledTimes(2) // geology-france + geology-bretagne, no duplicates
+      expect(map.addSource).toHaveBeenCalledTimes(1) // geology-bretagne, no duplicates
     })
   })
 
@@ -125,10 +119,9 @@ describe('region-manager', () => {
       await ensureRegionInitialized(map as never, 'normandie')
 
       const addedSources = map.addSource.mock.calls.map((c: [string, object]) => c[0])
-      expect(addedSources).toContain('geology-france')
       expect(addedSources).toContain('geology-bretagne')
       expect(addedSources).toContain('geology-normandie')
-      expect(map.addSource).toHaveBeenCalledTimes(3)
+      expect(map.addSource).toHaveBeenCalledTimes(2)
     })
 
     it('Cas 3b — région déjà initialisée: n\'ajoute pas de doublon', async () => {
@@ -139,7 +132,7 @@ describe('region-manager', () => {
       initRegions(map as never, 'bretagne')
       await ensureRegionInitialized(map as never, 'bretagne')
 
-      expect(map.addSource).toHaveBeenCalledTimes(2) // geology-france + geology-bretagne
+      expect(map.addSource).toHaveBeenCalledTimes(1) // geology-bretagne
     })
   })
 
@@ -150,14 +143,13 @@ describe('region-manager', () => {
       const map = makeMap()
       map.isSourceLoaded.mockReturnValue(true)
 
-      // France national source is always initialized up-front
       initRegions(map as never, 'bretagne')
-      expect(map.addSource).toHaveBeenCalledTimes(2) // geology-france + geology-bretagne
+      expect(map.addSource).toHaveBeenCalledTimes(1) // geology-bretagne
 
-      // Switching to france view uses existing national source — no new sources needed
+      // Switching to france view initializes the 12 missing regions
       await loadRegion(map as never, 'france')
 
-      expect(map.addSource).toHaveBeenCalledTimes(2) // unchanged: national layer already present
+      expect(map.addSource).toHaveBeenCalledTimes(13) // 12 missing regions + geology-bretagne
     })
   })
 })

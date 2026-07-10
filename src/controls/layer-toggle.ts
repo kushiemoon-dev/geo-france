@@ -21,7 +21,7 @@ const LAYER_GROUPS: LayerGroup[] = [
 
 function getActiveRegionIds(): string[] {
   const { regionId } = store.getState()
-  if (regionId === 'france') return ['france']
+  if (regionId === 'france') return DATA_REGIONS.map(r => r.id)
   return regionId ? [regionId] : [DATA_REGIONS[0]?.id ?? '']
 }
 
