@@ -184,12 +184,21 @@ if [ ${#tippecanoe_args[@]} -eq 0 ]; then
 fi
 
 echo "  [generate] ${REGION}.pmtiles..."
+# --visvalingam: alternate simplification algorithm, keeps visually-significant
+# points instead of a mechanical distance threshold — smoother contours at
+# national/low zoom instead of the angular default (Douglas-Peucker).
+# NOTE: --no-simplification-of-shared-nodes (the documented, non-deprecated
+# replacement for --detect-shared-borders) crashes tippecanoe v2.79.0 with an
+# out-of-bounds assertion on at least one region's real geometry (auvergne-
+# rhone-alpes) — dropped. Shared-border consistency between adjacent regions
+# is not addressed by this rebuild.
 tippecanoe \
   -zg \
   --projection=EPSG:4326 \
   --force \
   --no-feature-limit \
   --no-tile-size-limit \
+  --visvalingam \
   -o "$pmtiles_out" \
   "${tippecanoe_args[@]}"
 

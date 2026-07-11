@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 /**
- * Serveur d'audit local pour valider visuellement les images de roches.
+ * Local audit server to visually validate rock images.
  * Usage: node scripts/audit-rock-images.mjs [--port=5174]
  *
- * Ouvrir http://localhost:5174 dans le navigateur.
- * Boutons OK → retire imageStatus:'quarantined' (patch pending-quarantine.json)
- * Boutons Reject → marque comme toujours invalide
- * Skip → passer sans action
+ * Open http://localhost:5174 in the browser.
+ * OK button → removes imageStatus:'quarantined' (patches pending-quarantine.json)
+ * Reject button → marks as still invalid
+ * Skip → move on without action
  *
- * Sorties:
- *   public/images/rocks/metadata.json   — crédits mis à jour
- *   public/images/rocks/pending-quarantine.json — patch à appliquer dans mineral-data.ts
+ * Outputs:
+ *   public/images/rocks/metadata.json   — updated credits
+ *   public/images/rocks/pending-quarantine.json — patch to apply in mineral-data.ts
  */
 
 import { createServer } from 'http'
@@ -79,20 +79,20 @@ function buildHtml(rocks, metadata, pending, filter) {
 
   const cards = filtered.map(r => {
     const sizeKb = getFileSizeKb(r.image)
-    const sizeLabel = sizeKb ? `${sizeKb} Ko` : '⚠ manquant'
+    const sizeLabel = sizeKb ? `${sizeKb} KB` : '⚠ missing'
     const meta = metadata[r.key]
     const pend = pending[r.key]
     const statusBadge = r.imageStatus === 'quarantined'
       ? `<span class="badge q">quarantined</span>`
       : pend === 'ok'
-      ? `<span class="badge ok">validé ✓</span>`
+      ? `<span class="badge ok">approved ✓</span>`
       : pend === 'reject'
-      ? `<span class="badge rej">rejeté ✗</span>`
+      ? `<span class="badge rej">rejected ✗</span>`
       : `<span class="badge v">verified</span>`
 
     const credit = meta
       ? `<div class="credit">© ${meta.author} — ${meta.license}<br><a href="${meta.url}" target="_blank" rel="noopener">${meta.title?.slice(0, 55) ?? ''}…</a></div>`
-      : `<div class="credit dim">Pas de metadata (image originale)</div>`
+      : `<div class="credit dim">No metadata (original image)</div>`
 
     return `
     <div class="card ${r.imageStatus === 'quarantined' ? 'card-q' : ''}">
@@ -123,10 +123,10 @@ function buildHtml(rocks, metadata, pending, filter) {
   ).join(' | ')
 
   return `<!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Audit images roches — geo-france</title>
+<title>Rock image audit — geo-france</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0 }
   body { font: 14px/1.4 system-ui, sans-serif; background: #111; color: #ddd; padding: 16px }
@@ -161,9 +161,9 @@ function buildHtml(rocks, metadata, pending, filter) {
 </style>
 </head>
 <body>
-<h1>Audit images de roches (${rocks.length} entrées)</h1>
+<h1>Rock image audit (${rocks.length} entries)</h1>
 <nav>${nav}</nav>
-<div class="grid">${cards || '<p style="color:#666;padding:20px">Aucune image dans ce filtre.</p>'}</div>
+<div class="grid">${cards || '<p style="color:#666;padding:20px">No images in this filter.</p>'}</div>
 <div id="toast"></div>
 <script>
 async function act(key, action) {
@@ -208,17 +208,17 @@ const server = createServer((req, res) => {
     saveJson(PENDING_FILE, pending)
 
     const message = action === 'ok'
-      ? `✓ ${key} validé — penser à retirer imageStatus:'quarantined' dans mineral-data.ts`
+      ? `✓ ${key} approved — remember to remove imageStatus:'quarantined' in mineral-data.ts`
       : action === 'reject'
-      ? `✗ ${key} rejeté — chercher manuellement une image de remplacement`
-      : `→ ${key} ignoré`
+      ? `✗ ${key} rejected — look for a replacement image manually`
+      : `→ ${key} skipped`
 
     res.writeHead(200, { 'Content-Type': 'application/json' })
     res.end(JSON.stringify({ ok: true, message }))
     return
   }
 
-  // GET / → page d'audit
+  // GET / → audit page
   if (url.pathname === '/' || url.pathname === '') {
     const rocks = parseRockDB()
     const metadata = loadJson(META_FILE)
@@ -235,9 +235,9 @@ const server = createServer((req, res) => {
 
 server.listen(port, '127.0.0.1', () => {
   console.log(`Audit rock images → http://localhost:${port}`)
-  console.log(`  Filtres: /?filter=all | /?filter=quarantined | /?filter=unreviewed`)
-  console.log(`  Ctrl+C pour arrêter\n`)
-  // Ouvrir dans le navigateur
+  console.log(`  Filters: /?filter=all | /?filter=quarantined | /?filter=unreviewed`)
+  console.log(`  Ctrl+C to stop\n`)
+  // Open in the browser
   try {
     const cmd = process.platform === 'darwin' ? 'open' : process.platform === 'win32' ? 'start' : 'xdg-open'
     execSync(`${cmd} http://localhost:${port}/?filter=quarantined`)

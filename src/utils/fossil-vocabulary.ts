@@ -73,6 +73,36 @@ export const FOSSIL_GROUPS: Record<string, readonly string[]> = {
   ],
 }
 
+// Stratigraphic interval (Ma) in which each fossil group is plausible, used
+// to filter inter-formation bleeding of fossils enriched per BRGM sheet (a
+// sheet can span multiple ages, but a given fossil should only show on a
+// formation of compatible age). Intervals are deliberately wide for phylum-
+// level groups (bivalves, gastropods, brachiopods...) that span the whole
+// Phanerozoic and aren't index fossils — only the diagnostic groups
+// (trilobites, rudists, belemnites, ammonites) filter meaningfully. ammonites
+// includes nautiloids/cephalopods broadly in the vocabulary; bounded at the
+// K-Pg extinction (66 Ma) of ammonites sensu stricto, at the cost of minor
+// imprecision on Cenozoic nautiloids.
+export const FOSSIL_AGE_RANGES: Record<string, { startMa: number; endMa: number }> = {
+  ammonites: { startMa: 419.2, endMa: 66.0 },
+  'bélemnites': { startMa: 251.9, endMa: 66.0 },
+  'échinodermes': { startMa: 538.8, endMa: 0 },
+  'échinides': { startMa: 485.4, endMa: 0 },
+  brachiopodes: { startMa: 538.8, endMa: 0 },
+  bivalves: { startMa: 538.8, endMa: 0 },
+  'gastéropodes': { startMa: 538.8, endMa: 0 },
+  rudistes: { startMa: 163.5, endMa: 66.0 },
+  coraux: { startMa: 485.4, endMa: 0 },
+  'foraminifères': { startMa: 538.8, endMa: 0 },
+  trilobites: { startMa: 538.8, endMa: 251.9 },
+  'vertébrés': { startMa: 485.4, endMa: 0 },
+  algues: { startMa: 538.8, endMa: 0 },
+  bryozoaires: { startMa: 485.4, endMa: 0 },
+  microfossiles: { startMa: 538.8, endMa: 0 },
+  'annélides': { startMa: 538.8, endMa: 0 },
+  autres: { startMa: 538.8, endMa: 0 },
+}
+
 export const FOSSIL_CANONICAL: Record<string, string> = {
   // ammonites
   ammonites: 'ammonite', ammonite: 'ammonite', ammonitique: 'ammonite',

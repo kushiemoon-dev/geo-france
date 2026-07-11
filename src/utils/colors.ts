@@ -1,91 +1,12 @@
 // Build a MapLibre expression that maps NOTATION prefixes to ICS colors
 // Uses case expressions with string prefix matching (longest prefix first)
+//
+// Derived from geology-data.ts SORTED_RULES — the same table drives both the
+// map fill color and the detail-panel age classification, so they can no
+// longer drift apart (they used to be two independently hand-maintained lists).
 
 import type { ExpressionSpecification } from 'maplibre-gl'
-
-type CaseEntry = readonly [prefixes: readonly string[], color: string]
-
-// Ordered longest-prefix-first within each group
-const COLOR_RULES: readonly CaseEntry[] = [
-  // Multi-char prefixes first
-  [['Hydro', 'GLB'], '#C8E8FF'],
-  [['SGH'], '#F9F97F'],
-  [['SL', 'VL'], '#C8E8FF'],
-  [['SC', 'CF', 'LP', 'OE', 'Tz'], '#F9F97F'],
-  [['Fz', 'Fy', 'Fx', 'Fw', 'Fv', 'Fu'], '#F9F97F'],
-  [['B-'], '#F9F97F'],
-
-  // Mesozoic composite (must precede single 'M')
-  [['LMz-T', 'LMz'], '#34B2E8'],
-  [['MzM', 'MzS', 'MzR', 'Mz'], '#67C5B0'],
-  [['TLB'], '#812B92'],
-
-  // Lias composite — Lã prefix (must precede single 'l')
-  [['Lã1', 'Lã5', 'Lã'], '#34B2E8'],
-
-  // Miocene subdivisions (must precede single 'M')
-  [['Mp-u', 'Mp', 'Mu', 'Mv', 'Mx', 'My'], '#FFFF00'],
-
-  // Eocene subdivisions
-  [['e7'], '#FDB46C'],
-  [['e6'], '#FDB46C'],
-  [['e5'], '#FDB46C'],
-  [['e3', 'e4'], '#FDB46C'],
-  [['e1', 'e2'], '#FDB46C'],
-
-  // Upper Cretaceous
-  [['c6'], '#BFE48A'],
-  [['c5', 'c4'], '#E2F2B0'],
-  [['c3'], '#BFE48A'],
-  [['c2', 'c1'], '#A6D468'],
-
-  // Lower Cretaceous (n-prefixes + n2/n4)
-  [['n6', 'n5', 'n4', 'n2'], '#7ECD74'],
-
-  // Upper Jurassic
-  [['j7', 'j6', 'j5'], '#B3D4FF'],
-  // Middle Jurassic
-  [['j4', 'j3'], '#80CFFF'],
-  // Lower Jurassic
-  [['j2', 'j1'], '#34B2E8'],
-
-  // Lias
-  [['l4', 'l3', 'l2', 'l1'], '#34B2E8'],
-
-  // Single-char periods (after longer prefixes)
-  [['e'], '#FDB46C'],
-  [['c'], '#A6D468'],
-  [['j', 'l'], '#34B2E8'],
-  [['p'], '#FFFF99'],
-  [['m'], '#FFFF00'],
-  [['g'], '#FDC07A'],
-  [['t'], '#812B92'],
-  [['r'], '#F04028'],
-  [['h'], '#67A599'],
-  [['d'], '#CB8C37'],
-  [['s'], '#B3E1B6'],
-  [['o'], '#009270'],
-  [['k'], '#7FA08C'],
-  // Parenthesized NOTATION like "(b2-r)LM" — 2-char prefix catches the leading "("
-  [['(b'], '#F4B8D4'],
-  [['b'], '#F4B8D4'],
-
-  // Miocene uppercase generic (M), Quaternary uppercase (Q) — after Mz/Mp/Mu/Mv/Mx/My
-  [['M'], '#FFFF00'],
-  [['Q'], '#F9F97F'],
-
-  // Crystalline rocks — accentued-char prefixes (longest first, aã/Èæ before single chars)
-  [['aã', 'Èæ'], '#E36DAA'],
-  [['ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', 'Ê', 'ï', 'â', '¥'], '#E36DAA'],
-
-  // Quaternary catch-all
-  [['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R'], '#F9F97F'],
-  [['°', '³'], '#F9F97F'],
-
-  // Alterites
-  [['¡'], '#E8D0A0'],
-  [['a1'], '#E8D0A0'],
-]
+import { SORTED_RULES, classifyNotation } from './geology-data.ts'
 
 function prefixCondition(prefix: string): ExpressionSpecification {
   const len = prefix.length
@@ -96,15 +17,15 @@ export function buildColorExpression(): ExpressionSpecification {
   // Build: ['case', cond1, color1, cond2, color2, ..., fallback]
   const parts: unknown[] = ['case']
 
-  for (const [prefixes, color] of COLOR_RULES) {
-    if (prefixes.length === 1) {
-      parts.push(prefixCondition(prefixes[0]), color)
-    } else {
-      // OR multiple prefix checks
-      const conditions = prefixes.map(p => prefixCondition(p))
-      parts.push(['any', ...conditions], color)
-    }
+  for (const { prefix, entry } of SORTED_RULES) {
+    parts.push(prefixCondition(prefix), entry.color)
   }
+
+  // classifyNotation() strips a leading "(...)" before matching (e.g. "(b2-r)LM"
+  // → "b2-r"), but this render-time expression only slices the raw NOTATION —
+  // it can't reproduce that normalization. Add an explicit "(b" case so
+  // parenthesized Briovérien notations still render pink instead of grey.
+  parts.push(prefixCondition('(b'), classifyNotation('b').color)
 
   parts.push('#CCCCCC') // fallback
   return parts as ExpressionSpecification

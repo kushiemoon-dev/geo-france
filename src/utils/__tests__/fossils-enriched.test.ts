@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { getEnrichedFossils, mergeFossils } from '../fossils-enriched.ts'
 import { FOSSIL_CANONICAL, classifyNotation, extractLithology } from '../geology-data.ts'
 import { FOSSIL_GROUPS, FOSSIL_CANONICAL as FC_VOCAB } from '../fossil-vocabulary.ts'
@@ -25,6 +25,70 @@ describe('getEnrichedFossils', () => {
     const a = await getEnrichedFossils('1')
     const b = await getEnrichedFossils('0001')
     expect(a).toEqual(b)
+  })
+})
+
+describe('getEnrichedFossils — by_notation (B2, ré-attribution par formation)', () => {
+  it('utilise by_notation[notation] plutôt que groups quand disponible', async () => {
+    vi.resetModules()
+    vi.doMock('../../config/fossils-enriched.json', () => ({
+      default: {
+        generated: '2026-01-01',
+        by_carte: {
+          '0039': {
+            groups: { ammonites: ['ammonite'] }, // sheet-level bleeding (would be wrong for h1b)
+            by_notation: { h1b: { brachiopodes: ['spirifer'] } },
+            sources: ['notice:0039'],
+          },
+        },
+      },
+    }))
+    const { getEnrichedFossils: getEnrichedFossilsMocked } = await import('../fossils-enriched.ts')
+    const result = await getEnrichedFossilsMocked('0039', 'h1b')
+    expect(result.brachiopodes).toEqual(['spirifer'])
+    expect(result.ammonites).toBeUndefined()
+    vi.doUnmock('../../config/fossils-enriched.json')
+    vi.resetModules()
+  })
+
+  it('retombe sur groups (sheet-level) quand la notation demandée n\'a pas de by_notation', async () => {
+    vi.resetModules()
+    vi.doMock('../../config/fossils-enriched.json', () => ({
+      default: {
+        generated: '2026-01-01',
+        by_carte: {
+          '0039': {
+            groups: { ammonites: ['ammonite'] },
+            by_notation: { h1b: { brachiopodes: ['spirifer'] } },
+            sources: ['notice:0039'],
+          },
+        },
+      },
+    }))
+    const { getEnrichedFossils: getEnrichedFossilsMocked } = await import('../fossils-enriched.ts')
+    const result = await getEnrichedFossilsMocked('0039', 'zzz-unknown-notation')
+    expect(result.ammonites).toEqual(['ammonite'])
+    vi.doUnmock('../../config/fossils-enriched.json')
+    vi.resetModules()
+  })
+
+  it('retombe sur groups quand aucune notation n\'est passée (compat B1)', async () => {
+    vi.resetModules()
+    vi.doMock('../../config/fossils-enriched.json', () => ({
+      default: {
+        generated: '2026-01-01',
+        by_carte: {
+          '0039': {
+            groups: { ammonites: ['ammonite'] },
+            by_notation: { h1b: { brachiopodes: ['spirifer'] } },
+            sources: ['notice:0039'],
+          },
+        },
+      },
+    }))
+    const { getEnrichedFossils: getEnrichedFossilsMocked } = await import('../fossils-enriched.ts')
+    const result = await getEnrichedFossilsMocked('0039')
+    expect(result.ammonites).toEqual(['ammonite'])
   })
 })
 

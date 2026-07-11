@@ -1,6 +1,6 @@
 import type maplibregl from 'maplibre-gl'
 export type FeatureLike = { properties: Record<string, unknown> }
-import { classifyNotation, extractLithology, extractFossils, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS, METAMORPHISM_WIKI_SLUGS } from '../utils/geology-data.ts'
+import { classifyNotation, extractLithology, extractFossils, filterFossilsByAge, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS, METAMORPHISM_WIKI_SLUGS } from '../utils/geology-data.ts'
 import type { FossilGroups } from '../utils/geology-data.ts'
 import { getEnrichedFossils, mergeFossils } from '../utils/fossils-enriched.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
@@ -172,22 +172,28 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
 
   const lithology = extractLithology(descr, legende)
   const extracted: FossilGroups = extractFossils(descr, legende, geo.summary ?? '')
-  const enrichedRaw = await getEnrichedFossils(carte)
+  // getEnrichedFossils comes from the whole BRGM sheet, not this formation:
+  // filter by age coherence before merging to limit inter-formation bleeding
+  // (e.g. Jurassic ammonites shown on a Cambrian formation from the same sheet).
+  const enrichedRaw = filterFossilsByAge(await getEnrichedFossils(carte, notation), geo.ageStartMa, geo.ageEndMa)
   const rawFossils = mergeFossils(extracted, enrichedRaw)
+  // Absolute rule: no fossils in crystalline rocks (magmatic AND metamorphic —
+  // heat/pressure destroys all organic matter) nor in formations older than
+  // the Cambrian (no complex fossilizable life). When in doubt, hide rather
+  // than show out of excessive reverse caution.
   const isPrecambrian = geo.ere === 'Precambrien' || geo.periode === 'Brioverien'
-  // Magmatic rocks: heat destroys all organic matter → no fossils.
-  // Detected via the extracted lithology: if all identified lithologies are
-  // magmatic and none are sedimentary, we clear the fossils section.
+  const isCrystallineNotation = geo.periode === 'Roches cristallines'
   const { getRockInfo } = await getMineralData()
   const lithoTypes = lithology.map(l => getRockInfo(l)?.type ?? 'unknown')
-  const hasMagmatic = lithoTypes.some(t => t === 'magmatique')
-  const hasSedimentary = lithoTypes.some(t => t === 'sedimentaire')
-  const isMagmatic = hasMagmatic && !hasSedimentary
-  const { merged: fossils, enrichedSet } = (isPrecambrian || isMagmatic)
+  const hasCrystallineLitho = lithoTypes.some(t => t === 'magmatique' || t === 'metamorphique')
+  const noFossils = isPrecambrian || isCrystallineNotation || hasCrystallineLitho
+  const { merged: fossils, enrichedSet } = noFossils
     ? { merged: {} as FossilGroups, enrichedSet: new Set<string>() }
     : rawFossils
-  // Most-specific keys first — insertion order not reliable for matching priority
-  const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1S', 'b1', 'b2'] as const
+  // Most-specific keys first — insertion order not reliable for matching priority.
+  // b1G/b2G before b1/b2: startsWith('b1') also matches 'b1G', so the longer,
+  // more specific key must win or Normandie grès formations get the wrong rock.
+  const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1S', 'b1G', 'b1', 'b2G', 'b2'] as const
   const overrideKey = OVERRIDE_KEY_ORDER.find(k => notation.startsWith(k))
   const { FORMATION_IMAGE_OVERRIDES } = await getMineralData()
   const rock = overrideKey

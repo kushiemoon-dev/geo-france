@@ -153,6 +153,60 @@ describe('buildColorExpression — nouvelles règles (précédemment gris)', () 
   })
 })
 
+describe('buildColorExpression — gris résiduel (audit scripts/audit-notation-colors.mjs)', () => {
+  const CRISTALLIN = '#E36DAA'
+
+  it('ä, ë, û, å, ì, ò, í, ü, Á, Ù → Cristallin (accents seuls)', () => {
+    for (const n of ['ä', 'ë', 'û', 'å', 'ì', 'ò', 'í', 'ü', 'Á', 'Ù']) {
+      expect(evalColorExpression(n)).toBe(CRISTALLIN)
+    }
+  })
+
+  it('äM, ëä, ûi → Cristallin (accent + suffixe)', () => {
+    for (const n of ['äM', 'ëä', 'ûi']) {
+      expect(evalColorExpression(n)).toBe(CRISTALLIN)
+    }
+  })
+
+  it('n1, n3, n, n1-4 → Crétacé inférieur indifférencié (#7ECD74)', () => {
+    for (const n of ['n1', 'n3', 'n', 'n1-4']) {
+      expect(evalColorExpression(n)).toBe('#7ECD74')
+    }
+  })
+
+  it('n2, n4, n5, n6 restent sur leur sous-étage (non-régression)', () => {
+    for (const n of ['n2', 'n4', 'n5', 'n6']) {
+      expect(evalColorExpression(n)).toBe('#7ECD74')
+    }
+  })
+
+  it('G, Gy, Gz, J, Jz, T, H → Quaternaire (#F9F97F)', () => {
+    for (const n of ['G', 'Gy', 'Gz', 'J', 'Jz', 'T', 'H']) {
+      expect(evalColorExpression(n)).toBe('#F9F97F')
+    }
+  })
+
+  it('J6, J6a1 → Jurassique sup. Kimmeridgien (#B3D4FF), PAS Quaternaire', () => {
+    for (const n of ['J6', 'J6a1']) {
+      expect(evalColorExpression(n)).toBe('#B3D4FF')
+    }
+  })
+
+  it('HYDRO → Domaine marin/hydro (#C8E8FF), PAS Quaternaire', () => {
+    expect(evalColorExpression('HYDRO')).toBe('#C8E8FF')
+  })
+
+  it('(b2-r)LM → rose Briovérien (contournement parenthèses)', () => {
+    expect(evalColorExpression('(b2-r)LM')).toBe('#F4B8D4')
+  })
+
+  it('codes ambigus A, B, P restent gris (pas de couleur devinée)', () => {
+    for (const n of ['A', 'B', 'P']) {
+      expect(evalColorExpression(n)).toBe('#CCCCCC')
+    }
+  })
+})
+
 describe('buildColorExpression — non-régression', () => {
   it('j3 → Jurassique moyen (#80CFFF)', () => {
     expect(evalColorExpression('j3')).toBe('#80CFFF')

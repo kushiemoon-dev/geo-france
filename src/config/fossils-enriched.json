@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-25T12:51:42.934Z",
+  "generated": "2026-07-10T23:50:41.109Z",
   "by_carte": {
     "1001": {
       "groups": {
@@ -2598,7 +2598,57 @@
       ]
     },
     "1119": {
-      "groups": {},
+      "groups": {
+        "échinodermes": [
+          "échinoderme"
+        ],
+        "bivalves": [
+          "bivalve",
+          "lamellibranche",
+          "huître",
+          "ostrea",
+          "pecten",
+          "pectinidé"
+        ],
+        "gastéropodes": [
+          "gastéropode",
+          "natice"
+        ],
+        "coraux": [
+          "récifal",
+          "polypier",
+          "récif"
+        ],
+        "foraminifères": [
+          "foraminifère"
+        ],
+        "vertébrés": [
+          "poisson"
+        ],
+        "algues": [
+          "algue"
+        ],
+        "microfossiles": [
+          "radiolaire",
+          "ostracode"
+        ],
+        "autres": [
+          "microfaune"
+        ],
+        "genres": [
+          "Ghisonaccia",
+          "Corse",
+          "Comme",
+          "Elles",
+          "Bonin",
+          "Enfin",
+          "Solenzara",
+          "Rousse",
+          "Sardaigne",
+          "Jurassique"
+        ]
+      },
+      "by_notation": {},
       "sources": [
         "notice:1119"
       ]
@@ -4011,7 +4061,9 @@
         "microfossiles": [
           "ostracode",
           "conodonte",
-          "tentaculite",
+          "tentaculite"
+        ],
+        "autres": [
           "microfaune"
         ],
         "genres": [
@@ -4026,6 +4078,131 @@
           "Elles",
           "Grigneaux"
         ]
+      },
+      "by_notation": {
+        "Fz": {
+          "bivalves": [
+            "ostrea",
+            "pecten",
+            "inoceramus"
+          ],
+          "foraminifères": [
+            "nummulite"
+          ]
+        },
+        "h2b": {
+          "échinodermes": [
+            "crinoïde"
+          ],
+          "brachiopodes": [
+            "brachiopode"
+          ],
+          "foraminifères": [
+            "foraminifère"
+          ]
+        },
+        "h1b": {
+          "échinodermes": [
+            "crinoïde",
+            "encrine"
+          ],
+          "brachiopodes": [
+            "brachiopode",
+            "orthis",
+            "spirifer",
+            "athyris"
+          ],
+          "coraux": [
+            "polypier",
+            "stromatopore"
+          ],
+          "foraminifères": [
+            "foraminifère"
+          ],
+          "trilobites": [
+            "trilobite"
+          ],
+          "algues": [
+            "algue"
+          ],
+          "bryozoaires": [
+            "bryozoaire"
+          ],
+          "microfossiles": [
+            "ostracode",
+            "conodonte"
+          ],
+          "autres": [
+            "microfaune"
+          ]
+        },
+        "d6": {
+          "échinodermes": [
+            "crinoïde"
+          ],
+          "brachiopodes": [
+            "orthis",
+            "spirifer",
+            "athyris"
+          ],
+          "microfossiles": [
+            "conodonte"
+          ]
+        },
+        "d5": {
+          "ammonites": [
+            "orthocère"
+          ],
+          "échinodermes": [
+            "crinoïde",
+            "encrine"
+          ],
+          "brachiopodes": [
+            "brachiopode",
+            "spirifer",
+            "athyris"
+          ],
+          "bivalves": [
+            "lamellibranche",
+            "pecten"
+          ],
+          "coraux": [
+            "polypier",
+            "stromatopore",
+            "récif"
+          ],
+          "algues": [
+            "algue"
+          ],
+          "microfossiles": [
+            "conodonte"
+          ],
+          "autres": [
+            "microfaune"
+          ]
+        },
+        "d3": {
+          "échinodermes": [
+            "encrine"
+          ],
+          "brachiopodes": [
+            "brachiopode",
+            "orthis",
+            "spirifer"
+          ],
+          "bivalves": [
+            "lamellibranche"
+          ],
+          "coraux": [
+            "polypier",
+            "stromatopore",
+            "rugosa",
+            "récif"
+          ],
+          "microfossiles": [
+            "tentaculite"
+          ]
+        }
       },
       "sources": [
         "notice:0039"
@@ -4864,11 +5041,12 @@
           "bryozoaire"
         ],
         "microfossiles": [
-          "pollen",
-          "microfaune"
+          "pollen"
         ],
         "autres": [
-          "empreinte"
+          "microfaune",
+          "empreinte",
+          "encroûtement"
         ],
         "genres": [
           "Tertiaire",
@@ -4882,6 +5060,20 @@
           "Sourdon",
           "Roger"
         ]
+      },
+      "by_notation": {
+        "RS": {
+          "foraminifères": [
+            "nummulite"
+          ],
+          "bryozoaires": [
+            "bryozoaire"
+          ],
+          "autres": [
+            "empreinte",
+            "encroûtement"
+          ]
+        }
       },
       "sources": [
         "notice:0062"
@@ -6934,14 +7126,15 @@
           "algue"
         ],
         "microfossiles": [
-          "ostracode",
-          "microfaune"
+          "ostracode"
         ],
         "annélides": [
-          "serpule"
+          "serpule",
+          "terrier"
         ],
         "autres": [
-          "spongiaire"
+          "spongiaire",
+          "microfaune"
         ],
         "genres": [
           "Cedex",
@@ -6955,6 +7148,53 @@
           "Retourne",
           "Champenoise"
         ]
+      },
+      "by_notation": {
+        "j6": {
+          "ammonites": [
+            "ammonite",
+            "céphalopode"
+          ],
+          "échinodermes": [
+            "échinoderme"
+          ],
+          "échinides": [
+            "échinide"
+          ],
+          "brachiopodes": [
+            "térébratule"
+          ],
+          "bivalves": [
+            "lamellibranche",
+            "huître",
+            "pecten",
+            "inocérame",
+            "inoceramus"
+          ],
+          "gastéropodes": [
+            "gastéropode"
+          ],
+          "foraminifères": [
+            "foraminifère"
+          ],
+          "vertébrés": [
+            "poisson"
+          ],
+          "algues": [
+            "algue"
+          ],
+          "microfossiles": [
+            "ostracode"
+          ],
+          "annélides": [
+            "serpule",
+            "terrier"
+          ],
+          "autres": [
+            "spongiaire",
+            "microfaune"
+          ]
+        }
       },
       "sources": [
         "notice:0109"
@@ -7413,7 +7653,8 @@
           "gryphaea",
           "ostrea",
           "pecten",
-          "trigonia"
+          "trigonia",
+          "inocérame"
         ],
         "gastéropodes": [
           "gastéropode"
@@ -7437,14 +7678,19 @@
           "bryozoaire"
         ],
         "microfossiles": [
-          "ostracode",
-          "microfaune"
+          "ostracode"
+        ],
+        "annélides": [
+          "terrier"
         ],
         "autres": [
           "éponge",
           "spongiaire",
+          "microfaune",
           "empreinte",
-          "oncolite"
+          "encroûtement",
+          "oncolite",
+          "oncoïde"
         ],
         "genres": [
           "Editions",
@@ -7459,6 +7705,7 @@
           "Roches"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0119"
       ]
@@ -11563,6 +11810,7 @@
           "Vosges"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0196"
       ]
@@ -11770,10 +12018,10 @@
           "ostracode",
           "spore",
           "pollen",
-          "microfaune",
           "microflore"
         ],
         "autres": [
+          "microfaune",
           "empreinte",
           "oncolite"
         ],
@@ -11789,6 +12037,56 @@
           "Alnus",
           "Fraxinus"
         ]
+      },
+      "by_notation": {
+        "ts": {
+          "ammonites": [
+            "ammonite",
+            "baculite"
+          ],
+          "bélemnites": [
+            "bélemnite"
+          ],
+          "bivalves": [
+            "gryphée",
+            "ostrea",
+            "trigonia"
+          ],
+          "gastéropodes": [
+            "cérithe"
+          ],
+          "foraminifères": [
+            "foraminifère"
+          ],
+          "vertébrés": [
+            "poisson",
+            "mammifère",
+            "vertébré"
+          ],
+          "algues": [
+            "algue",
+            "characée"
+          ],
+          "bryozoaires": [
+            "bryozoaire"
+          ],
+          "microfossiles": [
+            "ostracode",
+            "spore",
+            "pollen",
+            "microflore"
+          ],
+          "autres": [
+            "microfaune",
+            "empreinte",
+            "oncolite"
+          ]
+        },
+        "Fx": {
+          "vertébrés": [
+            "mammifère"
+          ]
+        }
       },
       "sources": [
         "notice:0199"
@@ -12702,6 +13000,17 @@
           "Saclay",
           "Rungis"
         ]
+      },
+      "by_notation": {
+        "e7a": {
+          "bivalves": [
+            "huître",
+            "ostrea"
+          ],
+          "autres": [
+            "empreinte"
+          ]
+        }
       },
       "sources": [
         "notice:0219"
@@ -14389,10 +14698,8 @@
         "coraux": [
           "rugosa"
         ],
-        "microfossiles": [
-          "microfaune"
-        ],
         "autres": [
+          "microfaune",
           "empreinte"
         ],
         "genres": [
@@ -14408,6 +14715,7 @@
           "Limon"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0259"
       ]
@@ -14643,6 +14951,16 @@
           "Cornuel"
         ]
       },
+      "by_notation": {
+        "Fz": {
+          "ammonites": [
+            "ammonite"
+          ],
+          "bivalves": [
+            "exogyra"
+          ]
+        }
+      },
       "sources": [
         "notice:0264"
       ]
@@ -14731,6 +15049,36 @@
           "Argiles",
           "Pagny"
         ]
+      },
+      "by_notation": {
+        "Fy": {
+          "échinodermes": [
+            "crinoïde"
+          ],
+          "échinides": [
+            "échinide"
+          ],
+          "bivalves": [
+            "exogyra",
+            "exogyre"
+          ],
+          "vertébrés": [
+            "vertébré"
+          ]
+        },
+        "j7": {
+          "ammonites": [
+            "ammonite"
+          ],
+          "bivalves": [
+            "huître",
+            "exogyra",
+            "ostrea"
+          ],
+          "autres": [
+            "oncolite"
+          ]
+        }
       },
       "sources": [
         "notice:0266"
@@ -15100,6 +15448,7 @@
           "Accidents"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0273"
       ]
@@ -16442,13 +16791,11 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "microfossiles": [
-          "microfaune"
-        ],
         "annélides": [
           "serpule"
         ],
         "autres": [
+          "microfaune",
           "empreinte"
         ],
         "genres": [
@@ -16464,6 +16811,7 @@
           "Barrois"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0299"
       ]
@@ -17510,12 +17858,16 @@
           "dinoflagellé",
           "spore",
           "pollen",
-          "microfaune",
           "microflore"
+        ],
+        "annélides": [
+          "terrier"
         ],
         "autres": [
           "spongiaire",
-          "empreinte"
+          "microfaune",
+          "empreinte",
+          "encroûtement"
         ],
         "genres": [
           "Carte",
@@ -17529,6 +17881,76 @@
           "Vernhet",
           "Lacquement"
         ]
+      },
+      "by_notation": {
+        "o5b-6": {
+          "ammonites": [
+            "orthocère",
+            "céphalopode"
+          ],
+          "échinodermes": [
+            "échinoderme",
+            "oursin",
+            "crinoïde",
+            "encrine"
+          ],
+          "échinides": [
+            "échinide"
+          ],
+          "brachiopodes": [
+            "brachiopode",
+            "orthis",
+            "spirifer",
+            "athyris"
+          ],
+          "bivalves": [
+            "bivalve",
+            "lamellibranche",
+            "exogyra"
+          ],
+          "gastéropodes": [
+            "gastéropode"
+          ],
+          "coraux": [
+            "récifal",
+            "polypier",
+            "rugosa",
+            "récif"
+          ],
+          "foraminifères": [
+            "foraminifère"
+          ],
+          "trilobites": [
+            "trilobite"
+          ],
+          "vertébrés": [
+            "poisson"
+          ],
+          "algues": [
+            "algue"
+          ],
+          "bryozoaires": [
+            "bryozoaire"
+          ],
+          "microfossiles": [
+            "radiolaire",
+            "ostracode",
+            "conodonte",
+            "graptolite",
+            "chitinozoaire",
+            "acritarche",
+            "dinoflagellé",
+            "spore",
+            "pollen",
+            "microflore"
+          ],
+          "autres": [
+            "spongiaire",
+            "microfaune",
+            "empreinte",
+            "encroûtement"
+          ]
+        }
       },
       "sources": [
         "notice:0319"
@@ -17879,17 +18301,19 @@
         ],
         "microfossiles": [
           "radiolaire",
-          "ostracode",
-          "microfaune"
+          "ostracode"
         ],
         "annélides": [
           "annélide",
-          "serpule"
+          "serpule",
+          "terrier"
         ],
         "autres": [
           "éponge",
           "spongiaire",
-          "empreinte"
+          "microfaune",
+          "empreinte",
+          "encroûtement"
         ],
         "genres": [
           "Service",
@@ -17904,6 +18328,7 @@
           "Formations"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0324"
       ]
@@ -18010,6 +18435,7 @@
           "Chevilly"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0327"
       ]
@@ -18628,6 +19054,12 @@
           "poisson",
           "vertébré"
         ],
+        "annélides": [
+          "terrier"
+        ],
+        "autres": [
+          "encroûtement"
+        ],
         "genres": [
           "Hameurt",
           "Vosges",
@@ -18641,6 +19073,7 @@
           "Montagne"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0340"
       ]
@@ -19675,6 +20108,7 @@
           "Loing"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0364"
       ]
@@ -19705,6 +20139,16 @@
           "Cepoy",
           "Amilly"
         ]
+      },
+      "by_notation": {
+        "Fz": {
+          "échinodermes": [
+            "oursin"
+          ],
+          "vertébrés": [
+            "mammifère"
+          ]
+        }
       },
       "sources": [
         "notice:0365"
@@ -19747,11 +20191,9 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "microfossiles": [
-          "microfaune"
-        ],
         "autres": [
-          "éponge"
+          "éponge",
+          "microfaune"
         ],
         "genres": [
           "Courtenay",
@@ -19765,6 +20207,13 @@
           "Piffonds",
           "Chantecoq"
         ]
+      },
+      "by_notation": {
+        "Fz": {
+          "foraminifères": [
+            "foraminifère"
+          ]
+        }
       },
       "sources": [
         "notice:0366"
@@ -25730,11 +26179,11 @@
         "trilobites": [
           "paradoxides"
         ],
-        "microfossiles": [
-          "microfaune"
-        ],
         "annélides": [
           "annélide"
+        ],
+        "autres": [
+          "microfaune"
         ],
         "genres": [
           "Elqil",
@@ -25749,6 +26198,7 @@
           "Nazaire"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0479"
       ]
@@ -25947,12 +26397,16 @@
           "ostracode",
           "conodonte",
           "graptolite",
-          "tentaculite",
-          "microfaune"
+          "tentaculite"
+        ],
+        "annélides": [
+          "terrier"
         ],
         "autres": [
           "éponge",
-          "empreinte"
+          "microfaune",
+          "empreinte",
+          "encroûtement"
         ],
         "genres": [
           "Bassin",
@@ -25967,6 +26421,7 @@
           "Dinantien"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0484"
       ]
@@ -28822,6 +29277,7 @@
           "Ouche"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0527"
       ]
@@ -29442,15 +29898,16 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "microfossiles": [
-          "microfaune"
-        ],
         "annélides": [
           "annélide",
-          "serpule"
+          "serpule",
+          "terrier"
         ],
         "autres": [
-          "spongiaire"
+          "spongiaire",
+          "microfaune",
+          "encroûtement",
+          "oncoïde"
         ],
         "genres": [
           "Bressuire",
@@ -29465,6 +29922,7 @@
           "Toutefois"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0539"
       ]
@@ -29807,7 +30265,6 @@
         ],
         "microfossiles": [
           "ostracode",
-          "microfaune",
           "microflore"
         ],
         "annélides": [
@@ -29816,6 +30273,7 @@
         ],
         "autres": [
           "spongiaire",
+          "microfaune",
           "empreinte"
         ],
         "genres": [
@@ -29831,6 +30289,7 @@
           "Oxfordien"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0544"
       ]
@@ -30029,11 +30488,14 @@
           "dinoflagellé",
           "spore",
           "pollen",
-          "microfaune",
           "microflore"
+        ],
+        "annélides": [
+          "terrier"
         ],
         "autres": [
           "spongiaire",
+          "microfaune",
           "empreinte"
         ],
         "genres": [
@@ -30049,6 +30511,7 @@
           "Sagonnin"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0547"
       ]
@@ -31085,6 +31548,9 @@
         "vertébrés": [
           "poisson"
         ],
+        "annélides": [
+          "terrier"
+        ],
         "genres": [
           "Roches",
           "Parthenay",
@@ -31098,6 +31564,7 @@
           "Assais"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0565"
       ]
@@ -34216,6 +34683,9 @@
           "pollen",
           "microflore"
         ],
+        "annélides": [
+          "terrier"
+        ],
         "genres": [
           "Buussat",
           "Orleans",
@@ -34228,6 +34698,13 @@
           "Massif",
           "Bourbonnais"
         ]
+      },
+      "by_notation": {
+        "Fx": {
+          "microfossiles": [
+            "microflore"
+          ]
+        }
       },
       "sources": [
         "notice:0619"
@@ -35276,6 +35753,9 @@
           "poisson",
           "vertébré"
         ],
+        "annélides": [
+          "terrier"
+        ],
         "genres": [
           "Carte",
           "Montmorillon",
@@ -35288,6 +35768,16 @@
           "Bellac",
           "Notice"
         ]
+      },
+      "by_notation": {
+        "eS": {
+          "vertébrés": [
+            "vertébré"
+          ],
+          "annélides": [
+            "terrier"
+          ]
+        }
       },
       "sources": [
         "notice:0639"
@@ -36354,11 +36844,12 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "microfossiles": [
-          "microfaune"
-        ],
         "annélides": [
-          "serpule"
+          "serpule",
+          "terrier"
+        ],
+        "autres": [
+          "microfaune"
         ],
         "genres": [
           "Sommaire",
@@ -36373,6 +36864,7 @@
           "Ressources"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0659"
       ]
@@ -41927,11 +42419,12 @@
           "bryozoaire"
         ],
         "microfossiles": [
-          "ostracode",
-          "microfaune"
+          "ostracode"
         ],
         "autres": [
-          "empreinte"
+          "microfaune",
+          "empreinte",
+          "encroûtement"
         ],
         "genres": [
           "Blaye",
@@ -41945,6 +42438,13 @@
           "Noire",
           "Bordeaux"
         ]
+      },
+      "by_notation": {
+        "Fz": {
+          "autres": [
+            "empreinte"
+          ]
+        }
       },
       "sources": [
         "notice:0779"
@@ -42425,6 +42925,7 @@
           "Maronne"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0787"
       ]
@@ -45529,7 +46030,9 @@
           "bryozoaire"
         ],
         "microfossiles": [
-          "radiolaire",
+          "radiolaire"
+        ],
+        "autres": [
           "microfaune"
         ],
         "genres": [
@@ -45545,6 +46048,7 @@
           "Debelmas"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0847"
       ]
@@ -46192,10 +46696,12 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "microfossiles": [
-          "microfaune"
+        "annélides": [
+          "terrier"
         ],
         "autres": [
+          "microfaune",
+          "encroûtement",
           "oncolite"
         ],
         "genres": [
@@ -46210,6 +46716,31 @@
           "Quaternaire",
           "Administrativement"
         ]
+      },
+      "by_notation": {
+        "j7a": {
+          "ammonites": [
+            "ammonite",
+            "céphalopode"
+          ],
+          "gastéropodes": [
+            "gastéropode"
+          ],
+          "vertébrés": [
+            "vertébré"
+          ],
+          "annélides": [
+            "terrier"
+          ],
+          "autres": [
+            "oncolite"
+          ]
+        },
+        "GP": {
+          "autres": [
+            "encroûtement"
+          ]
+        }
       },
       "sources": [
         "notice:0857"
@@ -46327,8 +46858,12 @@
           "acritarche",
           "microflore"
         ],
+        "annélides": [
+          "terrier"
+        ],
         "autres": [
-          "empreinte"
+          "empreinte",
+          "encroûtement"
         ],
         "genres": [
           "Carte",
@@ -46343,6 +46878,7 @@
           "Domaine"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0859"
       ]
@@ -47519,13 +48055,13 @@
           "ostracode",
           "chitinozoaire",
           "acritarche",
-          "microfaune",
           "microflore"
         ],
         "annélides": [
           "serpule"
         ],
         "autres": [
+          "microfaune",
           "empreinte",
           "oncolite"
         ],
@@ -47541,6 +48077,13 @@
           "Pages",
           "Tertiaire"
         ]
+      },
+      "by_notation": {
+        "Fu": {
+          "vertébrés": [
+            "vertébré"
+          ]
+        }
       },
       "sources": [
         "notice:0877"
@@ -47679,10 +48222,13 @@
           "acritarche",
           "spore",
           "pollen",
-          "tentaculite",
-          "microfaune"
+          "tentaculite"
+        ],
+        "annélides": [
+          "terrier"
         ],
         "autres": [
+          "microfaune",
           "oncolite"
         ],
         "genres": [
@@ -47698,6 +48244,7 @@
           "Cardou"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0879"
       ]
@@ -48904,7 +49451,11 @@
           "miliolidé",
           "alvéoline",
           "lituolidé",
-          "orbitolinidé"
+          "orbitolinidé",
+          "globigérine",
+          "globotruncana",
+          "rotalipora",
+          "praeglobotruncana"
         ],
         "algues": [
           "algue"
@@ -48914,11 +49465,11 @@
           "ostracode",
           "spore",
           "pollen",
-          "tentaculite",
-          "microfaune"
+          "tentaculite"
         ],
         "autres": [
-          "spongiaire"
+          "spongiaire",
+          "microfaune"
         ],
         "genres": [
           "Lloyd",
@@ -48930,6 +49481,16 @@
           "Nappes",
           "Castets"
         ]
+      },
+      "by_notation": {
+        "Fz": {
+          "échinodermes": [
+            "oursin"
+          ],
+          "bivalves": [
+            "pecten"
+          ]
+        }
       },
       "sources": [
         "notice:0897"
@@ -49147,14 +49708,15 @@
           "bryozoaire"
         ],
         "microfossiles": [
-          "ostracode",
-          "microfaune"
+          "ostracode"
         ],
         "annélides": [
           "annélide"
         ],
         "autres": [
+          "microfaune",
           "empreinte",
+          "encroûtement",
           "oncolite"
         ],
         "genres": [
@@ -49170,6 +49732,7 @@
           "Burdigalien"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0901"
       ]
@@ -49347,10 +49910,12 @@
         "bryozoaires": [
           "bryozoaire"
         ],
-        "microfossiles": [
-          "microfaune"
+        "annélides": [
+          "terrier"
         ],
         "autres": [
+          "microfaune",
+          "encroûtement",
           "oncolite"
         ],
         "genres": [
@@ -49365,6 +49930,13 @@
           "Tertiaire",
           "Quaternaire"
         ]
+      },
+      "by_notation": {
+        "CF": {
+          "autres": [
+            "encroûtement"
+          ]
+        }
       },
       "sources": [
         "notice:0905"
@@ -50061,6 +50633,7 @@
           "Service"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0918"
       ]
@@ -50110,7 +50683,12 @@
           "alvéoline",
           "orbitoïde",
           "discocycline",
-          "assiline"
+          "assiline",
+          "operculine",
+          "globigérine",
+          "globotruncana",
+          "rotalipora",
+          "calpionelle"
         ],
         "algues": [
           "algue",
@@ -50120,8 +50698,7 @@
           "bryozoaire"
         ],
         "microfossiles": [
-          "pollen",
-          "microfaune"
+          "pollen"
         ],
         "annélides": [
           "annélide"
@@ -50129,7 +50706,9 @@
         "autres": [
           "éponge",
           "spongiaire",
-          "empreinte"
+          "microfaune",
+          "empreinte",
+          "encroûtement"
         ],
         "genres": [
           "Service",
@@ -50144,6 +50723,7 @@
           "Formations"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0919"
       ]
@@ -51006,6 +51586,9 @@
           "pollen",
           "microflore"
         ],
+        "annélides": [
+          "terrier"
+        ],
         "autres": [
           "spongiaire",
           "empreinte"
@@ -51023,6 +51606,7 @@
           "Gardon"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0937"
       ]
@@ -52191,6 +52775,7 @@
           "Quaternaire"
         ]
       },
+      "by_notation": {},
       "sources": [
         "notice:0957"
       ]
