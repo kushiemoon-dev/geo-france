@@ -12,11 +12,20 @@ const geologyFillLayer: LayerSpecification = {
   }
 }
 
-const geologyOutlineLayer: LayerSpecification = {
+export const geologyOutlineLayer: LayerSpecification = {
   id: 'geology-outline',
   type: 'line',
   source: 'geology',
   'source-layer': 'L_FGEOL',
+  // No minzoom before: ~1M polygon borders drawn at national zoom overdraw into
+  // a solid dark mass, hiding the fill colors underneath. Matches the minzoom
+  // already used for faults-minor/dip-points — not useful before individual
+  // formations are visually distinguishable anyway.
+  minzoom: 8,
+  layout: {
+    'line-join': 'round',
+    'line-cap': 'round'
+  },
   paint: {
     'line-color': '#333333',
     'line-width': 0.5,

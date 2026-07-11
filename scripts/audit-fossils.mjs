@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 /**
- * Audit et nettoyage des fossiles précambriens / magmatiques.
+ * Audit and cleanup of Precambrian / magmatic fossils.
  *
- * Règles :
- *   R1 : toutes les formations d'une carte sont précambriennes → vider groups
- *   R2 : toutes les formations d'une carte sont magmatiques (Roches cristallines) → vider groups
- *   Mix : laisser en place, loguer dans pending-review.json
+ * Rules:
+ *   R1: all formations on a sheet are Precambrian → clear groups
+ *   R2: all formations on a sheet are magmatic (Roches cristallines) → clear groups
+ *   Mix: leave in place, log to pending-review.json
  *
- * Stratégie lecture GeoJSON : ligne par ligne (fichiers jusqu'à 1.1 Go)
- * Extrait CARTE + NOTATION par regex sans charger le JSON en mémoire.
+ * GeoJSON reading strategy: line by line (files up to 1.1 GB)
+ * Extracts CARTE + NOTATION via regex without loading the JSON into memory.
  *
- * Usage :
+ * Usage:
  *   node scripts/audit-fossils.mjs [--dry-run]
  */
 
@@ -24,8 +24,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const DRY_RUN = process.argv.includes('--dry-run')
 
-// ── Reproduction de la logique classifyNotation en JS ──────────────────────
-// (miroir de geology-data.ts — seuls ere et periode sont nécessaires)
+// ── Reproduction of classifyNotation's logic in JS ──────────────────────
+// (mirror of geology-data.ts — only ere and periode are needed)
 
 const PREFIX_RULES_RAW = [
   // Composite notations (longest first)
@@ -52,8 +52,11 @@ const PREFIX_RULES_RAW = [
   { prefixes: ['k'], ere: 'Paleozoique', periode: 'Cambrien' },
   // Precambrien (b prefix — Brioverien)
   { prefixes: ['b'], ere: 'Precambrien', periode: 'Brioverien' },
-  // Roches cristallines (magmatiques/métamorphiques du socle)
-  { prefixes: ['Èæ', 'ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', '¥', 'Ê', 'ï', 'â'], ere: '', periode: 'Roches cristallines' },
+  // Roches cristallines (magmatic/metamorphic basement rocks)
+  // Bare accents (ä ë û å ì ò í ü Á Ù) synced with src/utils/geology-data.ts
+  // following the scripts/audit-notation-colors.mjs audit — without them,
+  // crystalline granodiorites/schists slipped past rule R2 (no mapping = no cleanup).
+  { prefixes: ['Èæ', 'ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', '¥', 'Ê', 'ï', 'â', 'ä', 'ë', 'û', 'å', 'ì', 'ò', 'í', 'ü', 'Á', 'Ù'], ere: '', periode: 'Roches cristallines' },
   // Quaternaire catch-all
   { prefixes: ['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R'], ere: 'Cenozoique', periode: 'Quaternaire' },
   { prefixes: ['°', '³'], ere: 'Cenozoique', periode: 'Quaternaire' },
@@ -95,24 +98,25 @@ function isPrecambrien(cls) {
   return cls.ere === 'Precambrien'
 }
 
-function isMagmatic(cls) {
-  // Roches cristallines = granites, gabbros, gneiss, etc. (socle magmatique/métamorphique)
+function isCrystalline(cls) {
+  // Roches cristallines = granites, gabbros, gneiss, etc. (basement rock, both magmatic
+  // AND metamorphic — heat/pressure destroys all organic matter either way, cf. detail-panel.ts)
   return cls.periode === 'Roches cristallines'
 }
 
-// Cartes géologiquement connues comme intégralement magmatiques mais non couvertes
-// par le mapping GeoJSON (CARTE values GeoJSON ≠ numéros de notices BRGM)
-// Corse : granite hercynien dominant (notices 1103–1120)
+// Sheets known geologically to be entirely magmatic but not covered by the
+// GeoJSON mapping (GeoJSON CARTE values ≠ BRGM notice numbers)
+// Corsica: dominant Hercynian granite (notices 1103–1120)
 const KNOWN_MAGMATIC_NOTICES = new Set(['1103', '1110', '1117', '1118', '1119', '1120'])
 
-// ── Charger fossils-enriched.json ─────────────────────────────────────────
+// ── Load fossils-enriched.json ─────────────────────────────────────────
 const FOSSILS_PATH = join(ROOT, 'src/config/fossils-enriched.json')
 const fossilsRaw = JSON.parse(readFileSync(FOSSILS_PATH, 'utf8'))
 const byCarte = fossilsRaw.by_carte
 
-// ── Lire les GeoJSON ligne par ligne pour extraire CARTE + NOTATION ─────────
-// Chaque feature est sur une seule ligne dans ces fichiers.
-// Pattern : "CARTE": 2479, ... "NOTATION": "ph"
+// ── Read the GeoJSON files line by line to extract CARTE + NOTATION ─────────
+// Each feature is on a single line in these files.
+// Pattern: "CARTE": 2479, ... "NOTATION": "ph"
 
 const DATA_WORK_MAIN = '/srv/http/geo-france/data-work'
 const DATA_WORK_REL = join(ROOT, '..', '..', '..', '..', 'data-work')
@@ -120,11 +124,11 @@ const dataWorkDir = existsSync(DATA_WORK_MAIN) ? DATA_WORK_MAIN :
   existsSync(DATA_WORK_REL) ? DATA_WORK_REL : null
 
 if (!dataWorkDir) {
-  console.error('ERREUR : répertoire data-work introuvable.')
+  console.error('ERROR: data-work directory not found.')
   process.exit(1)
 }
 
-console.log(`data-work : ${dataWorkDir}`)
+console.log(`data-work: ${dataWorkDir}`)
 
 const CARTE_RE = /"CARTE":\s*(\d+)/
 const NOTATION_RE = /"NOTATION":\s*"([^"]+)"/
@@ -154,7 +158,7 @@ async function extractFromGeojson(filePath, carteNotations) {
   })
 }
 
-// Collect NOTATION → Set from all regions
+// Collect NOTATION sets from all regions
 const carteNotations = new Map() // carteKey → Set<NOTATION>
 const regions = readdirSync(dataWorkDir, { withFileTypes: true })
   .filter(d => d.isDirectory())
@@ -171,10 +175,10 @@ for (const region of regions) {
   console.log(`${n} features`)
 }
 
-console.log(`\nTotal features : ${totalFeatures}`)
-console.log(`Cartes avec NOTATION : ${carteNotations.size}`)
+console.log(`\nTotal features: ${totalFeatures}`)
+console.log(`Sheets with NOTATION: ${carteNotations.size}`)
 
-// ── Appliquer les règles R1 / R2 ──────────────────────────────────────────
+// ── Apply rules R1 / R2 ──────────────────────────────────────────
 let clearedR1 = 0
 let clearedR2 = 0
 let clearedMix = 0
@@ -194,7 +198,7 @@ for (const [carteKey, entry] of Object.entries(byCarte)) {
   if (KNOWN_MAGMATIC_NOTICES.has(carteKey)) {
     clearedR2++
     updatedByCarte[carteKey] = { ...entry, groups: {} }
-    console.log(`  R2 Override    : carte ${carteKey} — géologie granitique connue (Corse)`)
+    console.log(`  R2 Override    : sheet ${carteKey} — known granitic geology (Corsica)`)
     continue
   }
 
@@ -214,31 +218,31 @@ for (const [carteKey, entry] of Object.entries(byCarte)) {
   const classified = [...notations].map(n => ({ notation: n, cls: classifyNotation(n) }))
 
   const allPrecambrien = classified.every(({ cls }) => isPrecambrien(cls))
-  const allMagmatic = classified.every(({ cls }) => isMagmatic(cls))
+  const allMagmatic = classified.every(({ cls }) => isCrystalline(cls))
   // Mix where every notation is EITHER precambrien OR magmatic (no fossiliferous formations)
-  const allPrecambrienOrMagmatic = classified.every(({ cls }) => isPrecambrien(cls) || isMagmatic(cls))
+  const allPrecambrienOrMagmatic = classified.every(({ cls }) => isPrecambrien(cls) || isCrystalline(cls))
 
-  const fossilNotations = classified.filter(({ cls }) => !isPrecambrien(cls) && !isMagmatic(cls))
+  const fossilNotations = classified.filter(({ cls }) => !isPrecambrien(cls) && !isCrystalline(cls))
 
   if (allPrecambrien) {
     clearedR1++
     updatedByCarte[carteKey] = { ...entry, groups: {} }
     const sample = [...notations].slice(0, 3).join(',')
-    console.log(`  R1 Précambrien : carte ${carteKey} — vidé (${notations.size} not., ex: ${sample})`)
+    console.log(`  R1 Precambrian : sheet ${carteKey} — cleared (${notations.size} notations, e.g.: ${sample})`)
   } else if (allMagmatic) {
     clearedR2++
     updatedByCarte[carteKey] = { ...entry, groups: {} }
     const sample = [...notations].slice(0, 3).join(',')
-    console.log(`  R2 Magmatique  : carte ${carteKey} — vidé (${notations.size} not., ex: ${sample})`)
+    console.log(`  R2 Magmatic    : sheet ${carteKey} — cleared (${notations.size} notations, e.g.: ${sample})`)
   } else if (allPrecambrienOrMagmatic) {
     clearedMix++
     updatedByCarte[carteKey] = { ...entry, groups: {} }
     const sample = [...notations].slice(0, 3).join(',')
-    console.log(`  R1+R2 mix      : carte ${carteKey} — vidé (uniquement précambrien+magmatique, ${sample})`)
+    console.log(`  R1+R2 mix      : sheet ${carteKey} — cleared (Precambrian+magmatic only, ${sample})`)
   } else {
-    // Mix avec des formations fossilifères : laisser en place, loguer si contient aussi précambrien/magmatique
+    // Mix with fossiliferous formations: leave in place, log if it also contains Precambrian/magmatic
     const precambrienNotations = classified.filter(({ cls }) => isPrecambrien(cls)).map(({ notation }) => notation)
-    const magmaticNotations = classified.filter(({ cls }) => isMagmatic(cls)).map(({ notation }) => notation)
+    const magmaticNotations = classified.filter(({ cls }) => isCrystalline(cls)).map(({ notation }) => notation)
     if (precambrienNotations.length > 0 || magmaticNotations.length > 0) {
       pendingMix++
       pendingReview.push({
@@ -255,28 +259,28 @@ for (const [carteKey, entry] of Object.entries(byCarte)) {
   }
 }
 
-// ── Résumé ─────────────────────────────────────────────────────────────────
-console.log('\n── Résultat ──────────────────────────────────────────────────')
-console.log(`  Cartes traitées           : ${Object.keys(byCarte).length}`)
-console.log(`  Vidées R1 (Précambrien)   : ${clearedR1}`)
-console.log(`  Vidées R2 (Magmatique)    : ${clearedR2}`)
-console.log(`  Vidées R1+R2 (mix pur)    : ${clearedMix}`)
-console.log(`  Mixtes fossilifères        : ${pendingMix} → pending-review.json`)
-console.log(`  Sans mapping GeoJSON       : ${noMapping} → pending-review.json`)
-console.log(`  Total vidées               : ${clearedR1 + clearedR2 + clearedMix}`)
+// ── Summary ─────────────────────────────────────────────────────────────────
+console.log('\n── Result ──────────────────────────────────────────────────')
+console.log(`  Sheets processed          : ${Object.keys(byCarte).length}`)
+console.log(`  Cleared R1 (Precambrian)  : ${clearedR1}`)
+console.log(`  Cleared R2 (Magmatic)     : ${clearedR2}`)
+console.log(`  Cleared R1+R2 (pure mix)  : ${clearedMix}`)
+console.log(`  Fossiliferous mixes       : ${pendingMix} → pending-review.json`)
+console.log(`  No GeoJSON mapping        : ${noMapping} → pending-review.json`)
+console.log(`  Total cleared             : ${clearedR1 + clearedR2 + clearedMix}`)
 
-// ── Écrire le résultat ─────────────────────────────────────────────────────
+// ── Write the result ─────────────────────────────────────────────────────
 if (!DRY_RUN) {
   const updated = {
     generated: new Date().toISOString(),
     by_carte: updatedByCarte,
   }
   writeFileSync(FOSSILS_PATH, JSON.stringify(updated, null, 2) + '\n', 'utf8')
-  console.log(`\nÉcrit : ${FOSSILS_PATH}`)
+  console.log(`\nWritten: ${FOSSILS_PATH}`)
 
   const pendingPath = join(ROOT, 'public/images/rocks/pending-review.json')
   writeFileSync(pendingPath, JSON.stringify(pendingReview, null, 2) + '\n', 'utf8')
-  console.log(`Écrit : ${pendingPath} (${pendingReview.length} entrées)`)
+  console.log(`Written: ${pendingPath} (${pendingReview.length} entries)`)
 } else {
-  console.log('\n[DRY-RUN] Aucun fichier écrit.')
+  console.log('\n[DRY-RUN] No file written.')
 }

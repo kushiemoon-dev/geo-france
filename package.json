@@ -20,7 +20,9 @@
     "data:rocks": "node scripts/fetch-rock-images.mjs",
     "data:rocks:force": "node scripts/fetch-rock-images.mjs --force",
     "data:rocks:audit": "node scripts/audit-rock-images.mjs",
-    "audit:notices": "node scripts/audit-notices.mjs"
+    "audit:notices": "node scripts/audit-notices.mjs",
+    "audit:fossils": "node scripts/audit-fossils.mjs --dry-run",
+    "audit:notation-colors": "node scripts/audit-notation-colors.mjs"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.59.0",

@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * Télécharge/remplace les images de roches via Wikimedia Commons avec scoring.
+ * Downloads/replaces rock images via Wikimedia Commons with scoring.
  * Usage: node scripts/fetch-rock-images.mjs [options]
- *   --status=quarantined|missing|all  (défaut: quarantined)
- *   --rock=<key>   cible unique
- *   --force        re-télécharger même si fichier existe
- *   --dry-run      log uniquement, pas de download
+ *   --status=quarantined|missing|all  (default: quarantined)
+ *   --rock=<key>   single target
+ *   --force        re-download even if file exists
+ *   --dry-run      log only, no download
  *
- * Sortie: public/images/rocks/<key>.jpg + public/images/rocks/metadata.json
- * Prérequis: connexion internet
+ * Output: public/images/rocks/<key>.jpg + public/images/rocks/metadata.json
+ * Requires: internet connection
  */
 
 import { createWriteStream, existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
@@ -31,7 +31,7 @@ const rockFlag   = args.find(a => a.startsWith('--rock='))?.split('=')[1]
 const force      = args.includes('--force')
 const dryRun     = args.includes('--dry-run')
 
-// ── Queries qualifiées FR→EN ──────────────────────────────────────────────────
+// ── Qualified FR→EN queries (keys are the French rock names used as mineral-data.ts lookup keys) ──
 const QUERY_MAP = {
   argile:       'claystone mudstone shale rock hand specimen outcrop geology geological',
   sable:        'quartz sand grains geological sample',
@@ -47,6 +47,7 @@ const QUERY_MAP = {
   dolomie:      'dolostone dolomite carbonate rock hand specimen outcrop geology',
   craie:        'chalk white cretaceous limestone rock outcrop cliff geology specimen',
   gres:         'sandstone hand specimen geological sample sedimentary rock close-up',
+  calcaire:     'limestone hand specimen geological sample sedimentary rock close-up',
   grauwacke:    'greywacke wacke turbidite rock hand specimen geology',
   schiste:      'phyllite schist metamorphic rock hand specimen outcrop',
   loess:        'loess aeolian deposit windblown silt sediment outcrop geological',
@@ -60,10 +61,15 @@ const QUERY_MAP = {
 }
 const DEFAULT_SUFFIX = 'rock hand specimen geology'
 
-const BLACKLIST   = /\b(map|sketch|pdf|diagram|landscape|sculpture|pottery|ceramic|plate|painting|chart|schema|drawing|stamp|coin|flag|bone|skull|museum|display|cabinet|journal|quarterly|proceedings|review|bulletin|notice|annual|grindstone|tableware|artifact|artefact|carving|brick|tile|statue|figurine|arch|arche|children|child|kids|people|person|boy|girl|playing|portrait|village|town|city|house|building|monument|tower|blackboard|classroom|school|crayon|colored|colour|color|writing|pastel|agamidae|lizard|reptile|amphibian|insect|butterfly|bird|mammal|plant|flower|tree|forest|fungi|mushroom|bacteria|soldier|infantry|military|division|emblem|regiment|army|gold|silver|copper|zinc|ore|mine|mining|miner)\b|fossils?/i
+// cave/karst/stalactite/grotto/sinkhole added: "Limestone Formation" matches
+// TITLE_BONUS but can just as well name a karst cave formation (the original
+// calcaire.jpg bug, "Limestone Formation In Waitomo") as a rock specimen —
+// without this filter, scoring re-selects the same photo already flagged
+// as unrepresentative.
+const BLACKLIST   = /\b(map|sketch|pdf|diagram|landscape|sculpture|pottery|ceramic|plate|painting|chart|schema|drawing|stamp|coin|flag|bone|skull|museum|display|cabinet|journal|quarterly|proceedings|review|bulletin|notice|annual|grindstone|tableware|artifact|artefact|carving|brick|tile|statue|figurine|arch|arche|children|child|kids|people|person|boy|girl|playing|portrait|village|town|city|house|building|monument|tower|blackboard|classroom|school|crayon|colored|colour|color|writing|pastel|agamidae|lizard|reptile|amphibian|insect|butterfly|bird|mammal|plant|flower|tree|forest|fungi|mushroom|bacteria|soldier|infantry|military|division|emblem|regiment|army|gold|silver|copper|zinc|ore|mine|mining|miner|cave|karst|stalactite|stalagmite|speleothem|grotto|grotte|sinkhole|cavern)\b|fossils?/i
 const TITLE_BONUS = /\b(specimen|outcrop|hand.?sample|hand.?specimen|thin.?section|rock|stone|geological|geology|sample|exposure|fragment|block|core|sand|clay|shale|chert|basalt|granite|limestone|schist|gneiss|quartzite|sandstone|mudstone|mudrock|siltstone|sediment|mineral|petrograph|litholog)\b/i
 
-// ── Parse ROCK_DB depuis mineral-data.ts ──────────────────────────────────────
+// ── Parse ROCK_DB from mineral-data.ts ──────────────────────────────────────
 function parseRockKeys() {
   const src = readFileSync(MINERAL_SRC, 'utf8')
   const allKeys       = [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*type:/gm)].map(m => m[1])
@@ -150,7 +156,7 @@ async function findBestImage(key) {
   const fallbackQuery = `${key.replace(/_/g, ' ')} rock`
 
   let candidates = await searchCommons(primaryQuery)
-  // fallback si pas assez de candidats JPG
+  // fallback if not enough JPG candidates
   if (candidates.length < 3) {
     const extra = await searchCommons(fallbackQuery)
     const seen = new Set(candidates.map(r => r.title))
@@ -162,9 +168,9 @@ async function findBestImage(key) {
   const pages = await getImageInfo(candidates.map(r => r.title))
 
   let best = null
-  let bestScore = -1 // accepte tout non-blacklisté
+  let bestScore = -1 // accepts anything not blacklisted
 
-  // Itérer sur les pages retournées (évite le bug de normalisation de titre)
+  // Iterate over the returned pages (avoids the title-normalization bug)
   for (const page of Object.values(pages)) {
     if (page.missing !== undefined) continue
     const info = page.imageinfo?.[0]
@@ -203,7 +209,7 @@ if (existsSync(META_FILE)) {
 const { allKeys, quarantined, missing } = parseRockKeys()
 let targets = rockFlag ? [rockFlag] : getTargets(statusFlag, quarantined, missing, allKeys)
 
-// Sans --force : quarantainées = toujours retraiter, manquantes = skip si fichier existe
+// Without --force: quarantined = always reprocessed, missing = skip if file exists
 if (!force) {
   targets = targets.filter(k => {
     const dest = path.join(DEST, `${k}.jpg`)
@@ -212,8 +218,8 @@ if (!force) {
   })
 }
 
-console.log(`Cible : ${targets.length} roches  [status=${statusFlag}${force ? ' force' : ''}${dryRun ? ' dry-run' : ''}]`)
-if (targets.length === 0) { console.log('Rien à faire.'); process.exit(0) }
+console.log(`Target: ${targets.length} rocks  [status=${statusFlag}${force ? ' force' : ''}${dryRun ? ' dry-run' : ''}]`)
+if (targets.length === 0) { console.log('Nothing to do.'); process.exit(0) }
 console.log()
 
 let ok = 0, skipped = 0, failed = 0
@@ -224,8 +230,8 @@ for (const key of targets) {
   try {
     const result = await findBestImage(key)
     if (!result) {
-      console.log(`FAIL  aucun résultat (score < 3)`)
-      failures.push({ key, reason: 'score insuffisant' })
+      console.log(`FAIL  no result (score < 3)`)
+      failures.push({ key, reason: 'insufficient score' })
       failed++
       await new Promise(r => setTimeout(r, 1000))
       continue
@@ -255,22 +261,22 @@ for (const key of targets) {
   }
 }
 
-// Écriture des sorties
+// Write outputs
 if (!dryRun) {
   const sorted = Object.fromEntries(Object.entries(metadata).sort(([a], [b]) => a.localeCompare(b)))
   writeFileSync(META_FILE, JSON.stringify(sorted, null, 2), 'utf8')
 
-  const lines = ['# Attributions images lithologies\n', 'Source : Wikimedia Commons\n']
+  const lines = ['# Lithology image attributions\n', 'Source: Wikimedia Commons\n']
   for (const [k, m] of Object.entries(sorted)) {
-    lines.push(`- **${k}.jpg** : "${m.title}" — © ${m.author} (${m.license}) — ${m.url}`)
+    lines.push(`- **${k}.jpg**: "${m.title}" — © ${m.author} (${m.license}) — ${m.url}`)
   }
   writeFileSync(ATTR_FILE, lines.join('\n') + '\n', 'utf8')
-  console.log(`\n→ metadata.json mis à jour (${Object.keys(sorted).length} entrées)`)
+  console.log(`\n→ metadata.json updated (${Object.keys(sorted).length} entries)`)
 }
 
-console.log(`\nTerminé : ${ok} téléchargés, ${skipped} dry-run, ${failed} échecs`)
+console.log(`\nDone: ${ok} downloaded, ${skipped} dry-run, ${failed} failures`)
 if (failures.length > 0) {
-  console.log('\nÉchecs :')
+  console.log('\nFailures:')
   for (const f of failures) console.log(`  ${f.key.padEnd(16)} ${f.reason}`)
-  console.log('\n→ Retry: node scripts/fetch-rock-images.mjs --rock=<clé> [--force]')
+  console.log('\n→ Retry: node scripts/fetch-rock-images.mjs --rock=<key> [--force]')
 }

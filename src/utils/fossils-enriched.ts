@@ -1,7 +1,7 @@
 import { FOSSIL_CANONICAL } from './geology-data.ts'
 import type { FossilGroups } from './geology-data.ts'
 
-type EnrichedEntry = { groups: Record<string, string[]>; sources: string[] }
+type EnrichedEntry = { groups: Record<string, string[]>; by_notation?: Record<string, Record<string, string[]>>; sources: string[] }
 type EnrichedJson = {
   generated: string
   by_carte: Record<string, EnrichedEntry>
@@ -37,13 +37,19 @@ function carteToNoticeKey(carte: string): string {
   return String(noticeNum).padStart(4, '0')
 }
 
-export async function getEnrichedFossils(carte: string): Promise<FossilGroups> {
+// notation: when the sheet's notice text has a paragraph attributed to this
+// exact NOTATION code (by_notation), use that instead of the sheet-wide
+// groups — avoids bleeding fossils from other formations described in the
+// same BRGM notice. Falls back to sheet-level groups when no per-formation
+// match exists (most formations, or sheets processed before this existed).
+export async function getEnrichedFossils(carte: string, notation?: string): Promise<FossilGroups> {
   const data = await loadEnrichedData()
   const key = carteToNoticeKey(carte)
   const entry = key ? (data.by_carte[key] ?? null) : null
   if (!entry) return {}
+  const source = (notation && entry.by_notation?.[notation]) || entry.groups
   const out: FossilGroups = {}
-  for (const [group, terms] of Object.entries(entry.groups)) {
+  for (const [group, terms] of Object.entries(source)) {
     const mapped = [...terms].map(t => FOSSIL_CANONICAL[t] ?? t)
     const deduped = [...new Set(mapped)]
     out[group] = deduped.slice(0, MAX_TERMS)

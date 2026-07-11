@@ -15,6 +15,10 @@ describe('getRockInfo', () => {
   it('retourne undefined pour une roche inconnue', () => {
     expect(getRockInfo('roche_inexistante_xyz')).toBeUndefined()
   })
+
+  it('calcaire est en quarantaine (photo de grotte non représentative)', () => {
+    expect(getRockInfo('calcaire')?.imageStatus).toBe('quarantined')
+  })
 })
 
 describe('hasUsableImage', () => {
@@ -67,5 +71,21 @@ describe('FORMATION_IMAGE_OVERRIDES', () => {
     const idxB1 = keys.indexOf('b1')
     expect(idxPh).toBeLessThan(idxS)
     expect(idxS).toBeLessThan(idxB1)
+  })
+
+  it('b1G est défini et distinct de b1 (grès détritique, pas micaschiste métamorphique)', () => {
+    expect(FORMATION_IMAGE_OVERRIDES['b1G']).toBeDefined()
+    expect(FORMATION_IMAGE_OVERRIDES['b1G'].image).not.toBe(FORMATION_IMAGE_OVERRIDES['b1'].image)
+  })
+
+  it('b2G est défini et mappé vers grauwacke (cohérent avec b2)', () => {
+    expect(FORMATION_IMAGE_OVERRIDES['b2G']).toBeDefined()
+    expect(FORMATION_IMAGE_OVERRIDES['b2G'].image).toContain('grauwacke')
+  })
+
+  it('b1G avant b1, b2G avant b2 (startsWith(\'b1\') matcherait b1G sinon)', () => {
+    const keys = Object.keys(FORMATION_IMAGE_OVERRIDES)
+    expect(keys.indexOf('b1G')).toBeLessThan(keys.indexOf('b1'))
+    expect(keys.indexOf('b2G')).toBeLessThan(keys.indexOf('b2'))
   })
 })

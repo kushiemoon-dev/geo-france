@@ -1,5 +1,5 @@
 // ICS (International Chronostratigraphic Chart) classification for BD Charm-50 NOTATION codes
-import { FOSSIL_GROUPS, FOSSIL_CANONICAL } from './fossil-vocabulary.ts'
+import { FOSSIL_GROUPS, FOSSIL_CANONICAL, FOSSIL_AGE_RANGES } from './fossil-vocabulary.ts'
 export { FOSSIL_CANONICAL }
 
 export interface GeologyEntry {
@@ -69,10 +69,13 @@ const PREFIX_RULES: ReadonlyArray<{ prefixes: readonly string[]; entry: GeologyE
   // Cretace inferieur
   { prefixes: ['n6'], entry: { ere: 'Mesozoique', periode: 'Cretace', systeme: 'Cretace inf.', etage: 'Albien', color: '#7ECD74', ageStartMa: 113.0, ageEndMa: 100.5, wikiSlug: 'Albien', summary: 'Albien. Argiles et sables (sables verts). Important aquifere du Bassin parisien (nappe de l\'Albien).' } },
   { prefixes: ['n5'], entry: { ere: 'Mesozoique', periode: 'Cretace', systeme: 'Cretace inf.', etage: 'Aptien', color: '#7ECD74', ageStartMa: 121.4, ageEndMa: 113.0, wikiSlug: 'Aptien', summary: 'Aptien. Etage defini a Apt (Vaucluse). Marnes, calcaires et gres avec faune d\'ammonites et rudistes.' } },
+  // Undifferentiated Lower Cretaceous (n1, n3, bare n...) — after n2/n4/n5/n6 sub-stages
+  { prefixes: ['n'], entry: { ere: 'Mesozoique', periode: 'Cretace', systeme: 'Cretace inf.', etage: '', color: '#7ECD74', ageStartMa: 145.0, ageEndMa: 100.5, wikiSlug: 'Crétacé_inférieur', summary: 'Cretace inferieur (145-100 Ma) indifferencie. Calcaires, marnes et gres de plate-forme.' } },
 
   // Jurassique superieur
   { prefixes: ['j7'], entry: { ere: 'Mesozoique', periode: 'Jurassique', systeme: 'Jur. sup.', etage: 'Tithonien', color: '#B3D4FF', ageStartMa: 152.1, ageEndMa: 145.0, wikiSlug: 'Tithonien', summary: 'Tithonien. Dernier etage du Jurassique. Calcaires lithographiques et faunes d\'ammonites diversifiees.' } },
-  { prefixes: ['j6'], entry: { ere: 'Mesozoique', periode: 'Jurassique', systeme: 'Jur. sup.', etage: 'Kimmeridgien', color: '#B3D4FF', ageStartMa: 157.3, ageEndMa: 152.1, wikiSlug: 'Kimméridgien', summary: 'Kimmeridgien. Calcaires et marnes de plate-forme. Roche-mere petrolifere importante (schistes bitumineux).' } },
+  // Uppercase 'J6' is a local notation equivalent to 'j6' (Kimmeridgian) on some sheets
+  { prefixes: ['j6', 'J6'], entry: { ere: 'Mesozoique', periode: 'Jurassique', systeme: 'Jur. sup.', etage: 'Kimmeridgien', color: '#B3D4FF', ageStartMa: 157.3, ageEndMa: 152.1, wikiSlug: 'Kimméridgien', summary: 'Kimmeridgien. Calcaires et marnes de plate-forme. Roche-mere petrolifere importante (schistes bitumineux).' } },
   { prefixes: ['j5'], entry: { ere: 'Mesozoique', periode: 'Jurassique', systeme: 'Jur. sup.', etage: 'Oxfordien', color: '#B3D4FF', ageStartMa: 163.5, ageEndMa: 157.3, wikiSlug: 'Oxfordien', summary: 'Oxfordien. Calcaires recifaux et marnes. Etage riche en coraux, spongiaires et ammonites.' } },
 
   // Jurassique moyen
@@ -90,7 +93,7 @@ const PREFIX_RULES: ReadonlyArray<{ prefixes: readonly string[]; entry: GeologyE
   { prefixes: ['l1'], entry: { ere: 'Mesozoique', periode: 'Jurassique', systeme: 'Jur. inf. (Lias)', etage: 'Hettangien', color: '#34B2E8', ageStartMa: 201.4, ageEndMa: 199.5, wikiSlug: 'Hettangien', summary: 'Hettangien. Premier etage du Jurassique. Calcaires et dolomies de transgression.' } },
 
   // Quaternaire (multi-prefix)
-  { prefixes: ['Hydro', 'GLB'], entry: { ere: '', periode: 'Domaine marin/hydro', systeme: '', etage: '', color: '#C8E8FF', summary: 'Domaine marin et hydrographique. Zones immergees ou formations liees aux cours d\'eau.' } },
+  { prefixes: ['Hydro', 'HYDRO', 'GLB'], entry: { ere: '', periode: 'Domaine marin/hydro', systeme: '', etage: '', color: '#C8E8FF', summary: 'Domaine marin et hydrographique. Zones immergees ou formations liees aux cours d\'eau.' } },
   { prefixes: ['SGH'], entry: { ere: 'Cenozoique', periode: 'Quaternaire', systeme: '', etage: '', color: '#F9F97F', ageStartMa: 2.58, ageEndMa: 0, wikiSlug: 'Quaternaire', summary: 'Quaternaire. Formations superficielles et depots glaciaires ou periglaciaires.' } },
   { prefixes: ['SL', 'VL'], entry: { ere: '', periode: 'Domaine marin/hydro', systeme: '', etage: '', color: '#C8E8FF', summary: 'Domaine marin et littoral. Formations cotieres et sediments marins actuels.' } },
   { prefixes: ['SC'], entry: { ere: 'Cenozoique', periode: 'Quaternaire', systeme: '', etage: '', color: '#F9F97F', ageStartMa: 2.58, ageEndMa: 0, wikiSlug: 'Quaternaire', summary: 'Quaternaire. Formations superficielles, colluvions et depots de pente.' } },
@@ -124,10 +127,17 @@ const PREFIX_RULES: ReadonlyArray<{ prefixes: readonly string[]; entry: GeologyE
   { prefixes: ['b'], entry: { ere: 'Precambrien', periode: 'Brioverien', systeme: '', etage: '', color: '#F4B8D4', ageStartMa: 670, ageEndMa: 538.8, wikiSlug: 'Briovérien', summary: 'Brioverien (Neoproterozoique). Formations sedimentaires et volcaniques du Massif armoricain. Schistes et grauwackes.' } },
 
   // Roches cristallines
-  { prefixes: ['Èæ', 'ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', '¥', 'Ê', 'ï', 'â'], entry: { ere: '', periode: 'Roches cristallines', systeme: '', etage: '', color: '#E36DAA', summary: 'Roches cristallines. Granites, gneiss, micaschistes et autres roches du socle metamorphique et magmatique.' } },
+  // Bare accents added by scripts/audit-notation-colors.mjs: ä, ë, û, å, ì, ò, í, ü, Á, Ù
+  // cover magmatic/metamorphic basement rocks not matched by the composite Èæ/¥/etc. codes.
+  { prefixes: ['Èæ', 'ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', '¥', 'Ê', 'ï', 'â', 'ä', 'ë', 'û', 'å', 'ì', 'ò', 'í', 'ü', 'Á', 'Ù'], entry: { ere: '', periode: 'Roches cristallines', systeme: '', etage: '', color: '#E36DAA', summary: 'Roches cristallines. Granites, gneiss, micaschistes et autres roches du socle metamorphique et magmatique.' } },
 
   // Quaternaire catch-all (single chars)
-  { prefixes: ['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R'], entry: { ere: 'Cenozoique', periode: 'Quaternaire', systeme: '', etage: '', color: '#F9F97F', ageStartMa: 2.58, ageEndMa: 0, wikiSlug: 'Quaternaire', summary: 'Quaternaire. Formations superficielles, alluvions et depots recents.' } },
+  // G/J/T/H added by audit: moraines/glacial deposits (G), torrential alluvium (J),
+  // peat (T), clayey complex/surficial formations (H). 'J6' is handled above (Jurassic).
+  // 'A', 'B' (no hyphen), and 'P' are deliberately left uncovered: ambiguous notations
+  // (alterite vs glacial deposit for A, Precambrian basement vs Quaternary volcanism for B,
+  // crystalline pegmatite vs Quaternary clay for P) — better grey than wrongly classified.
+  { prefixes: ['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R', 'G', 'J', 'T', 'H'], entry: { ere: 'Cenozoique', periode: 'Quaternaire', systeme: '', etage: '', color: '#F9F97F', ageStartMa: 2.58, ageEndMa: 0, wikiSlug: 'Quaternaire', summary: 'Quaternaire. Formations superficielles, alluvions et depots recents.' } },
   { prefixes: ['°', '³'], entry: { ere: 'Cenozoique', periode: 'Quaternaire', systeme: '', etage: '', color: '#F9F97F', ageStartMa: 2.58, ageEndMa: 0, wikiSlug: 'Quaternaire', summary: 'Quaternaire. Formations superficielles et depots recents.' } },
 
   // Alterites
@@ -135,7 +145,7 @@ const PREFIX_RULES: ReadonlyArray<{ prefixes: readonly string[]; entry: GeologyE
 ]
 
 // Build a flat sorted list: longest prefix first for greedy matching
-const SORTED_RULES: ReadonlyArray<{ prefix: string; entry: GeologyEntry }> = PREFIX_RULES
+export const SORTED_RULES: ReadonlyArray<{ prefix: string; entry: GeologyEntry }> = PREFIX_RULES
   .flatMap(rule => rule.prefixes.map(prefix => ({ prefix, entry: rule.entry })))
   .sort((a, b) => b.prefix.length - a.prefix.length)
 
@@ -179,7 +189,7 @@ const LITHOLOGY = [
   'mylonite', 'brèche', 'breche', 'phyllade', 'ardoise',
   'alterite', 'altérite', 'tonalite', 'arkose', 'leucogranite',
   'tillite', 'trondhjemite', 'microgranite',
-  'gabbro', 'stratovolcan'
+  'gabbro', 'stratovolcan', 'flysch', 'molasse'
 ]
 
 export const LITHO_WIKI_SLUGS: Record<string, string> = {
@@ -236,6 +246,8 @@ export const LITHO_WIKI_SLUGS: Record<string, string> = {
   'ardoise': 'Ardoise',
   'arkose': 'Arkose',
   'tillite': 'Tillite',
+  'flysch': 'Flysch',
+  'molasse': 'Molasse_(géologie)',
 }
 
 const FOSSIL_WIKI_SLUGS: Record<string, string> = {
@@ -298,6 +310,24 @@ export function extractFossils(...sources: string[]): FossilGroups {
 
 export function extractLithology(...sources: string[]): string[] {
   return extractTerms(sources.filter(Boolean).join(' '), LITHOLOGY)
+}
+
+// Filters inter-formation bleeding: enriched fossils come from the whole
+// BRGM sheet (all formations combined), not the clicked formation. Only keep
+// a group if its stratigraphic interval (FOSSIL_AGE_RANGES) overlaps the
+// formation's age. No known age for the formation (ageStartMa/ageEndMa
+// absent) means nothing to compare against, so it's let through.
+export function filterFossilsByAge(fossils: FossilGroups, ageStartMa?: number, ageEndMa?: number): FossilGroups {
+  if (ageStartMa === undefined || ageEndMa === undefined) return fossils
+  const out: FossilGroups = {}
+  for (const [group, terms] of Object.entries(fossils)) {
+    const range = FOSSIL_AGE_RANGES[group]
+    // Group with no known interval (e.g. 'genres', added elsewhere): let it through.
+    if (!range) { out[group] = terms; continue }
+    const overlaps = Math.max(range.endMa, ageEndMa) <= Math.min(range.startMa, ageStartMa)
+    if (overlaps) out[group] = terms
+  }
+  return out
 }
 
 export const METAMORPHISM_WIKI_SLUGS: Record<string, string> = {

@@ -153,7 +153,10 @@ const ROCK_DB: Record<string, RockInfo> = {
   ]},
 
   // Sedimentaires carbonatees
-  calcaire: { type: 'sedimentaire', origin: 'marine', facies: 'Calcaire bioclastique a micritique', texture: 'Micritique a sparitique', image: '/images/rocks/calcaire.jpg', minerals: [
+  // imageStatus 'quarantined': calcaire.jpg is a photo of cave speleothems
+  // (Waitomo), not a representative specimen — flag already set in
+  // pending-quarantine.json (commit 908c85c) but never carried over here.
+  calcaire: { type: 'sedimentaire', origin: 'marine', facies: 'Calcaire bioclastique a micritique', texture: 'Micritique a sparitique', image: '/images/rocks/calcaire.jpg', imageStatus: 'quarantined', minerals: [
     { name: 'calcite', percent: '95%' }, { name: 'quartz', percent: '3%' }, { name: 'argile', percent: '2%' }
   ]},
   craie: { type: 'sedimentaire', origin: 'marine', facies: 'Craie a silex', texture: 'Crayeuse, tres fine', image: '/images/rocks/craie.jpg', minerals: [
@@ -208,6 +211,16 @@ const ROCK_DB: Record<string, RockInfo> = {
   ]},
   grauwacke: { type: 'sedimentaire', origin: 'detritique', facies: 'Grauwacke', texture: 'Granulaire, mal triee', image: '/images/rocks/grauwacke.jpg', minerals: [
     { name: 'quartz', percent: '35%' }, { name: 'feldspath', percent: '25%' }, { name: 'argile', percent: '20%' }, { name: 'mica', percent: '10%' }, { name: 'chlorite', percent: '10%' }
+  ]},
+  // No image sourced (fetch-rock-images.mjs blocked, cf. imageStatus 'missing'
+  // on marne/falun/meuliere): without an entry, Alpine "Flyschs indifferencies"/
+  // "Grauwackes dominants" fell back to the generic calcaire/gres fallback,
+  // not representative of the facies. This at least avoids the wrong fallback.
+  flysch: { type: 'sedimentaire', origin: 'turbiditique', facies: 'Flysch turbiditique', texture: 'Alternances rythmiques gres-marnes (turbidites)', imageStatus: 'missing', minerals: [
+    { name: 'quartz', percent: '35%' }, { name: 'argile', percent: '25%' }, { name: 'calcite', percent: '20%' }, { name: 'mica', percent: '10%' }, { name: 'feldspath', percent: '10%' }
+  ]},
+  molasse: { type: 'sedimentaire', origin: 'continentale', facies: 'Molasse greso-marneuse', texture: 'Detritique greso-conglomeratique, cimentee', imageStatus: 'missing', minerals: [
+    { name: 'quartz', percent: '40%' }, { name: 'calcite', percent: '25%' }, { name: 'argile', percent: '20%' }, { name: 'feldspath', percent: '15%' }
   ]},
   gaize: { type: 'sedimentaire', origin: 'marine', facies: 'Gaize siliceuse', texture: 'Fine, poreuse', image: '/images/rocks/gaize.jpg', minerals: [
     { name: 'silice', percent: '70%' }, { name: 'argile', percent: '20%' }, { name: 'glauconie', percent: '10%' }
@@ -366,6 +379,14 @@ export function getRockInfo(name: string): RockInfo | undefined {
 export const FORMATION_IMAGE_OVERRIDES: Record<string, { image: string; attribution?: string }> = {
   b1Ph: { image: '/images/rocks/phtanite.jpg', attribution: 'Arlette1, CC BY-SA 3.0' },
   b1S:  { image: '/images/rocks/schiste.jpg' },
+  // b1G "Grès fins, grès tufacés" (Normandie, sheet 1680) — detrital, NOT the
+  // (metamorphic) micaschiste that 'b1'.startsWith would have served by collision.
+  // arkose.jpg (feldspathic sandstone, same detrital family) is the best proxy
+  // available while no dedicated grès photo exists (gres is quarantined, no image).
+  b1G:  { image: '/images/rocks/arkose.jpg' },
   b1:   { image: '/images/rocks/micaschiste.jpg' },
+  // b2G "grauwackes dominants" (Normandie, sheet 1680) — already correct via
+  // the collision with 'b2' (grauwacke.jpg), made explicit here.
+  b2G:  { image: '/images/rocks/grauwacke.jpg' },
   b2:   { image: '/images/rocks/grauwacke.jpg' },
 }

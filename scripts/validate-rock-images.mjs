@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * CI guard : vérifie l'intégrité des images de roches avant le build.
- * Fail si : fichier absent, fichier < 10 Ko, ou image marquée quarantined mais non remplacée.
+ * CI guard: checks rock image integrity before the build.
+ * Fails if: file missing, file < 10 KB, or image marked quarantined but not replaced.
  * Usage: node scripts/validate-rock-images.mjs
  */
 
@@ -14,10 +14,10 @@ const ROOT = path.join(__dir, '..')
 const DEST = path.join(ROOT, 'public', 'images', 'rocks')
 const MINERAL_SRC = path.join(ROOT, 'src/utils/mineral-data.ts')
 const META_FILE = path.join(DEST, 'metadata.json')
-const MIN_SIZE = 10_000 // 10 Ko
+const MIN_SIZE = 10_000 // 10 KB
 
 const src = readFileSync(MINERAL_SRC, 'utf8')
-// Extraire toutes les clés avec un champ `image:`
+// Extract all keys with an `image:` field
 const withImage = [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*image:\s*'([^']+)'/gm)]
   .map(m => ({ key: m[1], path: m[2] }))
 const quarantined = new Set(
@@ -31,20 +31,20 @@ for (const { key, path: imgPath } of withImage) {
   const filePath = path.join(ROOT, 'public', imgPath)
 
   if (!existsSync(filePath)) {
-    console.error(`  ERREUR  ${key}: fichier absent — ${imgPath}`)
+    console.error(`  ERROR   ${key}: file missing — ${imgPath}`)
     errors++
     continue
   }
 
   const size = statSync(filePath).size
   if (size < MIN_SIZE) {
-    console.error(`  ERREUR  ${key}: fichier trop petit (${Math.round(size / 1024)} Ko < 10 Ko) — probable vignette erronée`)
+    console.error(`  ERROR   ${key}: file too small (${Math.round(size / 1024)} KB < 10 KB) — likely a broken thumbnail`)
     errors++
     continue
   }
 
   if (quarantined.has(key)) {
-    console.warn(`  WARN    ${key}: toujours en quarantaine — image non remplacée`)
+    console.warn(`  WARN    ${key}: still quarantined — image not replaced`)
     warnings++
   }
 }
@@ -58,12 +58,12 @@ if (existsSync(META_FILE)) {
   } catch { /* ignore */ }
 }
 
-console.log(`\nImages : ${total} total | ${quarantinedCount} quarantinées | ${metaCount} avec metadata`)
+console.log(`\nImages: ${total} total | ${quarantinedCount} quarantined | ${metaCount} with metadata`)
 if (errors > 0) {
-  console.error(`\n✗ ${errors} erreur(s) — build bloqué`)
+  console.error(`\n✗ ${errors} error(s) — build blocked`)
   process.exit(1)
 }
 if (warnings > 0) {
-  console.warn(`⚠ ${warnings} avertissement(s) — ${quarantinedCount} image(s) en quarantaine sans remplacement`)
+  console.warn(`⚠ ${warnings} warning(s) — ${quarantinedCount} quarantined image(s) without replacement`)
 }
-console.log('✓ Validation images OK')
+console.log('✓ Image validation OK')

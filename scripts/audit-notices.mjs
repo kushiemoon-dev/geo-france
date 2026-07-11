@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // scripts/audit-notices.mjs
-// Audit des notices BRGM : inventaire par région, détection d'incohérences
+// BRGM notice audit: per-region inventory, inconsistency detection
 
 import { readFileSync, writeFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
@@ -12,7 +12,7 @@ const ROOT = join(__dirname, '..')
 const noticesTs = readFileSync(join(ROOT, 'src/config/notices.ts'), 'utf8')
 
 // --- Parsing ---
-// Extraire les blocs par région : 'region-id': [ ... ]
+// Extract per-region blocks: 'region-id': [ ... ]
 const regionBlocks = {}
 const regionHeaderRe = /^\s+'([\w-]+)':\s*\[/gm
 let match
@@ -27,7 +27,7 @@ for (let i = 0; i < regionStarts.length; i++) {
   const end = i + 1 < regionStarts.length ? regionStarts[i + 1].pos : noticesTs.length
   const block = noticesTs.slice(pos, end)
 
-  // Extraire toutes les notices du bloc
+  // Extract all notices from the block
   const noticeRe = /\{\s*sheet:\s*'(\d+)'[^}]*name:\s*'([^']*)'[^}]*url:\s*'([^']*)'/g
   const notices = []
   let nm
@@ -37,12 +37,12 @@ for (let i = 0; i < regionStarts.length; i++) {
   regionBlocks[id] = notices
 }
 
-// --- Analyse ---
+// --- Analysis ---
 const BRGM_URL_RE = /^https?:\/\/ficheinfoterre\.brgm\.fr\/Notices\/(\d{4})N\.pdf$/
 const allSheets = new Set()
 const duplicateSheets = []
 
-// Première passe : collecter tous les sheets pour détecter les doublons inter-régions
+// First pass: collect all sheets to detect cross-region duplicates
 for (const [region, notices] of Object.entries(regionBlocks)) {
   for (const n of notices) {
     if (allSheets.has(n.sheet)) {
@@ -52,7 +52,7 @@ for (const [region, notices] of Object.entries(regionBlocks)) {
   }
 }
 
-// --- Génération du rapport ---
+// --- Report generation ---
 const now = new Date().toISOString().slice(0, 10)
 let totalNotices = 0
 const regionRows = []
@@ -71,17 +71,17 @@ for (const [region, notices] of Object.entries(regionBlocks)) {
   regionRows.push({ region, count: notices.length, urlIssues: urlIssues.length, examples, notices })
 }
 
-// Trier par nombre de notices décroissant
+// Sort by descending notice count
 regionRows.sort((a, b) => b.count - a.count)
 
-// Construire le tableau markdown
-const tableHeader = `| Région | Notices | URL invalides | Exemples sheets |`
+// Build the markdown table
+const tableHeader = `| Region | Notices | Invalid URLs | Sample sheets |`
 const tableSep =    `|--------|--------:|:-------------:|-----------------|`
 const tableRows = regionRows.map(r =>
   `| \`${r.region}\` | ${r.count} | ${r.urlIssues > 0 ? `**${r.urlIssues}**` : '0'} | ${r.examples} |`
 )
 
-// Section détail des URL invalides
+// Invalid URL detail section
 const invalidSection = regionRows
   .filter(r => r.urlIssues > 0)
   .flatMap(r => {
@@ -92,51 +92,51 @@ const invalidSection = regionRows
     return bad.map(n => `- \`${r.region}\` sheet \`${n.sheet}\` → \`${n.url}\``)
   })
 
-// Section doublons
+// Duplicates section
 const dupSection = duplicateSheets.length > 0
-  ? duplicateSheets.map(d => `- sheet \`${d.sheet}\` (\`${d.name}\`) dupliquée dans \`${d.region}\``)
-  : ['_Aucun doublon détecté._']
+  ? duplicateSheets.map(d => `- sheet \`${d.sheet}\` (\`${d.name}\`) duplicated in \`${d.region}\``)
+  : ['_No duplicates detected._']
 
-const report = `# Audit des notices BRGM
+const report = `# BRGM Notice Audit
 
-> Généré le ${now} — source : \`src/config/notices.ts\`
+> Generated on ${now} — source: \`src/config/notices.ts\`
 
-## Résumé
+## Summary
 
-| Métrique | Valeur |
+| Metric | Value |
 |----------|-------:|
-| Régions couvertes | ${regionRows.length} |
-| Notices totales | ${totalNotices} |
-| Sheets uniques | ${allSheets.size} |
-| Doublons inter-régions | ${duplicateSheets.length} |
-| URL mal formées / incohérentes | ${regionRows.reduce((s, r) => s + r.urlIssues, 0)} |
+| Regions covered | ${regionRows.length} |
+| Total notices | ${totalNotices} |
+| Unique sheets | ${allSheets.size} |
+| Cross-region duplicates | ${duplicateSheets.length} |
+| Malformed / inconsistent URLs | ${regionRows.reduce((s, r) => s + r.urlIssues, 0)} |
 
-## Notices par région
+## Notices per region
 
 ${tableHeader}
 ${tableSep}
 ${tableRows.join('\n')}
 
-## URL invalides ou incohérentes
+## Invalid or inconsistent URLs
 
-${invalidSection.length > 0 ? invalidSection.join('\n') : '_Aucune URL invalide détectée._'}
+${invalidSection.length > 0 ? invalidSection.join('\n') : '_No invalid URLs detected._'}
 
-## Doublons inter-régions
+## Cross-region duplicates
 
 ${dupSection.join('\n')}
 
 ## Notes
 
-- **URL valide** = correspond au pattern \`http(s)://ficheinfoterre.brgm.fr/Notices/XXXXN.pdf\`
-  et le numéro dans l'URL correspond au champ \`sheet\`.
-- Les notices sans champ \`pages\`/\`bytes\` ne sont pas considérées comme invalides
-  (ces champs sont optionnels).
+- **Valid URL** = matches the pattern \`http(s)://ficheinfoterre.brgm.fr/Notices/XXXXN.pdf\`
+  and the number in the URL matches the \`sheet\` field.
+- Notices without a \`pages\`/\`bytes\` field are not considered invalid
+  (these fields are optional).
 `
 
 writeFileSync(join(ROOT, 'docs/notices-audit-report.md'), report, 'utf8')
-console.log(`Rapport généré : docs/notices-audit-report.md`)
-console.log(`  ${regionRows.length} régions, ${totalNotices} notices, ${allSheets.size} sheets uniques`)
-if (duplicateSheets.length) console.warn(`  ⚠ ${duplicateSheets.length} doublons inter-régions`)
+console.log(`Report generated: docs/notices-audit-report.md`)
+console.log(`  ${regionRows.length} regions, ${totalNotices} notices, ${allSheets.size} unique sheets`)
+if (duplicateSheets.length) console.warn(`  ⚠ ${duplicateSheets.length} cross-region duplicates`)
 const totalInvalid = regionRows.reduce((s, r) => s + r.urlIssues, 0)
-if (totalInvalid) console.warn(`  ⚠ ${totalInvalid} URL invalides`)
-else console.log(`  Toutes les URLs sont bien formées.`)
+if (totalInvalid) console.warn(`  ⚠ ${totalInvalid} invalid URLs`)
+else console.log(`  All URLs are well-formed.`)
