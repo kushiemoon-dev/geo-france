@@ -9,7 +9,7 @@ Carte géologique interactive de France. MapLibre GL JS + PMTiles + BRGM BD Char
 | Bundler | Vite 7 + TypeScript 5.9 strict |
 | Carte | MapLibre GL JS 5 |
 | Données | PMTiles (byte-range, pas de serveur tile) |
-| Déploiement | Vercel (prod) / nginx (self-host) |
+| Déploiement | Hostinger (LiteSpeed + Cloudflare) |
 | Tests | Vitest 4 |
 | Lint | ESLint 10 flat config + Prettier |
 
