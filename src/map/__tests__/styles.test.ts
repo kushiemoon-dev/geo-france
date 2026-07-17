@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { createLayersForRegion, faultsMajorLayer, faultsMinorLayer, surchargeLayer, geologyOutlineLayer } from '../styles.ts'
+import { createLayersForRegion, faultsMajorLayer, faultsMinorLayer, surchargeLayer } from '../styles.ts'
 import type { LayerSpecification } from 'maplibre-gl'
 
 describe('faultsMajorLayer', () => {
@@ -61,34 +61,5 @@ describe('createLayersForRegion', () => {
     for (const layer of layers) {
       expect((layer as LayerSpecification & { source: string }).source).toBe('geology-bretagne')
     }
-  })
-
-  it('préserve line-join/line-cap round sur geology-outline cloné (contours lissés)', () => {
-    const layers = createLayersForRegion('bretagne')
-    const outline = layers.find(l => l.id === 'geology-outline__bretagne')
-    expect(outline).toBeDefined()
-    const layout = (outline as LayerSpecification & { layout: Record<string, unknown> }).layout
-    expect(layout['line-join']).toBe('round')
-    expect(layout['line-cap']).toBe('round')
-  })
-})
-
-describe('geologyOutlineLayer', () => {
-  it('a line-join et line-cap round', () => {
-    const layout = (geologyOutlineLayer as LayerSpecification & { layout: Record<string, unknown> }).layout
-    expect(layout['line-join']).toBe('round')
-    expect(layout['line-cap']).toBe('round')
-  })
-
-  it('a minzoom: 8 (évite la surdensité de ~1M bordures en vue nationale)', () => {
-    expect((geologyOutlineLayer as Record<string, unknown>).minzoom).toBe(8)
-  })
-})
-
-describe('createLayersForRegion — geology-outline', () => {
-  it('préserve minzoom: 8 sur le clone régional', () => {
-    const layers = createLayersForRegion('bretagne')
-    const outline = layers.find(l => l.id === 'geology-outline__bretagne')
-    expect((outline as Record<string, unknown>).minzoom).toBe(8)
   })
 })
