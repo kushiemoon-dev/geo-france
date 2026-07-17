@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.3.1 — 2026-07-17
+
+### Fixes
+- Restored dense geology-outline contours at national zoom: the `minzoom: 8` added in v2.3.0 to fix outline overdraw hid ~1M polygon borders across all 13 stacked regions, flattening the visual density used to distinguish formations before zooming in
+
 ## v2.3.0 — 2026-07-11
 
 ### New features
