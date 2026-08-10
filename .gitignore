@@ -2,6 +2,7 @@ node_modules/
 dist/
 data-work/
 public/data/*.pmtiles
+public/data/*.pmtiles-journal
 data.zip
 *.log
 task_plan.md
