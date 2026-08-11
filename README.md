@@ -18,6 +18,16 @@ Interactive geological map of metropolitan France — 14 regions, ~1 million geo
 
 ---
 
+## Screenshots
+
+<div align="center">
+<img src="docs/screenshots/overview.png" alt="Full France geological map with color-coded formations" width="800">
+<br><br>
+<img src="docs/screenshots/formation-detail.png" alt="Formation detail panel with stratigraphy and photo" width="800">
+</div>
+
+---
+
 ## Features
 
 - **14 regions** — Dynamic selector to navigate across metropolitan France
