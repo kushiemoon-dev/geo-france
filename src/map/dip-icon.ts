@@ -29,9 +29,13 @@ export function registerDipIcon(map: Map): void {
   const size = 32
   const imageData = createDipIconData(size)
 
-  map.addImage('dip-symbol', {
-    width: size,
-    height: size,
-    data: imageData.data
-  }, { sdf: true })
+  map.addImage(
+    'dip-symbol',
+    {
+      width: size,
+      height: size,
+      data: imageData.data,
+    },
+    { sdf: true }
+  )
 }

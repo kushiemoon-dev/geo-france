@@ -38,10 +38,18 @@ const PREFIX_RULES_RAW = [
   { prefixes: ['n4', 'n2'], ere: 'Mesozoique', periode: 'Cretace' },
   { prefixes: ['a1'], ere: '', periode: 'Alterites' },
   { prefixes: ['aã'], ere: '', periode: 'Roches cristallines' },
-  { prefixes: ['e7', 'e6', 'e5', 'e4', 'e3', 'e2', 'e1', 'e'], ere: 'Cenozoique', periode: 'Paleogene' },
+  {
+    prefixes: ['e7', 'e6', 'e5', 'e4', 'e3', 'e2', 'e1', 'e'],
+    ere: 'Cenozoique',
+    periode: 'Paleogene',
+  },
   { prefixes: ['c7', 'c6', 'c5', 'c4', 'c3', 'c2', 'c1'], ere: 'Mesozoique', periode: 'Cretace' },
   { prefixes: ['n7', 'n6', 'n5', 'n3', 'n1'], ere: 'Mesozoique', periode: 'Cretace' },
-  { prefixes: ['j9', 'j8', 'j7', 'j6', 'j5', 'j4', 'j3', 'j2', 'j1', 'j'], ere: 'Mesozoique', periode: 'Jurassique' },
+  {
+    prefixes: ['j9', 'j8', 'j7', 'j6', 'j5', 'j4', 'j3', 'j2', 'j1', 'j'],
+    ere: 'Mesozoique',
+    periode: 'Jurassique',
+  },
   { prefixes: ['c', 'n'], ere: 'Mesozoique', periode: 'Cretace' },
   { prefixes: ['t'], ere: 'Mesozoique', periode: 'Trias' },
   { prefixes: ['r'], ere: 'Paleozoique', periode: 'Permien' },
@@ -56,9 +64,41 @@ const PREFIX_RULES_RAW = [
   // Bare accents (ä ë û å ì ò í ü Á Ù) synced with src/utils/geology-data.ts
   // following the scripts/audit-notation-colors.mjs audit — without them,
   // crystalline granodiorites/schists slipped past rule R2 (no mapping = no cleanup).
-  { prefixes: ['Èæ', 'ã', 'î', 'ó', 'Ã', 'Õ', 'ñ', 'Å', 'Û', '¥', 'Ê', 'ï', 'â', 'ä', 'ë', 'û', 'å', 'ì', 'ò', 'í', 'ü', 'Á', 'Ù'], ere: '', periode: 'Roches cristallines' },
+  {
+    prefixes: [
+      'Èæ',
+      'ã',
+      'î',
+      'ó',
+      'Ã',
+      'Õ',
+      'ñ',
+      'Å',
+      'Û',
+      '¥',
+      'Ê',
+      'ï',
+      'â',
+      'ä',
+      'ë',
+      'û',
+      'å',
+      'ì',
+      'ò',
+      'í',
+      'ü',
+      'Á',
+      'Ù',
+    ],
+    ere: '',
+    periode: 'Roches cristallines',
+  },
   // Quaternaire catch-all
-  { prefixes: ['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R'], ere: 'Cenozoique', periode: 'Quaternaire' },
+  {
+    prefixes: ['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R'],
+    ere: 'Cenozoique',
+    periode: 'Quaternaire',
+  },
   { prefixes: ['°', '³'], ere: 'Cenozoique', periode: 'Quaternaire' },
   // Neogene / Paleogene lowercase catch-all
   { prefixes: ['p'], ere: 'Cenozoique', periode: 'Neogene' },
@@ -71,9 +111,9 @@ const PREFIX_RULES_RAW = [
 ]
 
 // Sort: longest prefix first (mirrors SORTED_RULES in geology-data.ts)
-const SORTED_RULES = PREFIX_RULES_RAW
-  .flatMap(r => r.prefixes.map(prefix => ({ prefix, ere: r.ere, periode: r.periode })))
-  .sort((a, b) => b.prefix.length - a.prefix.length)
+const SORTED_RULES = PREFIX_RULES_RAW.flatMap((r) =>
+  r.prefixes.map((prefix) => ({ prefix, ere: r.ere, periode: r.periode }))
+).sort((a, b) => b.prefix.length - a.prefix.length)
 
 function classifyNotation(notation) {
   if (!notation) return { ere: '', periode: 'Indetermine' }
@@ -120,8 +160,11 @@ const byCarte = fossilsRaw.by_carte
 
 const DATA_WORK_MAIN = '/srv/http/geo-france/data-work'
 const DATA_WORK_REL = join(ROOT, '..', '..', '..', '..', 'data-work')
-const dataWorkDir = existsSync(DATA_WORK_MAIN) ? DATA_WORK_MAIN :
-  existsSync(DATA_WORK_REL) ? DATA_WORK_REL : null
+const dataWorkDir = existsSync(DATA_WORK_MAIN)
+  ? DATA_WORK_MAIN
+  : existsSync(DATA_WORK_REL)
+    ? DATA_WORK_REL
+    : null
 
 if (!dataWorkDir) {
   console.error('ERROR: data-work directory not found.')
@@ -140,7 +183,7 @@ async function extractFromGeojson(filePath, carteNotations) {
       crlfDelay: Infinity,
     })
     let count = 0
-    rl.on('line', line => {
+    rl.on('line', (line) => {
       const cm = CARTE_RE.exec(line)
       const nm = NOTATION_RE.exec(line)
       if (cm && nm) {
@@ -161,8 +204,8 @@ async function extractFromGeojson(filePath, carteNotations) {
 // Collect NOTATION sets from all regions
 const carteNotations = new Map() // carteKey → Set<NOTATION>
 const regions = readdirSync(dataWorkDir, { withFileTypes: true })
-  .filter(d => d.isDirectory())
-  .map(d => d.name)
+  .filter((d) => d.isDirectory())
+  .map((d) => d.name)
   .sort()
 
 let totalFeatures = 0
@@ -215,12 +258,14 @@ for (const [carteKey, entry] of Object.entries(byCarte)) {
     continue
   }
 
-  const classified = [...notations].map(n => ({ notation: n, cls: classifyNotation(n) }))
+  const classified = [...notations].map((n) => ({ notation: n, cls: classifyNotation(n) }))
 
   const allPrecambrien = classified.every(({ cls }) => isPrecambrien(cls))
   const allMagmatic = classified.every(({ cls }) => isCrystalline(cls))
   // Mix where every notation is EITHER precambrien OR magmatic (no fossiliferous formations)
-  const allPrecambrienOrMagmatic = classified.every(({ cls }) => isPrecambrien(cls) || isCrystalline(cls))
+  const allPrecambrienOrMagmatic = classified.every(
+    ({ cls }) => isPrecambrien(cls) || isCrystalline(cls)
+  )
 
   const fossilNotations = classified.filter(({ cls }) => !isPrecambrien(cls) && !isCrystalline(cls))
 
@@ -228,21 +273,31 @@ for (const [carteKey, entry] of Object.entries(byCarte)) {
     clearedR1++
     updatedByCarte[carteKey] = { ...entry, groups: {} }
     const sample = [...notations].slice(0, 3).join(',')
-    console.log(`  R1 Precambrian : sheet ${carteKey} — cleared (${notations.size} notations, e.g.: ${sample})`)
+    console.log(
+      `  R1 Precambrian : sheet ${carteKey} — cleared (${notations.size} notations, e.g.: ${sample})`
+    )
   } else if (allMagmatic) {
     clearedR2++
     updatedByCarte[carteKey] = { ...entry, groups: {} }
     const sample = [...notations].slice(0, 3).join(',')
-    console.log(`  R2 Magmatic    : sheet ${carteKey} — cleared (${notations.size} notations, e.g.: ${sample})`)
+    console.log(
+      `  R2 Magmatic    : sheet ${carteKey} — cleared (${notations.size} notations, e.g.: ${sample})`
+    )
   } else if (allPrecambrienOrMagmatic) {
     clearedMix++
     updatedByCarte[carteKey] = { ...entry, groups: {} }
     const sample = [...notations].slice(0, 3).join(',')
-    console.log(`  R1+R2 mix      : sheet ${carteKey} — cleared (Precambrian+magmatic only, ${sample})`)
+    console.log(
+      `  R1+R2 mix      : sheet ${carteKey} — cleared (Precambrian+magmatic only, ${sample})`
+    )
   } else {
     // Mix with fossiliferous formations: leave in place, log if it also contains Precambrian/magmatic
-    const precambrienNotations = classified.filter(({ cls }) => isPrecambrien(cls)).map(({ notation }) => notation)
-    const magmaticNotations = classified.filter(({ cls }) => isCrystalline(cls)).map(({ notation }) => notation)
+    const precambrienNotations = classified
+      .filter(({ cls }) => isPrecambrien(cls))
+      .map(({ notation }) => notation)
+    const magmaticNotations = classified
+      .filter(({ cls }) => isCrystalline(cls))
+      .map(({ notation }) => notation)
     if (precambrienNotations.length > 0 || magmaticNotations.length > 0) {
       pendingMix++
       pendingReview.push({

@@ -6,10 +6,10 @@ import type { MapMode } from '../core/types.ts'
 import { REGIONS } from '../config/regions.ts'
 import { getRegionLayerIds } from './styles.ts'
 
-const DATA_REGIONS_CACHE = REGIONS.filter(r => r.id !== 'france')
+const DATA_REGIONS_CACHE = REGIONS.filter((r) => r.id !== 'france')
 
 function getAllRegionLayerIds(): string[] {
-  return DATA_REGIONS_CACHE.flatMap(r => getRegionLayerIds(r.id))
+  return DATA_REGIONS_CACHE.flatMap((r) => getRegionLayerIds(r.id))
 }
 
 const WMS_SOURCE_ID = 'brgm-wms'
@@ -26,11 +26,11 @@ function ensureWmsSource(map: maplibregl.Map): void {
   map.addSource(WMS_SOURCE_ID, {
     type: 'raster',
     tiles: [
-      'https://geoservices.brgm.fr/geologie?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=SCAN_H_GEOL50&SRS=EPSG:3857&FORMAT=image/png&TRANSPARENT=true&WIDTH=256&HEIGHT=256&BBOX={bbox-epsg-3857}'
+      'https://geoservices.brgm.fr/geologie?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=SCAN_H_GEOL50&SRS=EPSG:3857&FORMAT=image/png&TRANSPARENT=true&WIDTH=256&HEIGHT=256&BBOX={bbox-epsg-3857}',
     ],
     tileSize: 256,
     minzoom: LOCAL_MIN_ZOOM,
-    attribution: '&copy; BRGM'
+    attribution: '&copy; BRGM',
   })
 
   if (!wmsErrorHandled) {
@@ -57,12 +57,15 @@ function showWmsLayer(map: maplibregl.Map): void {
   const activeRegion = regionId !== 'france' ? regionId : DATA_REGIONS_CACHE[0]?.id
   const fillLayerId = activeRegion ? `geology-fill__${activeRegion}` : undefined
   const beforeId = fillLayerId && map.getLayer(fillLayerId) ? fillLayerId : undefined
-  map.addLayer({
-    id: WMS_LAYER_ID,
-    type: 'raster',
-    source: WMS_SOURCE_ID,
-    paint: { 'raster-opacity': 0.7 }
-  }, beforeId)
+  map.addLayer(
+    {
+      id: WMS_LAYER_ID,
+      type: 'raster',
+      source: WMS_SOURCE_ID,
+      paint: { 'raster-opacity': 0.7 },
+    },
+    beforeId
+  )
 }
 
 function hideWmsLayer(map: maplibregl.Map): void {
@@ -84,13 +87,16 @@ function hideVectorLayers(map: maplibregl.Map): void {
 
 function restoreVectorLayers(map: maplibregl.Map): void {
   const { layers, regionId } = store.getState()
-  const activeRegionIds = regionId === 'france'
-    ? DATA_REGIONS_CACHE.map(r => r.id)
-    : (regionId ? [regionId] : [DATA_REGIONS_CACHE[0]?.id ?? ''])
+  const activeRegionIds =
+    regionId === 'france'
+      ? DATA_REGIONS_CACHE.map((r) => r.id)
+      : regionId
+        ? [regionId]
+        : [DATA_REGIONS_CACHE[0]?.id ?? '']
 
   for (const layerId of getAllRegionLayerIds()) {
     if (!map.getLayer(layerId)) continue
-    const belongsToActive = activeRegionIds.some(rid => layerId.endsWith(`__${rid}`))
+    const belongsToActive = activeRegionIds.some((rid) => layerId.endsWith(`__${rid}`))
     if (!belongsToActive) continue
 
     if (layerId.startsWith('geology-fill__')) {
@@ -102,7 +108,7 @@ function restoreVectorLayers(map: maplibregl.Map): void {
       continue
     }
 
-    const baseId = layerId.split('__')[0]
+    const baseId = layerId.split('__')[0]!
     const visible = layers[baseId] ?? true
     map.setLayoutProperty(layerId, 'visibility', visible ? 'visible' : 'none')
   }

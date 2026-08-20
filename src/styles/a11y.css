@@ -1,16 +1,26 @@
 /* ===== Global transitions ===== */
 
-.geo-btn, .geo-toggle-item, .geo-select, .geo-chip {
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
-              box-shadow 0.15s ease, transform 0.15s ease;
+.geo-btn,
+.geo-toggle-item,
+.geo-select,
+.geo-chip {
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
 }
 
-.geo-btn:hover, .geo-btn-icon:hover {
+.geo-btn:hover,
+.geo-btn-icon:hover {
   transform: scale(1.02);
 }
 
-.geo-checkbox input[type="checkbox"] {
-  transition: background 0.15s ease, border-color 0.15s ease;
+.geo-checkbox input[type='checkbox'] {
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
 }
 
 /* ===== Focus visible ===== */
@@ -59,7 +69,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

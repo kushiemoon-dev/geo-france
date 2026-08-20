@@ -28,23 +28,89 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
 const force = process.argv.includes('--force')
-const limitArg = process.argv.find(a => a.startsWith('--limit='))
+const limitArg = process.argv.find((a) => a.startsWith('--limit='))
 const limit = limitArg ? parseInt(limitArg.split('=')[1], 10) : undefined
 
 // ── Fossil keywords — imported from shared vocabulary ─────────────────────────
-import { FOSSIL_GROUPS, FOSSIL_CANONICAL as _FOSSIL_CANONICAL } from '../src/utils/fossil-vocabulary.mjs'
+import {
+  FOSSIL_GROUPS,
+  FOSSIL_CANONICAL as _FOSSIL_CANONICAL,
+} from '../src/utils/fossil-vocabulary.mjs'
 
 const MAX_TERMS = 12
 // French common words to skip in genus extraction
 const SKIP_WORDS = new Set([
-  'Les', 'La', 'Le', 'Des', 'De', 'En', 'Au', 'Aux', 'Par', 'Sur', 'Sous', 'Dans',
-  'Une', 'Un', 'Cette', 'Ces', 'Ce', 'Avec', 'Sans', 'Pour', 'Vers', 'Note', 'Figure',
-  'Planche', 'Tableau', 'Voir', 'Cf', 'Fig', 'Pl', 'Tab', 'Niveau', 'Zone', 'Faune',
-  'Flore', 'Formation', 'Calcaire', 'Marne', 'Craie', 'Sable', 'Argile', 'Base',
-  'Sommet', 'Partie', 'Couche', 'Couches', 'Banc', 'Bancs', 'Lit', 'Lits',
-  'France', 'Paris', 'Normandie', 'Bretagne', 'Est', 'Ouest', 'Nord', 'Sud',
-  'Aucun', 'Seul', 'Seule', 'Aussi', 'Ainsi', 'Mais', 'Cependant', 'Notamment',
-  'Association', 'Crinoïdes', 'Bivalves', 'Brachiopodes', 'Ammonites', 'Foraminifères',
+  'Les',
+  'La',
+  'Le',
+  'Des',
+  'De',
+  'En',
+  'Au',
+  'Aux',
+  'Par',
+  'Sur',
+  'Sous',
+  'Dans',
+  'Une',
+  'Un',
+  'Cette',
+  'Ces',
+  'Ce',
+  'Avec',
+  'Sans',
+  'Pour',
+  'Vers',
+  'Note',
+  'Figure',
+  'Planche',
+  'Tableau',
+  'Voir',
+  'Cf',
+  'Fig',
+  'Pl',
+  'Tab',
+  'Niveau',
+  'Zone',
+  'Faune',
+  'Flore',
+  'Formation',
+  'Calcaire',
+  'Marne',
+  'Craie',
+  'Sable',
+  'Argile',
+  'Base',
+  'Sommet',
+  'Partie',
+  'Couche',
+  'Couches',
+  'Banc',
+  'Bancs',
+  'Lit',
+  'Lits',
+  'France',
+  'Paris',
+  'Normandie',
+  'Bretagne',
+  'Est',
+  'Ouest',
+  'Nord',
+  'Sud',
+  'Aucun',
+  'Seul',
+  'Seule',
+  'Aussi',
+  'Ainsi',
+  'Mais',
+  'Cependant',
+  'Notamment',
+  'Association',
+  'Crinoïdes',
+  'Bivalves',
+  'Brachiopodes',
+  'Ammonites',
+  'Foraminifères',
 ])
 
 const FOSSIL_CANONICAL = _FOSSIL_CANONICAL
@@ -59,7 +125,7 @@ function extractFossilsFromText(text) {
       if (lower.includes(term) && !found.includes(term)) found.push(term)
     }
     if (found.length > 0) {
-      const mapped = found.map(t => FOSSIL_CANONICAL[t] ?? t)
+      const mapped = found.map((t) => FOSSIL_CANONICAL[t] ?? t)
       const deduped = [...new Set(mapped)]
       out[group] = deduped.slice(0, MAX_TERMS)
     }
@@ -84,7 +150,8 @@ function extractGenera(text) {
 // Extract paleontology sections from full PDF text
 function extractFossilSections(fullText) {
   // Section header patterns used in BRGM notices
-  const headerRe = /(?:^|\n[ \t]*)(?:[IVX]+\s*[-–—.]\s*|[A-Z]\s*[-–—.]\s*|\d+\s*[-–—.]\s*)?(?:Pal[eé]ontologie|Contenu\s+pal[eé]ontologique|Mat[eé]riel\s+fossile|Esp[eè]ces?\s+fossiles?|Description\s+pal[eé]ontologique|(?:La\s+)?[Ff]aune|(?:La\s+)?[Ff]lore|[Ff]ossiles?)\s*[:\n]/gm
+  const headerRe =
+    /(?:^|\n[ \t]*)(?:[IVX]+\s*[-–—.]\s*|[A-Z]\s*[-–—.]\s*|\d+\s*[-–—.]\s*)?(?:Pal[eé]ontologie|Contenu\s+pal[eé]ontologique|Mat[eé]riel\s+fossile|Esp[eè]ces?\s+fossiles?|Description\s+pal[eé]ontologique|(?:La\s+)?[Ff]aune|(?:La\s+)?[Ff]lore|[Ff]ossiles?)\s*[:\n]/gm
   const sections = []
   let m
   while ((m = headerRe.exec(fullText)) !== null) {
@@ -117,13 +184,18 @@ async function buildCarteNotationMap() {
   const map = new Map() // sheetKey → Set<NOTATION>
   if (!existsSync(DATA_WORK_DIR)) return map
   const regions = readdirSync(DATA_WORK_DIR, { withFileTypes: true })
-    .filter(d => d.isDirectory()).map(d => d.name).sort()
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name)
+    .sort()
   for (const region of regions) {
     const geojsonPath = join(DATA_WORK_DIR, region, 'S_FGEOL_merged.geojson')
     if (!existsSync(geojsonPath)) continue
     await new Promise((resolve, reject) => {
-      const rl = createInterface({ input: createReadStream(geojsonPath, { encoding: 'utf8' }), crlfDelay: Infinity })
-      rl.on('line', line => {
+      const rl = createInterface({
+        input: createReadStream(geojsonPath, { encoding: 'utf8' }),
+        crlfDelay: Infinity,
+      })
+      rl.on('line', (line) => {
         const cm = CARTE_RE.exec(line)
         const nm = NOTATION_RE.exec(line)
         if (!cm || !nm) return
@@ -148,8 +220,8 @@ function extractFossilsByFormation(fullText, realNotations) {
   // paragraph (validated on real notices — e.g. 'b' matched a bullet list
   // item, not the Briovérien map notation, and inherited an unrelated
   // fossil list).
-  const sorted = [...realNotations].filter(n => n.length >= 2).sort((a, b) => b.length - a.length)
-  const escaped = sorted.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  const sorted = [...realNotations].filter((n) => n.length >= 2).sort((a, b) => b.length - a.length)
+  const escaped = sorted.map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
   const codePattern = new RegExp(`(?:^|\\n)[ \\t]*(${escaped.join('|')})\\.[ \\t]`, 'gm')
 
   const matches = []
@@ -161,7 +233,8 @@ function extractFossilsByFormation(fullText, realNotations) {
   const byFormation = {}
   for (let i = 0; i < matches.length; i++) {
     const start = matches[i].paraStart
-    const end = i + 1 < matches.length ? matches[i + 1].paraStart : Math.min(start + 3000, fullText.length)
+    const end =
+      i + 1 < matches.length ? matches[i + 1].paraStart : Math.min(start + 3000, fullText.length)
     const fossils = extractFossilsFromText(fullText.slice(start, end))
     if (Object.keys(fossils).length === 0) continue
     const code = matches[i].code
@@ -178,20 +251,28 @@ function extractFossilsByFormation(fullText, realNotations) {
 function downloadFile(url, dest) {
   return new Promise((resolve, reject) => {
     const file = createWriteStream(dest)
-    http.get(url, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+    http
+      .get(url, (res) => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          file.destroy()
+          // All BRGM URLs are http, redirects stay http
+          return downloadFile(res.headers.location, dest).then(resolve).catch(reject)
+        }
+        if (res.statusCode !== 200) {
+          file.destroy()
+          return reject(new Error(`HTTP ${res.statusCode} for ${url}`))
+        }
+        res.pipe(file)
+        file.on('finish', () => {
+          file.close()
+          resolve()
+        })
+        file.on('error', reject)
+      })
+      .on('error', (e) => {
         file.destroy()
-        // All BRGM URLs are http, redirects stay http
-        return downloadFile(res.headers.location, dest).then(resolve).catch(reject)
-      }
-      if (res.statusCode !== 200) {
-        file.destroy()
-        return reject(new Error(`HTTP ${res.statusCode} for ${url}`))
-      }
-      res.pipe(file)
-      file.on('finish', () => { file.close(); resolve() })
-      file.on('error', reject)
-    }).on('error', (e) => { file.destroy(); reject(e) })
+        reject(e)
+      })
   })
 }
 
@@ -205,19 +286,20 @@ async function processNotice(sheet, url, realNotations, attempt = 0) {
     if (!existsSync(dest) || force) {
       await downloadFile(url, dest)
     }
-    const { stdout } = await execFileAsync('pdftotext', ['-layout', '-q', dest, '-'],
-      { maxBuffer: 20 * 1024 * 1024 })
+    const { stdout } = await execFileAsync('pdftotext', ['-layout', '-q', dest, '-'], {
+      maxBuffer: 20 * 1024 * 1024,
+    })
 
     // Dict matching on full text (robust: BRGM notices vary in structure)
     const groups = extractFossilsFromText(stdout)
 
     // Genus extraction limited to paleontology sections only (reduces noise)
     const sectionText = extractFossilSections(stdout)
-    const targetText = sectionText || stdout  // fallback to full text if no sections
+    const targetText = sectionText || stdout // fallback to full text if no sections
     const genera = extractGenera(targetText)
     if (genera.length > 0) {
       const existing = new Set(Object.values(groups).flat())
-      const newGenera = genera.filter(g => !existing.has(g)).slice(0, 10)
+      const newGenera = genera.filter((g) => !existing.has(g)).slice(0, 10)
       if (newGenera.length > 0) {
         groups['genres'] = newGenera
       }
@@ -257,7 +339,9 @@ if (!force && existsSync(outPath)) {
     const existing = JSON.parse(readFileSync(outPath, 'utf8'))
     byCarte = existing.by_carte ?? {}
     console.log(`Cache: ${Object.keys(byCarte).length} sheets already processed`)
-  } catch { /* ignore */ }
+  } catch {
+    /* ignore */
+  }
 }
 
 console.log('Building real NOTATION vocabulary per sheet (data-work)...')
@@ -271,7 +355,7 @@ console.log(`  ${carteNotationMap.size} sheets with known NOTATION vocabulary`)
 const backfillTarget = process.argv.includes('--backfill-by-notation')
 let toProcess = force
   ? sheets
-  : sheets.filter(s => {
+  : sheets.filter((s) => {
       if (!byCarte[s.sheet]) return true
       if (backfillTarget) return !byCarte[s.sheet].by_notation && carteNotationMap.has(s.sheet)
       return false
@@ -291,7 +375,11 @@ async function worker(queue) {
     const realNotations = carteNotationMap.get(sheet)
     const result = await processNotice(sheet, url, realNotations)
     if (result) {
-      byCarte[sheet] = { groups: result.groups, by_notation: result.byNotation, sources: [`notice:${sheet}`] }
+      byCarte[sheet] = {
+        groups: result.groups,
+        by_notation: result.byNotation,
+        sources: [`notice:${sheet}`],
+      }
       enriched++
       if (Object.keys(result.byNotation).length > 0) byFormationCount++
     }
@@ -307,7 +395,8 @@ await Promise.all(Array.from({ length: CONCURRENCY }, () => worker(queue)))
 console.log()
 
 // Sort keys for stable diffs
-const sortObj = obj => Object.fromEntries(Object.entries(obj).sort(([a], [b]) => a.localeCompare(b)))
+const sortObj = (obj) =>
+  Object.fromEntries(Object.entries(obj).sort(([a], [b]) => a.localeCompare(b)))
 
 const result = {
   generated: new Date().toISOString(),

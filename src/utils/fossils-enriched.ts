@@ -1,7 +1,11 @@
 import { FOSSIL_CANONICAL } from './geology-data.ts'
 import type { FossilGroups } from './geology-data.ts'
 
-type EnrichedEntry = { groups: Record<string, string[]>; by_notation?: Record<string, Record<string, string[]>>; sources: string[] }
+type EnrichedEntry = {
+  groups: Record<string, string[]>
+  by_notation?: Record<string, Record<string, string[]>>
+  sources: string[]
+}
 type EnrichedJson = {
   generated: string
   by_carte: Record<string, EnrichedEntry>
@@ -13,7 +17,7 @@ let cache: Promise<EnrichedJson> | null = null
 
 function loadEnrichedData(): Promise<EnrichedJson> {
   if (!cache) {
-    cache = import('../config/fossils-enriched.json').then(m => m.default as EnrichedJson)
+    cache = import('../config/fossils-enriched.json').then((m) => m.default as EnrichedJson)
   }
   return cache
 }
@@ -50,14 +54,17 @@ export async function getEnrichedFossils(carte: string, notation?: string): Prom
   const source = (notation && entry.by_notation?.[notation]) || entry.groups
   const out: FossilGroups = {}
   for (const [group, terms] of Object.entries(source)) {
-    const mapped = [...terms].map(t => FOSSIL_CANONICAL[t] ?? t)
+    const mapped = [...terms].map((t) => FOSSIL_CANONICAL[t] ?? t)
     const deduped = [...new Set(mapped)]
     out[group] = deduped.slice(0, MAX_TERMS)
   }
   return out
 }
 
-export function mergeFossils(extracted: FossilGroups, enriched: FossilGroups): {
+export function mergeFossils(
+  extracted: FossilGroups,
+  enriched: FossilGroups
+): {
   merged: FossilGroups
   enrichedSet: Set<string>
 } {
@@ -66,8 +73,8 @@ export function mergeFossils(extracted: FossilGroups, enriched: FossilGroups): {
 
   for (const [group, terms] of Object.entries(enriched)) {
     const existing = new Set(extracted[group] ?? [])
-    const newTerms = terms.filter(t => !existing.has(t))
-    newTerms.forEach(t => enrichedSet.add(t))
+    const newTerms = terms.filter((t) => !existing.has(t))
+    newTerms.forEach((t) => enrichedSet.add(t))
     if (newTerms.length === 0 && !merged[group]) continue
     if (!merged[group]) {
       merged[group] = newTerms.slice(0, MAX_TERMS)

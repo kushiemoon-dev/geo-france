@@ -18,10 +18,12 @@ const MIN_SIZE = 10_000 // 10 KB
 
 const src = readFileSync(MINERAL_SRC, 'utf8')
 // Extract all keys with an `image:` field
-const withImage = [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*image:\s*'([^']+)'/gm)]
-  .map(m => ({ key: m[1], path: m[2] }))
+const withImage = [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*image:\s*'([^']+)'/gm)].map((m) => ({
+  key: m[1],
+  path: m[2],
+}))
 const quarantined = new Set(
-  [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*imageStatus:\s*'quarantined'/gm)].map(m => m[1])
+  [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*imageStatus:\s*'quarantined'/gm)].map((m) => m[1])
 )
 
 let errors = 0
@@ -38,7 +40,9 @@ for (const { key, path: imgPath } of withImage) {
 
   const size = statSync(filePath).size
   if (size < MIN_SIZE) {
-    console.error(`  ERROR   ${key}: file too small (${Math.round(size / 1024)} KB < 10 KB) — likely a broken thumbnail`)
+    console.error(
+      `  ERROR   ${key}: file too small (${Math.round(size / 1024)} KB < 10 KB) — likely a broken thumbnail`
+    )
     errors++
     continue
   }
@@ -55,15 +59,21 @@ let metaCount = 0
 if (existsSync(META_FILE)) {
   try {
     metaCount = Object.keys(JSON.parse(readFileSync(META_FILE, 'utf8'))).length
-  } catch { /* ignore */ }
+  } catch {
+    /* ignore */
+  }
 }
 
-console.log(`\nImages: ${total} total | ${quarantinedCount} quarantined | ${metaCount} with metadata`)
+console.log(
+  `\nImages: ${total} total | ${quarantinedCount} quarantined | ${metaCount} with metadata`
+)
 if (errors > 0) {
   console.error(`\n✗ ${errors} error(s) — build blocked`)
   process.exit(1)
 }
 if (warnings > 0) {
-  console.warn(`⚠ ${warnings} warning(s) — ${quarantinedCount} quarantined image(s) without replacement`)
+  console.warn(
+    `⚠ ${warnings} warning(s) — ${quarantinedCount} quarantined image(s) without replacement`
+  )
 }
 console.log('✓ Image validation OK')

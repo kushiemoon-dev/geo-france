@@ -10,10 +10,7 @@ export function initSentry(): void {
     // Capture 10% of sessions for performance (free tier friendly)
     tracesSampleRate: 0.1,
     // Ignore non-actionable noise
-    ignoreErrors: [
-      'ResizeObserver loop limit exceeded',
-      'Non-Error promise rejection captured',
-    ],
+    ignoreErrors: ['ResizeObserver loop limit exceeded', 'Non-Error promise rejection captured'],
   })
 }
 

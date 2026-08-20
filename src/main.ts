@@ -36,6 +36,11 @@ map.on('load', () => {
 
   // Prefetch fossils data during browser idle time to avoid cold-load on first panel open
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(() => { prefetchEnrichedFossils() }, { timeout: 5000 })
+    requestIdleCallback(
+      () => {
+        prefetchEnrichedFossils()
+      },
+      { timeout: 5000 }
+    )
   }
 })

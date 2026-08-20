@@ -94,7 +94,9 @@
   font-size: 13px;
   font-family: inherit;
   outline: none;
-  transition: border-color 150ms ease, box-shadow 150ms ease;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
 }
 
 .geo-select:focus {
@@ -113,7 +115,7 @@
   color: var(--geo-text-secondary);
 }
 
-.geo-checkbox input[type="checkbox"] {
+.geo-checkbox input[type='checkbox'] {
   appearance: none;
   width: 16px;
   height: 16px;
@@ -125,13 +127,13 @@
   flex-shrink: 0;
 }
 
-.geo-checkbox input[type="checkbox"]:checked {
+.geo-checkbox input[type='checkbox']:checked {
   background: var(--geo-accent-strong);
   border-color: var(--geo-accent-strong);
 }
 
-.geo-checkbox input[type="checkbox"]:checked::after {
-  content: "\2713";
+.geo-checkbox input[type='checkbox']:checked::after {
+  content: '\2713';
   color: white;
   font-size: 10px;
   display: flex;

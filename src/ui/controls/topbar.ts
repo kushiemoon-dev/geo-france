@@ -95,7 +95,11 @@ function createIconButton(icon: string, title: string, onClick: () => void): HTM
   return btn
 }
 
-function togglePanel(panelSel: string, btn: HTMLElement, exclusive?: { panelSel: string; btn: HTMLElement }): void {
+function togglePanel(
+  panelSel: string,
+  btn: HTMLElement,
+  exclusive?: { panelSel: string; btn: HTMLElement }
+): void {
   const panel = document.querySelector(panelSel)
   if (!panel) return
   const isOpen = panel.classList.toggle('panel-open')
@@ -103,7 +107,10 @@ function togglePanel(panelSel: string, btn: HTMLElement, exclusive?: { panelSel:
   btn.setAttribute('aria-expanded', String(isOpen))
   if (isOpen && exclusive) {
     const other = document.querySelector(exclusive.panelSel)
-    if (other) { other.classList.remove('panel-open'); other.classList.add('panel-closed') }
+    if (other) {
+      other.classList.remove('panel-open')
+      other.classList.add('panel-closed')
+    }
     exclusive.btn.setAttribute('aria-expanded', 'false')
   }
 }
@@ -127,11 +134,15 @@ export function setupTopbar(map: maplibregl.Map): void {
   const right = document.createElement('div')
   right.className = 'topbar-right'
 
-  const layersBtn = createIconButton('&#9776;', 'Couches', () => togglePanel('.layer-toggle-panel', layersBtn))
+  const layersBtn = createIconButton('&#9776;', 'Couches', () =>
+    togglePanel('.layer-toggle-panel', layersBtn)
+  )
   layersBtn.setAttribute('aria-expanded', 'false')
   layersBtn.setAttribute('aria-controls', 'layer-toggle-panel')
 
-  const legendBtn = createIconButton('&#9673;', 'Légende', () => togglePanel('.legend-panel', legendBtn))
+  const legendBtn = createIconButton('&#9673;', 'Légende', () =>
+    togglePanel('.legend-panel', legendBtn)
+  )
   legendBtn.setAttribute('aria-expanded', 'false')
   legendBtn.setAttribute('aria-controls', 'legend-panel')
 

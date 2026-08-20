@@ -10,31 +10,79 @@ import { getRockInfo } from '../../utils/mineral-data.ts'
 // overridable per test via mockReturnValueOnce. filterFossilsByAge, mergeFossils,
 // and SORTED_RULES stay the real implementation (importOriginal): they're what
 // we want to exercise, not stand-ins.
-vi.mock('../../utils/geology-data.ts', async importOriginal => {
+vi.mock('../../utils/geology-data.ts', async (importOriginal) => {
   const actual = await importOriginal<typeof import('../../utils/geology-data.ts')>()
   return {
     ...actual,
     classifyNotation: vi.fn((n: string) => {
       if (n.startsWith('b')) {
-        return { ere: 'Precambrien', periode: 'Brioverien', systeme: '', etage: '', color: '#ccc', ageStartMa: 670, ageEndMa: 538.8, summary: 'Test formation', wikiSlug: undefined }
+        return {
+          ere: 'Precambrien',
+          periode: 'Brioverien',
+          systeme: '',
+          etage: '',
+          color: '#ccc',
+          ageStartMa: 670,
+          ageEndMa: 538.8,
+          summary: 'Test formation',
+          wikiSlug: undefined,
+        }
       }
       if (n.startsWith('cristallin')) {
-        return { ere: '', periode: 'Roches cristallines', systeme: '', etage: '', color: '#ccc', summary: 'Test formation', wikiSlug: undefined }
+        return {
+          ere: '',
+          periode: 'Roches cristallines',
+          systeme: '',
+          etage: '',
+          color: '#ccc',
+          summary: 'Test formation',
+          wikiSlug: undefined,
+        }
       }
       if (n.startsWith('cambrien')) {
-        return { ere: 'Paleozoique', periode: 'Cambrien', systeme: '', etage: '', color: '#ccc', ageStartMa: 538.8, ageEndMa: 485.4, summary: 'Test formation', wikiSlug: undefined }
+        return {
+          ere: 'Paleozoique',
+          periode: 'Cambrien',
+          systeme: '',
+          etage: '',
+          color: '#ccc',
+          ageStartMa: 538.8,
+          ageEndMa: 485.4,
+          summary: 'Test formation',
+          wikiSlug: undefined,
+        }
       }
       if (n.startsWith('cretace')) {
-        return { ere: 'Mesozoique', periode: 'Cretace', systeme: '', etage: '', color: '#ccc', ageStartMa: 145.0, ageEndMa: 66.0, summary: 'Test formation', wikiSlug: undefined }
+        return {
+          ere: 'Mesozoique',
+          periode: 'Cretace',
+          systeme: '',
+          etage: '',
+          color: '#ccc',
+          ageStartMa: 145.0,
+          ageEndMa: 66.0,
+          summary: 'Test formation',
+          wikiSlug: undefined,
+        }
       }
-      return { ere: 'Mesozoique', periode: 'Jurassique', systeme: '', etage: '', color: '#ccc', ageStartMa: 201, ageEndMa: 145, summary: 'Test formation', wikiSlug: undefined }
+      return {
+        ere: 'Mesozoique',
+        periode: 'Jurassique',
+        systeme: '',
+        etage: '',
+        color: '#ccc',
+        ageStartMa: 201,
+        ageEndMa: 145,
+        summary: 'Test formation',
+        wikiSlug: undefined,
+      }
     }),
     extractLithology: vi.fn(() => []),
     extractFossils: vi.fn(() => ({ ammonites: ['ammonite'] })),
   }
 })
 
-vi.mock('../../utils/fossils-enriched.ts', async importOriginal => {
+vi.mock('../../utils/fossils-enriched.ts', async (importOriginal) => {
   const actual = await importOriginal<typeof import('../../utils/fossils-enriched.ts')>()
   return {
     ...actual,
@@ -99,7 +147,7 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
     }
     openDetailPanel(feature as never)
     // Wait for the async renderDetailContent promise to resolve and update the DOM
-    await new Promise(resolve => setTimeout(resolve, 0))
+    await new Promise((resolve) => setTimeout(resolve, 0))
     const panel = document.querySelector('.detail-panel')
     expect(panel).not.toBeNull()
     expect(panel!.innerHTML).not.toContain('Fossiles')
@@ -120,7 +168,7 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
       },
     }
     openDetailPanel(feature as never)
-    await new Promise(resolve => setTimeout(resolve, 0))
+    await new Promise((resolve) => setTimeout(resolve, 0))
     const panel = document.querySelector('.detail-panel')
     expect(panel).not.toBeNull()
     expect(panel!.innerHTML).not.toContain('Fossiles')
@@ -136,13 +184,13 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
     const feature = {
       properties: {
         NOTATION: 'k1',
-        DESCR: 'Schistes d\'Urville',
+        DESCR: "Schistes d'Urville",
         LEGENDE: '',
         CARTE: '0123',
       },
     }
     openDetailPanel(feature as never)
-    await new Promise(resolve => setTimeout(resolve, 0))
+    await new Promise((resolve) => setTimeout(resolve, 0))
     const panel = document.querySelector('.detail-panel')
     expect(panel).not.toBeNull()
     expect(panel!.innerHTML).not.toContain('Fossiles')
@@ -162,7 +210,7 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
       },
     }
     openDetailPanel(feature as never)
-    await new Promise(resolve => setTimeout(resolve, 0))
+    await new Promise((resolve) => setTimeout(resolve, 0))
     const panel = document.querySelector('.detail-panel')
     expect(panel).not.toBeNull()
     expect(panel!.innerHTML).toContain('Fossiles')
@@ -171,7 +219,10 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
 
   it('filtre les ammonites (bleeding feuille BRGM) sur une formation cambrienne, garde les trilobites', async () => {
     vi.mocked(extractFossils).mockReturnValueOnce({})
-    vi.mocked(getEnrichedFossils).mockResolvedValueOnce({ ammonites: ['ammonite'], trilobites: ['trilobite'] })
+    vi.mocked(getEnrichedFossils).mockResolvedValueOnce({
+      ammonites: ['ammonite'],
+      trilobites: ['trilobite'],
+    })
     const { openDetailPanel } = await import('../detail-panel.ts')
     const feature = {
       properties: {
@@ -182,7 +233,7 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
       },
     }
     openDetailPanel(feature as never)
-    await new Promise(resolve => setTimeout(resolve, 0))
+    await new Promise((resolve) => setTimeout(resolve, 0))
     const panel = document.querySelector('.detail-panel')
     expect(panel).not.toBeNull()
     expect(panel!.innerHTML).toContain('trilobite')
@@ -191,7 +242,10 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
 
   it('filtre les trilobites (bleeding feuille BRGM) sur une formation crétacée, garde les rudistes', async () => {
     vi.mocked(extractFossils).mockReturnValueOnce({})
-    vi.mocked(getEnrichedFossils).mockResolvedValueOnce({ trilobites: ['trilobite'], rudistes: ['rudiste'] })
+    vi.mocked(getEnrichedFossils).mockResolvedValueOnce({
+      trilobites: ['trilobite'],
+      rudistes: ['rudiste'],
+    })
     const { openDetailPanel } = await import('../detail-panel.ts')
     const feature = {
       properties: {
@@ -202,7 +256,7 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
       },
     }
     openDetailPanel(feature as never)
-    await new Promise(resolve => setTimeout(resolve, 0))
+    await new Promise((resolve) => setTimeout(resolve, 0))
     const panel = document.querySelector('.detail-panel')
     expect(panel).not.toBeNull()
     expect(panel!.innerHTML).toContain('rudiste')

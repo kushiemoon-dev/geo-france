@@ -27,21 +27,46 @@ const ROOT = join(__dirname, '..')
 
 const PREFIX_RULES_RAW = [
   { prefixes: ['LMz-T', 'LMz'] },
-  { prefixes: ['MzM'] }, { prefixes: ['MzS'] }, { prefixes: ['MzR'] }, { prefixes: ['Mz'] },
+  { prefixes: ['MzM'] },
+  { prefixes: ['MzS'] },
+  { prefixes: ['MzR'] },
+  { prefixes: ['Mz'] },
   { prefixes: ['TLB'] },
   { prefixes: ['Lã1', 'Lã5', 'Lã'] },
-  { prefixes: ['Mp-u', 'Mp'] }, { prefixes: ['Mu'] }, { prefixes: ['Mv'] }, { prefixes: ['Mx'] }, { prefixes: ['M'] },
+  { prefixes: ['Mp-u', 'Mp'] },
+  { prefixes: ['Mu'] },
+  { prefixes: ['Mv'] },
+  { prefixes: ['Mx'] },
+  { prefixes: ['M'] },
   { prefixes: ['Q'] },
-  { prefixes: ['n4'] }, { prefixes: ['n2'] },
+  { prefixes: ['n4'] },
+  { prefixes: ['n2'] },
   { prefixes: ['a1'] },
   { prefixes: ['aã'] },
-  { prefixes: ['e7'] }, { prefixes: ['e6'] }, { prefixes: ['e5'] }, { prefixes: ['e3', 'e4'] }, { prefixes: ['e1', 'e2'] },
-  { prefixes: ['c6'] }, { prefixes: ['c5'] }, { prefixes: ['c4'] }, { prefixes: ['c3'] }, { prefixes: ['c2'] }, { prefixes: ['c1'] },
-  { prefixes: ['n6'] }, { prefixes: ['n5'] },
-  { prefixes: ['j7'] }, { prefixes: ['j6'] }, { prefixes: ['j5'] },
-  { prefixes: ['j4'] }, { prefixes: ['j3'] },
-  { prefixes: ['j2'] }, { prefixes: ['j1'] },
-  { prefixes: ['l4'] }, { prefixes: ['l3'] }, { prefixes: ['l2'] }, { prefixes: ['l1'] },
+  { prefixes: ['e7'] },
+  { prefixes: ['e6'] },
+  { prefixes: ['e5'] },
+  { prefixes: ['e3', 'e4'] },
+  { prefixes: ['e1', 'e2'] },
+  { prefixes: ['c6'] },
+  { prefixes: ['c5'] },
+  { prefixes: ['c4'] },
+  { prefixes: ['c3'] },
+  { prefixes: ['c2'] },
+  { prefixes: ['c1'] },
+  { prefixes: ['n6'] },
+  { prefixes: ['n5'] },
+  { prefixes: ['j7'] },
+  { prefixes: ['j6'] },
+  { prefixes: ['j5'] },
+  { prefixes: ['j4'] },
+  { prefixes: ['j3'] },
+  { prefixes: ['j2'] },
+  { prefixes: ['j1'] },
+  { prefixes: ['l4'] },
+  { prefixes: ['l3'] },
+  { prefixes: ['l2'] },
+  { prefixes: ['l1'] },
   { prefixes: ['Hydro', 'GLB'] },
   { prefixes: ['SGH'] },
   { prefixes: ['SL', 'VL'] },
@@ -72,9 +97,9 @@ const PREFIX_RULES_RAW = [
   { prefixes: ['¡'] },
 ]
 
-const SORTED_RULES = PREFIX_RULES_RAW
-  .flatMap(r => r.prefixes.map(prefix => prefix))
-  .sort((a, b) => b.length - a.length)
+const SORTED_RULES = PREFIX_RULES_RAW.flatMap((r) => r.prefixes.map((prefix) => prefix)).sort(
+  (a, b) => b.length - a.length
+)
 
 function classifyNotation(notation) {
   if (!notation) return null
@@ -106,9 +131,12 @@ const DESCR_RE = /"DESCR":\s*"([^"]*)"/
 
 async function scanGeojson(filePath, unmatched) {
   return new Promise((resolve, reject) => {
-    const rl = createInterface({ input: createReadStream(filePath, { encoding: 'utf8' }), crlfDelay: Infinity })
+    const rl = createInterface({
+      input: createReadStream(filePath, { encoding: 'utf8' }),
+      crlfDelay: Infinity,
+    })
     let count = 0
-    rl.on('line', line => {
+    rl.on('line', (line) => {
       const nm = NOTATION_RE.exec(line)
       if (!nm) return
       const notation = nm[1]
@@ -126,8 +154,8 @@ async function scanGeojson(filePath, unmatched) {
 }
 
 const regions = readdirSync(dataWorkDir, { withFileTypes: true })
-  .filter(d => d.isDirectory())
-  .map(d => d.name)
+  .filter((d) => d.isDirectory())
+  .map((d) => d.name)
   .sort()
 
 const unmatched = new Map() // notation → { count, descr }
@@ -145,7 +173,9 @@ for (const region of regions) {
 const totalUnmatched = [...unmatched.values()].reduce((s, e) => s + e.count, 0)
 console.log(`\nTotal features       : ${totalFeatures}`)
 console.log(`Distinct grey codes  : ${unmatched.size}`)
-console.log(`Grey features        : ${totalUnmatched} (${(100 * totalUnmatched / totalFeatures).toFixed(1)}%)`)
+console.log(
+  `Grey features        : ${totalUnmatched} (${((100 * totalUnmatched) / totalFeatures).toFixed(1)}%)`
+)
 
 const sorted = [...unmatched.entries()].sort((a, b) => b[1].count - a[1].count)
 console.log('\n── Unclassified codes, sorted by frequency ──────────────────────')
@@ -154,5 +184,13 @@ for (const [notation, { count, descr }] of sorted) {
 }
 
 const outPath = join(ROOT, 'public/images/rocks/notation-color-gaps.json')
-writeFileSync(outPath, JSON.stringify(sorted.map(([notation, v]) => ({ notation, ...v })), null, 2) + '\n', 'utf8')
+writeFileSync(
+  outPath,
+  JSON.stringify(
+    sorted.map(([notation, v]) => ({ notation, ...v })),
+    null,
+    2
+  ) + '\n',
+  'utf8'
+)
 console.log(`\nWritten: ${outPath}`)

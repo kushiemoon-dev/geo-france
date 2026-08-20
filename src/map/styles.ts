@@ -8,8 +8,8 @@ const geologyFillLayer: LayerSpecification = {
   'source-layer': 'S_FGEOL',
   paint: {
     'fill-color': buildColorExpression() as never,
-    'fill-opacity': 0.65
-  }
+    'fill-opacity': 0.65,
+  },
 }
 
 const geologyOutlineLayer: LayerSpecification = {
@@ -20,8 +20,8 @@ const geologyOutlineLayer: LayerSpecification = {
   paint: {
     'line-color': '#333333',
     'line-width': 0.5,
-    'line-opacity': 0.6
-  }
+    'line-opacity': 0.6,
+  },
 }
 
 export const faultsMajorLayer: LayerSpecification = {
@@ -32,14 +32,10 @@ export const faultsMajorLayer: LayerSpecification = {
   filter: ['==', ['get', 'CODE'], 1],
   paint: {
     'line-color': '#CC0000',
-    'line-width': [
-      'interpolate', ['linear'], ['zoom'],
-      8, 1,
-      14, 3
-    ],
+    'line-width': ['interpolate', ['linear'], ['zoom'], 8, 1, 14, 3],
     'line-opacity': 0.8,
-    'line-dasharray': [4, 2]
-  }
+    'line-dasharray': [4, 2],
+  },
 }
 
 export const faultsMinorLayer: LayerSpecification = {
@@ -51,14 +47,10 @@ export const faultsMinorLayer: LayerSpecification = {
   minzoom: 8,
   paint: {
     'line-color': '#CC0000',
-    'line-width': [
-      'interpolate', ['linear'], ['zoom'],
-      8, 1,
-      14, 3
-    ],
+    'line-width': ['interpolate', ['linear'], ['zoom'], 8, 1, 14, 3],
     'line-opacity': 0.8,
-    'line-dasharray': [4, 2]
-  }
+    'line-dasharray': [4, 2],
+  },
 }
 
 const dipPointsLayer: LayerSpecification = {
@@ -80,7 +72,7 @@ const dipPointsLayer: LayerSpecification = {
     'icon-halo-color': '#ffffff',
     'icon-halo-width': 1,
   },
-  minzoom: 8
+  minzoom: 8,
 }
 
 export const surchargeLayer: LayerSpecification = {
@@ -92,8 +84,8 @@ export const surchargeLayer: LayerSpecification = {
   paint: {
     'fill-color': '#9933CC',
     'fill-opacity': 0.25,
-    'fill-outline-color': '#9933CC'
-  }
+    'fill-outline-color': '#9933CC',
+  },
 }
 
 const dipLabelsLayer: LayerSpecification = {
@@ -107,14 +99,14 @@ const dipLabelsLayer: LayerSpecification = {
     'text-size': 11,
     'text-offset': [1, 0],
     'text-anchor': 'left',
-    'text-allow-overlap': false
+    'text-allow-overlap': false,
   },
   paint: {
     'text-color': '#1a1a1a',
     'text-halo-color': '#ffffff',
-    'text-halo-width': 1.5
+    'text-halo-width': 1.5,
   },
-  minzoom: 8
+  minzoom: 8,
 }
 
 const geologyHighlightLayer: LayerSpecification = {
@@ -125,9 +117,9 @@ const geologyHighlightLayer: LayerSpecification = {
   paint: {
     'line-color': '#FFFFFF',
     'line-width': 3,
-    'line-opacity': 0.9
+    'line-opacity': 0.9,
   },
-  filter: ['==', 'OBJECTID', '']
+  filter: ['==', 'OBJECTID', ''],
 }
 
 const formationLabelsLayer: LayerSpecification = {
@@ -146,8 +138,8 @@ const formationLabelsLayer: LayerSpecification = {
   paint: {
     'text-color': '#1a1a1a',
     'text-halo-color': '#ffffff',
-    'text-halo-width': 1.5
-  }
+    'text-halo-width': 1.5,
+  },
 }
 
 const ALL_LAYERS = [
@@ -164,8 +156,12 @@ const ALL_LAYERS = [
 
 export function createLayersForRegion(regionId: string): LayerSpecification[] {
   const sourceId = `geology-${regionId}`
-  return ALL_LAYERS.map(layer => {
-    const cloned = { ...layer, id: `${layer.id}__${regionId}`, source: sourceId } as LayerSpecification
+  return ALL_LAYERS.map((layer) => {
+    const cloned = {
+      ...layer,
+      id: `${layer.id}__${regionId}`,
+      source: sourceId,
+    } as LayerSpecification
     const existingLayout = (layer as { layout?: Record<string, unknown> }).layout ?? {}
     ;(cloned as Record<string, unknown>).layout = { ...existingLayout, visibility: 'none' }
     return cloned
@@ -173,5 +169,5 @@ export function createLayersForRegion(regionId: string): LayerSpecification[] {
 }
 
 export function getRegionLayerIds(regionId: string): string[] {
-  return ALL_LAYERS.map(l => `${l.id}__${regionId}`)
+  return ALL_LAYERS.map((l) => `${l.id}__${regionId}`)
 }

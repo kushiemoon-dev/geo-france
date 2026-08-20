@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest'
-import { extractFossils, extractLithology, classifyNotation, filterFossilsByAge } from '../geology-data.ts'
+import {
+  extractFossils,
+  extractLithology,
+  classifyNotation,
+  filterFossilsByAge,
+} from '../geology-data.ts'
 
 describe('extractFossils', () => {
   it('détecte les ammonites dans un nom de formation', () => {
@@ -9,7 +14,11 @@ describe('extractFossils', () => {
 
   it('détecte les bivalves', () => {
     const result = extractFossils('Marnes à huîtres et bivalves')
-    expect(Object.values(result).flat().some(t => ['huître', 'bivalve'].includes(t))).toBe(true)
+    expect(
+      Object.values(result)
+        .flat()
+        .some((t) => ['huître', 'bivalve'].includes(t))
+    ).toBe(true)
   })
 
   it('retourne {} si texte vide', () => {
@@ -27,7 +36,8 @@ describe('filterFossilsByAge', () => {
   it('retire les ammonites (Jurassique-Crétacé) sur une formation cambrienne', () => {
     const result = filterFossilsByAge(
       { ammonites: ['ammonite'], trilobites: ['trilobite'] },
-      538.8, 485.4, // Cambrien
+      538.8,
+      485.4 // Cambrien
     )
     expect(result.ammonites).toBeUndefined()
     expect(result.trilobites).toEqual(['trilobite'])
@@ -36,7 +46,8 @@ describe('filterFossilsByAge', () => {
   it('retire les trilobites (éteints fin-Permien) sur une formation crétacée', () => {
     const result = filterFossilsByAge(
       { trilobites: ['trilobite'], rudistes: ['rudiste'] },
-      145.0, 66.0, // Cretace
+      145.0,
+      66.0 // Cretace
     )
     expect(result.trilobites).toBeUndefined()
     expect(result.rudistes).toEqual(['rudiste'])
@@ -67,7 +78,7 @@ describe('extractLithology', () => {
   })
 
   it('détecte flysch et molasse (faciès alpins Cénozoïque/Paléogène)', () => {
-    expect(extractLithology('Flyschs indifférenciés (des Aiguilles d\'Arves)')).toContain('flysch')
+    expect(extractLithology("Flyschs indifférenciés (des Aiguilles d'Arves)")).toContain('flysch')
     expect(extractLithology('Molasse rouge du Bas-Dauphiné')).toContain('molasse')
   })
 
