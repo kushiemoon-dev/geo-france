@@ -24,7 +24,7 @@ function evalCondition(cond: unknown[], notation: string): boolean {
     return notation.slice(0, len) === expected
   }
   if (cond[0] === 'any') {
-    return (cond.slice(1) as unknown[][]).some(c => evalCondition(c, notation))
+    return (cond.slice(1) as unknown[][]).some((c) => evalCondition(c, notation))
   }
   return false
 }

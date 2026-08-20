@@ -19,16 +19,12 @@ function getContainer(): HTMLElement {
   return container
 }
 
-export function showToast(
-  message: string,
-  type: ToastType = 'info',
-  duration = 5000
-): void {
+export function showToast(message: string, type: ToastType = 'info', duration = 5000): void {
   const el = getContainer()
 
   // Enforce max toasts: remove oldest
   while (el.children.length >= MAX_TOASTS) {
-    el.removeChild(el.children[0])
+    el.removeChild(el.children[0]!)
   }
 
   if (type === 'error') {
@@ -50,10 +46,16 @@ export function showToast(
 
   const timer = setTimeout(() => dismiss(toast), duration)
 
-  const dismissHandler = () => { clearTimeout(timer); dismiss(toast) }
+  const dismissHandler = () => {
+    clearTimeout(timer)
+    dismiss(toast)
+  }
   toast.addEventListener('click', dismissHandler)
   toast.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dismissHandler() }
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      dismissHandler()
+    }
   })
 }
 

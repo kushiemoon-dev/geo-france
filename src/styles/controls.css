@@ -110,7 +110,7 @@
   color: var(--geo-text-primary);
 }
 
-.layer-toggle-item input[type="checkbox"] {
+.layer-toggle-item input[type='checkbox'] {
   accent-color: var(--geo-accent);
 }
 
@@ -194,7 +194,9 @@
   color: var(--geo-text-secondary);
   background: var(--geo-bg-elevated);
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 .mode-btn:hover {
@@ -215,7 +217,9 @@
 /* Collapsible panel states */
 .layer-toggle-panel,
 .legend-panel {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .layer-toggle-panel.panel-closed,

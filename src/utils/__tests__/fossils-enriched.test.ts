@@ -4,7 +4,14 @@ import { FOSSIL_CANONICAL, classifyNotation, extractLithology } from '../geology
 import { FOSSIL_GROUPS, FOSSIL_CANONICAL as FC_VOCAB } from '../fossil-vocabulary.ts'
 import fossilsJson from '../../config/fossils-enriched.json'
 
-const BANNED_FROM_AUTRES = ['fossile', 'fossiles', 'fossilifère', 'fossilifere', 'bioclastes', 'bioclaste']
+const BANNED_FROM_AUTRES = [
+  'fossile',
+  'fossiles',
+  'fossilifère',
+  'fossilifere',
+  'bioclastes',
+  'bioclaste',
+]
 
 describe('getEnrichedFossils', () => {
   it('retourne {} pour une carte vide', async () => {
@@ -51,7 +58,7 @@ describe('getEnrichedFossils — by_notation (B2, ré-attribution par formation)
     vi.resetModules()
   })
 
-  it('retombe sur groups (sheet-level) quand la notation demandée n\'a pas de by_notation', async () => {
+  it("retombe sur groups (sheet-level) quand la notation demandée n'a pas de by_notation", async () => {
     vi.resetModules()
     vi.doMock('../../config/fossils-enriched.json', () => ({
       default: {
@@ -72,7 +79,7 @@ describe('getEnrichedFossils — by_notation (B2, ré-attribution par formation)
     vi.resetModules()
   })
 
-  it('retombe sur groups quand aucune notation n\'est passée (compat B1)', async () => {
+  it("retombe sur groups quand aucune notation n'est passée (compat B1)", async () => {
     vi.resetModules()
     vi.doMock('../../config/fossils-enriched.json', () => ({
       default: {
@@ -119,28 +126,37 @@ describe('mergeFossils', () => {
 
 describe('fossils-enriched.json — singulier uniquement', () => {
   it('aucun terme dans le JSON ne doit être une clé plurielle (FOSSIL_CANONICAL key → different value)', () => {
-    const byCarte = (fossilsJson as { by_carte: Record<string, { groups: Record<string, string[]> }> }).by_carte
-    const allTerms: string[] = Object.values(byCarte)
-      .flatMap(v => Object.values(v.groups).flat())
+    const byCarte = (
+      fossilsJson as { by_carte: Record<string, { groups: Record<string, string[]> }> }
+    ).by_carte
+    const allTerms: string[] = Object.values(byCarte).flatMap((v) => Object.values(v.groups).flat())
 
-    const violations = allTerms.filter(t => {
+    const violations = allTerms.filter((t) => {
       const canonical = FOSSIL_CANONICAL[t]
       return canonical !== undefined && canonical !== t
     })
 
-    expect(violations, `Termes pluriels non canonicalisés dans JSON : ${violations.slice(0, 10).join(', ')}`).toHaveLength(0)
+    expect(
+      violations,
+      `Termes pluriels non canonicalisés dans JSON : ${violations.slice(0, 10).join(', ')}`
+    ).toHaveLength(0)
   })
 })
 
 describe('fossil-vocabulary — termes bannis absents du groupe autres', () => {
   it('FOSSIL_GROUPS.autres ne contient aucun terme générique banni', () => {
     const autresTerms = FOSSIL_GROUPS['autres'] ?? []
-    const found = BANNED_FROM_AUTRES.filter(t => autresTerms.includes(t))
-    expect(found, `Termes bannis encore dans FOSSIL_GROUPS.autres : ${found.join(', ')}`).toHaveLength(0)
+    const found = BANNED_FROM_AUTRES.filter((t) => autresTerms.includes(t))
+    expect(
+      found,
+      `Termes bannis encore dans FOSSIL_GROUPS.autres : ${found.join(', ')}`
+    ).toHaveLength(0)
   })
 
   it('fossils-enriched.json ne contient aucun terme banni dans le groupe autres', () => {
-    const byCarte = (fossilsJson as { by_carte: Record<string, { groups: Record<string, string[]> }> }).by_carte
+    const byCarte = (
+      fossilsJson as { by_carte: Record<string, { groups: Record<string, string[]> }> }
+    ).by_carte
     const violations: string[] = []
     for (const [carte, v] of Object.entries(byCarte)) {
       const autres = v.groups?.autres ?? []
@@ -148,7 +164,10 @@ describe('fossil-vocabulary — termes bannis absents du groupe autres', () => {
         if (BANNED_FROM_AUTRES.includes(t)) violations.push(`${carte}:${t}`)
       }
     }
-    expect(violations, `Termes bannis dans fossils-enriched.json/autres : ${violations.slice(0, 10).join(', ')}`).toHaveLength(0)
+    expect(
+      violations,
+      `Termes bannis dans fossils-enriched.json/autres : ${violations.slice(0, 10).join(', ')}`
+    ).toHaveLength(0)
   })
 
   it('FOSSIL_CANONICAL et FOSSIL_GROUPS sont définis dans fossil-vocabulary.ts (re-export cohérent)', () => {
@@ -185,7 +204,9 @@ describe('T4 — règles précambrien / magmatique', () => {
     // 'b'-prefixed keys are Precambrian — if a notice contained ONLY these formations,
     // the script should clear them. This test validates that classifyNotation is consistent.
     const precambrienNotations = ['b', 'b1', 'b2', 'b2S', 'b2G']
-    const allPrecambrien = precambrienNotations.every(n => classifyNotation(n).ere === 'Precambrien')
+    const allPrecambrien = precambrienNotations.every(
+      (n) => classifyNotation(n).ere === 'Precambrien'
+    )
     expect(allPrecambrien).toBe(true)
   })
 })

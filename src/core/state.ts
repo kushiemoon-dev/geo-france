@@ -14,7 +14,7 @@ const initialState: AppState = {
     'faults-minor': true,
     'dip-points': true,
     'dip-labels': true,
-    'surcharge': true,
+    surcharge: true,
   },
   detailOpen: false,
   loading: false,
@@ -35,6 +35,8 @@ export const store = {
 
   subscribe(listener: Listener): () => void {
     listeners.add(listener)
-    return () => { listeners.delete(listener) }
+    return () => {
+      listeners.delete(listener)
+    }
   },
 }

@@ -60,13 +60,16 @@ const regionRows = []
 for (const [region, notices] of Object.entries(regionBlocks)) {
   totalNotices += notices.length
 
-  const urlIssues = notices.filter(n => {
+  const urlIssues = notices.filter((n) => {
     if (!BRGM_URL_RE.test(n.url)) return true
     const urlSheet = n.url.match(BRGM_URL_RE)?.[1]
     return urlSheet !== n.sheet
   })
 
-  const examples = notices.slice(0, 3).map(n => `\`${n.sheet}\``).join(', ')
+  const examples = notices
+    .slice(0, 3)
+    .map((n) => `\`${n.sheet}\``)
+    .join(', ')
 
   regionRows.push({ region, count: notices.length, urlIssues: urlIssues.length, examples, notices })
 }
@@ -76,26 +79,30 @@ regionRows.sort((a, b) => b.count - a.count)
 
 // Build the markdown table
 const tableHeader = `| Region | Notices | Invalid URLs | Sample sheets |`
-const tableSep =    `|--------|--------:|:-------------:|-----------------|`
-const tableRows = regionRows.map(r =>
-  `| \`${r.region}\` | ${r.count} | ${r.urlIssues > 0 ? `**${r.urlIssues}**` : '0'} | ${r.examples} |`
+const tableSep = `|--------|--------:|:-------------:|-----------------|`
+const tableRows = regionRows.map(
+  (r) =>
+    `| \`${r.region}\` | ${r.count} | ${r.urlIssues > 0 ? `**${r.urlIssues}**` : '0'} | ${r.examples} |`
 )
 
 // Invalid URL detail section
 const invalidSection = regionRows
-  .filter(r => r.urlIssues > 0)
-  .flatMap(r => {
-    const bad = r.notices.filter(n => {
+  .filter((r) => r.urlIssues > 0)
+  .flatMap((r) => {
+    const bad = r.notices.filter((n) => {
       if (!BRGM_URL_RE.test(n.url)) return true
       return n.url.match(BRGM_URL_RE)?.[1] !== n.sheet
     })
-    return bad.map(n => `- \`${r.region}\` sheet \`${n.sheet}\` → \`${n.url}\``)
+    return bad.map((n) => `- \`${r.region}\` sheet \`${n.sheet}\` → \`${n.url}\``)
   })
 
 // Duplicates section
-const dupSection = duplicateSheets.length > 0
-  ? duplicateSheets.map(d => `- sheet \`${d.sheet}\` (\`${d.name}\`) duplicated in \`${d.region}\``)
-  : ['_No duplicates detected._']
+const dupSection =
+  duplicateSheets.length > 0
+    ? duplicateSheets.map(
+        (d) => `- sheet \`${d.sheet}\` (\`${d.name}\`) duplicated in \`${d.region}\``
+      )
+    : ['_No duplicates detected._']
 
 const report = `# BRGM Notice Audit
 
@@ -135,7 +142,9 @@ ${dupSection.join('\n')}
 
 writeFileSync(join(ROOT, 'docs/notices-audit-report.md'), report, 'utf8')
 console.log(`Report generated: docs/notices-audit-report.md`)
-console.log(`  ${regionRows.length} regions, ${totalNotices} notices, ${allSheets.size} unique sheets`)
+console.log(
+  `  ${regionRows.length} regions, ${totalNotices} notices, ${allSheets.size} unique sheets`
+)
 if (duplicateSheets.length) console.warn(`  ⚠ ${duplicateSheets.length} cross-region duplicates`)
 const totalInvalid = regionRows.reduce((s, r) => s + r.urlIssues, 0)
 if (totalInvalid) console.warn(`  ⚠ ${totalInvalid} invalid URLs`)

@@ -1,6 +1,14 @@
 import type maplibregl from 'maplibre-gl'
 export type FeatureLike = { properties: Record<string, unknown> }
-import { classifyNotation, extractLithology, extractFossils, filterFossilsByAge, LITHO_WIKI_SLUGS, FOSSIL_TERM_WIKI_SLUGS, METAMORPHISM_WIKI_SLUGS } from '../utils/geology-data.ts'
+import {
+  classifyNotation,
+  extractLithology,
+  extractFossils,
+  filterFossilsByAge,
+  LITHO_WIKI_SLUGS,
+  FOSSIL_TERM_WIKI_SLUGS,
+  METAMORPHISM_WIKI_SLUGS,
+} from '../utils/geology-data.ts'
 import type { FossilGroups } from '../utils/geology-data.ts'
 import { getEnrichedFossils, mergeFossils } from '../utils/fossils-enriched.ts'
 import type { GeologyEntry } from '../utils/geology-data.ts'
@@ -21,20 +29,31 @@ function getNotices() {
   return (_noticesCache ??= import('../config/notices.ts'))
 }
 
-function renderTags(items: string[], className: string, wikiSlugs?: Record<string, string>, enrichedSet?: Set<string>): string {
+function renderTags(
+  items: string[],
+  className: string,
+  wikiSlugs?: Record<string, string>,
+  enrichedSet?: Set<string>
+): string {
   if (items.length === 0) return ''
-  return items.map(t => {
-    const slug = wikiSlugs?.[t]
-    const extra = enrichedSet?.has(t) ? ' tag-enriched' : ''
-    if (slug) {
-      const url = `https://fr.wikipedia.org/wiki/${encodeURIComponent(slug)}`
-      return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="popup-tag ${className}${extra}">${escapeHtml(t)}</a>`
-    }
-    return `<span class="popup-tag ${className}${extra}">${escapeHtml(t)}</span>`
-  }).join('')
+  return items
+    .map((t) => {
+      const slug = wikiSlugs?.[t]
+      const extra = enrichedSet?.has(t) ? ' tag-enriched' : ''
+      if (slug) {
+        const url = `https://fr.wikipedia.org/wiki/${encodeURIComponent(slug)}`
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="popup-tag ${className}${extra}">${escapeHtml(t)}</a>`
+      }
+      return `<span class="popup-tag ${className}${extra}">${escapeHtml(t)}</span>`
+    })
+    .join('')
 }
 
-async function renderAgeSection(geo: GeologyEntry, notation: string, carte: string): Promise<string> {
+async function renderAgeSection(
+  geo: GeologyEntry,
+  notation: string,
+  carte: string
+): Promise<string> {
   function makeRow(label: string, valueHtml: string): string {
     return `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${valueHtml}</span></div>`
   }
@@ -61,7 +80,7 @@ async function renderAgeSection(geo: GeologyEntry, notation: string, carte: stri
     const { NOTICES } = await getNotices()
     const regionNotices = NOTICES[regionId] ?? []
     const paddedCarte = carte.padStart(4, '0')
-    const notice = regionNotices.find(n => n.sheet === paddedCarte)
+    const notice = regionNotices.find((n) => n.sheet === paddedCarte)
     if (notice) {
       carteHtml = `<a href="${escapeHtml(notice.url)}" target="_blank" rel="noopener noreferrer">feuille ${escapeHtml(carte)} ↗</a>`
     } else {
@@ -97,7 +116,9 @@ async function renderPetrographySection(lithology: string[]): Promise<string> {
   const originSlug = rockInfo.origin ? METAMORPHISM_WIKI_SLUGS[rockInfo.origin] : undefined
   const originHtml = originSlug
     ? ` <a href="https://fr.wikipedia.org/wiki/${encodeURIComponent(originSlug)}" target="_blank" rel="noopener noreferrer">${escapeHtml(rockInfo.origin)}</a>`
-    : (rockInfo.origin ? ` ${escapeHtml(rockInfo.origin)}` : '')
+    : rockInfo.origin
+      ? ` ${escapeHtml(rockInfo.origin)}`
+      : ''
   const typeHtml = `Roche ${escapeHtml(rockInfo.type)}${originHtml}`
 
   const typeRowHtml = `<div class="detail-row"><span class="detail-row-label">${escapeHtml('Type')}</span><span class="detail-row-value">${typeHtml}</span></div>`
@@ -108,40 +129,98 @@ async function renderPetrographySection(lithology: string[]): Promise<string> {
 
   const rowsHtml = [
     typeRowHtml,
-    ...otherRows.map(([label, value]) =>
-      `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${escapeHtml(value)}</span></div>`
+    ...otherRows.map(
+      ([label, value]) =>
+        `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${escapeHtml(value)}</span></div>`
     ),
   ].join('')
 
-  const barsHtml = rockInfo.minerals.map(m => {
-    const pctNum = parseInt(m.percent, 10)
-    const color = getMineralBarColor(m.name)
-    const displayName = m.name.charAt(0).toUpperCase() + m.name.slice(1)
-    const mineralInfo = getMineralInfo(m.name)
-    const formulaLine = mineralInfo
-      ? `<div class="mineral-bar-formula">${mineralInfo.formula}</div>`
-      : ''
+  const barsHtml = rockInfo.minerals
+    .map((m) => {
+      const pctNum = parseInt(m.percent, 10)
+      const color = getMineralBarColor(m.name)
+      const displayName = m.name.charAt(0).toUpperCase() + m.name.slice(1)
+      const mineralInfo = getMineralInfo(m.name)
+      const formulaLine = mineralInfo
+        ? `<div class="mineral-bar-formula">${mineralInfo.formula}</div>`
+        : ''
 
-    return `<div class="mineral-bar-row">` +
-      `<span class="mineral-bar-name">${escapeHtml(displayName)}</span>` +
-      `<div class="mineral-bar-track"><div class="mineral-bar-fill" style="width:${pctNum}%;background:${color}"></div></div>` +
-      `<span class="mineral-bar-pct">${escapeHtml(m.percent)}</span>` +
-      `</div>${formulaLine}`
-  }).join('')
+      return (
+        `<div class="mineral-bar-row">` +
+        `<span class="mineral-bar-name">${escapeHtml(displayName)}</span>` +
+        `<div class="mineral-bar-track"><div class="mineral-bar-fill" style="width:${pctNum}%;background:${color}"></div></div>` +
+        `<span class="mineral-bar-pct">${escapeHtml(m.percent)}</span>` +
+        `</div>${formulaLine}`
+      )
+    })
+    .join('')
 
   return `<div class="detail-section-header">Pétrographie</div>${rowsHtml}<div style="margin-top:10px">${barsHtml}</div>`
 }
 
 const LITHO_PRIORITY = [
-  'calcaire','craie','marne','dolomie','gres','argile','sable','schiste',
-  'granite','basalte','gneiss','micaschiste','quartzite','ardoise','silex',
-  'rhyolite','andesite','dacite','phonolite','trachyte','diorite','granodiorite',
-  'tonalite','migmatite','eclogite','serpentinite','ophite','tuf','loess',
-  'limon','argilite','siltite','grauwacke','arkose','pelite','lumachelle',
-  'oolite','travertin','falun','radiolarite','gaize','meuliere','tourbe',
-  'leucogranite','microgranite','mylonite','corneenne','phyllade','ampelite',
-  'phtanite','spilite','cinerite','trondhjemite','tillite',
-  'poudingue','breche','conglomerat','alluvion','colluvion','greze','tangue','alterite',
+  'calcaire',
+  'craie',
+  'marne',
+  'dolomie',
+  'gres',
+  'argile',
+  'sable',
+  'schiste',
+  'granite',
+  'basalte',
+  'gneiss',
+  'micaschiste',
+  'quartzite',
+  'ardoise',
+  'silex',
+  'rhyolite',
+  'andesite',
+  'dacite',
+  'phonolite',
+  'trachyte',
+  'diorite',
+  'granodiorite',
+  'tonalite',
+  'migmatite',
+  'eclogite',
+  'serpentinite',
+  'ophite',
+  'tuf',
+  'loess',
+  'limon',
+  'argilite',
+  'siltite',
+  'grauwacke',
+  'arkose',
+  'pelite',
+  'lumachelle',
+  'oolite',
+  'travertin',
+  'falun',
+  'radiolarite',
+  'gaize',
+  'meuliere',
+  'tourbe',
+  'leucogranite',
+  'microgranite',
+  'mylonite',
+  'corneenne',
+  'phyllade',
+  'ampelite',
+  'phtanite',
+  'spilite',
+  'cinerite',
+  'trondhjemite',
+  'tillite',
+  'poudingue',
+  'breche',
+  'conglomerat',
+  'alluvion',
+  'colluvion',
+  'greze',
+  'tangue',
+  'alterite',
 ]
 
 function sortLithologyByPriority(lithology: string[]): string[] {
@@ -152,7 +231,9 @@ function sortLithologyByPriority(lithology: string[]): string[] {
   return [...lithology].sort((a, b) => rank(a) - rank(b))
 }
 
-async function findRockImage(lithology: string[]): Promise<{ image: string; name: string } | undefined> {
+async function findRockImage(
+  lithology: string[]
+): Promise<{ image: string; name: string } | undefined> {
   const { getRockInfo, hasUsableImage } = await getMineralData()
   for (const litho of sortLithologyByPriority(lithology)) {
     const info = getRockInfo(litho)
@@ -175,7 +256,11 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
   // getEnrichedFossils comes from the whole BRGM sheet, not this formation:
   // filter by age coherence before merging to limit inter-formation bleeding
   // (e.g. Jurassic ammonites shown on a Cambrian formation from the same sheet).
-  const enrichedRaw = filterFossilsByAge(await getEnrichedFossils(carte, notation), geo.ageStartMa, geo.ageEndMa)
+  const enrichedRaw = filterFossilsByAge(
+    await getEnrichedFossils(carte, notation),
+    geo.ageStartMa,
+    geo.ageEndMa
+  )
   const rawFossils = mergeFossils(extracted, enrichedRaw)
   // Absolute rule: no fossils in crystalline rocks (magmatic AND metamorphic —
   // heat/pressure destroys all organic matter) nor in formations older than
@@ -184,8 +269,8 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
   const isPrecambrian = geo.ere === 'Precambrien' || geo.periode === 'Brioverien'
   const isCrystallineNotation = geo.periode === 'Roches cristallines'
   const { getRockInfo } = await getMineralData()
-  const lithoTypes = lithology.map(l => getRockInfo(l)?.type ?? 'unknown')
-  const hasCrystallineLitho = lithoTypes.some(t => t === 'magmatique' || t === 'metamorphique')
+  const lithoTypes = lithology.map((l) => getRockInfo(l)?.type ?? 'unknown')
+  const hasCrystallineLitho = lithoTypes.some((t) => t === 'magmatique' || t === 'metamorphique')
   const noFossils = isPrecambrian || isCrystallineNotation || hasCrystallineLitho
   const { merged: fossils, enrichedSet } = noFossils
     ? { merged: {} as FossilGroups, enrichedSet: new Set<string>() }
@@ -194,10 +279,10 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
   // b1G/b2G before b1/b2: startsWith('b1') also matches 'b1G', so the longer,
   // more specific key must win or Normandie grès formations get the wrong rock.
   const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1S', 'b1G', 'b1', 'b2G', 'b2'] as const
-  const overrideKey = OVERRIDE_KEY_ORDER.find(k => notation.startsWith(k))
+  const overrideKey = OVERRIDE_KEY_ORDER.find((k) => notation.startsWith(k))
   const { FORMATION_IMAGE_OVERRIDES } = await getMineralData()
   const rock = overrideKey
-    ? { image: FORMATION_IMAGE_OVERRIDES[overrideKey].image, name: overrideKey }
+    ? { image: FORMATION_IMAGE_OVERRIDES[overrideKey]!.image, name: overrideKey }
     : await findRockImage(lithology)
 
   const wikiUrl = geo.wikiSlug
@@ -214,18 +299,27 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
       ${await renderPetrographySection(lithology)}
       ${descr ? `<div class="detail-panel-section"><strong>Description BRGM</strong><p class="detail-panel-descr">${escapeHtml(descr)}</p></div>` : ''}
       ${lithology.length > 0 ? `<div class="detail-panel-section"><strong>Lithologie</strong><div class="popup-tags">${renderTags(lithology, 'tag-litho', LITHO_WIKI_SLUGS)}</div></div>` : ''}
-      ${Object.keys(fossils).some(g => g !== 'genres') ? `
+      ${
+        Object.keys(fossils).some((g) => g !== 'genres')
+          ? `
         <div class="detail-panel-section">
           <strong>Fossiles</strong>
-          ${Object.entries(fossils).filter(([group]) => group !== 'genres').map(([group, terms]) => `
+          ${Object.entries(fossils)
+            .filter(([group]) => group !== 'genres')
+            .map(
+              ([group, terms]) => `
             <div class="fossil-group">
               <span class="fossil-group-label">${escapeHtml(group)}</span>
               <div class="popup-tags">${renderTags(terms, 'tag-fossil', FOSSIL_TERM_WIKI_SLUGS, enrichedSet)}</div>
             </div>
-          `).join('')}
+          `
+            )
+            .join('')}
           ${enrichedSet.size > 0 ? `<p class="fossil-inferred-note">Termes en pointillés : données notices BRGM</p>` : ''}
         </div>
-      ` : ''}
+      `
+          : ''
+      }
       <div class="detail-panel-links">
         <strong>Liens externes</strong>
         ${wikiUrl ? `<a href="${wikiUrl}" target="_blank" rel="noopener noreferrer">Wikipedia FR</a>` : ''}
@@ -248,9 +342,15 @@ function trapFocus(panel: HTMLElement): () => void {
     if (e.key !== 'Tab') return
     const els = [...panel.querySelectorAll<HTMLElement>(FOCUSABLE)]
     if (els.length === 0) return
-    const first = els[0], last = els[els.length - 1]
-    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus() }
-    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
+    const first = els[0]!,
+      last = els[els.length - 1]!
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault()
+      first.focus()
+    }
   }
   panel.addEventListener('keydown', handler)
   return () => panel.removeEventListener('keydown', handler)
@@ -268,7 +368,8 @@ function getOrCreatePanel(): HTMLElement {
 }
 
 export function openDetailPanel(feature: FeatureLike, trigger?: HTMLElement): void {
-  triggerEl = trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null)
+  triggerEl =
+    trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null)
 
   const panel = getOrCreatePanel()
 
@@ -287,11 +388,18 @@ export function openDetailPanel(feature: FeatureLike, trigger?: HTMLElement): vo
   if (removeTrapFocus) removeTrapFocus()
   removeTrapFocus = trapFocus(panel)
 
-  panel.addEventListener('keydown', (e: KeyboardEvent) => {
-    if (e.key === 'Escape') { e.stopPropagation(); closeDetailPanel() }
-  }, { once: true })
+  panel.addEventListener(
+    'keydown',
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.stopPropagation()
+        closeDetailPanel()
+      }
+    },
+    { once: true }
+  )
 
-  renderDetailContent(feature).then(html => {
+  renderDetailContent(feature).then((html) => {
     // Only update if the same panel is still open (user hasn't closed it)
     if (panel.classList.contains('open')) {
       panel.innerHTML = html
@@ -301,19 +409,32 @@ export function openDetailPanel(feature: FeatureLike, trigger?: HTMLElement): vo
       }
       if (removeTrapFocus) removeTrapFocus()
       removeTrapFocus = trapFocus(panel)
-      panel.addEventListener('keydown', (e: KeyboardEvent) => {
-        if (e.key === 'Escape') { e.stopPropagation(); closeDetailPanel() }
-      }, { once: true })
+      panel.addEventListener(
+        'keydown',
+        (e: KeyboardEvent) => {
+          if (e.key === 'Escape') {
+            e.stopPropagation()
+            closeDetailPanel()
+          }
+        },
+        { once: true }
+      )
     }
   })
 }
 
 export function closeDetailPanel(): void {
-  if (removeTrapFocus) { removeTrapFocus(); removeTrapFocus = null }
+  if (removeTrapFocus) {
+    removeTrapFocus()
+    removeTrapFocus = null
+  }
   if (panelEl) {
     panelEl.classList.remove('open')
   }
-  if (triggerEl) { triggerEl.focus(); triggerEl = null }
+  if (triggerEl) {
+    triggerEl.focus()
+    triggerEl = null
+  }
   if (closeCallback) {
     closeCallback()
   }
@@ -327,11 +448,14 @@ export function setupDetailPanel(map: maplibregl.Map, onClose: () => void): void
   map.on('click', (e) => {
     if (store.getState().mode === 'local') return
     const currentRegion = getCurrentRegionId()
-    const activeRegionIds = currentRegion === 'france'
-      ? DATA_REGIONS.map(r => r.id)
-      : (currentRegion ? [currentRegion] : [])
-    const fillLayerIds = activeRegionIds.map(rid => `geology-fill__${rid}`)
-    const dipLayerIds = activeRegionIds.map(rid => `dip-points__${rid}`)
+    const activeRegionIds =
+      currentRegion === 'france'
+        ? DATA_REGIONS.map((r) => r.id)
+        : currentRegion
+          ? [currentRegion]
+          : []
+    const fillLayerIds = activeRegionIds.map((rid) => `geology-fill__${rid}`)
+    const dipLayerIds = activeRegionIds.map((rid) => `dip-points__${rid}`)
     const features = map.queryRenderedFeatures(e.point, { layers: fillLayerIds })
     const dipFeatures = map.queryRenderedFeatures(e.point, { layers: dipLayerIds })
     if (features.length === 0 && dipFeatures.length === 0) {

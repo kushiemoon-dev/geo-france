@@ -11,17 +11,32 @@ interface LayerGroup {
 }
 
 const LAYER_GROUPS: LayerGroup[] = [
-  { id: 'formations', label: 'Formations géologiques', baseLayerIds: ['geology-fill', 'geology-highlight'], visible: true },
-  { id: 'contours', label: 'Contours formations', baseLayerIds: ['geology-outline'], visible: true },
+  {
+    id: 'formations',
+    label: 'Formations géologiques',
+    baseLayerIds: ['geology-fill', 'geology-highlight'],
+    visible: true,
+  },
+  {
+    id: 'contours',
+    label: 'Contours formations',
+    baseLayerIds: ['geology-outline'],
+    visible: true,
+  },
   { id: 'labels', label: 'Noms de formations', baseLayerIds: ['formation-labels'], visible: false },
-  { id: 'faults', label: 'Failles & contacts', baseLayerIds: ['faults-major', 'faults-minor'], visible: true },
+  {
+    id: 'faults',
+    label: 'Failles & contacts',
+    baseLayerIds: ['faults-major', 'faults-minor'],
+    visible: true,
+  },
   { id: 'dips', label: 'Pendages', baseLayerIds: ['dip-points', 'dip-labels'], visible: true },
   { id: 'surcharge', label: 'Surcharges', baseLayerIds: ['surcharge'], visible: true },
 ]
 
 function getActiveRegionIds(): string[] {
   const { regionId } = store.getState()
-  if (regionId === 'france') return DATA_REGIONS.map(r => r.id)
+  if (regionId === 'france') return DATA_REGIONS.map((r) => r.id)
   return regionId ? [regionId] : [DATA_REGIONS[0]?.id ?? '']
 }
 

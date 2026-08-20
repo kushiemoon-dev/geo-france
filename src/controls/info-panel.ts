@@ -9,9 +9,8 @@ import { escapeHtml } from '../utils/html.ts'
 
 function getHighlightLayerId(): string {
   const { regionId } = store.getState()
-  const activeId = (regionId && regionId !== 'france')
-    ? regionId
-    : DATA_REGIONS[0]?.id ?? 'bretagne'
+  const activeId =
+    regionId && regionId !== 'france' ? regionId : (DATA_REGIONS[0]?.id ?? 'bretagne')
   return `geology-highlight__${activeId}`
 }
 
@@ -26,43 +25,52 @@ function highlightFormation(map: maplibregl.Map, objectId: string | number | nul
 }
 
 function getAllFillLayerIds(): string[] {
-  return DATA_REGIONS.map(r => `geology-fill__${r.id}`)
+  return DATA_REGIONS.map((r) => `geology-fill__${r.id}`)
 }
 
 function getAllDipLayerIds(): string[] {
-  return DATA_REGIONS.map(r => `dip-points__${r.id}`)
+  return DATA_REGIONS.map((r) => `dip-points__${r.id}`)
 }
-
 
 let wmsAbort: AbortController | null = null
 
 function lngLatToEpsg3857(lng: number, lat: number): [number, number] {
-  const x = lng * 20037508.34 / 180
-  const y = Math.log(Math.tan((90 + lat) * Math.PI / 360)) / (Math.PI / 180)
-  return [x, y * 20037508.34 / 180]
+  const x = (lng * 20037508.34) / 180
+  const y = Math.log(Math.tan(((90 + lat) * Math.PI) / 360)) / (Math.PI / 180)
+  return [x, (y * 20037508.34) / 180]
 }
 
-async function queryWmsFeatureInfo(
-  lngLat: { lng: number; lat: number }
-): Promise<Record<string, unknown> | null> {
+async function queryWmsFeatureInfo(lngLat: {
+  lng: number
+  lat: number
+}): Promise<Record<string, unknown> | null> {
   wmsAbort?.abort()
   wmsAbort = new AbortController()
   const [x, y] = lngLatToEpsg3857(lngLat.lng, lngLat.lat)
   const buf = 50
   const bbox = `${x - buf},${y - buf},${x + buf},${y + buf}`
-  const url = 'https://geoservices.brgm.fr/geologie?' + [
-    'SERVICE=WMS', 'VERSION=1.1.1', 'REQUEST=GetFeatureInfo',
-    'LAYERS=GEO050_S_FGEOL', 'QUERY_LAYERS=GEO050_S_FGEOL',
-    'INFO_FORMAT=application/json', 'SRS=EPSG:3857',
-    'WIDTH=101', 'HEIGHT=101', 'X=50', 'Y=50',
-    `BBOX=${bbox}`,
-  ].join('&')
+  const url =
+    'https://geoservices.brgm.fr/geologie?' +
+    [
+      'SERVICE=WMS',
+      'VERSION=1.1.1',
+      'REQUEST=GetFeatureInfo',
+      'LAYERS=GEO050_S_FGEOL',
+      'QUERY_LAYERS=GEO050_S_FGEOL',
+      'INFO_FORMAT=application/json',
+      'SRS=EPSG:3857',
+      'WIDTH=101',
+      'HEIGHT=101',
+      'X=50',
+      'Y=50',
+      `BBOX=${bbox}`,
+    ].join('&')
   const res = await fetch(url, { signal: wmsAbort.signal })
   if (!res.ok) return null
-  const data = await res.json() as { features?: { properties: Record<string, unknown> }[] }
+  const data = (await res.json()) as { features?: { properties: Record<string, unknown> }[] }
   const features = data?.features
   if (!Array.isArray(features) || features.length === 0) return null
-  return features[0].properties
+  return features[0]!.properties
 }
 
 function formatDipPopupContent(feature: MapGeoJSONFeature): string {
@@ -85,12 +93,11 @@ function formatDipPopupContent(feature: MapGeoJSONFeature): string {
   `
 }
 
-
 export function setupInfoPanel(map: maplibregl.Map): void {
   const popup = new maplibregl.Popup({
     closeButton: true,
     closeOnClick: true,
-    maxWidth: '320px'
+    maxWidth: '320px',
   })
 
   // Setup detail panel with close callback to clear highlight
@@ -125,7 +132,7 @@ export function setupInfoPanel(map: maplibregl.Map): void {
       const canvas = map.getCanvas()
       canvas.style.cursor = 'wait'
       queryWmsFeatureInfo(e.lngLat)
-        .then(props => {
+        .then((props) => {
           canvas.style.cursor = 'pointer'
           if (props) {
             openDetailPanel({ properties: { ...feature.properties, ...props } })
@@ -145,9 +152,12 @@ export function setupInfoPanel(map: maplibregl.Map): void {
       const canvas = map.getCanvas()
       canvas.style.cursor = 'wait'
       queryWmsFeatureInfo(e.lngLat)
-        .then(props => {
+        .then((props) => {
           canvas.style.cursor = ''
-          if (!props) { showToast('Aucune donnée géologique ici', 'info'); return }
+          if (!props) {
+            showToast('Aucune donnée géologique ici', 'info')
+            return
+          }
           openDetailPanel({ properties: props })
         })
         .catch((err: unknown) => {
@@ -161,6 +171,6 @@ export function setupInfoPanel(map: maplibregl.Map): void {
   map.on('mousemove', (e) => {
     const dipHit = map.queryRenderedFeatures(e.point, { layers: getAllDipLayerIds() })
     const fillHit = map.queryRenderedFeatures(e.point, { layers: getAllFillLayerIds() })
-    map.getCanvas().style.cursor = (dipHit.length > 0 || fillHit.length > 0) ? 'pointer' : ''
+    map.getCanvas().style.cursor = dipHit.length > 0 || fillHit.length > 0 ? 'pointer' : ''
   })
 }

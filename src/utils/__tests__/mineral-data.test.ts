@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest'
-import { getRockInfo, hasUsableImage, getMineralInfo, FORMATION_IMAGE_OVERRIDES } from '../mineral-data.ts'
+import {
+  getRockInfo,
+  hasUsableImage,
+  getMineralInfo,
+  FORMATION_IMAGE_OVERRIDES,
+} from '../mineral-data.ts'
 
 describe('getRockInfo', () => {
   it('retourne les infos pour une roche connue', () => {
@@ -26,16 +31,26 @@ describe('hasUsableImage', () => {
     expect(hasUsableImage(undefined)).toBe(false)
   })
 
-  it('retourne false si pas d\'image', () => {
+  it("retourne false si pas d'image", () => {
     expect(hasUsableImage({ type: 'test', origin: 'test', minerals: [] })).toBe(false)
   })
 
   it('retourne false si imageStatus quarantined', () => {
-    expect(hasUsableImage({ type: 'test', origin: 'test', minerals: [], image: '/foo.jpg', imageStatus: 'quarantined' })).toBe(false)
+    expect(
+      hasUsableImage({
+        type: 'test',
+        origin: 'test',
+        minerals: [],
+        image: '/foo.jpg',
+        imageStatus: 'quarantined',
+      })
+    ).toBe(false)
   })
 
   it('retourne true si image présente et non quarantinée', () => {
-    expect(hasUsableImage({ type: 'test', origin: 'test', minerals: [], image: '/foo.jpg' })).toBe(true)
+    expect(hasUsableImage({ type: 'test', origin: 'test', minerals: [], image: '/foo.jpg' })).toBe(
+      true
+    )
   })
 })
 
@@ -53,21 +68,21 @@ describe('getMineralInfo', () => {
 describe('FORMATION_IMAGE_OVERRIDES', () => {
   it('b1S est défini et possède une image', () => {
     expect(FORMATION_IMAGE_OVERRIDES['b1S']).toBeDefined()
-    expect(FORMATION_IMAGE_OVERRIDES['b1S'].image).toBeTruthy()
+    expect(FORMATION_IMAGE_OVERRIDES['b1S']!.image).toBeTruthy()
   })
 
   it('b1S utilise une image schiste (distincte de b1 micaschiste)', () => {
-    expect(FORMATION_IMAGE_OVERRIDES['b1S'].image).not.toBe(FORMATION_IMAGE_OVERRIDES['b1'].image)
+    expect(FORMATION_IMAGE_OVERRIDES['b1S']!.image).not.toBe(FORMATION_IMAGE_OVERRIDES['b1']!.image)
   })
 
   it('b2 est mappé vers grauwacke', () => {
-    expect(FORMATION_IMAGE_OVERRIDES['b2'].image).toContain('grauwacke')
+    expect(FORMATION_IMAGE_OVERRIDES['b2']!.image).toContain('grauwacke')
   })
 
-  it('les clés sont dans l\'ordre spécificité décroissante : b1Ph avant b1S avant b1', () => {
+  it("les clés sont dans l'ordre spécificité décroissante : b1Ph avant b1S avant b1", () => {
     const keys = Object.keys(FORMATION_IMAGE_OVERRIDES)
     const idxPh = keys.indexOf('b1Ph')
-    const idxS  = keys.indexOf('b1S')
+    const idxS = keys.indexOf('b1S')
     const idxB1 = keys.indexOf('b1')
     expect(idxPh).toBeLessThan(idxS)
     expect(idxS).toBeLessThan(idxB1)
@@ -75,15 +90,15 @@ describe('FORMATION_IMAGE_OVERRIDES', () => {
 
   it('b1G est défini et distinct de b1 (grès détritique, pas micaschiste métamorphique)', () => {
     expect(FORMATION_IMAGE_OVERRIDES['b1G']).toBeDefined()
-    expect(FORMATION_IMAGE_OVERRIDES['b1G'].image).not.toBe(FORMATION_IMAGE_OVERRIDES['b1'].image)
+    expect(FORMATION_IMAGE_OVERRIDES['b1G']!.image).not.toBe(FORMATION_IMAGE_OVERRIDES['b1']!.image)
   })
 
   it('b2G est défini et mappé vers grauwacke (cohérent avec b2)', () => {
     expect(FORMATION_IMAGE_OVERRIDES['b2G']).toBeDefined()
-    expect(FORMATION_IMAGE_OVERRIDES['b2G'].image).toContain('grauwacke')
+    expect(FORMATION_IMAGE_OVERRIDES['b2G']!.image).toContain('grauwacke')
   })
 
-  it('b1G avant b1, b2G avant b2 (startsWith(\'b1\') matcherait b1G sinon)', () => {
+  it("b1G avant b1, b2G avant b2 (startsWith('b1') matcherait b1G sinon)", () => {
     const keys = Object.keys(FORMATION_IMAGE_OVERRIDES)
     expect(keys.indexOf('b1G')).toBeLessThan(keys.indexOf('b1'))
     expect(keys.indexOf('b2G')).toBeLessThan(keys.indexOf('b2'))

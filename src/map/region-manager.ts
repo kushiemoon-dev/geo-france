@@ -10,7 +10,7 @@ import { bus } from '../core/events.ts'
 let currentRegionId: string | null = null
 const initializedRegions = new Set<string>()
 
-export const DATA_REGIONS = REGIONS.filter(r => r.id !== 'france')
+export const DATA_REGIONS = REGIONS.filter((r) => r.id !== 'france')
 
 function getSourceId(regionId: string): string {
   return `geology-${regionId}`
@@ -24,7 +24,7 @@ function addRegionToMap(map: maplibregl.Map, regionId: string): void {
   if (!map.getSource(sourceId)) {
     map.addSource(sourceId, {
       type: 'vector',
-      url: `pmtiles:///data/${regionId}.pmtiles`
+      url: `pmtiles:///data/${regionId}.pmtiles`,
     })
   }
   for (const layer of createLayersForRegion(regionId)) {
@@ -46,7 +46,10 @@ export function initRegions(map: maplibregl.Map, initialRegionId: string): void 
   }
 }
 
-export async function ensureRegionInitialized(map: maplibregl.Map, regionId: string): Promise<void> {
+export async function ensureRegionInitialized(
+  map: maplibregl.Map,
+  regionId: string
+): Promise<void> {
   if (initializedRegions.has(regionId)) return
   addRegionToMap(map, regionId)
 
@@ -65,7 +68,11 @@ export async function ensureRegionInitialized(map: maplibregl.Map, regionId: str
   })
 }
 
-function setRegionVisibility(map: maplibregl.Map, regionId: string, visibility: 'visible' | 'none'): void {
+function setRegionVisibility(
+  map: maplibregl.Map,
+  regionId: string,
+  visibility: 'visible' | 'none'
+): void {
   for (const layerId of getRegionLayerIds(regionId)) {
     if (map.getLayer(layerId)) {
       map.setLayoutProperty(layerId, 'visibility', visibility)
@@ -90,7 +97,7 @@ export async function loadRegion(map: maplibregl.Map, regionId: string): Promise
 
   if (regionId === 'france') {
     // National view stacks all 13 regional PMTiles (~851MB) — no spinner shown, matches prod.
-    await Promise.all(DATA_REGIONS.map(r => ensureRegionInitialized(map, r.id)))
+    await Promise.all(DATA_REGIONS.map((r) => ensureRegionInitialized(map, r.id)))
     hideAllRegions(map)
     for (const r of DATA_REGIONS) {
       setRegionVisibility(map, r.id, 'visible')

@@ -1,7 +1,8 @@
 import { LEGEND_PERIODS } from '../utils/colors.ts'
 import { bus } from '../core/events.ts'
 
-const WMS_LEGEND_URL = 'https://geoservices.brgm.fr/geologie?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=SCAN_H_GEOL50&FORMAT=image/png&STYLE=default'
+const WMS_LEGEND_URL =
+  'https://geoservices.brgm.fr/geologie?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=SCAN_H_GEOL50&FORMAT=image/png&STYLE=default'
 
 export function setupLegend(): void {
   const container = document.createElement('div')

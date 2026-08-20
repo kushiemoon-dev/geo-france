@@ -26,38 +26,38 @@ const MINERAL_SRC = path.join(ROOT, 'src/utils/mineral-data.ts')
 
 // ── CLI flags ─────────────────────────────────────────────────────────────────
 const args = process.argv.slice(2)
-const statusFlag = args.find(a => a.startsWith('--status='))?.split('=')[1] ?? 'quarantined'
-const rockFlag   = args.find(a => a.startsWith('--rock='))?.split('=')[1]
-const force      = args.includes('--force')
-const dryRun     = args.includes('--dry-run')
+const statusFlag = args.find((a) => a.startsWith('--status='))?.split('=')[1] ?? 'quarantined'
+const rockFlag = args.find((a) => a.startsWith('--rock='))?.split('=')[1]
+const force = args.includes('--force')
+const dryRun = args.includes('--dry-run')
 
 // ── Qualified FR→EN queries (keys are the French rock names used as mineral-data.ts lookup keys) ──
 const QUERY_MAP = {
-  argile:       'claystone mudstone shale rock hand specimen outcrop geology geological',
-  sable:        'quartz sand grains geological sample',
-  gaize:        'greensand siliceous rock glauconitic',
-  spilite:      'pillow lava basalt greenstone rock outcrop',
-  ampelite:     'carbonaceous shale black schist alum specimen',
-  alterite:     'laterite saprolite weathered rock',
-  colluvion:    'debris flow slope deposit erosion sediment',
-  tangue:       'tidal flat mud calcareous sediment',
-  phtanite:     'chert lydite rock specimen',
-  pelite:       'argillite mudrock sedimentary rock sample',
+  argile: 'claystone mudstone shale rock hand specimen outcrop geology geological',
+  sable: 'quartz sand grains geological sample',
+  gaize: 'greensand siliceous rock glauconitic',
+  spilite: 'pillow lava basalt greenstone rock outcrop',
+  ampelite: 'carbonaceous shale black schist alum specimen',
+  alterite: 'laterite saprolite weathered rock',
+  colluvion: 'debris flow slope deposit erosion sediment',
+  tangue: 'tidal flat mud calcareous sediment',
+  phtanite: 'chert lydite rock specimen',
+  pelite: 'argillite mudrock sedimentary rock sample',
   trondhjemite: 'leucocratic plutonic rock hand specimen',
-  dolomie:      'dolostone dolomite carbonate rock hand specimen outcrop geology',
-  craie:        'chalk white cretaceous limestone rock outcrop cliff geology specimen',
-  gres:         'sandstone hand specimen geological sample sedimentary rock close-up',
-  calcaire:     'limestone hand specimen geological sample sedimentary rock close-up',
-  grauwacke:    'greywacke wacke turbidite rock hand specimen geology',
-  schiste:      'phyllite schist metamorphic rock hand specimen outcrop',
-  loess:        'loess aeolian deposit windblown silt sediment outcrop geological',
-  limon:        'silt alluvial deposit floodplain sediment',
-  alluvion:     'alluvial gravel sediment fluvial deposit riverbed',
-  tourbe:       'peat bog peatland sediment geological formation',
-  meuliere:     'meulière siliceous rock millstone geology specimen',
-  marne:        'marl grey limestone clay sedimentary outcrop cliff geological hand specimen',
-  falun:        'coquina bioclastic shell sand deposit Loire sedimentary rock geology',
-  greze:        'grèze litée periglacial stratified scree sediment geology',
+  dolomie: 'dolostone dolomite carbonate rock hand specimen outcrop geology',
+  craie: 'chalk white cretaceous limestone rock outcrop cliff geology specimen',
+  gres: 'sandstone hand specimen geological sample sedimentary rock close-up',
+  calcaire: 'limestone hand specimen geological sample sedimentary rock close-up',
+  grauwacke: 'greywacke wacke turbidite rock hand specimen geology',
+  schiste: 'phyllite schist metamorphic rock hand specimen outcrop',
+  loess: 'loess aeolian deposit windblown silt sediment outcrop geological',
+  limon: 'silt alluvial deposit floodplain sediment',
+  alluvion: 'alluvial gravel sediment fluvial deposit riverbed',
+  tourbe: 'peat bog peatland sediment geological formation',
+  meuliere: 'meulière siliceous rock millstone geology specimen',
+  marne: 'marl grey limestone clay sedimentary outcrop cliff geological hand specimen',
+  falun: 'coquina bioclastic shell sand deposit Loire sedimentary rock geology',
+  greze: 'grèze litée periglacial stratified scree sediment geology',
 }
 const DEFAULT_SUFFIX = 'rock hand specimen geology'
 
@@ -66,49 +66,70 @@ const DEFAULT_SUFFIX = 'rock hand specimen geology'
 // calcaire.jpg bug, "Limestone Formation In Waitomo") as a rock specimen —
 // without this filter, scoring re-selects the same photo already flagged
 // as unrepresentative.
-const BLACKLIST   = /\b(map|sketch|pdf|diagram|landscape|sculpture|pottery|ceramic|plate|painting|chart|schema|drawing|stamp|coin|flag|bone|skull|museum|display|cabinet|journal|quarterly|proceedings|review|bulletin|notice|annual|grindstone|tableware|artifact|artefact|carving|brick|tile|statue|figurine|arch|arche|children|child|kids|people|person|boy|girl|playing|portrait|village|town|city|house|building|monument|tower|blackboard|classroom|school|crayon|colored|colour|color|writing|pastel|agamidae|lizard|reptile|amphibian|insect|butterfly|bird|mammal|plant|flower|tree|forest|fungi|mushroom|bacteria|soldier|infantry|military|division|emblem|regiment|army|gold|silver|copper|zinc|ore|mine|mining|miner|cave|karst|stalactite|stalagmite|speleothem|grotto|grotte|sinkhole|cavern)\b|fossils?/i
-const TITLE_BONUS = /\b(specimen|outcrop|hand.?sample|hand.?specimen|thin.?section|rock|stone|geological|geology|sample|exposure|fragment|block|core|sand|clay|shale|chert|basalt|granite|limestone|schist|gneiss|quartzite|sandstone|mudstone|mudrock|siltstone|sediment|mineral|petrograph|litholog)\b/i
+const BLACKLIST =
+  /\b(map|sketch|pdf|diagram|landscape|sculpture|pottery|ceramic|plate|painting|chart|schema|drawing|stamp|coin|flag|bone|skull|museum|display|cabinet|journal|quarterly|proceedings|review|bulletin|notice|annual|grindstone|tableware|artifact|artefact|carving|brick|tile|statue|figurine|arch|arche|children|child|kids|people|person|boy|girl|playing|portrait|village|town|city|house|building|monument|tower|blackboard|classroom|school|crayon|colored|colour|color|writing|pastel|agamidae|lizard|reptile|amphibian|insect|butterfly|bird|mammal|plant|flower|tree|forest|fungi|mushroom|bacteria|soldier|infantry|military|division|emblem|regiment|army|gold|silver|copper|zinc|ore|mine|mining|miner|cave|karst|stalactite|stalagmite|speleothem|grotto|grotte|sinkhole|cavern)\b|fossils?/i
+const TITLE_BONUS =
+  /\b(specimen|outcrop|hand.?sample|hand.?specimen|thin.?section|rock|stone|geological|geology|sample|exposure|fragment|block|core|sand|clay|shale|chert|basalt|granite|limestone|schist|gneiss|quartzite|sandstone|mudstone|mudrock|siltstone|sediment|mineral|petrograph|litholog)\b/i
 
 // ── Parse ROCK_DB from mineral-data.ts ──────────────────────────────────────
 function parseRockKeys() {
   const src = readFileSync(MINERAL_SRC, 'utf8')
-  const allKeys       = [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*type:/gm)].map(m => m[1])
-  const quarantined   = new Set([...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*imageStatus:\s*'quarantined'/gm)].map(m => m[1]))
-  const withImage     = new Set([...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*image:\s*'/gm)].map(m => m[1]))
-  const missing       = new Set(allKeys.filter(k => !withImage.has(k)))
+  const allKeys = [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*type:/gm)].map((m) => m[1])
+  const quarantined = new Set(
+    [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*imageStatus:\s*'quarantined'/gm)].map((m) => m[1])
+  )
+  const withImage = new Set(
+    [...src.matchAll(/^\s{2}(\w+):\s*\{[^}\n]*image:\s*'/gm)].map((m) => m[1])
+  )
+  const missing = new Set(allKeys.filter((k) => !withImage.has(k)))
   return { allKeys, quarantined, missing }
 }
 
 function getTargets(statusFlag, quarantined, missing, allKeys) {
   if (statusFlag === 'quarantined') return [...quarantined]
-  if (statusFlag === 'missing')     return [...missing]
+  if (statusFlag === 'missing') return [...missing]
   return allKeys
 }
 
 // ── HTTP helpers ──────────────────────────────────────────────────────────────
 function httpsGet(url) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, {
-      headers: { 'User-Agent': 'brgmremaster-bot/1.0 (educational geological map)' }
-    }, res => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        httpsGet(res.headers.location).then(resolve).catch(reject)
-        return
+    const req = https.get(
+      url,
+      {
+        headers: { 'User-Agent': 'brgmremaster-bot/1.0 (educational geological map)' },
+      },
+      (res) => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          httpsGet(res.headers.location).then(resolve).catch(reject)
+          return
+        }
+        resolve(res)
       }
-      resolve(res)
-    })
+    )
     req.on('error', reject)
-    req.setTimeout(20000, () => { req.destroy(new Error('timeout')) })
+    req.setTimeout(20000, () => {
+      req.destroy(new Error('timeout'))
+    })
   })
 }
 
 async function fetchJson(url) {
   const res = await httpsGet(url)
-  if (res.statusCode !== 200) { res.resume(); throw new Error(`HTTP ${res.statusCode}`) }
+  if (res.statusCode !== 200) {
+    res.resume()
+    throw new Error(`HTTP ${res.statusCode}`)
+  }
   return new Promise((resolve, reject) => {
     let body = ''
-    res.on('data', d => body += d)
-    res.on('end', () => { try { resolve(JSON.parse(body)) } catch (e) { reject(e) } })
+    res.on('data', (d) => (body += d))
+    res.on('end', () => {
+      try {
+        resolve(JSON.parse(body))
+      } catch (e) {
+        reject(e)
+      }
+    })
     res.on('error', reject)
   })
 }
@@ -135,16 +156,18 @@ function scoreResult(title, info) {
 
 // ── Commons search + scoring ──────────────────────────────────────────────────
 async function searchCommons(query, limit = 15) {
-  const url = `https://commons.wikimedia.org/w/api.php?action=query&list=search` +
+  const url =
+    `https://commons.wikimedia.org/w/api.php?action=query&list=search` +
     `&srsearch=${encodeURIComponent(query)}&srnamespace=6&srlimit=${limit}&format=json`
   const data = await fetchJson(url)
-  return (data?.query?.search ?? []).filter(r => /\.(jpg|jpeg)$/i.test(r.title))
+  return (data?.query?.search ?? []).filter((r) => /\.(jpg|jpeg)$/i.test(r.title))
 }
 
 async function getImageInfo(titles) {
   if (titles.length === 0) return {}
-  const param = titles.map(t => encodeURIComponent(t)).join('|')
-  const url = `https://commons.wikimedia.org/w/api.php?action=query&titles=${param}` +
+  const param = titles.map((t) => encodeURIComponent(t)).join('|')
+  const url =
+    `https://commons.wikimedia.org/w/api.php?action=query&titles=${param}` +
     `&prop=imageinfo&iiprop=url|mime|size|extmetadata` +
     `&iiextmetadatafilter=Artist|LicenseShortName|DescriptionUrl&iiurlwidth=800&format=json`
   const data = await fetchJson(url)
@@ -159,13 +182,13 @@ async function findBestImage(key) {
   // fallback if not enough JPG candidates
   if (candidates.length < 3) {
     const extra = await searchCommons(fallbackQuery)
-    const seen = new Set(candidates.map(r => r.title))
-    candidates = [...candidates, ...extra.filter(r => !seen.has(r.title))]
+    const seen = new Set(candidates.map((r) => r.title))
+    candidates = [...candidates, ...extra.filter((r) => !seen.has(r.title))]
   }
   candidates = candidates.slice(0, 8)
   if (candidates.length === 0) return null
 
-  const pages = await getImageInfo(candidates.map(r => r.title))
+  const pages = await getImageInfo(candidates.map((r) => r.title))
 
   let best = null
   let bestScore = -1 // accepts anything not blacklisted
@@ -184,11 +207,13 @@ async function findBestImage(key) {
       const meta = info.extmetadata ?? {}
       const rawAuthor = (meta.Artist?.value ?? '').replace(/<[^>]+>/g, '').trim()
       best = {
-        url:        info.thumburl || info.url,
-        title:      page.title,
-        author:     rawAuthor || 'Wikimedia Commons',
-        license:    meta.LicenseShortName?.value ?? 'CC-BY-SA',
-        commonsUrl: meta.DescriptionUrl?.value ?? `https://commons.wikimedia.org/wiki/${encodeURIComponent(page.title)}`,
+        url: info.thumburl || info.url,
+        title: page.title,
+        author: rawAuthor || 'Wikimedia Commons',
+        license: meta.LicenseShortName?.value ?? 'CC-BY-SA',
+        commonsUrl:
+          meta.DescriptionUrl?.value ??
+          `https://commons.wikimedia.org/wiki/${encodeURIComponent(page.title)}`,
         score,
       }
     }
@@ -203,7 +228,11 @@ mkdirSync(DEST, { recursive: true })
 
 let metadata = {}
 if (existsSync(META_FILE)) {
-  try { metadata = JSON.parse(readFileSync(META_FILE, 'utf8')) } catch { /* ignore */ }
+  try {
+    metadata = JSON.parse(readFileSync(META_FILE, 'utf8'))
+  } catch {
+    /* ignore */
+  }
 }
 
 const { allKeys, quarantined, missing } = parseRockKeys()
@@ -211,18 +240,25 @@ let targets = rockFlag ? [rockFlag] : getTargets(statusFlag, quarantined, missin
 
 // Without --force: quarantined = always reprocessed, missing = skip if file exists
 if (!force) {
-  targets = targets.filter(k => {
+  targets = targets.filter((k) => {
     const dest = path.join(DEST, `${k}.jpg`)
     if (!existsSync(dest)) return true
     return quarantined.has(k)
   })
 }
 
-console.log(`Target: ${targets.length} rocks  [status=${statusFlag}${force ? ' force' : ''}${dryRun ? ' dry-run' : ''}]`)
-if (targets.length === 0) { console.log('Nothing to do.'); process.exit(0) }
+console.log(
+  `Target: ${targets.length} rocks  [status=${statusFlag}${force ? ' force' : ''}${dryRun ? ' dry-run' : ''}]`
+)
+if (targets.length === 0) {
+  console.log('Nothing to do.')
+  process.exit(0)
+}
 console.log()
 
-let ok = 0, skipped = 0, failed = 0
+let ok = 0,
+  skipped = 0,
+  failed = 0
 const failures = []
 
 for (const key of targets) {
@@ -233,7 +269,7 @@ for (const key of targets) {
       console.log(`FAIL  no result (score < 3)`)
       failures.push({ key, reason: 'insufficient score' })
       failed++
-      await new Promise(r => setTimeout(r, 1000))
+      await new Promise((r) => setTimeout(r, 1000))
       continue
     }
 
@@ -244,20 +280,20 @@ for (const key of targets) {
       const dest = path.join(DEST, `${key}.jpg`)
       await downloadImage(result.url, dest)
       metadata[key] = {
-        title:   result.title,
-        author:  result.author,
+        title: result.title,
+        author: result.author,
         license: result.license,
-        url:     result.commonsUrl,
+        url: result.commonsUrl,
       }
       console.log(`OK    score=${result.score}  "${result.title.slice(0, 55)}"`)
       ok++
     }
-    await new Promise(r => setTimeout(r, 4000))
+    await new Promise((r) => setTimeout(r, 4000))
   } catch (err) {
     console.log(`FAIL  ${err.message}`)
     failures.push({ key, reason: err.message })
     failed++
-    await new Promise(r => setTimeout(r, 5000))
+    await new Promise((r) => setTimeout(r, 5000))
   }
 }
 

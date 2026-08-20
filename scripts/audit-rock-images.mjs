@@ -26,7 +26,10 @@ const MINERAL_SRC = path.join(ROOT, 'src/utils/mineral-data.ts')
 const META_FILE = path.join(DEST, 'metadata.json')
 const PENDING_FILE = path.join(DEST, 'pending-quarantine.json')
 
-const port = parseInt(process.argv.find(a => a.startsWith('--port='))?.split('=')[1] ?? '5174', 10)
+const port = parseInt(
+  process.argv.find((a) => a.startsWith('--port='))?.split('=')[1] ?? '5174',
+  10
+)
 
 // ── Parse ROCK_DB ──────────────────────────────────────────────────────────────
 function parseRockDB() {
@@ -55,7 +58,11 @@ function parseRockDB() {
 
 function loadJson(file) {
   if (!existsSync(file)) return {}
-  try { return JSON.parse(readFileSync(file, 'utf8')) } catch { return {} }
+  try {
+    return JSON.parse(readFileSync(file, 'utf8'))
+  } catch {
+    return {}
+  }
 }
 
 function saveJson(file, data) {
@@ -71,30 +78,33 @@ function getFileSizeKb(imgPath) {
 
 // ── HTML generation ───────────────────────────────────────────────────────────
 function buildHtml(rocks, metadata, pending, filter) {
-  const filtered = filter === 'quarantined'
-    ? rocks.filter(r => r.imageStatus === 'quarantined')
-    : filter === 'unreviewed'
-    ? rocks.filter(r => r.imageStatus === 'verified' && !metadata[r.key])
-    : rocks
+  const filtered =
+    filter === 'quarantined'
+      ? rocks.filter((r) => r.imageStatus === 'quarantined')
+      : filter === 'unreviewed'
+        ? rocks.filter((r) => r.imageStatus === 'verified' && !metadata[r.key])
+        : rocks
 
-  const cards = filtered.map(r => {
-    const sizeKb = getFileSizeKb(r.image)
-    const sizeLabel = sizeKb ? `${sizeKb} KB` : '⚠ missing'
-    const meta = metadata[r.key]
-    const pend = pending[r.key]
-    const statusBadge = r.imageStatus === 'quarantined'
-      ? `<span class="badge q">quarantined</span>`
-      : pend === 'ok'
-      ? `<span class="badge ok">approved ✓</span>`
-      : pend === 'reject'
-      ? `<span class="badge rej">rejected ✗</span>`
-      : `<span class="badge v">verified</span>`
+  const cards = filtered
+    .map((r) => {
+      const sizeKb = getFileSizeKb(r.image)
+      const sizeLabel = sizeKb ? `${sizeKb} KB` : '⚠ missing'
+      const meta = metadata[r.key]
+      const pend = pending[r.key]
+      const statusBadge =
+        r.imageStatus === 'quarantined'
+          ? `<span class="badge q">quarantined</span>`
+          : pend === 'ok'
+            ? `<span class="badge ok">approved ✓</span>`
+            : pend === 'reject'
+              ? `<span class="badge rej">rejected ✗</span>`
+              : `<span class="badge v">verified</span>`
 
-    const credit = meta
-      ? `<div class="credit">© ${meta.author} — ${meta.license}<br><a href="${meta.url}" target="_blank" rel="noopener">${meta.title?.slice(0, 55) ?? ''}…</a></div>`
-      : `<div class="credit dim">No metadata (original image)</div>`
+      const credit = meta
+        ? `<div class="credit">© ${meta.author} — ${meta.license}<br><a href="${meta.url}" target="_blank" rel="noopener">${meta.title?.slice(0, 55) ?? ''}…</a></div>`
+        : `<div class="credit dim">No metadata (original image)</div>`
 
-    return `
+      return `
     <div class="card ${r.imageStatus === 'quarantined' ? 'card-q' : ''}">
       <div class="img-wrap">
         <img src="/img/${r.key}.jpg" alt="${r.key}" loading="lazy" onerror="this.src='/img/_missing.svg'">
@@ -112,15 +122,21 @@ function buildHtml(rocks, metadata, pending, filter) {
         </div>
       </div>
     </div>`
-  }).join('')
+    })
+    .join('')
 
-  const nav = ['all','quarantined','unreviewed'].map(f =>
-    `<a href="/?filter=${f}" class="${filter===f?'active':''}">${f} (${
-      f==='quarantined' ? rocks.filter(r=>r.imageStatus==='quarantined').length
-      : f==='unreviewed' ? rocks.filter(r=>r.imageStatus==='verified'&&!metadata[r.key]).length
-      : rocks.length
-    })</a>`
-  ).join(' | ')
+  const nav = ['all', 'quarantined', 'unreviewed']
+    .map(
+      (f) =>
+        `<a href="/?filter=${f}" class="${filter === f ? 'active' : ''}">${f} (${
+          f === 'quarantined'
+            ? rocks.filter((r) => r.imageStatus === 'quarantined').length
+            : f === 'unreviewed'
+              ? rocks.filter((r) => r.imageStatus === 'verified' && !metadata[r.key]).length
+              : rocks.length
+        })</a>`
+    )
+    .join(' | ')
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -188,7 +204,9 @@ const server = createServer((req, res) => {
     const name = url.pathname.slice(5) // e.g. argile.jpg
     const file = path.join(DEST, name)
     if (!existsSync(file)) {
-      res.writeHead(404); res.end(); return
+      res.writeHead(404)
+      res.end()
+      return
     }
     const ext = name.split('.').pop()?.toLowerCase()
     const mime = ext === 'svg' ? 'image/svg+xml' : ext === 'png' ? 'image/png' : 'image/jpeg'
@@ -201,17 +219,22 @@ const server = createServer((req, res) => {
   if (url.pathname === '/validate' && req.method === 'POST') {
     const key = url.searchParams.get('key')
     const action = url.searchParams.get('action')
-    if (!key || !action) { res.writeHead(400); res.end('{}'); return }
+    if (!key || !action) {
+      res.writeHead(400)
+      res.end('{}')
+      return
+    }
 
     const pending = loadJson(PENDING_FILE)
     if (action !== 'skip') pending[key] = action
     saveJson(PENDING_FILE, pending)
 
-    const message = action === 'ok'
-      ? `✓ ${key} approved — remember to remove imageStatus:'quarantined' in mineral-data.ts`
-      : action === 'reject'
-      ? `✗ ${key} rejected — look for a replacement image manually`
-      : `→ ${key} skipped`
+    const message =
+      action === 'ok'
+        ? `✓ ${key} approved — remember to remove imageStatus:'quarantined' in mineral-data.ts`
+        : action === 'reject'
+          ? `✗ ${key} rejected — look for a replacement image manually`
+          : `→ ${key} skipped`
 
     res.writeHead(200, { 'Content-Type': 'application/json' })
     res.end(JSON.stringify({ ok: true, message }))
@@ -230,7 +253,8 @@ const server = createServer((req, res) => {
     return
   }
 
-  res.writeHead(404); res.end()
+  res.writeHead(404)
+  res.end()
 })
 
 server.listen(port, '127.0.0.1', () => {
@@ -239,7 +263,10 @@ server.listen(port, '127.0.0.1', () => {
   console.log(`  Ctrl+C to stop\n`)
   // Open in the browser
   try {
-    const cmd = process.platform === 'darwin' ? 'open' : process.platform === 'win32' ? 'start' : 'xdg-open'
+    const cmd =
+      process.platform === 'darwin' ? 'open' : process.platform === 'win32' ? 'start' : 'xdg-open'
     execSync(`${cmd} http://localhost:${port}/?filter=quarantined`)
-  } catch { /* ignore if xdg-open fails */ }
+  } catch {
+    /* ignore if xdg-open fails */
+  }
 })

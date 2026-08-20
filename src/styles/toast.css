@@ -24,24 +24,36 @@
   border: 1px solid rgba(220, 38, 38, 0.2);
 }
 
-.geo-toast-error .geo-toast-icon { color: var(--geo-danger); }
-.geo-toast-error .geo-toast-message { color: #fca5a5; }
+.geo-toast-error .geo-toast-icon {
+  color: var(--geo-danger);
+}
+.geo-toast-error .geo-toast-message {
+  color: #fca5a5;
+}
 
 .geo-toast-warning {
   background: rgba(217, 119, 6, 0.1);
   border: 1px solid rgba(217, 119, 6, 0.2);
 }
 
-.geo-toast-warning .geo-toast-icon { color: var(--geo-accent); }
-.geo-toast-warning .geo-toast-message { color: #fcd34d; }
+.geo-toast-warning .geo-toast-icon {
+  color: var(--geo-accent);
+}
+.geo-toast-warning .geo-toast-message {
+  color: #fcd34d;
+}
 
 .geo-toast-info {
   background: var(--geo-bg-elevated);
   border: 1px solid var(--geo-border);
 }
 
-.geo-toast-info .geo-toast-icon { color: var(--geo-text-muted); }
-.geo-toast-info .geo-toast-message { color: var(--geo-text-primary); }
+.geo-toast-info .geo-toast-icon {
+  color: var(--geo-text-muted);
+}
+.geo-toast-info .geo-toast-message {
+  color: var(--geo-text-primary);
+}
 
 .geo-toast-icon {
   font-size: 16px;
@@ -57,9 +69,15 @@
 }
 
 @keyframes geo-toast-in {
-  from { transform: translateY(20px); opacity: 0; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
 }
 
 @keyframes geo-toast-out {
-  to { transform: translateY(10px); opacity: 0; }
+  to {
+    transform: translateY(10px);
+    opacity: 0;
+  }
 }

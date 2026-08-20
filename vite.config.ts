@@ -30,8 +30,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'maplibre': ['maplibre-gl'],
-          'pmtiles': ['pmtiles'],
+          maplibre: ['maplibre-gl'],
+          pmtiles: ['pmtiles'],
         },
       },
     },
