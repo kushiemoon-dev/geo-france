@@ -1,6 +1,6 @@
 // @vitest-environment happy-dom
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { extractLithology, extractFossils } from '../../utils/geology-data.ts'
+import { extractLithology, extractFossils, classifyNotation } from '../../utils/geology-data.ts'
 import { getEnrichedFossils } from '../../utils/fossils-enriched.ts'
 import { getRockInfo } from '../../utils/mineral-data.ts'
 
@@ -261,5 +261,123 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
     expect(panel).not.toBeNull()
     expect(panel!.innerHTML).toContain('rudiste')
     expect(panel!.innerHTML).not.toContain('trilobite')
+  })
+})
+
+describe('detail-panel — liens Wikipédia ère/période/étage', () => {
+  beforeEach(() => {
+    document.body.innerHTML = '<div id="map"></div>'
+    vi.resetModules()
+  })
+
+  it('rend ère ET période comme liens Wikipédia distincts, séparateur " / " préservé', async () => {
+    // Default classifyNotation mock: ere:'Mesozoique', periode:'Jurassique' — both
+    // have real entries in ERE_WIKI_SLUGS/PERIODE_WIKI_SLUGS (confirmed in geology-data.ts).
+    const { openDetailPanel } = await import('../detail-panel.ts')
+    const feature = {
+      properties: {
+        NOTATION: 'j3',
+        DESCR: 'Calcaires oolithiques à ammonites',
+        LEGENDE: '',
+        CARTE: '0123',
+      },
+    }
+    openDetailPanel(feature as never)
+    await new Promise((resolve) => setTimeout(resolve, 0))
+    const panel = document.querySelector('.detail-panel')
+    expect(panel).not.toBeNull()
+    const ereSlug = encodeURIComponent('Mésozoïque')
+    const periodeSlug = encodeURIComponent('Jurassique')
+    expect(panel!.innerHTML).toContain(
+      `<span class="detail-row-value"><a href="https://fr.wikipedia.org/wiki/${ereSlug}" target="_blank" rel="noopener noreferrer">Mesozoique</a> / <a href="https://fr.wikipedia.org/wiki/${periodeSlug}" target="_blank" rel="noopener noreferrer">Jurassique</a></span>`
+    )
+  })
+
+  it('ne rend PAS en lien une période sans entrée dans PERIODE_WIKI_SLUGS (Indetermine), garde ère en lien', async () => {
+    // 'Indetermine' is the real FALLBACK periode value in geology-data.ts and has
+    // no PERIODE_WIKI_SLUGS entry — confirmed absent from the table.
+    // Importing detail-panel.ts (fresh, post-resetModules) transitively imports
+    // map/region-manager.ts -> map/styles.ts, whose top-level geologyFillLayer
+    // constant calls buildColorExpression(), which calls classifyNotation('b')
+    // once as a side effect. Consume that call first so our override below
+    // lands on the real classifyNotation(notation) call in renderDetailContent.
+    vi.mocked(classifyNotation).mockReturnValueOnce({
+      ere: 'Precambrien',
+      periode: 'Brioverien',
+      systeme: '',
+      etage: '',
+      color: '#ccc',
+    })
+    vi.mocked(classifyNotation).mockReturnValueOnce({
+      ere: 'Paleozoique',
+      periode: 'Indetermine',
+      systeme: '',
+      etage: '',
+      color: '#ccc',
+      ageStartMa: 538.8,
+      ageEndMa: 251.9,
+      summary: 'Test formation',
+      wikiSlug: undefined,
+    })
+    const { openDetailPanel } = await import('../detail-panel.ts')
+    const feature = {
+      properties: {
+        NOTATION: 'x1',
+        DESCR: 'Formation indéterminée',
+        LEGENDE: '',
+        CARTE: '0123',
+      },
+    }
+    openDetailPanel(feature as never)
+    await new Promise((resolve) => setTimeout(resolve, 0))
+    const panel = document.querySelector('.detail-panel')
+    expect(panel).not.toBeNull()
+    const ereSlug = encodeURIComponent('Paléozoïque')
+    expect(panel!.innerHTML).toContain(
+      `<span class="detail-row-value"><a href="https://fr.wikipedia.org/wiki/${ereSlug}" target="_blank" rel="noopener noreferrer">Paleozoique</a> / Indetermine</span>`
+    )
+    expect(panel!.innerHTML).not.toContain('>Indetermine</a>')
+  })
+
+  it('ne rend JAMAIS geo.systeme comme lien, même avec un étage à slug valide ; séparateur " – " préservé', async () => {
+    // See comment in the previous test: consume the classifyNotation('b') side
+    // effect from importing detail-panel.ts (via map/region-manager.ts ->
+    // map/styles.ts -> utils/colors.ts) before queuing our real override.
+    vi.mocked(classifyNotation).mockReturnValueOnce({
+      ere: 'Precambrien',
+      periode: 'Brioverien',
+      systeme: '',
+      etage: '',
+      color: '#ccc',
+    })
+    vi.mocked(classifyNotation).mockReturnValueOnce({
+      ere: 'Mesozoique',
+      periode: 'Jurassique',
+      systeme: 'Jur. inf. (Lias)',
+      etage: 'Sinemurien',
+      color: '#ccc',
+      ageStartMa: 199.3,
+      ageEndMa: 190.8,
+      summary: 'Test formation',
+      wikiSlug: undefined,
+    })
+    const { openDetailPanel } = await import('../detail-panel.ts')
+    const feature = {
+      properties: {
+        NOTATION: 'l2',
+        DESCR: 'Calcaires à gryphées',
+        LEGENDE: '',
+        CARTE: '0123',
+      },
+    }
+    openDetailPanel(feature as never)
+    await new Promise((resolve) => setTimeout(resolve, 0))
+    const panel = document.querySelector('.detail-panel')
+    expect(panel).not.toBeNull()
+    const etageSlug = encodeURIComponent('Sinémurien')
+    expect(panel!.innerHTML).toContain(
+      `<span class="detail-row-value">Jur. inf. (Lias) – <a href="https://fr.wikipedia.org/wiki/${etageSlug}" target="_blank" rel="noopener noreferrer">Sinemurien</a></span>`
+    )
+    expect(panel!.innerHTML).not.toContain('>Jur. inf. (Lias)</a>')
   })
 })
