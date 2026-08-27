@@ -8,6 +8,9 @@ import {
   LITHO_WIKI_SLUGS,
   FOSSIL_TERM_WIKI_SLUGS,
   METAMORPHISM_WIKI_SLUGS,
+  ERE_WIKI_SLUGS,
+  PERIODE_WIKI_SLUGS,
+  ETAGE_WIKI_SLUGS,
 } from '../utils/geology-data.ts'
 import type { FossilGroups } from '../utils/geology-data.ts'
 import { getEnrichedFossils, mergeFossils } from '../utils/fossils-enriched.ts'
@@ -58,16 +61,31 @@ async function renderAgeSection(
     return `<div class="detail-row"><span class="detail-row-label">${escapeHtml(label)}</span><span class="detail-row-value">${valueHtml}</span></div>`
   }
 
+  function linkOrText(value: string, slug: string | undefined): string {
+    if (!value) return ''
+    if (!slug) return escapeHtml(value)
+    const url = `https://fr.wikipedia.org/wiki/${encodeURIComponent(slug)}`
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer">${escapeHtml(value)}</a>`
+  }
+
   const parts: string[] = []
 
   if (geo.ere) {
-    const ereParts = [geo.ere, geo.periode].filter(Boolean)
-    parts.push(makeRow('Ère géologique', escapeHtml(ereParts.join(' / '))))
+    const ereHtml = [
+      linkOrText(geo.ere, ERE_WIKI_SLUGS[geo.ere]),
+      linkOrText(geo.periode, PERIODE_WIKI_SLUGS[geo.periode]),
+    ]
+      .filter(Boolean)
+      .join(' / ')
+    parts.push(makeRow('Ère géologique', ereHtml))
   }
 
-  const periodParts = [geo.systeme, geo.etage].filter(Boolean)
-  if (periodParts.length > 0) {
-    parts.push(makeRow('Période', escapeHtml(periodParts.join(' – '))))
+  const periodeHtmlParts = [
+    geo.systeme ? escapeHtml(geo.systeme) : '',
+    linkOrText(geo.etage, ETAGE_WIKI_SLUGS[geo.etage]),
+  ].filter(Boolean)
+  if (periodeHtmlParts.length > 0) {
+    parts.push(makeRow('Période', periodeHtmlParts.join(' – ')))
   }
 
   if (geo.ageStartMa != null && geo.ageEndMa != null) {
