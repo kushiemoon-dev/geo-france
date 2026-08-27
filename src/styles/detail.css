@@ -150,6 +150,15 @@
   max-width: 60%;
 }
 
+.detail-row-value a {
+  color: var(--geo-link);
+  text-decoration: none;
+}
+
+.detail-row-value a:hover {
+  text-decoration: underline;
+}
+
 /* Mineral composition bars */
 .mineral-bar-row {
   display: flex;
@@ -348,6 +357,15 @@ a.popup-tag:hover {
   font-size: 10px;
   color: var(--geo-text-muted);
   font-style: italic;
+}
+
+.popup-source a {
+  color: var(--geo-link);
+  text-decoration: none;
+}
+
+.popup-source a:hover {
+  text-decoration: underline;
 }
 
 /* Notices panel */
