@@ -1376,3 +1376,52 @@ export const METAMORPHISM_WIKI_SLUGS: Record<string, string> = {
   dynamique: 'Métamorphisme_dynamique',
   anatexie: 'Anatexie',
 }
+
+export const ERE_WIKI_SLUGS: Record<string, string> = {
+  Mesozoique: 'Mésozoïque',
+  Cenozoique: 'Cénozoïque',
+  Paleozoique: 'Paléozoïque',
+  Precambrien: 'Précambrien',
+}
+
+export const PERIODE_WIKI_SLUGS: Record<string, string> = {
+  Brioverien: 'Briovérien',
+  Cambrien: 'Cambrien',
+  Carbonifere: 'Carbonifère',
+  Cretace: 'Crétacé',
+  Devonien: 'Dévonien',
+  Jurassique: 'Jurassique',
+  Neogene: 'Néogène',
+  Ordovicien: 'Ordovicien',
+  Paleogene: 'Paléogène',
+  Permien: 'Permien',
+  Quaternaire: 'Quaternaire',
+  Silurien: 'Silurien',
+  Trias: 'Trias',
+}
+
+export const ETAGE_WIKI_SLUGS: Record<string, string> = {
+  Albien: 'Albien',
+  Aptien: 'Aptien',
+  Bajocien: 'Bajocien',
+  Barremien: 'Barrémien',
+  Bartonien: 'Bartonien',
+  Callovien: 'Callovien',
+  Campanien: 'Campanien',
+  Cenomanien: 'Cénomanien',
+  Coniacien: 'Coniacien',
+  Hettangien: 'Hettangien',
+  Kimmeridgien: 'Kimméridgien',
+  Lutetien: 'Lutétien',
+  Maastrichtien: 'Maastrichtien',
+  Oxfordien: 'Oxfordien',
+  Pliensbachien: 'Pliensbachien',
+  Priabonien: 'Priabonien',
+  Santonien: 'Santonien',
+  Sinemurien: 'Sinémurien',
+  Tithonien: 'Tithonien',
+  Toarcien: 'Toarcien',
+  Turonien: 'Turonien',
+  Valanginien: 'Valanginien',
+  Ypresien: 'Yprésien',
+}
