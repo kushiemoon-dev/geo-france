@@ -4,3 +4,4 @@ allowBuilds:
 overrides:
   esbuild: ^0.28.1
   '@babel/core': ^7.29.7
+  ws: ^8.21.0
