@@ -1,11 +1,11 @@
 # Changelog
 
-## v2.3.1 — 2026-07-17
+## v2.3.1 (2026-07-17)
 
 ### Fixes
 - Restored dense geology-outline contours at national zoom: the `minzoom: 8` added in v2.3.0 to fix outline overdraw hid ~1M polygon borders across all 13 stacked regions, flattening the visual density used to distinguish formations before zooming in
 
-## v2.3.0 — 2026-07-11
+## v2.3.0 (2026-07-11)
 
 ### New features
 - Per-formation image overrides for Brioverian formations (b1/b2/b1Ph/b1S)
@@ -35,6 +35,6 @@
 - Lighthouse mobile baseline measurement script added
 
 ### Internal
-- Explored a simplified 1:1M national PMTiles layer to cut load size; reverted after it diverged from prod's rendering and silenced several layer toggles — restored the original 13-region stacking for the national view, keeping the formation-labels toggle and color/fossil fixes made along the way
+- Explored a simplified 1:1M national PMTiles layer to cut load size; reverted after it diverged from prod's rendering and silenced several layer toggles, restored the original 13-region stacking for the national view, keeping the formation-labels toggle and color/fossil fixes made along the way
 - Migrated from npm to pnpm; dead code and obsolete scripts removed (knip audit)
 - French code comments translated to English

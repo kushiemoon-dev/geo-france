@@ -14,7 +14,7 @@
 
 ## Overview
 
-Interactive geological map of metropolitan France — 14 regions, ~1 million geological entities from the **BD Charm-50** dataset published by BRGM, rendered client-side with MapLibre GL JS and served from regional PMTiles archives. No tile server required.
+Interactive geological map of metropolitan France: 14 regions, ~1 million geological entities from the **BD Charm-50** dataset published by BRGM, rendered client-side with MapLibre GL JS and served from regional PMTiles archives. No tile server required.
 
 ---
 
@@ -30,22 +30,22 @@ Interactive geological map of metropolitan France — 14 regions, ~1 million geo
 
 ## Features
 
-- **14 regions** — Dynamic selector to navigate across metropolitan France
-- **Geological formations** — ICS colors (International Chronostratigraphic Chart), from Precambrian to Quaternary
-- **Tectonic structures** — Faults, folds, and dip points with degree values
-- **Interactive popups** — Notation code, stratigraphic hierarchy, lithology, minerals, and fossils (~110 detected terms)
-- **Layer controls** — Toggle geology, structures, and overlays independently
+- **14 regions**: Dynamic selector to navigate across metropolitan France
+- **Geological formations**: ICS colors (International Chronostratigraphic Chart), from Precambrian to Quaternary
+- **Tectonic structures**: Faults, folds, and dip points with degree values
+- **Interactive popups**: Notation code, stratigraphic hierarchy, lithology, minerals, and fossils (~110 detected terms)
+- **Layer controls**: Toggle geology, structures, and overlays independently
 - **Color legend** by geological period
-- **Geological notices** — 997 BRGM notice PDFs with page-count badges (full vs. pocket format)
-- **Local mode** — 1:50,000 WMS raster overlay from BRGM with formation identification via BD Charm-50 vectors
-- **Installable PWA** — offline-capable via `vite-plugin-pwa`
-- **Error tracking** — Sentry, client-side
+- **Geological notices**: 997 BRGM notice PDFs with page-count badges (full vs. pocket format)
+- **Local mode**: 1:50,000 WMS raster overlay from BRGM with formation identification via BD Charm-50 vectors
+- **Installable PWA**: offline-capable via `vite-plugin-pwa`
+- **Error tracking**: Sentry, client-side
 
 ---
 
 ## Data
 
-**BD Charm-50** — Geological map of France at 1:50,000 published by [BRGM](https://www.brgm.fr/).
+**BD Charm-50**: Geological map of France at 1:50,000 published by [BRGM](https://www.brgm.fr/).
 
 | | |
 |---|---|
@@ -97,9 +97,9 @@ Static files in `dist/` can be served by any web server. A static server with by
 
 Scripts in `scripts/` handle the full per-region conversion, plus enrichment and auditing of secondary datasets:
 
-1. `scripts/regions.sh` — Region-to-department mapping
-2. `scripts/convert.sh` — Single region conversion (download, reprojection, merge, PMTiles)
-3. `scripts/convert-all.sh` — Runs conversion for all 14 regions
+1. `scripts/regions.sh`: Region-to-department mapping
+2. `scripts/convert.sh`: Single region conversion (download, reprojection, merge, PMTiles)
+3. `scripts/convert-all.sh`: Runs conversion for all 14 regions
 
 **Requirements:** `gdal`, `tippecanoe`, `curl`, `unzip`
 
@@ -109,18 +109,18 @@ cd scripts && bash convert-all.sh
 
 **Enrichment & audits** (separate from the core tile pipeline):
 
-- `fetch-fossil-enrichment.mjs` / `audit-fossils.mjs` — fossil term detection data
-- `fetch-rock-images.mjs` / `validate-rock-images.mjs` / `audit-rock-images.mjs` — rock sample images
-- `audit-notices.mjs` — BRGM notice PDF coverage
+- `fetch-fossil-enrichment.mjs` / `audit-fossils.mjs`: fossil term detection data
+- `fetch-rock-images.mjs` / `validate-rock-images.mjs` / `audit-rock-images.mjs`: rock sample images
+- `audit-notices.mjs`: BRGM notice PDF coverage
 
 ---
 
 ## Credits
 
-- [BRGM](https://www.brgm.fr/) — Geological data (BD Charm-50)
-- [International Commission on Stratigraphy](https://stratigraphy.org/) — Chronostratigraphic chart & ICS colors
-- [data.cquest.org](https://data.cquest.org/) — Open mirror of French public data
-- [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) — Basemap
+- [BRGM](https://www.brgm.fr/): Geological data (BD Charm-50)
+- [International Commission on Stratigraphy](https://stratigraphy.org/): Chronostratigraphic chart & ICS colors
+- [data.cquest.org](https://data.cquest.org/): Open mirror of French public data
+- [OpenStreetMap contributors](https://www.openstreetmap.org/copyright): Basemap
 
 ---
 
