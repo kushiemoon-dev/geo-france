@@ -496,7 +496,7 @@ const ROCK_DB: Record<string, RockInfo> = {
 
   // Sedimentaires carbonatees
   // imageStatus 'quarantined': calcaire.jpg is a photo of cave speleothems
-  // (Waitomo), not a representative specimen — flag already set in
+  // (Waitomo), not a representative specimen; flag already set in
   // pending-quarantine.json (commit 908c85c) but never carried over here.
   calcaire: {
     type: 'sedimentaire',
@@ -1202,13 +1202,13 @@ export function getRockInfo(name: string): RockInfo | undefined {
 export const FORMATION_IMAGE_OVERRIDES: Record<string, { image: string; attribution?: string }> = {
   b1Ph: { image: '/images/rocks/phtanite.jpg', attribution: 'Arlette1, CC BY-SA 3.0' },
   b1S: { image: '/images/rocks/schiste.jpg' },
-  // b1G "Grès fins, grès tufacés" (Normandie, sheet 1680) — detrital, NOT the
+  // b1G "Grès fins, grès tufacés" (Normandie, sheet 1680): detrital, NOT the
   // (metamorphic) micaschiste that 'b1'.startsWith would have served by collision.
   // arkose.jpg (feldspathic sandstone, same detrital family) is the best proxy
   // available while no dedicated grès photo exists (gres is quarantined, no image).
   b1G: { image: '/images/rocks/arkose.jpg' },
   b1: { image: '/images/rocks/micaschiste.jpg' },
-  // b2G "grauwackes dominants" (Normandie, sheet 1680) — already correct via
+  // b2G "grauwackes dominants" (Normandie, sheet 1680): already correct via
   // the collision with 'b2' (grauwacke.jpg), made explicit here.
   b2G: { image: '/images/rocks/grauwacke.jpg' },
   b2: { image: '/images/rocks/grauwacke.jpg' },

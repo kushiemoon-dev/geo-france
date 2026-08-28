@@ -204,7 +204,7 @@ export const FOSSIL_GROUPS: Record<string, readonly string[]> = {
 // sheet can span multiple ages, but a given fossil should only show on a
 // formation of compatible age). Intervals are deliberately wide for phylum-
 // level groups (bivalves, gastropods, brachiopods...) that span the whole
-// Phanerozoic and aren't index fossils — only the diagnostic groups
+// Phanerozoic and aren't index fossils; only the diagnostic groups
 // (trilobites, rudists, belemnites, ammonites) filter meaningfully. ammonites
 // includes nautiloids/cephalopods broadly in the vocabulary; bounded at the
 // K-Pg extinction (66 Ma) of ammonites sensu stricto, at the cost of minor

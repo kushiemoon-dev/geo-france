@@ -1,7 +1,7 @@
 // Build a MapLibre expression that maps NOTATION prefixes to ICS colors
 // Uses case expressions with string prefix matching (longest prefix first)
 //
-// Derived from geology-data.ts SORTED_RULES — the same table drives both the
+// Derived from geology-data.ts SORTED_RULES: the same table drives both the
 // map fill color and the detail-panel age classification, so they can no
 // longer drift apart (they used to be two independently hand-maintained lists).
 
@@ -22,7 +22,7 @@ export function buildColorExpression(): ExpressionSpecification {
   }
 
   // classifyNotation() strips a leading "(...)" before matching (e.g. "(b2-r)LM"
-  // → "b2-r"), but this render-time expression only slices the raw NOTATION —
+  // → "b2-r"), but this render-time expression only slices the raw NOTATION;
   // it can't reproduce that normalization. Add an explicit "(b" case so
   // parenthesized Briovérien notations still render pink instead of grey.
   parts.push(prefixCondition('(b'), classifyNotation('b').color)

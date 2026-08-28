@@ -170,7 +170,7 @@ export function setupTopbar(map: maplibregl.Map): void {
 
   document.body.appendChild(bar)
 
-  // Mobile FABs — separate from topbar to avoid stacking context issues
+  // Mobile FABs: separate from topbar to avoid stacking context issues
   const mobileFabs = document.createElement('div')
   mobileFabs.className = 'mobile-fabs'
 

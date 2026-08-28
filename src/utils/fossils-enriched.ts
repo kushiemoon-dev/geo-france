@@ -43,7 +43,7 @@ function carteToNoticeKey(carte: string): string {
 
 // notation: when the sheet's notice text has a paragraph attributed to this
 // exact NOTATION code (by_notation), use that instead of the sheet-wide
-// groups — avoids bleeding fossils from other formations described in the
+// groups: avoids bleeding fossils from other formations described in the
 // same BRGM notice. Falls back to sheet-level groups when no per-formation
 // match exists (most formations, or sheets processed before this existed).
 export async function getEnrichedFossils(carte: string, notation?: string): Promise<FossilGroups> {

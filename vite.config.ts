@@ -8,7 +8,7 @@ export default defineConfig({
       workbox: {
         skipWaiting: true,
         clientsClaim: true,
-        // Cache app shell only — rock images cached on-demand via runtime caching
+        // Cache app shell only: rock images cached on-demand via runtime caching
         globPatterns: ['**/*.{js,css,html,svg,woff2,pbf}', 'og-image.png', 'favicon.svg'],
         globIgnores: ['**/data/*.pmtiles', '**/images/rocks/**'],
         runtimeCaching: [

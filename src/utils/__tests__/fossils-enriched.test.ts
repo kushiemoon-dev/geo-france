@@ -201,7 +201,7 @@ describe('T4 — règles précambrien / magmatique', () => {
 
   it('aucune carte avec groupes non-vides ne doit avoir uniquement des notations précambriennes connues (sanity check)', () => {
     // Note: without access to GeoJSON in tests, we check the rule directly on the b* keys
-    // 'b'-prefixed keys are Precambrian — if a notice contained ONLY these formations,
+    // 'b'-prefixed keys are Precambrian; if a notice contained ONLY these formations,
     // the script should clear them. This test validates that classifyNotation is consistent.
     const precambrienNotations = ['b', 'b1', 'b2', 'b2S', 'b2G']
     const allPrecambrien = precambrienNotations.every(

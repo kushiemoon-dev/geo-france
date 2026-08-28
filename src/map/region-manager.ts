@@ -36,7 +36,7 @@ function addRegionToMap(map: maplibregl.Map, regionId: string): void {
 
 export function initRegions(map: maplibregl.Map, initialRegionId: string): void {
   if (initialRegionId === 'france') {
-    // France view: load all 13 regions — existing behaviour unchanged
+    // France view: load all 13 regions, existing behaviour unchanged
     for (const region of DATA_REGIONS) {
       addRegionToMap(map, region.id)
     }
@@ -96,7 +96,7 @@ export async function loadRegion(map: maplibregl.Map, regionId: string): Promise
   if (regionId === currentRegionId) return
 
   if (regionId === 'france') {
-    // National view stacks all 13 regional PMTiles (~851MB) — no spinner shown, matches prod.
+    // National view stacks all 13 regional PMTiles (~851MB), no spinner shown, matches prod.
     await Promise.all(DATA_REGIONS.map((r) => ensureRegionInitialized(map, r.id)))
     hideAllRegions(map)
     for (const r of DATA_REGIONS) {
@@ -156,7 +156,7 @@ export function loadInitialRegion(map: maplibregl.Map, regionId: string): void {
   loadRegion(map, regionId)
 }
 
-/** For test isolation only — resets module-level state between tests */
+/** For test isolation only: resets module-level state between tests */
 export function _resetInitializedRegions(): void {
   initializedRegions.clear()
 }

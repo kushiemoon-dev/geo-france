@@ -16,7 +16,7 @@ function createDipIconData(size: number): ImageData {
   ctx.lineTo(size, center)
   ctx.stroke()
 
-  // Dip tick (vertical, from center upward — points north = 0°)
+  // Dip tick (vertical, from center upward; points north = 0°)
   ctx.beginPath()
   ctx.moveTo(center, center)
   ctx.lineTo(center, 0)

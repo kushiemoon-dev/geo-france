@@ -21,7 +21,7 @@ import { store } from '../core/state.ts'
 import { getCurrentRegionId, DATA_REGIONS } from '../map/region-manager.ts'
 import { escapeHtml } from '../utils/html.ts'
 
-// Memoised lazy loaders — modules are fetched only when the panel first opens
+// Memoised lazy loaders: modules are fetched only when the panel first opens
 let _mineralDataCache: Promise<typeof import('../utils/mineral-data.ts')> | null = null
 function getMineralData() {
   return (_mineralDataCache ??= import('../utils/mineral-data.ts'))
@@ -280,8 +280,8 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
     geo.ageEndMa
   )
   const rawFossils = mergeFossils(extracted, enrichedRaw)
-  // Absolute rule: no fossils in crystalline rocks (magmatic AND metamorphic —
-  // heat/pressure destroys all organic matter) nor in formations older than
+  // Absolute rule: no fossils in crystalline rocks (magmatic AND metamorphic,
+  // since heat/pressure destroys all organic matter) nor in formations older than
   // the Cambrian (no complex fossilizable life). When in doubt, hide rather
   // than show out of excessive reverse caution.
   const isPrecambrian = geo.ere === 'Precambrien' || geo.periode === 'Brioverien'
@@ -293,7 +293,7 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
   const { merged: fossils, enrichedSet } = noFossils
     ? { merged: {} as FossilGroups, enrichedSet: new Set<string>() }
     : rawFossils
-  // Most-specific keys first — insertion order not reliable for matching priority.
+  // Most-specific keys first: insertion order not reliable for matching priority.
   // b1G/b2G before b1/b2: startsWith('b1') also matches 'b1G', so the longer,
   // more specific key must win or Normandie grès formations get the wrong rock.
   const OVERRIDE_KEY_ORDER = ['b1Ph', 'b1S', 'b1G', 'b1', 'b2G', 'b2'] as const
@@ -343,7 +343,7 @@ async function renderDetailContent(feature: FeatureLike): Promise<string> {
         ${wikiUrl ? `<a href="${wikiUrl}" target="_blank" rel="noopener noreferrer">Wikipedia FR</a>` : ''}
         <a href="https://infoterre.brgm.fr/viewer/MainTileForward.do" target="_blank" rel="noopener noreferrer">InfoTerre (BRGM)</a>
       </div>
-      <p class="popup-source">Source : BD Charm-50 © BRGM — <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" target="_blank" rel="noopener noreferrer">Données libres – Licence Etalab 2.0</a></p>
+      <p class="popup-source">Source : BD Charm-50 © BRGM, <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" target="_blank" rel="noopener noreferrer">Données libres – Licence Etalab 2.0</a></p>
     </div>
   `
 }

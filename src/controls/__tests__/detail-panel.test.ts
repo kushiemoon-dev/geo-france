@@ -6,7 +6,7 @@ import { getRockInfo } from '../../utils/mineral-data.ts'
 
 // Default classification: fossiliferous sedimentary formation (Jurassic),
 // except notation 'b*' (Briovérien/Precambrian), 'cristallin*' (Roches cristallines),
-// 'cambrien*' or 'cretace*' (ages used to test filterFossilsByAge) —
+// 'cambrien*' or 'cretace*' (ages used to test filterFossilsByAge);
 // overridable per test via mockReturnValueOnce. filterFossilsByAge, mergeFossils,
 // and SORTED_RULES stay the real implementation (importOriginal): they're what
 // we want to exercise, not stand-ins.
@@ -130,7 +130,7 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
   beforeEach(() => {
     document.body.innerHTML = '<div id="map"></div>'
     // detail-panel.ts keeps a module-level singleton (panelEl) attached to the
-    // previous DOM — without a reset, tests after the first one find a detached
+    // previous DOM; without a reset, tests after the first one find a detached
     // node and querySelector('.detail-panel') fails silently.
     vi.resetModules()
   })
@@ -156,7 +156,7 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
 
   it('ne rend PAS la section Fossiles pour une roche cristalline (granodiorite cadomienne, ere non-Precambrien)', async () => {
     const { openDetailPanel } = await import('../detail-panel.ts')
-    // Real reported case: "Granodiorites cadomiennes à biotite et cordiérite" —
+    // Real reported case: "Granodiorites cadomiennes à biotite et cordiérite";
     // classifies as 'Roches cristallines' with ere:'' (NOT 'Precambrien'), so
     // only the isCrystallineNotation guard (periode) must block the fossils.
     const feature = {
@@ -179,7 +179,7 @@ describe('detail-panel — filtrage fossiles Précambrien', () => {
     vi.mocked(extractLithology).mockReturnValueOnce(['schiste'])
     vi.mocked(getRockInfo).mockReturnValueOnce({ type: 'metamorphique' } as never)
     const { openDetailPanel } = await import('../detail-panel.ts')
-    // Real reported case: "Schistes d'Urville" — non-Precambrian age but a
+    // Real reported case: "Schistes d'Urville"; non-Precambrian age but a
     // metamorphic rock, must be blocked by the lithology guard (hasCrystallineLitho).
     const feature = {
       properties: {
@@ -271,7 +271,7 @@ describe('detail-panel — liens Wikipédia ère/période/étage', () => {
   })
 
   it('rend ère ET période comme liens Wikipédia distincts, séparateur " / " préservé', async () => {
-    // Default classifyNotation mock: ere:'Mesozoique', periode:'Jurassique' — both
+    // Default classifyNotation mock: ere:'Mesozoique', periode:'Jurassique'; both
     // have real entries in ERE_WIKI_SLUGS/PERIODE_WIKI_SLUGS (confirmed in geology-data.ts).
     const { openDetailPanel } = await import('../detail-panel.ts')
     const feature = {
@@ -295,7 +295,7 @@ describe('detail-panel — liens Wikipédia ère/période/étage', () => {
 
   it('ne rend PAS en lien une période sans entrée dans PERIODE_WIKI_SLUGS (Indetermine), garde ère en lien', async () => {
     // 'Indetermine' is the real FALLBACK periode value in geology-data.ts and has
-    // no PERIODE_WIKI_SLUGS entry — confirmed absent from the table.
+    // no PERIODE_WIKI_SLUGS entry; confirmed absent from the table.
     // Importing detail-panel.ts (fresh, post-resetModules) transitively imports
     // map/region-manager.ts -> map/styles.ts, whose top-level geologyFillLayer
     // constant calls buildColorExpression(), which calls classifyNotation('b')

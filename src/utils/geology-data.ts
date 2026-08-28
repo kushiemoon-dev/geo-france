@@ -479,7 +479,7 @@ const PREFIX_RULES: ReadonlyArray<{ prefixes: readonly string[]; entry: GeologyE
         "Aptien. Etage defini a Apt (Vaucluse). Marnes, calcaires et gres avec faune d'ammonites et rudistes.",
     },
   },
-  // Undifferentiated Lower Cretaceous (n1, n3, bare n...) — after n2/n4/n5/n6 sub-stages
+  // Undifferentiated Lower Cretaceous (n1, n3, bare n...), after n2/n4/n5/n6 sub-stages
   {
     prefixes: ['n'],
     entry: {
@@ -1068,7 +1068,7 @@ const PREFIX_RULES: ReadonlyArray<{ prefixes: readonly string[]; entry: GeologyE
   // peat (T), clayey complex/surficial formations (H). 'J6' is handled above (Jurassic).
   // 'A', 'B' (no hyphen), and 'P' are deliberately left uncovered: ambiguous notations
   // (alterite vs glacial deposit for A, Precambrian basement vs Quaternary volcanism for B,
-  // crystalline pegmatite vs Quaternary clay for P) — better grey than wrongly classified.
+  // crystalline pegmatite vs Quaternary clay for P), better grey than wrongly classified.
   {
     prefixes: ['q', 'F', 'C', 'D', 'E', 'K', 'S', 'U', 'X', 'R', 'G', 'J', 'T', 'H'],
     entry: {
