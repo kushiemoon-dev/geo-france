@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/banner.png" alt="Geo-France" width="600">
+
 ### Interactive Geological Map of France
 
 [![Live Demo](https://img.shields.io/badge/demo-geo--france.kushie.dev-blue?style=flat-square)](https://geo-france.kushie.dev)
