@@ -6,6 +6,7 @@ import { showMapLoading, hideMapLoading } from '../ui/shared/loading.ts'
 import { showToast } from '../ui/shared/toast.ts'
 import { store } from '../core/state.ts'
 import { bus } from '../core/events.ts'
+import { version as APP_VERSION } from '../../package.json'
 
 let currentRegionId: string | null = null
 const initializedRegions = new Set<string>()
@@ -24,7 +25,7 @@ function addRegionToMap(map: maplibregl.Map, regionId: string): void {
   if (!map.getSource(sourceId)) {
     map.addSource(sourceId, {
       type: 'vector',
-      url: `pmtiles:///data/${regionId}.pmtiles`,
+      url: `pmtiles:///data/${regionId}.pmtiles?v=${APP_VERSION}`,
     })
   }
   for (const layer of createLayersForRegion(regionId)) {
