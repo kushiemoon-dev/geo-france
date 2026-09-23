@@ -198,11 +198,20 @@ echo "  [generate] ${REGION}.pmtiles..."
 # comparing both on ile-de-france (smallest region): coalesce came out
 # slightly smaller (8,060,776 vs 8,074,808 bytes) with no visible quality
 # loss.
+# --maximum-tile-bytes=1000000: doubles tippecanoe's default 500000-byte
+# budget. Found by direct MVT inspection that the default budget wiped out
+# an entire z8 tile in Normandie (2900+ features down to 20, losing named
+# formations b1G/b2G/j1-2M entirely instead of just thinning them) because
+# that one tile aggregates two very dense z9 tiles worth of data. Doubling
+# the budget keeps those formations distinguishable at Normandie's default
+# regional zoom without reopening the national France-view budget (still
+# under 15 Mo transferred).
 tippecanoe \
   -zg \
   --projection=EPSG:4326 \
   --force \
   --coalesce-densest-as-needed \
+  --maximum-tile-bytes=1000000 \
   --visvalingam \
   -o "$pmtiles_out" \
   "${tippecanoe_args[@]}"
