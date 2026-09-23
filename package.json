@@ -37,7 +37,7 @@
     "typescript": "~5.9.3",
     "vite": "^7.3.6",
     "vite-plugin-pwa": "^1.2.0",
-    "vitest": "^4.1.4"
+    "vitest": "^4.1.11"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^10.49.0",
-    "maplibre-gl": "^5.19.0",
+    "maplibre-gl": "^6.10.0",
     "pmtiles": "^4.4.0"
   }
 }

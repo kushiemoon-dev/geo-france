@@ -1,4 +1,4 @@
-import type maplibregl from 'maplibre-gl'
+import type * as maplibregl from 'maplibre-gl'
 import { REGIONS, getRegion } from '../config/regions.ts'
 import { createLayersForRegion, getRegionLayerIds } from './styles.ts'
 import { ensureModeAfterRegionLoad } from './map-mode.ts'

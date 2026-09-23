@@ -1,4 +1,4 @@
-import maplibregl from 'maplibre-gl'
+import * as maplibregl from 'maplibre-gl'
 import type { MapGeoJSONFeature } from 'maplibre-gl'
 import { openDetailPanel, setupDetailPanel, closeDetailPanel } from './detail-panel.ts'
 import { store } from '../core/state.ts'

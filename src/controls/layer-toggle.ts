@@ -1,4 +1,4 @@
-import type maplibregl from 'maplibre-gl'
+import type * as maplibregl from 'maplibre-gl'
 import { bus } from '../core/events.ts'
 import { store } from '../core/state.ts'
 import { DATA_REGIONS } from '../map/region-manager.ts'
