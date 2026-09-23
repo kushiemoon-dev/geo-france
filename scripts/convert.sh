@@ -192,12 +192,17 @@ echo "  [generate] ${REGION}.pmtiles..."
 # out-of-bounds assertion on at least one region's real geometry (auvergne-
 # rhone-alpes) — dropped. Shared-border consistency between adjacent regions
 # is not addressed by this rebuild.
+# --coalesce-densest-as-needed: merges excess dense features instead of
+# dropping them, keeping full polygon coverage (no visual holes), which
+# suits a geological map. Chosen over --drop-densest-as-needed after
+# comparing both on ile-de-france (smallest region): coalesce came out
+# slightly smaller (8,060,776 vs 8,074,808 bytes) with no visible quality
+# loss.
 tippecanoe \
   -zg \
   --projection=EPSG:4326 \
   --force \
-  --no-feature-limit \
-  --no-tile-size-limit \
+  --coalesce-densest-as-needed \
   --visvalingam \
   -o "$pmtiles_out" \
   "${tippecanoe_args[@]}"
