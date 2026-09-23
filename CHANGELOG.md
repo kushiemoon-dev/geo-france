@@ -1,5 +1,20 @@
 # Changelog
 
+## v2.4.0 (2026-09-23)
+
+### New features
+- Era, period, and stage (ere/periode/etage) fields in the formation detail panel are now individually clickable, linking to their own French Wikipedia article when one exists, falling back to plain text otherwise. Each slug was verified against French Wikipedia before inclusion; the informal Trias-Lias compound label has no dedicated article and stays plain text by design.
+- Added a dedicated link color token to the dark and light themes, with hover underline styling for detail panel and popup source links.
+
+### Fixes
+- Bumped `maplibre-gl` to v6 (critical vulnerability), which dropped its default export, so all imports switched to the namespace form. Also bumped `vitest` to a patched 4.x release and overrode `nanoid`, resolving all 8 npm audit advisories.
+- Bumped `ws` to patch a memory-exhaustion DoS (GHSA), pulled in transitively via happy-dom/vite/vite-plugin-pwa (dev/test tooling only).
+- Unified the project banner background color.
+
+### Internal
+- Screenshots added to the README, project banner added.
+- GitHub Actions pinned to commit SHA.
+
 ## v2.3.1 (2026-07-17)
 
 ### Fixes
