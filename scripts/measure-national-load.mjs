@@ -101,8 +101,10 @@ function createCdpClient(ws) {
   ws.addEventListener('message', (event) => {
     const msg = JSON.parse(event.data)
     if (msg.id && pending.has(msg.id)) {
-      pending.get(msg.id)(msg.result)
+      const { resolve, reject } = pending.get(msg.id)
       pending.delete(msg.id)
+      if (msg.error) reject(new Error(`CDP ${msg.error.code} : ${msg.error.message}`))
+      else resolve(msg.result)
     } else if (msg.method) {
       for (const listener of eventListeners.get(msg.method) ?? []) {
         listener(msg.params)
@@ -113,7 +115,7 @@ function createCdpClient(ws) {
   function send(method, params = {}) {
     const id = nextId++
     ws.send(JSON.stringify({ id, method, params }))
-    return new Promise((resolve) => pending.set(id, resolve))
+    return new Promise((resolve, reject) => pending.set(id, { resolve, reject }))
   }
 
   function onEvent(method, listener) {
@@ -198,7 +200,13 @@ async function measure(url, profileDir, chromiumProcessRef) {
       }
     }, QUIET_POLL_INTERVAL_MS)
 
-    send('Page.navigate', { url })
+    send('Page.navigate', { url }).then((result) => {
+      if (result.errorText) {
+        clearInterval(interval)
+        clearTimeout(timeoutHandle)
+        reject(new Error(`Navigation échouée : ${result.errorText}`))
+      }
+    }, reject)
   })
 
   return { requestCount, totalBytes, pmtilesBytes, quietAtMs }
@@ -213,12 +221,16 @@ try {
   console.log(`Total transféré : ${(result.totalBytes / 1_000_000).toFixed(2)} Mo`)
   console.log(`PMTiles transférées : ${(result.pmtilesBytes / 1_000_000).toFixed(2)} Mo`)
   console.log(`Temps jusqu'à réseau calme : ${(result.quietAtMs / 1000).toFixed(2)} s`)
-  process.exit(0)
+  process.exitCode = 0
 } catch (err) {
   console.error(`Erreur : ${err.message}`)
-  process.exit(1)
+  process.exitCode = 1
 } finally {
   chromiumProcessRef.ws?.close()
   chromiumProcessRef.value?.kill('SIGTERM')
+  await new Promise((resolve) => {
+    if (!chromiumProcessRef.value || chromiumProcessRef.value.exitCode !== null) return resolve()
+    chromiumProcessRef.value.once('exit', resolve)
+  })
   rmSync(profileDir, { recursive: true, force: true })
 }
