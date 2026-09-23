@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { version } from '../../../package.json'
 
 // --- Mocks ---
 
@@ -113,7 +114,7 @@ describe('region-manager', () => {
       expect(map.addSource).toHaveBeenCalledWith(
         'geology-bretagne',
         expect.objectContaining({
-          url: 'pmtiles:///data/bretagne.pmtiles',
+          url: `pmtiles:///data/bretagne.pmtiles?v=${version}`,
         })
       )
     })

@@ -192,12 +192,41 @@ echo "  [generate] ${REGION}.pmtiles..."
 # out-of-bounds assertion on at least one region's real geometry (auvergne-
 # rhone-alpes) — dropped. Shared-border consistency between adjacent regions
 # is not addressed by this rebuild.
+# --coalesce-densest-as-needed: merges excess dense features instead of
+# dropping them, keeping full polygon coverage (no visual holes), which
+# suits a geological map. Chosen over --drop-densest-as-needed after
+# comparing both on ile-de-france (smallest region): coalesce came out
+# slightly smaller (8,060,776 vs 8,074,808 bytes) with no visible quality
+# loss.
+# --drop-fraction-as-needed: tippecanoe's own suggested fallback for a tile
+# coalesce-densest-as-needed still can't fit ("Try using
+# --drop-fraction-as-needed or --drop-densest-as-needed."). Kept as a
+# defensive no-cost addition; it did not change the outcome of the
+# occitanie failure below (root cause was the byte budget, not a missing
+# fallback strategy).
+# --maximum-tile-bytes=2000000 (4x tippecanoe's 500000-byte default):
+# direct MVT inspection found tippecanoe's default budget silently wiping
+# out entire tiles instead of thinning them in the 4 largest/densest
+# regions (auvergne-rhone-alpes, nouvelle-aquitaine, occitanie,
+# provence-alpes-cote-dazur), e.g. a Normandie z8 tile going from 2900+
+# features to 20, losing named formations b1G/b2G/j1-2M entirely. Worse,
+# occitanie's tightest tile hard-fails tippecanoe (exit 100, "Can't
+# increase feature gap threshold further") below 1,200,000-1,400,000
+# bytes, corrupting the output file. Doubling the default to 1,000,000
+# fixed Normandie but not the other 3 regions; 2,000,000 keeps every
+# region's formation loss in the same range as tippecanoe's normal
+# zoom-dependent simplification (no more near-total wipeouts). Tradeoff:
+# the France view now transfers ~25.5 Mo instead of the ticket's 15 Mo
+# target (still well under the 38.5 Mo pre-lot baseline), a deliberate
+# choice of formation-level correctness over hitting that number exactly,
+# confirmed with the user after testing 1,000,000 / 1,400,000 / 2,000,000.
 tippecanoe \
   -zg \
   --projection=EPSG:4326 \
   --force \
-  --no-feature-limit \
-  --no-tile-size-limit \
+  --coalesce-densest-as-needed \
+  --drop-fraction-as-needed \
+  --maximum-tile-bytes=2000000 \
   --visvalingam \
   -o "$pmtiles_out" \
   "${tippecanoe_args[@]}"
