@@ -38,3 +38,44 @@
 - Explored a simplified 1:1M national PMTiles layer to cut load size; reverted after it diverged from prod's rendering and silenced several layer toggles, restored the original 13-region stacking for the national view, keeping the formation-labels toggle and color/fossil fixes made along the way
 - Migrated from npm to pnpm; dead code and obsolete scripts removed (knip audit)
 - French code comments translated to English
+
+## v2.1.0 (2026-04-24)
+
+### New features
+- Rock image quality system: Commons scoring, blacklist filtering, title normalization, and a local HTTP audit tool (OK/Reject/Skip) backing a metadata.json of typed Wikimedia attribution; 54/62 lithologies verified
+- Fossil enrichment pipeline pulling structured metadata, covering 981/997 BRGM sheets (98.4%)
+- Accessibility pass to WCAG 2.1 AA: dialog role and focus trap on the detail panel, live regions on toasts, aria labels on topbar controls, 44x44px mobile touch targets
+- PWA support via vite-plugin-pwa with app shell precache and cache-first rock images
+- Light theme toggle (paper map palette) alongside the existing dark theme
+- Sentry and Plausible telemetry, both opt-in via env vars
+- CI workflow (typecheck, test, build), ESLint 10 flat config, Prettier, and 28 unit tests added
+
+### Fixes
+- Default region changed to "france" so the map opens on the full country instead of Normandie on first load, with a matching fix to avoid loading a nonexistent PMTiles source for that view
+- Fossil extraction now also scans the stratigraphic summary text, surfacing fossils stage inference alone missed
+- Licence attribution text corrected in the detail and info panels
+- phtanite rock image rotated 180 degrees; colluvion and ampelite images removed pending a suitable specimen
+
+## v0.2.2 (2026-04-16)
+
+### Fixes
+- Fossils inferred purely from geological stage removed; only fossils explicitly cited in the BRGM description are now shown, cutting false positives
+
+## v0.2.1 (2026-04-14)
+
+### New features
+- Wikipedia links added to lithology and fossil tags
+- 26 missing lithology rock images added from Wikimedia Commons
+
+### Fixes
+- Region assignments, fossil grouping, and WMS fallback corrected after audit
+- 13 mis-assigned notice sheets moved to their correct region; LAVAL (0319) moved from Normandie to Pays-de-la-Loire
+- Security: vite bumped to 7.3.2
+
+## v0.1.0 (2026-04-11)
+
+### Initial release
+- Interactive map of France's geology built on MapLibre GL and 13 stacked PMTiles regions, with national and local (BRGM WMS 1:50k) view modes
+- Formation detail panel with stratigraphic hierarchy, ICS color coding, mineral crystallographic data, and rock images sourced from Wikimedia Commons, later self-hosted to bypass browser Opaque Response Blocking on hotlinked images
+- Notices panel linking all 997 BRGM geological map sheets, plus WMS GetFeatureInfo lookups and dip symbols oriented by azimuth
+- Dark mode, SEO metadata, and a full UI/UX redesign under the Earth Tectonic design system before release
