@@ -28,12 +28,21 @@ const QUIET_WINDOW_MS = 3000
 const QUIET_POLL_INTERVAL_MS = 100
 const PMTILES_URL_PATTERN = /\/data\/[^/]+\.pmtiles(\?|$)/
 
-// blob:/data: requests (maplibre-gl's worker bundle, etc.) resolve locally and
-// never get a matching Network.loadingFinished/Failed event — tracking them
-// leaves inFlight stuck above 0 forever, so network-idle is never reached.
+// blob:/data: requests resolve locally and never get a matching
+// Network.loadingFinished/Failed event — tracking them leaves inFlight stuck
+// above 0 forever, so network-idle is never reached.
 function isNetworkUrl(url) {
   return url.startsWith('http://') || url.startsWith('https://')
 }
+
+// maplibre-gl v6 loads its worker as a same-origin http(s) module script
+// instead of the blob: URL older versions used. Its completion fires on the
+// worker's own CDP target, not the page's, an attach-then-instant-detach
+// race made Target.setAutoAttach too unreliable to catch it, so the fetch
+// this filters out never gets a page-session Network.loadingFinished either
+// and would otherwise stall network-idle detection forever, same failure
+// mode as blob:.
+const WORKER_SCRIPT_URL_PATTERN = /-worker\.mjs(\?|$)/
 
 const targetUrl = process.argv[2]
 if (!targetUrl) {
@@ -68,8 +77,10 @@ function waitForDevtoolsPort(chromiumProcess) {
       reject(new Error(`Impossible de démarrer Chromium : ${err.message}`))
     })
 
+    let stderrBuffer = ''
     chromiumProcess.stderr.on('data', (chunk) => {
-      const match = chunk.toString().match(/DevTools listening on ws:\/\/127\.0\.0\.1:(\d+)\//)
+      stderrBuffer += chunk.toString()
+      const match = stderrBuffer.match(/DevTools listening on ws:\/\/127\.0\.0\.1:(\d+)\//)
       if (match) {
         clearTimeout(timeoutHandle)
         resolve(Number(match[1]))
@@ -80,6 +91,9 @@ function waitForDevtoolsPort(chromiumProcess) {
 
 async function createTarget(port) {
   const response = await fetch(`http://127.0.0.1:${port}/json/new?about:blank`, { method: 'PUT' })
+  if (!response.ok) {
+    throw new Error(`Le endpoint DevTools a répondu ${response.status} à la création de l'onglet`)
+  }
   return response.json()
 }
 
@@ -110,6 +124,15 @@ function createCdpClient(ws) {
         listener(msg.params)
       }
     }
+  })
+
+  // A closed connection (Chromium crash, kill) otherwise leaves any in-flight
+  // send() promise pending forever, since it will never get a matching reply.
+  ws.addEventListener('close', () => {
+    for (const { reject } of pending.values()) {
+      reject(new Error('Connexion WebSocket au DevTools fermée avant la réponse'))
+    }
+    pending.clear()
   })
 
   function send(method, params = {}) {
@@ -146,6 +169,7 @@ async function measure(url, profileDir, chromiumProcessRef) {
 
   onEvent('Network.requestWillBeSent', (params) => {
     if (!isNetworkUrl(params.request.url)) return
+    if (WORKER_SCRIPT_URL_PATTERN.test(params.request.url)) return
     inFlight.add(params.requestId)
     urlsByRequestId.set(params.requestId, params.request.url)
   })
@@ -173,7 +197,9 @@ async function measure(url, profileDir, chromiumProcessRef) {
     loadFired = true
   })
   onEvent('Network.requestWillBeSent', (params) => {
-    if (isNetworkUrl(params.request.url)) quietSince = null
+    if (isNetworkUrl(params.request.url) && !WORKER_SCRIPT_URL_PATTERN.test(params.request.url)) {
+      quietSince = null
+    }
   })
 
   const navigationStartTime = Date.now()
