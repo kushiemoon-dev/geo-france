@@ -93,6 +93,8 @@ pnpm build
 
 Static files in `dist/` can be served by any web server. A static server with byte-range support is recommended for PMTiles files.
 
+PMTiles are served with a 30-day `immutable` cache header (see `public/.htaccess`), busted by a `?v=<package version>` query param on the PMTiles URL (`src/map/region-manager.ts`). Deploy order matters: upload regenerated `public/data/*.pmtiles` before the new `dist/` build. If the JS ships first, visitors who load it before the tiles land get the new `?v=` URL pointing at files that aren't there yet; if the tiles ship after a version bump that already went out, some visitors keep the old cached tiles under the new URL for the rest of the 30 days. Always pair a tile regeneration with a version bump in `package.json`, even if no other code changed.
+
 ---
 
 ## Data pipeline

@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.4.1 (2026-09-24)
+
+### Fixes
+- Fixed a regression from the v2.4.0 maplibre-gl v6 bump that left the map rendering nothing but the base layer: each region's PMTiles header loaded fine, but no vector tile was ever requested. Root cause was a missing `setWorkerUrl()` call, under Vite `import.meta.url` inside maplibre-gl's own module graph doesn't resolve to the built worker chunk, so the worker request quietly 404'd (served the SPA's `index.html` instead of a real 404) and failed to parse as a module, silently, with no console error on maplibre-gl 6.10. Upgraded to 6.11.0, which surfaces this failure as a console error, and pointed `setWorkerUrl()` at the worker's Vite-bundled URL.
+- `scripts/convert.sh` re-applies a tippecanoe tile-size budget (`--coalesce-densest-as-needed`, `--maximum-tile-bytes=2000000`, `--drop-fraction-as-needed`), lost since a July regeneration replayed the pipeline without the budget that had been applied out-of-band in May. Fixes the France view transferring 38.5 Mo of PMTiles on load; now transfers about 25.5 Mo. Bumping the budget further to hit the original 15 Mo target caused two of the densest regions to either fail to build or lose most of their named formations at their own default zoom, so 25.5 Mo was kept as the safer tradeoff.
+- PMTiles URLs now carry a `?v=<package version>` query param, so visitors who already cached the previous PMTiles under the 30-day `immutable` header pick up the regenerated ones after this deploy instead of waiting out the cache.
+
+### Internal
+- Added `scripts/measure-national-load.mjs`: measures request count, MB transferred, and time-to-network-idle for a page load, driven over raw CDP against a disposable cache-empty Chromium profile (no playwright/puppeteer dependency).
+
 ## v2.4.0 (2026-09-23)
 
 ### New features
