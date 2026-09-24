@@ -1,10 +1,16 @@
 import * as maplibregl from 'maplibre-gl'
 import { Protocol } from 'pmtiles'
 import { FRANCE_CENTER } from '../config/regions.ts'
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url'
 
 const DEFAULT_ZOOM = 6
 
 export function createMap(container: string): maplibregl.Map {
+  // With Vite, import.meta.url inside maplibre-gl's own module graph doesn't
+  // resolve to the built worker chunk, so the worker 404s (silently, as an
+  // HTML SPA-fallback response) unless its URL is set explicitly.
+  maplibregl.setWorkerUrl(maplibreWorkerUrl)
+
   // Register PMTiles protocol
   const protocol = new Protocol()
   maplibregl.addProtocol('pmtiles', protocol.tile)

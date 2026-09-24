@@ -42,7 +42,7 @@ function isNetworkUrl(url) {
 // this filters out never gets a page-session Network.loadingFinished either
 // and would otherwise stall network-idle detection forever, same failure
 // mode as blob:.
-const WORKER_SCRIPT_URL_PATTERN = /-worker\.mjs(\?|$)/
+const WORKER_SCRIPT_URL_PATTERN = /maplibre-gl-worker[^/]*\.m?js(\?|$)/
 
 const targetUrl = process.argv[2]
 if (!targetUrl) {
